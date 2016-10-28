@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import GymProgressLogger from './App';
 import './index.css';
+import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 ReactDOM.render(
-  <App />,
+  <GymProgressLogger />,
   document.getElementById('root')
 );
