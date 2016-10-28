@@ -1,0 +1,3517 @@
+{
+   "users":[
+      {
+         "first_name":"Mitch",
+         "surname":"Hitt",
+         "picture":"http://placehold.it/32x32",
+         "dob":"12/05/1986",
+         "training_from":"05/12/1986",
+         "training_sessions":[
+            {
+               "date":"04/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":110,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":20,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"06/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":140,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"08/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":180,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":80,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":30,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"11/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":112,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":20,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"13/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":140,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"15/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":180,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":80,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":30,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"18/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":114,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":102,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":20,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"20/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":140,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"22/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":180,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":80,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":32,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"25/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":114,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":102,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":62,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":22,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":200,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":250,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"27/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":140,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"29/07/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":180,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":80,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":32,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"01/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":116,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":84,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":104,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":62,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":22,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"03/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"05/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":185,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":32,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"08/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":116,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":104,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":64,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":22,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":25,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"10/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"12/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":185,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":32,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"15/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":116,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":84,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":102,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":64,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":25,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"17/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":82,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"19/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":55,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":34,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"22/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":120,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":86,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":106,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":66,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":26,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"24/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"26/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":55,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":34,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"29/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":120,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":88,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":106,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":67,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":25,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":28,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":220,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"31/08/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"02/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":55,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":50,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":34,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"05/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":122,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":89,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":108,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":68,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":25,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":28,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"07/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"09/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":58,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":60,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":36,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"12/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":122,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":108,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":68,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":25,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":28,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"14/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"16/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":58,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":60,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":36,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"19/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":124,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":92,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":110,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":70,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":26,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":28,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"21/092016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":88,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"23/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":58,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":60,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":36,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"26/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":125,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":95,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":109,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":70,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":26,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":28,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"28/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":320,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":88,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"30/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":70,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":36,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"03/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":126,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":96,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":112,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":67,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":26,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"05/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":160,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":340,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":88,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"07/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":70,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":36,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"10/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":127,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":94,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":110,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":67,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":24,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":26,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"12/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":160,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":340,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":88,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":210,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":260,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"14/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":190,
+                           "number_of_series":4,
+                           "number_of_reps":5
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":90,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":50,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":70,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":36,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "first_name":"Tyree",
+         "surname":"Layman",
+         "dob":"12/11/1989",
+         "picture":"http://placehold.it/32x32",
+         "training_from":"14/07/2008",
+		 "training_sessions":[
+		            {
+               "date":"26/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":35,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":12,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"28/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":150,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":40,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":30,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":45,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":10,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"30/09/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":70,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":40,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":40,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":40,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"03/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":85,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":35,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":12,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"05/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":90,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":160,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":40,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":30,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":45,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":10,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"07/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":70,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":40,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":40,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":40,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"10/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"chest",
+                     "exercises":[
+                        {
+                           "name":"barbell flat bench press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell incline bench press",
+                           "weight":60,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        },
+                        {
+                           "name":"barbell decline bench press",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":8
+                        }
+                     ]
+                  },
+                  {
+                     "name":"biceps",
+                     "exercises":[
+                        {
+                           "name":"barbell curl",
+                           "weight":35,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"concentration curls",
+                           "weight":12,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"alternate hammer curl",
+                           "weight":16,
+                           "number_of_series":3,
+                           "number_of_reps":10
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"12/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"leg",
+                     "exercises":[
+                        {
+                           "name":"barbell full squat",
+                           "weight":95,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"leg press",
+                           "weight":170,
+                           "number_of_series":4,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"leg extensions",
+                           "weight":40,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"lying leg curls",
+                           "weight":30,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"shoulders",
+                     "exercises":[
+                        {
+                           "name":"standing military press",
+                           "weight":45,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"power partials",
+                           "weight":10,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"front dumbbell raise",
+                           "weight":14,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"calf",
+                     "exercises":[
+                        {
+                           "name":"standing calf raise",
+                           "weight":80,
+                           "number_of_series":4,
+                           "number_of_reps":20
+                        },
+                        {
+                           "name":"sitting calf raise",
+                           "weight":100,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  }
+               ]
+            },
+            {
+               "date":"14/10/2016",
+               "muscle_group_sessions":[
+                  {
+                     "name":"back",
+                     "exercises":[
+                        {
+                           "name":"deadlift",
+                           "weight":100,
+                           "number_of_series":4,
+                           "number_of_reps":6
+                        },
+                        {
+                           "name":"reverse grip bent-over rows",
+                           "weight":70,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"t-bar row",
+                           "weight":85,
+                           "number_of_series":3,
+                           "number_of_reps":12
+                        }
+                     ]
+                  },
+                  {
+                     "name":"triceps",
+                     "exercises":[
+                        {
+                           "name":"cable two arms extensions",
+                           "weight":40,
+                           "number_of_series":4,
+                           "number_of_reps":12
+                        },
+                        {
+                           "name":"weighted bench dip",
+                           "weight":40,
+                           "number_of_series":3,
+                           "number_of_reps":15
+                        },
+                        {
+                           "name":"reverse grip triceps pushdown",
+                           "weight":40,
+                           "number_of_series":4,
+                           "number_of_reps":10
+                        }
+                     ]
+                  }
+               ]
+            }
+		]
+      },
+      {
+         "first_name":"Gus",
+         "surname":"Hathaway",
+         "dob":"30/11/1978",
+         "picture":"http://placehold.it/32x32",
+         "training_from":"21/01/1992"
+      },
+      {
+         "first_name":"Alphonse",
+         "surname":"Wetzel",
+         "dob":"25/03/1983",
+         "picture":"http://placehold.it/32x32",
+         "training_from":"19/12/1999"
+      },
+      {
+         "first_name":"Darell",
+         "surname":"Kent",
+         "dob":"10/09/1998",
+         "picture":"http://placehold.it/32x32",
+         "training_from":"12/09/2014"
+      }
+   ]
+}
