@@ -3,7 +3,7 @@ var AllUsers =  [
          "id":1,
          "first_name":"Mitch",
          "surname":"Hitt",
-         "picture":"http://placehold.it/32x32",
+         "picture":"assets/users/1.jpg",
          "dob":"12/05/1986",
          "training_from":"05/12/1986",
          "training_sessions":[
@@ -3074,7 +3074,7 @@ var AllUsers =  [
          "first_name":"Tyree",
          "surname":"Layman",
          "dob":"12/11/1989",
-         "picture":"http://placehold.it/32x32",
+         "picture":"assets/users/2.jpg",
          "training_from":"14/07/2008",
          "training_sessions":[
             {
@@ -3696,7 +3696,7 @@ var AllUsers =  [
 		"first_name": "Gus",
 		"surname": "Hathaway",
 		"dob":"30/11/1978",
-		"picture":"http://placehold.it/32x32",
+		"picture": "assets/users/3.jpg",
 		"training_from":"21/01/1992"
 	},
 	{
@@ -3704,7 +3704,7 @@ var AllUsers =  [
 		"first_name": "Alphonse",
 		"surname": "Wetzel",
 		"dob": "25/03/1983",
-		"picture": "http://placehold.it/32x32",
+		"picture": "assets/users/4.jpg",
 		"training_from": "19/12/1999"
 	},
 	{
@@ -3712,7 +3712,7 @@ var AllUsers =  [
 		"first_name": "Darell",
 		"surname": "Kent",
 		"dob": "10/09/1998",
-		"picture": "later",
+		"picture": "assets/users/5.jpg",
 		"training_from": "12/09/2014"
 	}
 ]; 

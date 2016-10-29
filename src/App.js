@@ -37,6 +37,7 @@ var User = React.createClass({
 			var userItem = this.props.userItem;
 			return (
 			<li>
+			<img className="thumb" src={userItem.picture} alt={userItem.first_name}/>
             <a href="#">{userItem.first_name} {userItem.surname}</a>
         </li>
 			)
