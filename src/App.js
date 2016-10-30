@@ -27,7 +27,7 @@ export default class SelectableDay extends React.Component {
           selectedDays={ day => DateUtils.isSameDay(selectedDay, day) }
           onDayClick={ this.handleDayClick }
         />
-        <div className="center">
+        <div className="centered">
           { selectedDay ? selectedDay.toLocaleDateString() : 'Please select a day ??' }
         </div>
       </div>
@@ -46,9 +46,31 @@ const data = [
   {text: '22/08', value: 120} 
 ];
  
-const margin = {top: 20, right: 20, bottom: 30, left: 40};
+var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
-const Chart = React.createClass({
+var EditProfileForm = React.createClass({
+	render() {
+		return (
+			<div className="centered">
+			
+			  <input type="text" className="form-control" 
+                     placeholder="First name"/>
+					 
+			 <input type="text" className="form-control" 
+                     placeholder="Surname"/>
+			 <input type="text" className="form-control" 
+                     placeholder="DOB"/>
+			 <input type="text" className="form-control" 
+                     placeholder="Training from"/>
+				<input type="fluid button" className="btn btn-primary btn-block" value="Submit"
+                       onClick={this.handleSubmit} />
+			  
+		 </div>
+		)
+	}
+});
+
+var Chart = React.createClass({
   
  /*
   componentDidMount: () => {
@@ -124,7 +146,7 @@ var UserInfo = React.createClass({
 		return (
 		<div>
 		<div className="left-within-main">
-		 <table className="table table-hover">
+		 <table className="table">
     <thead>
       <tr>
         <th>User name</th>
@@ -200,9 +222,9 @@ var MainContent = React.createClass({
 	render: function() {
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
-		<div className="main-content-with-search-box">
-		
-		<Chart/>
+		<div className="main-content-without-search-box">
+		<EditProfileForm/>
+		{/*<Chart/>*/}
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
 		<div className="calendar">
@@ -222,7 +244,7 @@ var GymProgressLogger = React.createClass({
         <Sidebar/>
 		{/*<MonthPicker/>*/}
 		{/*<SearchBox/>*/}
-		<ChartDataPicker/>
+		{/*<ChartDataPicker/>*/}
         <MainContent users={this.props.users}/>
 		
 		  <Footer />
