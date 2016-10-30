@@ -18,6 +18,38 @@ var SearchBox = React.createClass({
   }
 });
 
+var UserInfo = React.createClass({
+	render: function() {
+		return (
+		<div>
+		<div className="left-within-main">
+		 <table className="table table-hover">
+    <thead>
+      <tr>
+        <th>User name</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>dob</td>
+      </tr>
+      <tr>
+        <td>number of sessions</td>
+      </tr>
+    </tbody>
+  </table>
+		</div>
+		<div className="right-within-main">
+		<img className="thumb" src="assets/users/4.jpg" alt="placeholder"/>
+		   
+		</div>
+		</div>
+		
+		)
+	}
+	
+});
+
 var Sidebar = React.createClass({
   render: function(){
 	  return (
@@ -37,9 +69,9 @@ var User = React.createClass({
 			var userItem = this.props.userItem;
 			return (
 			<li>
-			<img className="thumb" src={userItem.picture} alt={userItem.first_name}/>
-            <a href="#">{userItem.first_name} {userItem.surname}</a>
-        </li>
+				<img className="thumb" src={userItem.picture} alt={userItem.first_name}/>
+				<a href={"/users/" + userItem.id}>{userItem.first_name} {userItem.surname}</a>
+			</li>
 			)
 		}
 	});
@@ -50,7 +82,7 @@ var FilteredUsersList = React.createClass({
 			return <User key={user.id} userItem={user} />;
 		}) ;
             return (
-                    <div className="col-md-10">
+                    <div className="main-content">
                       <ul className="users">
                           {displayedUsers}
                       </ul>
@@ -67,9 +99,8 @@ var MainContent = React.createClass({
 		return (
 		
 		<div className="main-content">
-		
-		
-		<FilteredUsersList  users={this.props.users}/>
+		<UserInfo />
+		{/*<FilteredUsersList  users={this.props.users}/>*/}
 		</div>
 		)
 	}
@@ -84,7 +115,6 @@ var GymProgressLogger = React.createClass({
         <Sidebar/>
 		<SearchBox/>
         <MainContent users={this.props.users}/>
-		
 		  <Footer />
 		  </div>
 	  );

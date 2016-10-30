@@ -56,6 +56,16 @@
   overflow-y: scroll;
 }
 
+.left-within-main {
+	float: left;
+	width: 60%;
+}
+
+.right-within-main {
+	float: right;
+	width: 35%;
+}
+
 .search-box {
   position: absolute;
   left: 24%;
