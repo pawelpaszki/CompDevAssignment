@@ -3,7 +3,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
-//import SelectableDay from './Calendar';
+import BarChart from 'react-bar-chart';
 import './App.css';
 
 export default class SelectableDay extends React.Component {
@@ -34,6 +34,46 @@ export default class SelectableDay extends React.Component {
     );
   }
 };
+
+const data = [
+  {text: '04/07', value: 110}, 
+  {text: '11/07', value: 112},
+  {text: '18/07', value: 114},
+  {text: '25/07', value: 114},
+  {text: '01/08', value: 116}, 
+  {text: '08/08', value: 116},
+  {text: '15/08', value: 116},
+  {text: '22/08', value: 120} 
+];
+ 
+const margin = {top: 20, right: 20, bottom: 30, left: 40};
+
+const Chart = React.createClass({
+  
+ /*
+  componentDidMount: () => {
+    var domNode = this.getDOMNode();
+ 
+    window.onresize = () => {
+     this.setState({width: domNode.offsetWidth}); 
+    };
+  },
+  */
+ 
+  render() {
+    return (
+        <div>
+            <div style={{width: '50%'}}> 
+                <BarChart ylabel='kg'
+                  width={600} //this.state.width
+                  height={400}
+                  margin={margin}
+                  data={data}/>
+            </div>
+        </div>
+    );
+  }
+});
 
 var SearchBox = React.createClass({
   render: function(){
@@ -132,10 +172,11 @@ var MainContent = React.createClass({
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
 		<div className="main-content-without-search-box">
+		<Chart/>
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
 		<div className="calendar">
-		<SelectableDay />
+		{/*<SelectableDay />*/}
 		</div>
 		</div>
 		)
