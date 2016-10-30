@@ -1,7 +1,39 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
+import DayPicker, { DateUtils } from 'react-day-picker';
+import 'react-day-picker/lib/style.css';
+//import SelectableDay from './Calendar';
 import './App.css';
+
+export default class SelectableDay extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleDayClick = this.handleDayClick.bind(this);
+  }
+  state = {
+    selectedDay: null,
+  };
+  handleDayClick(e, day, { selected }) {
+    this.setState({
+      selectedDay: selected ? null : day,
+    });
+  }
+  render() {
+    const { selectedDay } = this.state;
+    return (
+      <div>
+        <DayPicker
+          selectedDays={ day => DateUtils.isSameDay(selectedDay, day) }
+          onDayClick={ this.handleDayClick }
+        />
+        <div className="center">
+          { selectedDay ? selectedDay.toLocaleDateString() : 'Please select a day ??' }
+        </div>
+      </div>
+    );
+  }
+};
 
 var SearchBox = React.createClass({
   render: function(){
@@ -76,6 +108,7 @@ var User = React.createClass({
 		}
 	});
 	
+
 var FilteredUsersList = React.createClass({
 	render: function() {
 		var displayedUsers = this.props.users.map((user) =>{
@@ -97,10 +130,13 @@ var FilteredUsersList = React.createClass({
 var MainContent = React.createClass({
 	render: function() {
 		return (
-		
-		<div className="main-content">
-		<UserInfo />
+		//{/* conditional... !!!!!!!!!!! */}
+		<div className="main-content-without-search-box">
+		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
+		<div className="calendar">
+		<SelectableDay />
+		</div>
 		</div>
 		)
 	}
@@ -113,8 +149,10 @@ var GymProgressLogger = React.createClass({
 	  
 		<Navbar />
         <Sidebar/>
-		<SearchBox/>
+		{/*<MonthPicker/>*/}
+		{/*<SearchBox/>*/}
         <MainContent users={this.props.users}/>
+		
 		  <Footer />
 		  </div>
 	  );
