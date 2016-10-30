@@ -75,6 +75,35 @@ const Chart = React.createClass({
   }
 });
 
+var ChartDataPicker = React.createClass( {
+	render: function(){
+		return (
+		<div className="search-box">
+		 <tr>
+              <td>
+              <input type="text" className="form-control" 
+                     placeholder="Start typing Exercise name"
+              />
+              </td>
+              <td>
+              <input type="text" className="form-control"
+                     placeholder="Date from"
+              />
+              </td>
+              <td>
+              <input type="text" className="form-control" 
+                     placeholder="Date to"
+              />
+              </td>
+              <td>
+              <input type="button" className="btn btn-primary" value="Generate chart"
+                       onClick={this.handleSubmit} />
+              </td>
+            </tr>
+      </div>
+		)
+	}
+})
 var SearchBox = React.createClass({
   render: function(){
     return (
@@ -171,7 +200,8 @@ var MainContent = React.createClass({
 	render: function() {
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
-		<div className="main-content-without-search-box">
+		<div className="main-content-with-search-box">
+		
 		<Chart/>
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
@@ -192,6 +222,7 @@ var GymProgressLogger = React.createClass({
         <Sidebar/>
 		{/*<MonthPicker/>*/}
 		{/*<SearchBox/>*/}
+		<ChartDataPicker/>
         <MainContent users={this.props.users}/>
 		
 		  <Footer />
