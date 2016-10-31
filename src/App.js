@@ -572,11 +572,12 @@ var GymProgressLogger = React.createClass({
       }, 
   render: function(){
 	   var users = api.getAllUsers();
-	   var list = users.filter(function(p) {
-                  return p.surname.toLowerCase().search(
+	   var userList = users.filter(function(p) {
+		   var name = p.first_name + ' ' + p.surname;
+                  return name.toLowerCase().search(
                       this.state.search.toLowerCase() ) != -1 ;
                     }.bind(this) );
-            var filteredList = _.sortBy(list, this.state.sort) ;
+            var filteredList = _.sortBy(userList, this.state.sort) ;
 	 
 	  var exercises = api.getAllExercises();
 	  var muscles = api.getAllMuscles();
