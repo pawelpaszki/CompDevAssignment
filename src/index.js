@@ -6,10 +6,11 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Users from './Data';
 import Tsessions from './TrainingSessions';
 import Msessions from './MuscleSession';
-import Exercises from './Exercises';
+import ExerciseUnits from './ExerciseUnits';
 import Muscles from './Muscles';
+import Exercises from './Exercises';
 
 ReactDOM.render(
-  <GymProgressLogger users={Users} tsessions={Tsessions} msessions={Msessions} exercises={Exercises} muscles={Muscles}/>,
+  <GymProgressLogger users={Users} tsessions={Tsessions} msessions={Msessions} exerciseUnits={ExerciseUnits} muscles={Muscles} exercises={Exercises}/>,
   document.getElementById('root')
 );

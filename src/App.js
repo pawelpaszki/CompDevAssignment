@@ -255,24 +255,54 @@ var SessionsList = React.createClass({
 	}
 });
 
+var AddExerciseUnitForm = React.createClass({
+	render: function() {
+            return (
+			
+				<div className="left-within-main">
+										<table className="table table-borderless">
+    <tbody>
+      <tr>
+	      
+    <td className="col-md-4"><input type="text" className="form-control" 
+				 placeholder="Type exercise name"
+		  /></td>
+    <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add Exercise"
+				   onClick={this.fillInLater} /> </td>
+				   <td className="col-md-1"></td>
+    <td className="col-md-4"> </td>
+      </tr>
+    </tbody>
+  </table>
+				</div>
+				
+
+		  ) ;
+	}
+});
+
 var AddExerciseForm = React.createClass({
 	render: function() {
             return (
 			
 				<div className="left-within-main">
-				<tr>
-		  <td>
-		  <input type="text" className="form-control" 
-				 placeholder="Type exercise name"
-		  />
-		  </td>
-		  
-		  <td>
-		  <input type="button" className="btn btn-primary" value="Add Exercise"
-				   onClick={this.fillInLater} />
-		  </td>
-		</tr>
+										<table className="table table-borderless">
+    <tbody>
+      <tr>
+	      
+    <td className="col-md-4"><input type="text" className="form-control" 
+				 placeholder="Exercise name"
+		  /></td>
+    <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add new exercise"
+				   onClick={this.fillInLater} /> </td>
+				   <td className="col-md-1"></td>
+    <td className="col-md-4"> </td>
+      </tr>
+    </tbody>
+  </table>
 				</div>
+				
+
 		  ) ;
 	}
 });
@@ -316,6 +346,45 @@ var MuscleList = React.createClass({
 	}
 });
 
+var Exercise = React.createClass({
+	render: function() {
+		var exercise = this.props.exercise;
+		return (
+		
+		<li>
+		<div className="left-within-main">
+<table className="table table-borderless">
+    <tbody>
+      <tr>
+	      <td className="col-md-6"><a  href={"/exercises/" + exercise.name}>{exercise.name} </a></td>
+    <td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit"/></td>
+    <td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete"/></td>
+    <td className="col-md-2"></td>
+      </tr>
+    </tbody>
+  </table>
+			 </div>
+		</li>
+		)
+	}
+});
+
+
+var ExerciseList = React.createClass({
+	render: function() {
+		var Exercises = this.props.exercises.map((exercise) =>{
+			return <Exercise key={exercise.name} exercise={exercise} />;
+		}) ;
+            return (
+                    <div className="main-content">
+                      <ul className="users">
+                          {Exercises}
+                      </ul>
+                    </div>
+              ) ;
+	}
+});
+
 var ExerciseUnit = React.createClass({
 	render: function() {
 		var exerciseUnit = this.props.exerciseUnit;
@@ -342,7 +411,7 @@ var ExerciseUnit = React.createClass({
 
 var ExerciseUnitList = React.createClass({
 	render: function() {
-		var displayedExercises = this.props.exercises.map((exercise) =>{
+		var displayedExercises = this.props.exerciseUnits.map((exercise) =>{
 			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} />;
 		}) ;
             return (
@@ -441,14 +510,16 @@ var MainContent = React.createClass({
 		{/*<FilteredTrainingSessionsList  tsessions={this.props.tsessions}/>*/}
 		{/*<SessionsList  msessions={this.props.msessions}/>*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
-		{/*<ExerciseUnitList exercises={this.props.exercises}/>*/}
-		<MuscleList muscles={this.props.muscles}/>
-		<AddMuscleForm/>
+			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
+		{/*<MuscleList muscles={this.props.muscles}/>*/}
+		{/*<AddMuscleForm/>*/}
+		{/*<ExerciseList exercises={this.props.exercises}/>*/}
 		<div className="calendar">
 		{/*<SelectableDay />*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
+		{/*<AddExerciseUnitForm/>*/}
+		{/*<AddExerciseUnitForm/>*/}
 		{/*<AddExerciseForm/>*/}
-		
 		</div>
 		</div>
 		)
@@ -465,7 +536,9 @@ var GymProgressLogger = React.createClass({
 		{/*<MonthPicker/>*/}
 		{/*<SearchBox/>*/}
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={this.props.users} tsessions={this.props.tsessions} msessions={this.props.msessions} exercises={this.props.exercises} muscles={this.props.muscles}/>
+        <MainContent users={this.props.users} tsessions={this.props.tsessions} 
+		msessions={this.props.msessions} exerciseUnits={this.props.exerciseUnits} 
+		muscles={this.props.muscles} exercises={this.props.exercises}/>
 		
 		
 		  <Footer />
