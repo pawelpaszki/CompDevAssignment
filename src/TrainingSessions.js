@@ -1,10 +1,10 @@
 var TrainingSessions:[
             {
-               "main_session_id":1,
+               "id":1,
                "date":"04/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":1,
+                     "id":1,
                      "name":"chest",
                      "exercises":[
                         {
@@ -28,7 +28,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":2,
+                     "id":2,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -52,7 +52,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":3,
+                     "id":3,
                      "name":"calf",
                      "exercises":[
                         {
@@ -72,11 +72,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":2,
+               "id":2,
                "date":"06/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":4,
+                     "id":4,
                      "name":"leg",
                      "exercises":[
                         {
@@ -106,7 +106,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":5,
+                     "id":5,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -130,7 +130,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":6,
+                     "id":6,
                      "name":"calf",
                      "exercises":[
                         {
@@ -150,11 +150,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":3,
+               "id":3,
                "date":"08/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":7,
+                     "id":7,
                      "name":"back",
                      "exercises":[
                         {
@@ -178,7 +178,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":8,
+                     "id":8,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -204,11 +204,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":4,
+               "id":4,
                "date":"11/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":9,
+                     "id":9,
                      "name":"chest",
                      "exercises":[
                         {
@@ -232,7 +232,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":10,
+                     "id":10,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -256,7 +256,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":11,
+                     "id":11,
                      "name":"calf",
                      "exercises":[
                         {
@@ -276,11 +276,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":5,
+               "id":5,
                "date":"13/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":12,
+                     "id":12,
                      "name":"leg",
                      "exercises":[
                         {
@@ -310,7 +310,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":13,
+                     "id":13,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -334,7 +334,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":14,
+                     "id":14,
                      "name":"calf",
                      "exercises":[
                         {
@@ -354,11 +354,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":6,
+               "id":6,
                "date":"15/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":15,
+                     "id":15,
                      "name":"back",
                      "exercises":[
                         {
@@ -382,7 +382,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":16,
+                     "id":16,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -408,11 +408,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":7,
+               "id":7,
                "date":"18/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":17,
+                     "id":17,
                      "name":"chest",
                      "exercises":[
                         {
@@ -436,7 +436,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":18,
+                     "id":18,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -460,7 +460,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":19,
+                     "id":19,
                      "name":"calf",
                      "exercises":[
                         {
@@ -480,11 +480,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":8,
+               "id":8,
                "date":"20/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":20,
+                     "id":20,
                      "name":"leg",
                      "exercises":[
                         {
@@ -514,7 +514,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":21,
+                     "id":21,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -538,7 +538,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":22,
+                     "id":22,
                      "name":"calf",
                      "exercises":[
                         {
@@ -558,11 +558,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":9,
+               "id":9,
                "date":"22/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":23,
+                     "id":23,
                      "name":"back",
                      "exercises":[
                         {
@@ -586,7 +586,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":24,
+                     "id":24,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -612,11 +612,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":10,
+               "id":10,
                "date":"25/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":25,
+                     "id":25,
                      "name":"chest",
                      "exercises":[
                         {
@@ -640,7 +640,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":26,
+                     "id":26,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -664,7 +664,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":27,
+                     "id":27,
                      "name":"calf",
                      "exercises":[
                         {
@@ -684,11 +684,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":11,
+               "id":11,
                "date":"27/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":28,
+                     "id":28,
                      "name":"leg",
                      "exercises":[
                         {
@@ -718,7 +718,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":29,
+                     "id":29,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -742,7 +742,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":30,
+                     "id":30,
                      "name":"calf",
                      "exercises":[
                         {
@@ -762,11 +762,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":12,
+               "id":12,
                "date":"29/07/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":31,
+                     "id":31,
                      "name":"back",
                      "exercises":[
                         {
@@ -790,7 +790,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":32,
+                     "id":32,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -816,11 +816,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":13,
+               "id":13,
                "date":"01/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":33,
+                     "id":33,
                      "name":"chest",
                      "exercises":[
                         {
@@ -844,7 +844,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":34,
+                     "id":34,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -868,7 +868,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":35,
+                     "id":35,
                      "name":"calf",
                      "exercises":[
                         {
@@ -888,11 +888,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":14,
+               "id":14,
                "date":"03/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":36,
+                     "id":36,
                      "name":"leg",
                      "exercises":[
                         {
@@ -922,7 +922,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":37,
+                     "id":37,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -946,7 +946,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":38,
+                     "id":38,
                      "name":"calf",
                      "exercises":[
                         {
@@ -966,11 +966,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":15,
+               "id":15,
                "date":"05/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":39,
+                     "id":39,
                      "name":"back",
                      "exercises":[
                         {
@@ -994,7 +994,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":40,
+                     "id":40,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -1020,11 +1020,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":16,
+               "id":16,
                "date":"08/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":41,
+                     "id":41,
                      "name":"chest",
                      "exercises":[
                         {
@@ -1048,7 +1048,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":42,
+                     "id":42,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -1072,7 +1072,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":43,
+                     "id":43,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1092,11 +1092,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":17,
+               "id":17,
                "date":"10/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":44,
+                     "id":44,
                      "name":"leg",
                      "exercises":[
                         {
@@ -1126,7 +1126,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":45,
+                     "id":45,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -1150,7 +1150,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":46,
+                     "id":46,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1170,11 +1170,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":18,
+               "id":18,
                "date":"12/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":47,
+                     "id":47,
                      "name":"back",
                      "exercises":[
                         {
@@ -1198,7 +1198,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":48,
+                     "id":48,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -1224,11 +1224,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":19,
+               "id":19,
                "date":"15/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":49,
+                     "id":49,
                      "name":"chest",
                      "exercises":[
                         {
@@ -1252,7 +1252,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":50,
+                     "id":50,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -1276,7 +1276,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":51,
+                     "id":51,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1296,11 +1296,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":20,
+               "id":20,
                "date":"17/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":52,
+                     "id":52,
                      "name":"leg",
                      "exercises":[
                         {
@@ -1330,7 +1330,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":53,
+                     "id":53,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -1354,7 +1354,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":54,
+                     "id":54,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1374,11 +1374,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":21,
+               "id":21,
                "date":"19/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":55,
+                     "id":55,
                      "name":"back",
                      "exercises":[
                         {
@@ -1402,7 +1402,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":56,
+                     "id":56,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -1428,11 +1428,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":22,
+               "id":22,
                "date":"22/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":57,
+                     "id":57,
                      "name":"chest",
                      "exercises":[
                         {
@@ -1456,7 +1456,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":58,
+                     "id":58,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -1480,7 +1480,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":59,
+                     "id":59,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1500,11 +1500,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":23,
+               "id":23,
                "date":"24/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":60,
+                     "id":60,
                      "name":"leg",
                      "exercises":[
                         {
@@ -1534,7 +1534,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":61,
+                     "id":61,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -1558,7 +1558,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":62,
+                     "id":62,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1578,11 +1578,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":24,
+               "id":24,
                "date":"26/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":63,
+                     "id":63,
                      "name":"back",
                      "exercises":[
                         {
@@ -1606,7 +1606,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":64,
+                     "id":64,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -1632,11 +1632,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":25,
+               "id":25,
                "date":"29/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":65,
+                     "id":65,
                      "name":"chest",
                      "exercises":[
                         {
@@ -1660,7 +1660,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":66,
+                     "id":66,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -1684,7 +1684,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":67,
+                     "id":67,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1704,11 +1704,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":26,
+               "id":26,
                "date":"31/08/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":68,
+                     "id":68,
                      "name":"leg",
                      "exercises":[
                         {
@@ -1738,7 +1738,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":69,
+                     "id":69,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -1762,7 +1762,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":70,
+                     "id":70,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1782,11 +1782,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":27,
+               "id":27,
                "date":"02/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":71,
+                     "id":71,
                      "name":"back",
                      "exercises":[
                         {
@@ -1810,7 +1810,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":72,
+                     "id":72,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -1836,11 +1836,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":28,
+               "id":28,
                "date":"05/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":73,
+                     "id":73,
                      "name":"chest",
                      "exercises":[
                         {
@@ -1864,7 +1864,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":74,
+                     "id":74,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -1888,7 +1888,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":75,
+                     "id":75,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1908,11 +1908,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":29,
+               "id":29,
                "date":"07/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":76,
+                     "id":76,
                      "name":"leg",
                      "exercises":[
                         {
@@ -1942,7 +1942,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":77,
+                     "id":77,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -1966,7 +1966,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":78,
+                     "id":78,
                      "name":"calf",
                      "exercises":[
                         {
@@ -1986,11 +1986,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":30,
+               "id":30,
                "date":"09/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":79,
+                     "id":79,
                      "name":"back",
                      "exercises":[
                         {
@@ -2014,7 +2014,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":80,
+                     "id":80,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -2040,11 +2040,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":31,
+               "id":31,
                "date":"12/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":81,
+                     "id":81,
                      "name":"chest",
                      "exercises":[
                         {
@@ -2068,7 +2068,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":82,
+                     "id":82,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -2092,7 +2092,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":83,
+                     "id":83,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2112,11 +2112,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":32,
+               "id":32,
                "date":"14/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":84,
+                     "id":84,
                      "name":"leg",
                      "exercises":[
                         {
@@ -2146,7 +2146,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":85,
+                     "id":85,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -2170,7 +2170,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":86,
+                     "id":86,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2190,11 +2190,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":33,
+               "id":33,
                "date":"16/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":87,
+                     "id":87,
                      "name":"back",
                      "exercises":[
                         {
@@ -2218,7 +2218,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":88,
+                     "id":88,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -2244,11 +2244,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":34,
+               "id":34,
                "date":"19/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":89,
+                     "id":89,
                      "name":"chest",
                      "exercises":[
                         {
@@ -2272,7 +2272,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":90,
+                     "id":90,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -2296,7 +2296,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":91,
+                     "id":91,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2316,11 +2316,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":35,
+               "id":35,
                "date":"21/092016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":92,
+                     "id":92,
                      "name":"leg",
                      "exercises":[
                         {
@@ -2350,7 +2350,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":93,
+                     "id":93,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -2374,7 +2374,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":94,
+                     "id":94,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2394,11 +2394,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":36,
+               "id":36,
                "date":"23/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":95,
+                     "id":95,
                      "name":"back",
                      "exercises":[
                         {
@@ -2422,7 +2422,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":96,
+                     "id":96,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -2448,11 +2448,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":37,
+               "id":37,
                "date":"26/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":97,
+                     "id":97,
                      "name":"chest",
                      "exercises":[
                         {
@@ -2476,7 +2476,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":98,
+                     "id":98,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -2500,7 +2500,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":99,
+                     "id":99,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2520,11 +2520,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":38,
+               "id":38,
                "date":"28/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":100,
+                     "id":100,
                      "name":"leg",
                      "exercises":[
                         {
@@ -2554,7 +2554,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":101,
+                     "id":101,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -2578,7 +2578,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":102,
+                     "id":102,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2598,11 +2598,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":39,
+               "id":39,
                "date":"30/09/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":103,
+                     "id":103,
                      "name":"back",
                      "exercises":[
                         {
@@ -2626,7 +2626,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":104,
+                     "id":104,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -2652,11 +2652,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":40,
+               "id":40,
                "date":"03/10/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":105,
+                     "id":105,
                      "name":"chest",
                      "exercises":[
                         {
@@ -2680,7 +2680,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":106,
+                     "id":106,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -2704,7 +2704,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":107,
+                     "id":107,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2724,11 +2724,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":41,
+               "id":41,
                "date":"05/10/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":108,
+                     "id":108,
                      "name":"leg",
                      "exercises":[
                         {
@@ -2758,7 +2758,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":109,
+                     "id":109,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -2782,7 +2782,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":110,
+                     "id":110,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2802,11 +2802,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":42,
+               "id":42,
                "date":"07/10/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":111,
+                     "id":111,
                      "name":"back",
                      "exercises":[
                         {
@@ -2830,7 +2830,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":112,
+                     "id":112,
                      "name":"triceps",
                      "exercises":[
                         {
@@ -2856,11 +2856,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":43,
+               "id":43,
                "date":"10/10/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":113,
+                     "id":113,
                      "name":"chest",
                      "exercises":[
                         {
@@ -2884,7 +2884,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":114,
+                     "id":114,
                      "name":"biceps",
                      "exercises":[
                         {
@@ -2908,7 +2908,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":115,
+                     "id":115,
                      "name":"calf",
                      "exercises":[
                         {
@@ -2928,11 +2928,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":44,
+               "id":44,
                "date":"12/10/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":116,
+                     "id":116,
                      "name":"leg",
                      "exercises":[
                         {
@@ -2962,7 +2962,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":117,
+                     "id":117,
                      "name":"shoulders",
                      "exercises":[
                         {
@@ -2986,7 +2986,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":118,
+                     "id":118,
                      "name":"calf",
                      "exercises":[
                         {
@@ -3006,11 +3006,11 @@ var TrainingSessions:[
                ]
             },
             {
-               "main_session_id":45,
+               "id":45,
                "date":"14/10/2016",
                "muscle_group_sessions":[
                   {
-                     "muscle_group_session_id":119,
+                     "id":119,
                      "name":"back",
                      "exercises":[
                         {
@@ -3034,7 +3034,7 @@ var TrainingSessions:[
                      ]
                   },
                   {
-                     "muscle_group_session_id":120,
+                     "id":120,
                      "name":"triceps",
                      "exercises":[
                         {

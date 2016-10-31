@@ -4,9 +4,10 @@ import GymProgressLogger from './App';
 import './index.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.css';
 import Users from './Data';
-import TrainingSessions from './training_test';
+import TrainingSessions from './TrainingSessions';
+import MuscleSessions from './MuscleSession';
 
 ReactDOM.render(
-  <GymProgressLogger users={Users} training_sessions={TrainingSessions} />,
+  <GymProgressLogger users={Users} training_sessions={TrainingSessions} sessions={MuscleSessions}/>,
   document.getElementById('root')
 );

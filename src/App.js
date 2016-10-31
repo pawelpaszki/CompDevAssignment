@@ -216,6 +216,32 @@ var FilteredUsersList = React.createClass({
 	}
 });
 
+var Session = React.createClass({
+	render: function() {
+		var sessionItem = this.props.sessionItem;
+		return (
+		<li>
+			<a href={"/sessions/" + sessionItem.id}>{sessionItem.id}</a>
+		</li>
+		)
+	}
+});
+
+var SessionsList = React.createClass({
+	render: function() {
+		var displayedSessions = this.props.sessions.map((session) =>{
+			return <Session key={session.id} sessionItem={session} />;
+		}) ;
+            return (
+                    <div className="main-content">
+                      <ul className="users">
+                          {displayedSessions}
+                      </ul>
+                    </div>
+              ) ;
+	}
+})
+
 var TrainingSession = React.createClass({
 	render: function() {
 		var trainingSessionItem = this.props.trainingSessionItem;
@@ -254,7 +280,6 @@ var MainContent = React.createClass({
 		{/*<FilteredTrainingSessionsList  training_sessions={this.props.training_sessions}/>*/}
 		<div className="calendar">
 		{/*<SelectableDay />*/}
-		
 		</div>
 		</div>
 		)
@@ -269,9 +294,10 @@ var GymProgressLogger = React.createClass({
 		<Navbar />
         <Sidebar/>
 		{/*<MonthPicker/>*/}
-		<SearchBox/>
+		{/*<SearchBox/>*/}
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={this.props.users} training_sessions={this.props.training_sessions}/>
+        <MainContent users={this.props.users} training_sessions={this.props.training_sessions} sessions={this.props.sessions}/>
+		<SessionsList  sessions={this.props.sessions}/>
 		
 		  <Footer />
 		  </div>
