@@ -174,6 +174,23 @@ var UserInfo = React.createClass({
 	
 });
 
+var ExerciseInfo = React.createClass({
+	render: function() {
+		return (
+		<div>
+		<div className="left-within-main">
+		 <h1>Bench press</h1>
+		</div>
+		<div className="right-within-main">
+		<img src="assets/exercises/flatbench.jpg" alt="placeholder"/>
+		</div>
+		</div>
+		
+		)
+	}
+	
+});
+
 var Sidebar = React.createClass({
   render: function(){
 	  return (
@@ -514,6 +531,7 @@ var MainContent = React.createClass({
 		{/*<MuscleList muscles={this.props.muscles}/>*/}
 		{/*<AddMuscleForm/>*/}
 		{/*<ExerciseList exercises={this.props.exercises}/>*/}
+		<ExerciseInfo/>
 		<div className="calendar">
 		{/*<SelectableDay />*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
