@@ -5,6 +5,8 @@ import DayPicker, { DateUtils } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 import BarChart from 'react-bar-chart';
 import './App.css';
+//const low = require('lowdb');
+
 
 export default class SelectableDay extends React.Component {
   constructor(props) {
@@ -133,7 +135,7 @@ var SearchBox = React.createClass({
         <input type="text" placeholder="Search" />
         Sort by:
         <select>
-          <option value="name">Alphabetical</option>
+          <option value="age">Oldest</option>
           <option value="age">Newest</option>
         </select>
       </div>
@@ -164,7 +166,6 @@ var UserInfo = React.createClass({
 		</div>
 		<div className="right-within-main">
 		<img className="thumb" src="assets/users/4.jpg" alt="placeholder"/>
-		   
 		</div>
 		</div>
 		
@@ -188,16 +189,16 @@ var Sidebar = React.createClass({
 });
 
 var User = React.createClass({
-		render: function() {
-			var userItem = this.props.userItem;
-			return (
-			<li>
-				<img className="thumb" src={userItem.picture} alt={userItem.first_name}/>
-				<a href={"/users/" + userItem.id}>{userItem.first_name} {userItem.surname}</a>
-			</li>
-			)
-		}
-	});
+	render: function() {
+		var userItem = this.props.userItem;
+		return (
+		<li>
+			<img className="thumb" src={userItem.picture} alt={userItem.first_name}/>
+			<a href={"/users/" + userItem.id}>{userItem.first_name} {userItem.surname}</a>
+		</li>
+		)
+	}
+});
 	
 
 var FilteredUsersList = React.createClass({
@@ -215,20 +216,45 @@ var FilteredUsersList = React.createClass({
 	}
 });
 
+var TrainingSession = React.createClass({
+	render: function() {
+		var trainingSessionItem = this.props.trainingSessionItem;
+		return (
+		<li>
+			<a href={"/training_sessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
+		</li>
+		)
+	}
+});
 
-
+var FilteredTrainingSessionsList = React.createClass({
+	render: function() {
+		var displayedSessions = this.props.training_sessions.map((training_session) =>{
+			return <TrainingSession key={training_session.main_session_id} trainingSessionItem={training_session} />;
+		}) ;
+            return (
+                    <div className="main-content">
+                      <ul className="users">
+                          {displayedSessions}
+                      </ul>
+                    </div>
+              ) ;
+	}
+});
 
 var MainContent = React.createClass({
 	render: function() {
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
-		<div className="main-content-without-search-box">
-		<EditProfileForm/>
+		<div className="main-content-with-search-box">
+		{/*<EditProfileForm/>*/}
 		{/*<Chart/>*/}
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
+		{/*<FilteredTrainingSessionsList  training_sessions={this.props.training_sessions}/>*/}
 		<div className="calendar">
 		{/*<SelectableDay />*/}
+		
 		</div>
 		</div>
 		)
@@ -243,9 +269,9 @@ var GymProgressLogger = React.createClass({
 		<Navbar />
         <Sidebar/>
 		{/*<MonthPicker/>*/}
-		{/*<SearchBox/>*/}
+		<SearchBox/>
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={this.props.users}/>
+        <MainContent users={this.props.users} training_sessions={this.props.training_sessions}/>
 		
 		  <Footer />
 		  </div>
