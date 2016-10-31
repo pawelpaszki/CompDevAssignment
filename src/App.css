@@ -94,6 +94,7 @@
   margin: -0.5em 2.5em 1.5em 0;
 }
 
+
 .centered {
   width: 40%;
   margin-left: 20%;
@@ -107,3 +108,7 @@ input[type=text], .txtarea{
 margin-bottom: 1.5em;
 
  }
+ 
+ .table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border-top: none !important;
+}

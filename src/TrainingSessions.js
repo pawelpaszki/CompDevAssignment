@@ -1,4 +1,4 @@
-var TrainingSessions:[
+var TrainingSessions=[
             {
                "id":1,
                "date":"04/07/2016",

@@ -220,16 +220,29 @@ var Session = React.createClass({
 	render: function() {
 		var sessionItem = this.props.sessionItem;
 		return (
+		
 		<li>
-			<a href={"/sessions/" + sessionItem.id}>{sessionItem.id}</a>
+		<div className="left-within-main">
+<table className="table table-borderless">
+    <tbody>
+      <tr>
+	      <td className="col-md-3"><a  href={"/sessions/" + sessionItem.id}>{sessionItem.name} </a></td>
+    <td className="col-md-6"><input type="button"  className="btn btn-primary" value="delete"/></td>
+    <td className="col-md-2"></td>
+    <td className="col-md-1"></td>
+      </tr>
+    </tbody>
+  </table>
+			 </div>
 		</li>
 		)
 	}
 });
 
+
 var SessionsList = React.createClass({
 	render: function() {
-		var displayedSessions = this.props.sessions.map((session) =>{
+		var displayedSessions = this.props.msessions.map((session) =>{
 			return <Session key={session.id} sessionItem={session} />;
 		}) ;
             return (
@@ -247,7 +260,7 @@ var TrainingSession = React.createClass({
 		var trainingSessionItem = this.props.trainingSessionItem;
 		return (
 		<li>
-			<a href={"/training_sessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
+			<a href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
 		</li>
 		)
 	}
@@ -255,14 +268,36 @@ var TrainingSession = React.createClass({
 
 var FilteredTrainingSessionsList = React.createClass({
 	render: function() {
-		var displayedSessions = this.props.training_sessions.map((training_session) =>{
-			return <TrainingSession key={training_session.main_session_id} trainingSessionItem={training_session} />;
+		var displayedTsessions = this.props.tsessions.map((tsession) =>{
+			return <TrainingSession key={tsession.id} trainingSessionItem={tsession} />;
 		}) ;
             return (
                     <div className="main-content">
                       <ul className="users">
-                          {displayedSessions}
+                          {displayedTsessions}
                       </ul>
+                    </div>
+              ) ;
+	}
+});
+
+var AddMuscleGroupSessionForm = React.createClass({
+	render: function() {
+            return (
+			
+                    <div className="left-within-main">
+					<tr>
+              <td>
+              <input type="text" className="form-control" 
+                     placeholder="Type muscle group"
+              />
+              </td>
+              
+              <td>
+              <input type="button" className="btn btn-primary" value="Add Muscle Group"
+                       onClick={this.fillInLater} />
+              </td>
+            </tr>
                     </div>
               ) ;
 	}
@@ -272,14 +307,17 @@ var MainContent = React.createClass({
 	render: function() {
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
-		<div className="main-content-with-search-box">
+		<div className="main-content-without-search-box">
 		{/*<EditProfileForm/>*/}
 		{/*<Chart/>*/}
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
-		{/*<FilteredTrainingSessionsList  training_sessions={this.props.training_sessions}/>*/}
+		{/*<FilteredTrainingSessionsList  tsessions={this.props.tsessions}/>*/}
+		<SessionsList  msessions={this.props.msessions}/>
+		<AddMuscleGroupSessionForm/>
 		<div className="calendar">
 		{/*<SelectableDay />*/}
+		{/*<AddMuscleGroupSessionForm/>*/}
 		</div>
 		</div>
 		)
@@ -296,8 +334,8 @@ var GymProgressLogger = React.createClass({
 		{/*<MonthPicker/>*/}
 		{/*<SearchBox/>*/}
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={this.props.users} training_sessions={this.props.training_sessions} sessions={this.props.sessions}/>
-		<SessionsList  sessions={this.props.sessions}/>
+        <MainContent users={this.props.users} tsessions={this.props.tsessions} msessions={this.props.msessions}/>
+		
 		
 		  <Footer />
 		  </div>

@@ -1,4 +1,4 @@
-var MuscleSessions:[
+var MuscleSessions=[
 {
 	 "id":1,
 	 "name":"chest",
