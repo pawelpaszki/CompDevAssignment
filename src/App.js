@@ -227,7 +227,7 @@ var Session = React.createClass({
     <tbody>
       <tr>
 	      <td className="col-md-3"><a  href={"/sessions/" + sessionItem.id}>{sessionItem.name} </a></td>
-    <td className="col-md-6"><input type="button"  className="btn btn-primary" value="delete"/></td>
+    <td className="col-md-6"><input type="button"  className="btn btn-warning" value="delete"/></td>
     <td className="col-md-2"></td>
     <td className="col-md-1"></td>
       </tr>
@@ -249,6 +249,67 @@ var SessionsList = React.createClass({
                     <div className="main-content">
                       <ul className="users">
                           {displayedSessions}
+                      </ul>
+                    </div>
+              ) ;
+	}
+});
+
+var AddExerciseForm = React.createClass({
+	render: function() {
+            return (
+			
+				<div className="left-within-main">
+				<tr>
+		  <td>
+		  <input type="text" className="form-control" 
+				 placeholder="Type exercise name"
+		  />
+		  </td>
+		  
+		  <td>
+		  <input type="button" className="btn btn-primary" value="Add Exercise"
+				   onClick={this.fillInLater} />
+		  </td>
+		</tr>
+				</div>
+		  ) ;
+	}
+});
+
+var ExerciseUnit = React.createClass({
+	render: function() {
+		var exerciseUnit = this.props.exerciseUnit;
+		return (
+		
+		<li>
+		<div className="left-within-main">
+<table className="table table-borderless">
+    <tbody>
+      <tr>
+	      <td className="col-md-6"><a  href={"/sessions/" + exerciseUnit.name}>{exerciseUnit.name} </a></td>
+    <td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit"/></td>
+    <td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete"/></td>
+    <td className="col-md-2"></td>
+      </tr>
+    </tbody>
+  </table>
+			 </div>
+		</li>
+		)
+	}
+});
+
+
+var ExerciseUnitList = React.createClass({
+	render: function() {
+		var displayedExercises = this.props.exercises.map((exercise) =>{
+			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} />;
+		}) ;
+            return (
+                    <div className="main-content">
+                      <ul className="users">
+                          {displayedExercises}
                       </ul>
                     </div>
               ) ;
@@ -285,21 +346,21 @@ var AddMuscleGroupSessionForm = React.createClass({
 	render: function() {
             return (
 			
-                    <div className="left-within-main">
-					<tr>
-              <td>
-              <input type="text" className="form-control" 
-                     placeholder="Type muscle group"
-              />
-              </td>
-              
-              <td>
-              <input type="button" className="btn btn-primary" value="Add Muscle Group"
-                       onClick={this.fillInLater} />
-              </td>
-            </tr>
-                    </div>
-              ) ;
+				<div className="left-within-main">
+				<tr>
+		  <td>
+		  <input type="text" className="form-control" 
+				 placeholder="Type muscle group"
+		  />
+		  </td>
+		  
+		  <td>
+		  <input type="button" className="btn btn-primary" value="Add Muscle Group"
+				   onClick={this.fillInLater} />
+		  </td>
+		</tr>
+				</div>
+		  ) ;
 	}
 });
 
@@ -313,11 +374,14 @@ var MainContent = React.createClass({
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
 		{/*<FilteredTrainingSessionsList  tsessions={this.props.tsessions}/>*/}
-		<SessionsList  msessions={this.props.msessions}/>
-		<AddMuscleGroupSessionForm/>
+		{/*<SessionsList  msessions={this.props.msessions}/>*/}
+		{/*<AddMuscleGroupSessionForm/>*/}
+		<ExerciseUnitList exercises={this.props.exercises}/>
 		<div className="calendar">
 		{/*<SelectableDay />*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
+		<AddExerciseForm/>
+		
 		</div>
 		</div>
 		)
@@ -334,7 +398,7 @@ var GymProgressLogger = React.createClass({
 		{/*<MonthPicker/>*/}
 		{/*<SearchBox/>*/}
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={this.props.users} tsessions={this.props.tsessions} msessions={this.props.msessions}/>
+        <MainContent users={this.props.users} tsessions={this.props.tsessions} msessions={this.props.msessions} exercises={this.props.exercises}/>
 		
 		
 		  <Footer />
