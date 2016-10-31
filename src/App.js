@@ -6,6 +6,7 @@ import 'react-day-picker/lib/style.css';
 import BarChart from 'react-bar-chart';
 import './App.css';
 //const low = require('lowdb');
+import api from './test/stubAPI';
 
 
 export default class SelectableDay extends React.Component {
@@ -136,7 +137,7 @@ var SearchBox = React.createClass({
         Sort by:
         <select>
           <option value="age">Oldest</option>
-          <option value="age">Newest</option>
+          <option value="age">Youngest</option>
         </select>
       </div>
     );
@@ -224,7 +225,7 @@ var FilteredUsersList = React.createClass({
 			return <User key={user.id} userItem={user} />;
 		}) ;
             return (
-                    <div className="main-content">
+			<div className="main-content-with-search-box">
                       <ul className="users">
                           {displayedUsers}
                       </ul>
@@ -445,8 +446,8 @@ var TrainingSession = React.createClass({
 	render: function() {
 		var trainingSessionItem = this.props.trainingSessionItem;
 		return (
-		<li>
-			<a href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
+		<li >
+			<a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
 		</li>
 		)
 	}
@@ -454,7 +455,8 @@ var TrainingSession = React.createClass({
 
 var FilteredTrainingSessionsList = React.createClass({
 	render: function() {
-		var displayedTsessions = this.props.tsessions.map((tsession) =>{
+		var user = this.props.users[0];
+		var displayedTsessions = user.training_sessions.map((tsession) =>{
 			return <TrainingSession key={tsession.id} trainingSessionItem={tsession} />;
 		}) ;
             return (
@@ -519,19 +521,19 @@ var MainContent = React.createClass({
 	render: function() {
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
-		<div className="main-content-without-search-box">
+		<div> {/*className="main-content-without-search-box">*/}
 		{/*<EditProfileForm/>*/}
 		{/*<Chart/>*/}
 		{/*<UserInfo />*/}
-		{/*<FilteredUsersList  users={this.props.users}/>*/}
-		{/*<FilteredTrainingSessionsList  tsessions={this.props.tsessions}/>*/}
+		<FilteredUsersList  users={this.props.users}/>
+		{/*<FilteredTrainingSessionsList users={this.props.users} />*/}
 		{/*<SessionsList  msessions={this.props.msessions}/>*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
 			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
 		{/*<MuscleList muscles={this.props.muscles}/>*/}
 		{/*<AddMuscleForm/>*/}
 		{/*<ExerciseList exercises={this.props.exercises}/>*/}
-		<ExerciseInfo/>
+		{/*<ExerciseInfo/>*/}
 		<div className="calendar">
 		{/*<SelectableDay />*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
@@ -546,17 +548,21 @@ var MainContent = React.createClass({
 
 var GymProgressLogger = React.createClass({
   render: function(){
+	  var users = api.getAllUsers();
+	  var exercises = api.getAllExercises();
+	  var muscles = api.getAllMuscles();
+	  var exerciseUnits = api.getAllExerciseUnits();
 	  return (
 	  <div>
 	  
 		<Navbar />
         <Sidebar/>
 		{/*<MonthPicker/>*/}
-		{/*<SearchBox/>*/}
+		<SearchBox/>
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={this.props.users} tsessions={this.props.tsessions} 
-		msessions={this.props.msessions} exerciseUnits={this.props.exerciseUnits} 
-		muscles={this.props.muscles} exercises={this.props.exercises}/>
+        <MainContent users={users} 
+		msessions={this.props.msessions} exerciseUnits={exerciseUnits} 
+		muscles={muscles} exercises={exercises}/>
 		
 		
 		  <Footer />

@@ -10,7 +10,7 @@ var Navbar = React.createClass({
 			  <a className="navbar-brand" href="#">Gym Progress Logger</a>
 			</div>
 			<ul className="nav navbar-nav navbar-right">
-			  <li><a href="#">Muscle Info</a></li>
+			  <li><a href="#">Muscles & Exercises</a></li>
 			  <li><a href="#">Settings</a></li>
 			</ul>
 		  </div>
