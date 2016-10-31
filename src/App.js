@@ -7,6 +7,7 @@ import BarChart from 'react-bar-chart';
 import './App.css';
 //const low = require('lowdb');
 import api from './test/stubAPI';
+import _ from 'lodash';
 
 
 export default class SelectableDay extends React.Component {
@@ -130,15 +131,27 @@ var ChartDataPicker = React.createClass( {
 	}
 })
 var SearchBox = React.createClass({
+	handleChange : function(e, type,value) {
+           e.preventDefault();
+           this.props.onUserInput( type,value);
+      },
+      handleTextChange : function(e) {
+          this.handleChange( e, 'search', e.target.value);
+      },
+      handleSortChange : function(e) {
+          this.handleChange(e, 'sort', e.target.value);
+      },
   render: function(){
     return (
       <div className="search-box">
-        <input type="text" placeholder="Search" />
+        <input type="text" placeholder="Search" value={this.props.filterText}
+                          onChange={this.handleTextChange}/>
         Sort by:
-        <select>
-          <option value="age">Oldest</option>
-          <option value="age">Youngest</option>
-        </select>
+        <select id="sort" value={this.props.order } 
+                         onChange={this.handleSortChange} >
+                       <option value="dob">Newest</option>
+					   <option value="training_from">Training (Years)</option>
+                     </select>
       </div>
     );
   }
@@ -547,21 +560,40 @@ var MainContent = React.createClass({
 });
 
 var GymProgressLogger = React.createClass({
+	getInitialState: function() {
+           return { search: '', sort: 'dob' } ;
+      },
+	  handleChange : function(type,value) {
+        if ( type == 'search' ) {
+            this.setState( { search: value } ) ;
+          } else {
+             this.setState( { sort: value } ) ;
+          }
+      }, 
   render: function(){
-	  var users = api.getAllUsers();
+	   var users = api.getAllUsers();
+	   var list = users.filter(function(p) {
+                  return p.surname.toLowerCase().search(
+                      this.state.search.toLowerCase() ) != -1 ;
+                    }.bind(this) );
+            var filteredList = _.sortBy(list, this.state.sort) ;
+	 
 	  var exercises = api.getAllExercises();
 	  var muscles = api.getAllMuscles();
 	  var exerciseUnits = api.getAllExerciseUnits();
+	  var muscleSessions = api.getAllMuscleSessions();
 	  return (
 	  <div>
 	  
 		<Navbar />
         <Sidebar/>
 		{/*<MonthPicker/>*/}
-		<SearchBox/>
+		<SearchBox onUserInput={this.handleChange } 
+                           filterText={this.state.search} 
+                           sort={this.state.sort}/>
 		{/*<ChartDataPicker/>*/}
-        <MainContent users={users} 
-		msessions={this.props.msessions} exerciseUnits={exerciseUnits} 
+        <MainContent users={filteredList} 
+		msessions={muscleSessions} exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
 		
 		
