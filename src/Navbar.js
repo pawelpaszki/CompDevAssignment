@@ -11,7 +11,7 @@ var Navbar = React.createClass({
 			</div>
 			<ul className="nav navbar-nav navbar-right">
 			  <li><a href="#">Muscles & Exercises</a></li>
-			  <li><a href="#">Settings</a></li>
+			  <li><a href="#">info</a></li>
 			</ul>
 		  </div>
 		</nav>

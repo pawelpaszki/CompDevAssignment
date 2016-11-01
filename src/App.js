@@ -26,14 +26,15 @@ export default class SelectableDay extends React.Component {
   render() {
     const { selectedDay } = this.state;
     return (
-      <div>
+      <div className="centered"><div>
         <DayPicker
           selectedDays={ day => DateUtils.isSameDay(selectedDay, day) }
           onDayClick={ this.handleDayClick }
         />
-        <div className="centered">
+        <div >
           { selectedDay ? selectedDay.toLocaleDateString() : 'Please select a day ??' }
         </div>
+		</div>
       </div>
     );
   }
@@ -88,7 +89,7 @@ var Chart = React.createClass({
  
   render() {
     return (
-        <div>
+        <div className="main-content-without-search-box">
             <div style={{width: '50%'}}> 
                 <BarChart ylabel='kg'
                   width={600} //this.state.width
@@ -538,7 +539,7 @@ var MainContent = React.createClass({
 		{/*<EditProfileForm/>*/}
 		{/*<Chart/>*/}
 		{/*<UserInfo />*/}
-		<FilteredUsersList  users={this.props.users}/>
+		{/*<FilteredUsersList  users={this.props.users}/>*/}
 		{/*<FilteredTrainingSessionsList users={this.props.users} />*/}
 		{/*<SessionsList  msessions={this.props.msessions}/>*/}
 		{/*<AddMuscleGroupSessionForm/>*/}
@@ -548,7 +549,7 @@ var MainContent = React.createClass({
 		{/*<ExerciseList exercises={this.props.exercises}/>*/}
 		{/*<ExerciseInfo/>*/}
 		<div className="calendar">
-		{/*<SelectableDay />*/}
+		<SelectableDay />
 		{/*<AddMuscleGroupSessionForm/>*/}
 		{/*<AddExerciseUnitForm/>*/}
 		{/*<AddExerciseUnitForm/>*/}
@@ -589,9 +590,9 @@ var GymProgressLogger = React.createClass({
 		<Navbar />
         <Sidebar/>
 		{/*<MonthPicker/>*/}
-		<SearchBox onUserInput={this.handleChange } 
+		{/*<SearchBox onUserInput={this.handleChange } 
                            filterText={this.state.search} 
-                           sort={this.state.sort}/>
+                           sort={this.state.sort}/>*/}
 		{/*<ChartDataPicker/>*/}
         <MainContent users={filteredList} 
 		msessions={muscleSessions} exerciseUnits={exerciseUnits} 
