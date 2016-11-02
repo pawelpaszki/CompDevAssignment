@@ -57,6 +57,7 @@
 
 .main-content-with-search-box {
 	top: 24%;
+	z-index: -1;
 }
 
 .main-content-without-search-box {
@@ -75,11 +76,21 @@
 
 .search-box {
   position: absolute;
-  left: 24%;
+  left: 45%;
   top: 16%;
-  width: 75%;
-  height: 6%;
   overflow: hidden;
+}
+
+.exercisePicker {
+  position: absolute;
+  z-index: 100;
+  left: 24%;
+  top: 16.7%;
+  height: 30px;
+  overflow: show;
+  
+ 
+  
 }
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */

@@ -2327,7 +2327,7 @@ var users =  [
             },
             {
                "main_session_id":35,
-               "date":"21/092016",
+               "date":"21/09/2016",
                "muscle_group_sessions":[
                   {
                      "muscle_group_session_id":92,

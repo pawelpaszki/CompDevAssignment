@@ -7,11 +7,12 @@
   },
   "dependencies": {
     "bootstrap": "^3.3.6",
+    "lodash": "^2.4.2",
     "lowdb": "^0.14.0",
     "react": "^15.2.1",
+    "react-autosuggest": "^7.0.1",
     "react-day-picker": "^3.1.1",
-    "react-dom": "^15.2.1",
-	"lodash": "^2.4.2"
+    "react-dom": "^15.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
