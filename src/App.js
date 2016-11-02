@@ -178,50 +178,52 @@ var EditProfileForm = React.createClass({
     },
 	handleUpdateProfile: function(e) {
 		e.preventDefault();
+		
 		var first_name = this.state.first_name.trim();
 		var surname = this.state.surname.trim();
 		var dob = this.state.dob.trim();
 		var training_from = this.state.training_from.trim();
+		
 		var key = this.props.user.id;
-		this.props.profileUpdateHandler(key, first_name, surname, dob, training_from);
+		if (isValidDate(dob) && isValidDate(training_from)) {
+			this.props.profileUpdateHandler(key, first_name, surname, dob, training_from);
+		} else {
+			this.setState({dob: 'dd/mm/yyyy date required'})
+			this.setState({training_from: 'dd/mm/yyyy date required'})
+		}
 	},
 	render() {
-		var leftButtonHandler = this.handleEdit ;
-        var rightButtonHandler = this.handleDelete ;
 		return (
 		<div className="main-content-without-search-box">
 			<div className="centered">
 			<table>
 			<tbody>
-			<tr>
-			</tr>
-			<tr>
 			<td key={'first_name'}><input type="text" className="form-control" 
                      placeholder="First name" value={this.state.first_name} onChange={this.handleFirstNameChange}/> </td>
-						 </tr>
-						 <tr>
-			</tr>
-						 <tr>
+					 </tbody>
+			</table>  
+					 <table>
+			<tbody>
                       <td key={'surname'}><input type="text" className="form-control" 
                      placeholder="Surname" value={this.state.surname}
                      onChange={this.handleSurnameChange} /> </td>
-						 </tr>
-						 <tr>
-			</tr><tr>
+					 </tbody>
+			</table>  
+					 <table>
+			<tbody>
                       <td key={'dob'}><input type="text" className="form-control" 
                      placeholder="DOB" value={this.state.dob} onChange={this.handleDOBChange}/> </td>
-						 </tr>
-						 <tr>
-			</tr>
-						 <tr>
+					 </tbody>
+			</table>  
+					 <table>
+			<tbody>
                       <td key={'training_from'}><input type="text" className="form-control" 
                      placeholder="Training from" value={this.state.training_from} onChange={this.handleTrainingFromChange}/> </td>
-						 </tr>
-						 <tr>
+					 </tbody>
+			</table>  
+					 <table>
 						 <input type="fluid button" className="btn btn-primary btn-block" value="Submit"
 	onClick={this.handleUpdateProfile} />
-	</tr>
-	</tbody>
 			</table>  
 		 </div>
 		 </div>
@@ -249,22 +251,7 @@ var Chart = React.createClass({
   }
 });
 
-var ChartDataPicker = React.createClass( {
-	getInitialState : function() {
-	   return {
-		status : '',
-		date_from: '',
-		date_to: ''
-	   } ;
-	},
-	handleDateFromChange: function(e) {
-        this.setState({date_from: e.target.value});
-    },
-    handleDateToChange: function(e) {
-	    this.setState({date_to: e.target.value});
-    },
-    handleGenereteChart: function(e) {
-		
+
 		function isValidDate(dateString)
 		{
 			// First check for the pattern
@@ -290,6 +277,23 @@ var ChartDataPicker = React.createClass( {
 			// Check the range of the day
 			return day > 0 && day <= monthLength[month - 1];
 		};
+var ChartDataPicker = React.createClass( {
+	getInitialState : function() {
+	   return {
+		status : '',
+		date_from: '',
+		date_to: ''
+	   } ;
+	},
+	handleDateFromChange: function(e) {
+        this.setState({date_from: e.target.value});
+    },
+    handleDateToChange: function(e) {
+	    this.setState({date_to: e.target.value});
+    },
+    handleGenereteChart: function(e) {
+		
+
 		
 		if(!isValidDate(this.state.date_from)) {
 			this.setState({date_from: "type valid date"});
@@ -748,7 +752,6 @@ var MainContent = React.createClass({
 		return (
 		//{/* conditional... !!!!!!!!!!! */}
 		<div> {/*className="main-content-without-search-box">*/}
-		{/*<EditProfileForm/>*/}
 		
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
@@ -865,11 +868,11 @@ var GymProgressLogger = React.createClass({
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
 		{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
-		<SessionsList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession}/>
+			{/*<SessionsList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession}/>*/}
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
 		{/*<Chart data={this.state.data}/>*/}
-			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
+			<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>
 				{/*<TrainingSessionsList users={users} />*/}
 		  <Footer />
 		  </div>
