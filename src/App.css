@@ -87,11 +87,9 @@
   left: 24%;
   top: 16.7%;
   height: 30px;
-  overflow: show;
-  
- 
-  
+  overflow: show; 
 }
+
 ::-webkit-scrollbar {
     width: 0px;  /* remove scrollbar space */
     background: transparent;  /* optional: just make scrollbar invisible */
@@ -123,4 +121,9 @@ margin-bottom: 1.5em;
  
  .table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
     border-top: none !important;
+}
+
+.floatLeft {
+	margin-top:12%;
+	float: left;
 }

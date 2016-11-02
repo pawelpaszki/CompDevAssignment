@@ -3956,6 +3956,12 @@ var stubAPI = {
 			  });
 	   return elements; 
 	 },
+	 addMuscleGroupSession : function(name) {
+	  var len = muscleSessions.length ;
+	  var newL_len = muscleSessions.push({
+		 name: name }) ;
+	  return newL_len > len ;
+	 },
 	 getAllUsers : function() {
 		 return users ;
 	 },

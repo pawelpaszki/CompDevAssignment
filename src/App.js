@@ -10,20 +10,20 @@ import api from './test/stubAPI';
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
 
-// Imagine you have a list of languages that you'd like to autosuggest.
+// Imagine you have a list of exercises that you'd like to autosuggest.
 
 const exercises = api.getAllExercises();
-const languages = exercises;
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
-const getSuggestions = value => {
+const getExerciseSuggestions = value => {
   const inputValue = value.trim().toLowerCase();
   const inputLength = inputValue.length;
 
-  return inputLength === 0 ? [] : languages.filter(lang =>
-    lang.name.toLowerCase().slice(0, inputLength) === inputValue
+  return inputLength === 0 ? [] : exercises.filter(exercise =>
+    exercise.name.toLowerCase().slice(0, inputLength) === inputValue
   );
 };
+
 
 // When suggestion is clicked, Autosuggest needs to populate the input element
 // based on the clicked suggestion. Teach Autosuggest how to calculate the
@@ -62,7 +62,7 @@ class ExerciseNamePick extends React.Component {
   // You already implemented this logic above, so just use it.
   onSuggestionsFetchRequested = ({ value }) => {
     this.setState({
-      suggestions: getSuggestions(value)
+      suggestions: getExerciseSuggestions(value)
     });
   };
 
@@ -252,31 +252,31 @@ var Chart = React.createClass({
 });
 
 
-		function isValidDate(dateString)
-		{
-			// First check for the pattern
-			if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
-				return false;
+	function isValidDate(dateString)
+	{
+		// First check for the pattern
+		if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
+			return false;
 
-			// Parse the date parts to integers
-			var parts = dateString.split("/");
-			var day = parseInt(parts[0], 10);
-			var month = parseInt(parts[1], 10);
-			var year = parseInt(parts[2], 10);
+		// Parse the date parts to integers
+		var parts = dateString.split("/");
+		var day = parseInt(parts[0], 10);
+		var month = parseInt(parts[1], 10);
+		var year = parseInt(parts[2], 10);
 
-			// Check the ranges of month and year
-			if(year < 1000 || year > 3000 || month == 0 || month > 12)
-				return false;
+		// Check the ranges of month and year
+		if(year < 1000 || year > 3000 || month == 0 || month > 12)
+			return false;
 
-			var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
+		var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 
-			// Adjust for leap years
-			if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-				monthLength[1] = 29;
+		// Adjust for leap years
+		if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
+			monthLength[1] = 29;
 
-			// Check the range of the day
-			return day > 0 && day <= monthLength[month - 1];
-		};
+		// Check the range of the day
+		return day > 0 && day <= monthLength[month - 1];
+	};
 var ChartDataPicker = React.createClass( {
 	getInitialState : function() {
 	   return {
@@ -452,7 +452,7 @@ var FilteredUsersList = React.createClass({
 	}
 });
 
-var Session = React.createClass({
+var MuscleGroupSession = React.createClass({
 	getInitialState : function() {
              return {
               id: this.props.sessionItem.id
@@ -486,19 +486,23 @@ var Session = React.createClass({
 });
 
 
-var SessionsList = React.createClass({
+var MuscleGroupSessionList = React.createClass({
 	render: function() {
 		var displayedSessions = this.props.msessions.map((session) =>{
-			return <Session key={session.id} sessionItem={session} deleteSessionItemHandler={this.props.deleteSessionItemHandler} />;
+			return <MuscleGroupSession key={session.id} sessionItem={session} deleteSessionItemHandler={this.props.deleteSessionItemHandler} />;
 		}) ;
             return (
 			<div className="main-content-without-search-box">
                     <div className="main-content">
                       <ul className="users">
                           {displayedSessions}
+						  
                       </ul>
+					  
                     </div>
+					<AddMuscleGroupSessionForm msessions={this.props.msessions} addMuscleGroupSessionHandler={this.props.addMuscleGroupSessionHandler}/>
 					</div>
+					
               ) ;
 	}
 });
@@ -700,24 +704,53 @@ var TrainingSessionsList = React.createClass({
 });
 
 var AddMuscleGroupSessionForm = React.createClass({
+	getInitialState : function() {
+		
+	   return {
+		status : '',
+		name: ''
+	   } ;
+	},
+	handleMuscleNameChange: function(e) {
+        this.setState({name: e.target.value});
+    },
+	
+	handleAddMuscle: function(e) {
+		e.preventDefault();
+		
+		var name = this.state.name.trim();
+		var muscles = api.getAllMuscles();
+		var muscleNames = _.pluck(muscles, 'name');
+		var musclesInSession = _.pluck(this.props.msessions, 'name');
+		console.log(musclesInSession);
+		console.log(muscleNames);
+		console.log(name);
+		
+		if (muscleNames.indexOf(name) !== -1 && musclesInSession.indexOf(name) === -1) {
+			this.props.addMuscleGroupSessionHandler(name);
+		} else {
+			this.setState({name: ''})
+		}
+	},
 	render: function() {
             return (
-			
+			<div className="calendar">
 				<div className="left-within-main">
 				<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      
-    <td className="col-md-4"><input type="text" className="form-control" 
-				 placeholder="Type muscle group"/></td>
-    <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle group"
-				   onClick={this.fillInLater} /> </td>
-				   <td className="col-md-1"></td>
-    <td className="col-md-4"> </td>
-      </tr>
-    </tbody>
-  </table>
+				<tbody>
+				  <tr>
+					  
+				<td key={'name'} className="col-md-6"><input type="text" className="form-control" 
+				placeholder="Type muscle group" onChange={this.handleMuscleNameChange}/></td>
+				<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle group"
+							   onClick={this.handleAddMuscle} /> </td>
+							   <td className="col-md-1"></td>
+				<td className="col-md-2"> </td>
+				  </tr>
+				</tbody>
+			  </table>
 				
+				</div>
 				</div>
 		  ) ;
 	}
@@ -756,7 +789,7 @@ var MainContent = React.createClass({
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
 		
-		{/*<AddMuscleGroupSessionForm/>*/}
+		
 			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
 		{/*<MuscleList muscles={this.props.muscles}/>*/}
 		{/*<AddMuscleForm/>*/}
@@ -796,6 +829,10 @@ var GymProgressLogger = React.createClass({
              this.setState( { sort: value } ) ;
           }
       }, 
+	  addMuscleGroupSession(name) {
+		  api.addMuscleGroupSession(name) ;
+             this.setState({});
+	  },
 	  generateChartData: function(exercise, date_from, date_to) {
 		  console.log(exercise);
 		  console.log(date_from);
@@ -867,12 +904,12 @@ var GymProgressLogger = React.createClass({
 		
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
-		{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
-			{/*<SessionsList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession}/>*/}
+			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
+			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
 		{/*<Chart data={this.state.data}/>*/}
-			<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>
+			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
 				{/*<TrainingSessionsList users={users} />*/}
 		  <Footer />
 		  </div>
