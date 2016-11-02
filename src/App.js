@@ -155,22 +155,71 @@ export default class SelectableDay extends React.Component {
 var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
 var EditProfileForm = React.createClass({
+	 getInitialState : function() {
+	   return {
+		status : '',
+		first_name: this.props.user.first_name,
+		surname: this.props.user.surname,
+		dob: this.props.user.dob,
+		training_from: this.props.user.training_from
+	   } ;
+	},
+	handleFirstNameChange: function(e) {
+        this.setState({first_name: e.target.value});
+    },
+	handleSurnameChange: function(e) {
+        this.setState({surname: e.target.value});
+    },
+	handleDOBChange: function(e) {
+        this.setState({dob: e.target.value});
+    },
+	handleTrainingFromChange: function(e) {
+        this.setState({training_from: e.target.value});
+    },
+	handleUpdateProfile: function(e) {
+		e.preventDefault();
+		var first_name = this.state.first_name.trim();
+		var surname = this.state.surname.trim();
+		var dob = this.state.dob.trim();
+		var training_from = this.state.training_from.trim();
+		var key = this.props.user.id;
+		this.props.profileUpdateHandler(key, first_name, surname, dob, training_from);
+	},
 	render() {
 		return (
+		<div className="main-content-without-search-box">
 			<div className="centered">
-			
-			  <input type="text" className="form-control" 
-                     placeholder="First name"/>
-					 
-			 <input type="text" className="form-control" 
-                     placeholder="Surname"/>
-			 <input type="text" className="form-control" 
-                     placeholder="DOB"/>
-			 <input type="text" className="form-control" 
-                     placeholder="Training from"/>
-				<input type="fluid button" className="btn btn-primary btn-block" value="Submit"
-                       onClick={this.handleSubmit} />
-			  
+			<table>
+			<tr>
+			</tr>
+			<tr>
+			<td key={'first_name'}><input type="text" className="form-control" 
+                     placeholder="First name" value={this.state.first_name} onChange={this.handleFirstNameChange}/> </td>
+						 </tr>
+						 <tr>
+			</tr>
+						 <tr>
+                      <td key={'surname'}><input type="text" className="form-control" 
+                     placeholder="Surname" value={this.state.surname}
+                     onChange={this.handleDateToChange} onChange={this.handleSurnameChange}/> </td>
+						 </tr>
+						 <tr>
+			</tr><tr>
+                      <td key={'dob'}><input type="text" className="form-control" 
+                     placeholder="DOB" value={this.state.dob} onChange={this.handleDOBChange}/> </td>
+						 </tr>
+						 <tr>
+			</tr>
+						 <tr>
+                      <td key={'training_from'}><input type="text" className="form-control" 
+                     placeholder="Training from" value={this.state.training_from} onChange={this.handleTrainingFromChange}/> </td>
+						 </tr>
+						 <tr>
+						 <input type="fluid button" className="btn btn-primary btn-block" value="Submit"
+	onClick={this.handleUpdateProfile} />
+	</tr>
+			</table>  
+		 </div>
 		 </div>
 		)
 	}
@@ -715,6 +764,9 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  updateProfile: function() {
+		api.updateUser(key,f,s,d,t); 
+	  },
 	  handleChange : function(type,value) {
         if ( type == 'search' ) {
             this.setState( { search: value } ) ;
@@ -769,6 +821,7 @@ var GymProgressLogger = React.createClass({
 	  },
   render: function(){
 	   var users = api.getAllUsers();
+	   var testUser = users[0];
 	   var userList = users.filter(function(p) {
 		   var name = p.first_name + ' ' + p.surname;
                   return name.toLowerCase().search(
@@ -792,13 +845,13 @@ var GymProgressLogger = React.createClass({
 		
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
-		<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>
+		{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
         <MainContent users={filteredList} 
 		msessions={muscleSessions} exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
 		
-		<Chart data={this.state.data}/>
-		
+		{/*<Chart data={this.state.data}/>*/}
+		<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>
 		  <Footer />
 		  </div>
 	  );

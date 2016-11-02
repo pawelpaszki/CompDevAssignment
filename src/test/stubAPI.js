@@ -7,7 +7,7 @@ var users =  [
          "surname":"Hitt",
          "picture":"assets/users/1.jpg",
          "dob":"12/05/1986",
-         "training_from":"05/12/1986",
+         "training_from":"05/12/2006",
          "training_sessions":[
             {
                "main_session_id":1,
