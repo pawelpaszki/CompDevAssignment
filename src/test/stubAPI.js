@@ -1,3 +1,5 @@
+import _ from 'lodash';
+
 var users =  [ 
       {
          "id":1,
@@ -3962,7 +3964,7 @@ var stubAPI = {
 	 getAllMuscleSessions : function() {
 		 return muscleSessions;
 	 },
-	 addUser : function(f,s,d, ) {
+	 addUser : function(f,s,d,t) {
 	  var len = users.length ;
 	  var newL_len = users.push({
 		 first_name: f, surname : s, dob: d, training_from: t }) ;

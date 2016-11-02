@@ -14,14 +14,36 @@ export default class SelectableDay extends React.Component {
   constructor(props) {
     super(props);
     this.handleDayClick = this.handleDayClick.bind(this);
+
+
   }
+  
   state = {
     selectedDay: null,
   };
   handleDayClick(e, day, { selected }) {
-    this.setState({
-      selectedDay: selected ? null : day,
-    });
+	 var user = this.props.users[0];
+     var trainingSessions = user.training_sessions;
+	 var trainingDays = _.pluck(trainingSessions, 'date');
+	 	console.log(trainingDays);
+	  var month = day.getMonth() + 1;
+	  var year = day.getYear() + 1900;
+	  var dayOfMonth = day.getDate();
+	  var dateClicked = dayOfMonth + '/' + month + '/' + year;
+	  console.log(dateClicked);
+	  var sessionFound = false;
+	  if(trainingDays.indexOf(dateClicked) !== -1) {
+		  sessionFound = true;
+		  console.log(sessionFound);
+	  }
+      if (!sessionFound) {
+        return;
+      } else {
+		  
+	  }
+      this.setState({
+        selectedDay: dateClicked
+      });
   }
   render() {
     const { selectedDay } = this.state;
@@ -31,14 +53,12 @@ export default class SelectableDay extends React.Component {
           selectedDays={ day => DateUtils.isSameDay(selectedDay, day) }
           onDayClick={ this.handleDayClick }
         />
-        <div >
-          { selectedDay ? selectedDay.toLocaleDateString() : 'Please select a day ??' }
-        </div>
 		</div>
       </div>
     );
   }
 };
+
 
 const data = [
   {text: '04/07', value: 110}, 
@@ -549,7 +569,7 @@ var MainContent = React.createClass({
 		{/*<ExerciseList exercises={this.props.exercises}/>*/}
 		{/*<ExerciseInfo/>*/}
 		<div className="calendar">
-		<SelectableDay />
+		
 		{/*<AddMuscleGroupSessionForm/>*/}
 		{/*<AddExerciseUnitForm/>*/}
 		{/*<AddExerciseUnitForm/>*/}
@@ -594,6 +614,7 @@ var GymProgressLogger = React.createClass({
                            filterText={this.state.search} 
                            sort={this.state.sort}/>*/}
 		{/*<ChartDataPicker/>*/}
+		<SelectableDay users={users}/>
         <MainContent users={filteredList} 
 		msessions={muscleSessions} exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
