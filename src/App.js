@@ -186,10 +186,13 @@ var EditProfileForm = React.createClass({
 		this.props.profileUpdateHandler(key, first_name, surname, dob, training_from);
 	},
 	render() {
+		var leftButtonHandler = this.handleEdit ;
+        var rightButtonHandler = this.handleDelete ;
 		return (
 		<div className="main-content-without-search-box">
 			<div className="centered">
 			<table>
+			<tbody>
 			<tr>
 			</tr>
 			<tr>
@@ -201,7 +204,7 @@ var EditProfileForm = React.createClass({
 						 <tr>
                       <td key={'surname'}><input type="text" className="form-control" 
                      placeholder="Surname" value={this.state.surname}
-                     onChange={this.handleDateToChange} onChange={this.handleSurnameChange}/> </td>
+                     onChange={this.handleSurnameChange} /> </td>
 						 </tr>
 						 <tr>
 			</tr><tr>
@@ -218,6 +221,7 @@ var EditProfileForm = React.createClass({
 						 <input type="fluid button" className="btn btn-primary btn-block" value="Submit"
 	onClick={this.handleUpdateProfile} />
 	</tr>
+	</tbody>
 			</table>  
 		 </div>
 		 </div>
@@ -445,22 +449,32 @@ var FilteredUsersList = React.createClass({
 });
 
 var Session = React.createClass({
+	getInitialState : function() {
+             return {
+              id: this.props.sessionItem.id
+             } ;
+          },
+	handleDeleteSessionItem : function(e) {
+	  e.preventDefault();
+	  this.props.deleteSessionItemHandler(this.props.sessionItem.id);
+	}, 
 	render: function() {
+		var deleteHandler = this.handleDeleteSessionItem;
 		var sessionItem = this.props.sessionItem;
 		return (
 		
 		<li>
 		<div className="left-within-main">
-<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      <td className="col-md-3"><a  href={"/sessions/" + sessionItem.id}>{sessionItem.name} </a></td>
-    <td className="col-md-6"><input type="button"  className="btn btn-warning" value="delete"/></td>
-    <td className="col-md-2"></td>
-    <td className="col-md-1"></td>
-      </tr>
-    </tbody>
-  </table>
+			<table className="table table-borderless">
+				<tbody>
+				  <tr>
+					  <td className="col-md-3"><a href={"/sessions/" + sessionItem.id}>{sessionItem.name} </a></td>
+				<td className="col-md-6"><input type="button"  className="btn btn-warning" value="delete" onClick={deleteHandler}/></td>
+				<td className="col-md-2"></td>
+				<td className="col-md-1"></td>
+				  </tr>
+				</tbody>
+			  </table>
 			 </div>
 		</li>
 		)
@@ -471,14 +485,16 @@ var Session = React.createClass({
 var SessionsList = React.createClass({
 	render: function() {
 		var displayedSessions = this.props.msessions.map((session) =>{
-			return <Session key={session.id} sessionItem={session} />;
+			return <Session key={session.id} sessionItem={session} deleteSessionItemHandler={this.props.deleteSessionItemHandler} />;
 		}) ;
             return (
+			<div className="main-content-without-search-box">
                     <div className="main-content">
                       <ul className="users">
                           {displayedSessions}
                       </ul>
                     </div>
+					</div>
               ) ;
 	}
 });
@@ -656,26 +672,26 @@ var TrainingSession = React.createClass({
 	render: function() {
 		var trainingSessionItem = this.props.trainingSessionItem;
 		return (
-		<li >
+		<li className="users">
 			<a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
 		</li>
 		)
 	}
 });
 
-var FilteredTrainingSessionsList = React.createClass({
+var TrainingSessionsList = React.createClass({
 	render: function() {
 		var user = this.props.users[0];
 		var displayedTsessions = user.training_sessions.map((tsession) =>{
 			return <TrainingSession key={tsession.id} trainingSessionItem={tsession} />;
 		}) ;
             return (
-                    <div className="main-content">
-                      <ul className="users">
-                          {displayedTsessions}
-                      </ul>
-                    </div>
-              ) ;
+				<div className="main-content-without-search-box">
+				  <ul className="users">
+					  {displayedTsessions}
+				  </ul>
+				</div>
+		  ) ;	
 	}
 });
 
@@ -736,8 +752,7 @@ var MainContent = React.createClass({
 		
 		{/*<UserInfo />*/}
 		{/*<FilteredUsersList  users={this.props.users}/>*/}
-		{/*<FilteredTrainingSessionsList users={this.props.users} />*/}
-		{/*<SessionsList  msessions={this.props.msessions}/>*/}
+		
 		{/*<AddMuscleGroupSessionForm/>*/}
 			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
 		{/*<MuscleList muscles={this.props.muscles}/>*/}
@@ -747,7 +762,6 @@ var MainContent = React.createClass({
 		<div className="calendar">
 		
 		{/*<AddMuscleGroupSessionForm/>*/}
-		{/*<AddExerciseUnitForm/>*/}
 		{/*<AddExerciseUnitForm/>*/}
 		{/*<AddExerciseForm/>*/}
 		</div>
@@ -764,8 +778,13 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
-	  updateProfile: function() {
+	  deleteSession: function(sessionId) {
+		api.deleteSession(sessionId);  
+		this.setState( {} ) ;
+	  },
+	  updateProfile: function(key,f,s,d,t) {
 		api.updateUser(key,f,s,d,t); 
+		this.setState( {} ) ;
 	  },
 	  handleChange : function(type,value) {
         if ( type == 'search' ) {
@@ -846,12 +865,12 @@ var GymProgressLogger = React.createClass({
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
 		{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
-        <MainContent users={filteredList} 
-		msessions={muscleSessions} exerciseUnits={exerciseUnits} 
+		<SessionsList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession}/>
+        <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
-		
 		{/*<Chart data={this.state.data}/>*/}
-		<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>
+			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
+				{/*<TrainingSessionsList users={users} />*/}
 		  <Footer />
 		  </div>
 	  );

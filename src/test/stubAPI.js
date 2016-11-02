@@ -3949,6 +3949,13 @@ var stubAPI = {
 			  });
 	   return elements; 
 	 },
+	 deleteSession : function(id) {
+	   var elements = _.remove(muscleSessions, 
+		   function(session) {
+				 return session.id === id;
+			  });
+	   return elements; 
+	 },
 	 getAllUsers : function() {
 		 return users ;
 	 },
