@@ -365,7 +365,7 @@ var SearchBox = React.createClass({
 var UserInfo = React.createClass({
 	render: function() {
 		return (
-		<div>
+		<div className="main-content-without-search-box">
 			<div className="left-within-main">
 				 <table className="table">
 					<thead>
@@ -396,7 +396,7 @@ var UserInfo = React.createClass({
 var ExerciseInfo = React.createClass({
 	render: function() {
 		return (
-		<div>
+		<div className="main-content-without-search-box">
 		<div className="left-within-main">
 		 <h1>Bench press</h1>
 		</div>
@@ -1063,32 +1063,6 @@ var AddMuscleForm = React.createClass({
 	}
 });
 
-var MainContent = React.createClass({
-	render: function() {
-		return (
-		//{/* conditional... !!!!!!!!!!! */}
-		<div> {/*className="main-content-without-search-box">*/}
-		
-		{/*<UserInfo />*/}
-		{/*<FilteredUsersList  users={this.props.users}/>*/}
-		
-		
-			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
-		{/**/}
-		{/**/}
-		{/**/}
-		{/*<ExerciseInfo/>*/}
-		<div className="calendar">
-		
-		{/*<AddMuscleGroupSessionForm/>*/}
-		{/**/}
-		{/**/}
-		</div>
-		</div>
-		)
-	}
-});
-
 var GymProgressLogger = React.createClass({
 	getInitialState: function() {
 	    return { 
@@ -1219,6 +1193,10 @@ var GymProgressLogger = React.createClass({
 	  
 		<Navbar />
         <Sidebar/>
+		{/*<FilteredUsersList users={userList}/>*/}
+		
+		{/*<ExerciseInfo/>*/}
+		{/*<UserInfo />*/}
 		{/*<MonthPicker/>*/}
 		{/*<SearchBox onUserInput={this.handleChange } 
                            filterText={this.state.search} 
@@ -1227,20 +1205,18 @@ var GymProgressLogger = React.createClass({
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
-			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
+			<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>
 			{/*<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
 			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup} 
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>*/}
-			
-        <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
-		muscles={muscles} exercises={exercises}/>
+
 		{/*<Chart data={this.state.data}/>*/}
 			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
 				{/*<TrainingSessionsList users={users} />*/}
 		{/*<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
 		deleteMuscleHandler={this.deleteMuscle} addMuscleHandler={this.addNewMuscle}/>*/}
-		<ExerciseList exercises={exercises} exerciseConstants={exerciseConstants} updateExerciseHandler={this.updateExercise} 
-		deleteExerciseHandler={this.deleteExercise} addExerciseHandler={this.addNewExercise} muscles={muscles}/>
+		{/*<ExerciseList exercises={exercises} exerciseConstants={exerciseConstants} updateExerciseHandler={this.updateExercise} 
+		deleteExerciseHandler={this.deleteExercise} addExerciseHandler={this.addNewExercise} muscles={muscles}/>*/}
 		  <Footer />
 		  </div>
 	  );
