@@ -510,10 +510,20 @@ var MuscleGroupSessionList = React.createClass({
 var AddExerciseUnitForm = React.createClass({
 	
 	render: function() {
+		var muscleGroup = this.props.exerciseUnits[0].muscle_group;
+		console.log(muscleGroup);
 		var exercisesAdded = _.pluck(this.props.exerciseUnits, 'name');
 		console.log(exercisesAdded);
-		var exercisesAvailable = _.pluck(this.props.exercises, 'name');
-		console.log(exercisesAvailable);
+		var allExercisesAvailable = _.pluck(this.props.exercises, 'name');
+		console.log(allExercisesAvailable);
+		var muscleGroupExercisesAvailable = _.map(
+			_.where(allExercisesAvailable, {group : muscleGroup}), 
+			function(exercise) {
+				return { name: exercise.name};
+			}
+		);
+		console.log(muscleGroupExercisesAvailable);
+		
             return (
 			
 				<div className="left-within-main">
