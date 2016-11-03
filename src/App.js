@@ -484,7 +484,26 @@ var MuscleGroupSession = React.createClass({
 		)
 	}
 });
-
+var ExerciseUnitToAdd = React.createClass({
+	getInitialState : function() {
+		 return {
+		  status : '',
+		  name: this.props.exerciseUnitToAdd.name,
+		 } ;
+	  },
+	  
+	render: function() {
+		console.log(this.state.name);
+		return (
+		<tr >
+		  <td>
+			 <input type="button" className='btn btn-primary'
+				   value={this.state.name}  />
+		  </td>
+		</tr>
+		);
+	}
+});
 
 var MuscleGroupSessionList = React.createClass({
 	render: function() {
@@ -510,41 +529,38 @@ var MuscleGroupSessionList = React.createClass({
 var AddExerciseUnitForm = React.createClass({
 	
 	render: function() {
-		var muscleGroup = this.props.exerciseUnits[0].muscle_group;
-		console.log(muscleGroup);
+		var muscleGroup = this.props.exerciseUnitMuscleGroup;
 		var exercisesAdded = _.pluck(this.props.exerciseUnits, 'name');
-		console.log(exercisesAdded);
+		console.log(exercisesAdded);		
+		console.log(muscleGroup);
 		var allExercisesAvailable = this.props.exercises;
 		console.log(allExercisesAvailable);
 		var muscleGroupExercisesAvailable = [];
-		for(var i = 0; i < allExercisesAvailable.length; i++) {
-			if (allExercisesAvailable[i].group == muscleGroup && exercisesAdded.indexOf(allExercisesAvailable[i].name) == -1) {
-				muscleGroupExercisesAvailable.push(allExercisesAvailable[i].name);
+		if (exercisesAdded.length == 0) {
+			for(var i = 0; i < allExercisesAvailable.length; i++) {
+				if (allExercisesAvailable[i].group == muscleGroup) {
+					muscleGroupExercisesAvailable.push(allExercisesAvailable[i]);
+				}
+			}
+		} else {
+			for(var i = 0; i < allExercisesAvailable.length; i++) {
+				if (allExercisesAvailable[i].group == muscleGroup && exercisesAdded.indexOf(allExercisesAvailable[i].name) == -1) {
+					muscleGroupExercisesAvailable.push(allExercisesAvailable[i]);
+				}
 			}
 		}
 		console.log(muscleGroupExercisesAvailable);
-		
-            return (
-			
-				<div className="left-within-main">
-					<table className="table table-borderless">
-					<tbody>
-					  <tr>
-						  <td className="col-md-1"></td>
-					<td className="col-md-4"><input type="text" className="form-control" 
-								 placeholder="Type exercise name"
-						  /></td>
-					<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add Exercise"
-								   onClick={this.fillInLater} /> </td>
-								   
-					<td className="col-md-4"> </td>
-					  </tr>
-					</tbody>
-				  </table>
-				</div>
-				
-
-		  ) ;
+		var addExerciseUnitButtons = muscleGroupExercisesAvailable.map(function(exerciseUnitToAdd){
+                  return (
+                   <ExerciseUnitToAdd key={exerciseUnitToAdd.name}  exerciseUnitToAdd={exerciseUnitToAdd} 
+                      />
+                    ) ;
+                }.bind(this) );
+              return (
+                  <tbody >
+                      {addExerciseUnitButtons}
+                  </tbody>
+                ) ;
 	}
 });
 
@@ -699,7 +715,7 @@ var ExerciseUnitList = React.createClass({
                           {displayedExercises}
                       </ul>
                     </div>
-					<AddExerciseUnitForm exerciseUnits={this.props.exerciseUnits} exercises={this.props.exercises}/>
+					<AddExerciseUnitForm exerciseUnitMuscleGroup={this.props.exerciseUnitMuscleGroup} exerciseUnits={this.props.exerciseUnits} exercises={this.props.exercises}/>
 					</div>
               ) ;
 	}
@@ -924,6 +940,7 @@ var GymProgressLogger = React.createClass({
 	  var exercises = api.getAllExercises();
 	  var muscles = api.getAllMuscles();
 	  var exerciseUnits = api.getAllExerciseUnits();
+	  var exerciseUnitMuscleGroup = "back"; {/*parameterise later!!!!!!!*/}
 	  var muscleSessions = api.getAllMuscleSessions();
 	  return (
 	  <div>
@@ -939,7 +956,7 @@ var GymProgressLogger = React.createClass({
 		{/*<SelectableDay users={users}/>*/}
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
-			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit}/>
+			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup}/>
 			
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
