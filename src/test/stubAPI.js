@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-var users =  [ 
+var users =[ 
       {
          "id":1,
          "first_name":"Mitch",
@@ -18,18 +18,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":110,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":100,
                            "number_of_series":4,
@@ -42,18 +45,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":60,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":20,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":24,
                            "number_of_series":3,
@@ -66,12 +72,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -86,28 +94,34 @@ var users =  [
                "date":"06/07/2016",
                "muscle_group_sessions":[
                   {
+					  
                      "muscle_group_session_id":4,
                      "name":"leg",
                      "exercises":[
-                        {
+                      
+					  {
+						  "muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":140,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -120,18 +134,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -144,12 +161,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -168,18 +187,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":180,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":100,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":80,
                            "number_of_series":3,
@@ -192,18 +214,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":30,
                            "number_of_series":4,
@@ -222,18 +247,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":112,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":100,
                            "number_of_series":4,
@@ -246,18 +274,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":60,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":20,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":24,
                            "number_of_series":3,
@@ -270,12 +301,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -294,24 +327,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":140,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -324,18 +361,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -348,12 +388,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -372,18 +414,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":180,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":100,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":80,
                            "number_of_series":3,
@@ -396,18 +441,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":30,
                            "number_of_series":4,
@@ -426,18 +474,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":114,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":102,
                            "number_of_series":4,
@@ -450,18 +501,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":60,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":20,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":24,
                            "number_of_series":3,
@@ -474,12 +528,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -498,24 +554,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":140,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -528,18 +588,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -552,12 +615,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -576,18 +641,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":180,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":100,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":80,
                            "number_of_series":3,
@@ -600,18 +668,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":32,
                            "number_of_series":4,
@@ -630,18 +701,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":114,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":102,
                            "number_of_series":4,
@@ -654,18 +728,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":62,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":22,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":24,
                            "number_of_series":3,
@@ -678,12 +755,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":200,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":250,
                            "number_of_series":3,
@@ -702,24 +781,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":140,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -732,18 +815,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -756,12 +842,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -780,18 +868,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":180,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":80,
                            "number_of_series":3,
@@ -804,18 +895,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":32,
                            "number_of_series":4,
@@ -834,18 +928,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":116,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":84,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":104,
                            "number_of_series":4,
@@ -857,19 +954,23 @@ var users =  [
                      "muscle_group_session_id":34,
                      "name":"biceps",
                      "exercises":[
+					 
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":62,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":22,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":24,
                            "number_of_series":3,
@@ -882,12 +983,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -906,24 +1009,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -936,18 +1043,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -960,12 +1070,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -984,18 +1096,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":185,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -1008,18 +1123,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":32,
                            "number_of_series":4,
@@ -1038,18 +1156,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":116,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":104,
                            "number_of_series":4,
@@ -1062,18 +1183,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":64,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":22,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":25,
                            "number_of_series":3,
@@ -1086,12 +1210,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1110,24 +1236,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -1140,18 +1270,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -1164,12 +1297,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1188,18 +1323,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":185,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -1212,18 +1350,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":32,
                            "number_of_series":4,
@@ -1242,18 +1383,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":116,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":84,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":102,
                            "number_of_series":4,
@@ -1266,18 +1410,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":64,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":24,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":25,
                            "number_of_series":3,
@@ -1290,12 +1437,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1314,24 +1463,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -1344,18 +1497,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":82,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":16,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":16,
                            "number_of_series":3,
@@ -1368,12 +1524,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1392,18 +1550,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -1416,18 +1577,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":55,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":34,
                            "number_of_series":4,
@@ -1446,18 +1610,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":120,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":86,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":106,
                            "number_of_series":4,
@@ -1470,18 +1637,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+						   "muscle_group" : "biceps",	
                            "name":"barbell curl",
                            "weight":66,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":24,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":26,
                            "number_of_series":3,
@@ -1494,12 +1664,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1518,24 +1690,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -1548,18 +1724,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -1572,12 +1751,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1596,18 +1777,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -1620,18 +1804,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":55,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":34,
                            "number_of_series":4,
@@ -1650,18 +1837,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":120,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":88,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":106,
                            "number_of_series":4,
@@ -1674,18 +1864,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":67,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":25,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":28,
                            "number_of_series":3,
@@ -1698,12 +1891,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":220,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1722,24 +1917,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -1752,18 +1951,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -1776,12 +1978,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1800,18 +2004,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -1824,18 +2031,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":55,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":50,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":34,
                            "number_of_series":4,
@@ -1854,18 +2064,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":122,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":89,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":108,
                            "number_of_series":4,
@@ -1878,18 +2091,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":68,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":25,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "biceps",	
                            "name":"alternate hammer curl",
                            "weight":28,
                            "number_of_series":3,
@@ -1902,12 +2118,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -1926,24 +2144,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -1956,18 +2178,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -1980,12 +2205,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2004,18 +2231,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -2028,18 +2258,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":58,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":60,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":36,
                            "number_of_series":4,
@@ -2058,18 +2291,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":122,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":108,
                            "number_of_series":4,
@@ -2082,18 +2318,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":68,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":25,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":28,
                            "number_of_series":3,
@@ -2106,12 +2345,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2130,24 +2371,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -2160,18 +2405,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -2184,12 +2432,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2208,18 +2458,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+						   "muscle_group" : "back",	
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -2232,18 +2485,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":58,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":60,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":36,
                            "number_of_series":4,
@@ -2262,18 +2518,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":124,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":92,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":110,
                            "number_of_series":4,
@@ -2286,18 +2545,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":70,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":26,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":28,
                            "number_of_series":3,
@@ -2310,12 +2572,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2334,24 +2598,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -2364,18 +2632,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":88,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -2388,12 +2659,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2412,18 +2685,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+						"muscle_group" : "back",	
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -2436,18 +2712,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":58,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":60,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":36,
                            "number_of_series":4,
@@ -2466,18 +2745,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":125,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":95,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":109,
                            "number_of_series":4,
@@ -2490,18 +2772,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":70,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":26,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":28,
                            "number_of_series":3,
@@ -2514,12 +2799,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2538,24 +2825,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":320,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -2568,18 +2859,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":88,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -2592,12 +2886,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2616,18 +2912,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -2640,18 +2939,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":70,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":36,
                            "number_of_series":4,
@@ -2670,18 +2972,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":126,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":96,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":112,
                            "number_of_series":4,
@@ -2694,18 +2999,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":67,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":24,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":26,
                            "number_of_series":3,
@@ -2718,12 +3026,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2742,24 +3052,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":160,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":340,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -2772,18 +3086,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":88,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -2796,12 +3113,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2820,18 +3139,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -2844,18 +3166,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":70,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":36,
                            "number_of_series":4,
@@ -2874,18 +3199,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":127,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":94,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":110,
                            "number_of_series":4,
@@ -2898,18 +3226,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":67,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":24,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":26,
                            "number_of_series":3,
@@ -2922,12 +3253,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -2946,24 +3279,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":160,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":340,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":10
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":60,
                            "number_of_series":4,
@@ -2976,18 +3313,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":88,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":14,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -3000,12 +3340,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":210,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":260,
                            "number_of_series":3,
@@ -3024,18 +3366,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":190,
                            "number_of_series":4,
                            "number_of_reps":5
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":90,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -3048,18 +3393,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":50,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":70,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":36,
                            "number_of_series":4,
@@ -3088,18 +3436,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":60,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":80,
                            "number_of_series":4,
@@ -3112,18 +3463,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":35,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":12,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":16,
                            "number_of_series":3,
@@ -3136,12 +3490,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":100,
                            "number_of_series":3,
@@ -3160,24 +3516,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":100,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":150,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":40,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":30,
                            "number_of_series":3,
@@ -3190,18 +3550,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":45,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":10,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -3214,12 +3577,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":100,
                            "number_of_series":3,
@@ -3238,18 +3603,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":100,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":70,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -3262,18 +3630,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":40,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":40,
                            "number_of_series":3,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":40,
                            "number_of_series":4,
@@ -3292,18 +3663,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":85,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":60,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":80,
                            "number_of_series":4,
@@ -3316,18 +3690,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":35,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":12,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":16,
                            "number_of_series":3,
@@ -3340,12 +3717,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":100,
                            "number_of_series":3,
@@ -3364,24 +3743,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+							"muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":90,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg press",
                            "weight":160,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":40,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":30,
                            "number_of_series":3,
@@ -3394,18 +3777,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+							"muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":45,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":10,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -3418,12 +3804,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+							"muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+							"muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":100,
                            "number_of_series":3,
@@ -3442,18 +3830,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+							"muscle_group" : "back",
                            "name":"deadlift",
                            "weight":100,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+							"muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":70,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -3466,18 +3857,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+							"muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":40,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":40,
                            "number_of_series":3,
                            "number_of_reps":15
                         },
                         {
+							"muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":40,
                            "number_of_series":4,
@@ -3496,18 +3890,21 @@ var users =  [
                      "name":"chest",
                      "exercises":[
                         {
+							"muscle_group" : "chest",
                            "name":"barbell flat bench press",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell incline bench press",
                            "weight":60,
                            "number_of_series":4,
                            "number_of_reps":8
                         },
                         {
+							"muscle_group" : "chest",
                            "name":"barbell decline bench press",
                            "weight":80,
                            "number_of_series":4,
@@ -3520,18 +3917,21 @@ var users =  [
                      "name":"biceps",
                      "exercises":[
                         {
+							"muscle_group" : "biceps",
                            "name":"barbell curl",
                            "weight":35,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"concentration curls",
                            "weight":12,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+							"muscle_group" : "biceps",
                            "name":"alternate hammer curl",
                            "weight":16,
                            "number_of_series":3,
@@ -3544,12 +3944,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+						   "muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+						   "muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":100,
                            "number_of_series":3,
@@ -3568,24 +3970,28 @@ var users =  [
                      "name":"leg",
                      "exercises":[
                         {
+						   "muscle_group" : "leg",
                            "name":"barbell full squat",
                            "weight":95,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "leg",
                            "name":"leg press",
                            "weight":170,
                            "number_of_series":4,
                            "number_of_reps":15
                         },
                         {
+						   "muscle_group" : "leg",
                            "name":"leg extensions",
                            "weight":40,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "leg",
                            "name":"lying leg curls",
                            "weight":30,
                            "number_of_series":3,
@@ -3598,18 +4004,21 @@ var users =  [
                      "name":"shoulders",
                      "exercises":[
                         {
+						   "muscle_group" : "shoulders",
                            "name":"standing military press",
                            "weight":45,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "shoulders",
                            "name":"power partials",
                            "weight":10,
                            "number_of_series":3,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "shoulders",
                            "name":"front dumbbell raise",
                            "weight":14,
                            "number_of_series":3,
@@ -3622,12 +4031,14 @@ var users =  [
                      "name":"calf",
                      "exercises":[
                         {
+						   "muscle_group" : "calf",
                            "name":"standing calf raise",
                            "weight":80,
                            "number_of_series":4,
                            "number_of_reps":20
                         },
                         {
+						   "muscle_group" : "calf",
                            "name":"sitting calf raise",
                            "weight":100,
                            "number_of_series":3,
@@ -3646,18 +4057,21 @@ var users =  [
                      "name":"back",
                      "exercises":[
                         {
+						   "muscle_group" : "back",
                            "name":"deadlift",
                            "weight":100,
                            "number_of_series":4,
                            "number_of_reps":6
                         },
                         {
+						   "muscle_group" : "back",
                            "name":"reverse grip bent-over rows",
                            "weight":70,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "back",
                            "name":"t-bar row",
                            "weight":85,
                            "number_of_series":3,
@@ -3670,18 +4084,21 @@ var users =  [
                      "name":"triceps",
                      "exercises":[
                         {
+						   "muscle_group" : "triceps",
                            "name":"cable two arms extensions",
                            "weight":40,
                            "number_of_series":4,
                            "number_of_reps":12
                         },
                         {
+						   "muscle_group" : "triceps",
                            "name":"weighted bench dip",
                            "weight":40,
                            "number_of_series":3,
                            "number_of_reps":15
                         },
                         {
+						   "muscle_group" : "triceps",
                            "name":"reverse grip triceps pushdown",
                            "weight":40,
                            "number_of_series":4,
@@ -3853,18 +4270,21 @@ var exercises=[
  
  var exerciseUnits=[
 	{
+	   "muscle_group" : "back",
 	   "name":"deadlift",
 	   "weight":180,
 	   "number_of_series":4,
 	   "number_of_reps":5
 	},
 	{
+	   "muscle_group" : "back",
 	   "name":"reverse grip bent-over rows",
 	   "weight":100,
 	   "number_of_series":4,
 	   "number_of_reps":12
 	},
 	{
+	   "muscle_group" : "back",
 	   "name":"t-bar row",
 	   "weight":80,
 	   "number_of_series":3,
