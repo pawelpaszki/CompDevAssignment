@@ -454,10 +454,10 @@ var FilteredUsersList = React.createClass({
 
 var MuscleGroupSession = React.createClass({
 	getInitialState : function() {
-             return {
-              id: this.props.sessionItem.id
-             } ;
-          },
+		 return {
+		  id: this.props.sessionItem.id
+		 } ;
+	  },
 	handleDeleteSessionItem : function(e) {
 	  e.preventDefault();
 	  this.props.deleteSessionItemHandler(this.props.sessionItem.id);
@@ -514,33 +514,33 @@ var AddExerciseUnitForm = React.createClass({
 		console.log(muscleGroup);
 		var exercisesAdded = _.pluck(this.props.exerciseUnits, 'name');
 		console.log(exercisesAdded);
-		var allExercisesAvailable = _.pluck(this.props.exercises, 'name');
+		var allExercisesAvailable = this.props.exercises;
 		console.log(allExercisesAvailable);
-		var muscleGroupExercisesAvailable = _.map(
-			_.where(allExercisesAvailable, {group : muscleGroup}), 
-			function(exercise) {
-				return { name: exercise.name};
+		var muscleGroupExercisesAvailable = [];
+		for(var i = 0; i < allExercisesAvailable.length; i++) {
+			if (allExercisesAvailable[i].group == muscleGroup && exercisesAdded.indexOf(allExercisesAvailable[i].name) == -1) {
+				muscleGroupExercisesAvailable.push(allExercisesAvailable[i].name);
 			}
-		);
+		}
 		console.log(muscleGroupExercisesAvailable);
 		
             return (
 			
 				<div className="left-within-main">
-										<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      <td className="col-md-1"></td>
-    <td className="col-md-4"><input type="text" className="form-control" 
-				 placeholder="Type exercise name"
-		  /></td>
-    <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add Exercise"
-				   onClick={this.fillInLater} /> </td>
-				   
-    <td className="col-md-4"> </td>
-      </tr>
-    </tbody>
-  </table>
+					<table className="table table-borderless">
+					<tbody>
+					  <tr>
+						  <td className="col-md-1"></td>
+					<td className="col-md-4"><input type="text" className="form-control" 
+								 placeholder="Type exercise name"
+						  /></td>
+					<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add Exercise"
+								   onClick={this.fillInLater} /> </td>
+								   
+					<td className="col-md-4"> </td>
+					  </tr>
+					</tbody>
+				  </table>
 				</div>
 				
 
@@ -653,23 +653,34 @@ var ExerciseList = React.createClass({
 });
 
 var ExerciseUnit = React.createClass({
+	getInitialState : function() {
+		 return {
+		  name: this.props.exerciseUnit.name
+		 } ;
+	  },
+	handleDeleteExerciseUnit: function(e) {
+	  e.preventDefault();
+	  this.props.deleteExerciseUnitHandler(this.state.name);
+	}, 
 	render: function() {
+		var deleteHandler = this.handleDeleteExerciseUnit;
 		var exerciseUnit = this.props.exerciseUnit;
 		return (
 		
 		<li>
-		<div className="left-within-main">
-<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      <td className="col-md-6"><a  href={"/sessions/" + exerciseUnit.name}>{exerciseUnit.name} </a></td>
-    <td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit"/></td>
-    <td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete"/></td>
-    <td className="col-md-2"></td>
-      </tr>
-    </tbody>
-  </table>
-			 </div>
+			<div className="left-within-main">
+				<table className="table table-borderless">
+					<tbody>
+					  <tr>
+						<td className="col-md-6"><a  href={"/sessions/" + exerciseUnit.name}>{exerciseUnit.name} </a></td>
+						<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="edit"/></td>
+						<td className="col-md-2">
+							<input type="button"  className="btn btn-danger btn-block" value="delete" onClick={deleteHandler}/></td>
+						<td className="col-md-2"></td>
+					  </tr>
+					</tbody>
+				</table>
+			</div>
 		</li>
 		)
 	}
@@ -679,7 +690,7 @@ var ExerciseUnit = React.createClass({
 var ExerciseUnitList = React.createClass({
 	render: function() {
 		var displayedExercises = this.props.exerciseUnits.map((exercise) =>{
-			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} />;
+			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} deleteExerciseUnitHandler={this.props.deleteExerciseUnitHandler}/>;
 		}) ;
             return (
 			<div className="main-content-without-search-box">
@@ -832,6 +843,10 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  deleteExerciseUnit: function(key) {
+		  api.deleteExerciseUnit(key);
+		  this.setState( {} ) ;
+	  },
 	  deleteSession: function(sessionId) {
 		api.deleteSession(sessionId);  
 		this.setState( {} ) ;
@@ -924,7 +939,7 @@ var GymProgressLogger = React.createClass({
 		{/*<SelectableDay users={users}/>*/}
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
-			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises}/>
+			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit}/>
 			
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>

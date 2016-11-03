@@ -4298,18 +4298,21 @@ var exercises=[
 	 "name":"chest",
 	 "exercises":[
 		{
+			"muscle_group" : "chest",
 		   "name":"barbell flat bench press",
 		   "weight":110,
 		   "number_of_series":4,
 		   "number_of_reps":8
 		},
 		{
+			"muscle_group" : "chest",
 		   "name":"barbell incline bench press",
 		   "weight":80,
 		   "number_of_series":4,
 		   "number_of_reps":8
 		},
 		{
+			"muscle_group" : "chest",
 		   "name":"barbell decline bench press",
 		   "weight":100,
 		   "number_of_series":4,
@@ -4322,18 +4325,21 @@ var exercises=[
 	 "name":"biceps",
 	 "exercises":[
 		{
+			"muscle_group" : "biceps",
 		   "name":"barbell curl",
 		   "weight":60,
 		   "number_of_series":4,
 		   "number_of_reps":6
 		},
 		{
+			"muscle_group" : "biceps",
 		   "name":"concentration curls",
 		   "weight":20,
 		   "number_of_series":3,
 		   "number_of_reps":12
 		},
 		{
+			"muscle_group" : "biceps",
 		   "name":"alternate hammer curl",
 		   "weight":24,
 		   "number_of_series":3,
@@ -4346,12 +4352,14 @@ var exercises=[
 	 "name":"calf",
 	 "exercises":[
 		{
+			"muscle_group" : "calf",
 		   "name":"standing calf raise",
 		   "weight":200,
 		   "number_of_series":4,
 		   "number_of_reps":15
 		},
 		{
+			"muscle_group" : "calf",
 		   "name":"sitting calf raise",
 		   "weight":250,
 		   "number_of_series":3,
@@ -4362,6 +4370,13 @@ var exercises=[
   ];
  
 var stubAPI = {
+	 deleteExerciseUnit: function (key) {
+		var elements = _.remove(exerciseUnits, 
+		   function(exerciseUnit) {
+				 return exerciseUnit.name === key;
+		   });
+		return elements;
+	 },
 	 deleteUser : function(k) {
 	   var elements = _.remove(users, 
 		   function(user) {
