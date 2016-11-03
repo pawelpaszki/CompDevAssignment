@@ -4244,7 +4244,139 @@ var exercises=[
 	}
  ];
 
+ var exerciseConstants=[
+	{
+	   "name":"barbell flat bench press",
+	   "group":"chest",
+	   "picture": "assets/exercises/flatbench.jpg"
+	},
+	{
+	   "name":"barbell incline bench press",
+	   "group":"chest",
+	   "picture": "assets/exercises/incline.jpg"
+	},
+	{
+	   "name":"barbell decline bench press",
+	   "group":"chest",
+	   "picture": "assets/exercises/declinebench.jpg"
+	},
+	{
+	   "name":"barbell curl",
+	   "group":"biceps",
+	   "picture": "assets/exercises/barbellcurl.jpg"
+	},
+	{
+	   "name":"concentration curls",
+	   "group":"biceps",
+	   "picture": "assets/exercises/concentrationcurl.jpg"
+	},
+	{
+	   "name":"alternate hammer curl",
+	   "group":"biceps",
+	   "picture": "assets/exercises/hammercurl.jpg"
+	},
+	{
+	   "name":"standing calf raise",
+	   "group":"calf",
+	   "picture": "assets/exercises/standingcalfraise.jpg"
+	},
+	{
+	   "name":"sitting calf raise",
+	   "group":"calf",
+	   "picture": "assets/exercises/sittingcalfraise.jpg"
+	},
+	{
+	   "name":"barbell full squat",
+	   "group":"leg",
+	   "picture": "assets/exercises/barbellsquat.jpg"
+	},
+	{
+	   "name":"leg press",
+	   "group":"leg",
+	   "picture": "assets/exercises/legpress.jpg"
+	},
+	{
+	   "name":"leg extensions",
+	   "group":"leg",
+	   "picture": "assets/exercises/legextensions.jpg"
+	},
+	{
+	   "name":"lying leg curls",
+	   "group":"leg",
+	   "picture": "assets/exercises/lyinglegcurls.jpg"
+	},
+	{
+	   "name":"cable two arms extensions",
+	   "group":"triceps",
+	   "picture": "assets/exercises/cabletwoarmsextensions.jpg"
+	},
+	{
+	   "name":"weighted bench dip",
+	   "group":"triceps",
+	   "picture": "assets/exercises/weightedbenchdips.jpg"
+	},
+	{
+	   "name":"reverse grip triceps pushdown",
+	   "group":"triceps",
+	   "picture": "assets/exercises/reversepushdown.jpg"
+	},
+	{
+	   "name":"standing military press",
+	   "group":"shoulders",
+	   "picture": "assets/exercises/militarypress.jpg"
+	},
+	{
+	   "name":"power partials",
+	   "group":"shoulders",
+	   "picture": "assets/exercises/powerpartials.jpg"
+	},
+	{
+	   "name":"front dumbbell raise",
+	   "group":"shoulders",
+	   "picture": "assets/exercises/frontraise.jpg"
+	},
+	{
+	   "name":"deadlift",
+	   "group":"back",
+	   "picture": "assets/exercises/deadlift.jpg"
+	},
+	{
+	   "name":"reverse grip bent-over rows",
+	   "group":"back",
+	   "picture": "assets/exercises/bentoverrows.jpg"
+	},
+	{
+	   "name":"t-bar row",
+	   "group":"back",
+	   "picture": "assets/exercises/tbarrows.jpg"
+	}
+ ];
+ 
  var muscles=[
+	{
+	   "name":"chest",
+	},
+	{
+	   "name":"biceps",
+	},
+	{
+	   "name":"calf",
+	},
+	{
+	   "name":"triceps",
+	},
+	{
+	   "name":"leg",
+	},
+	{
+	   "name":"shoulders",
+	},
+	{
+	   "name":"back",
+	}
+ ];
+ 
+ var muscleConstants=[
 	{
 	   "name":"chest",
 	},
@@ -4370,6 +4502,29 @@ var exercises=[
   ];
  
 var stubAPI = {
+	addMuscle : function(n) {
+	  var len = muscles.length ;
+	  var newL_len = muscles.push({
+		 name: n}) ;
+	  return newL_len > len ;
+	 },
+	updateMuscleName: function(n) {
+		var index = _.findIndex(muscles, function(muscle) {
+			 return muscle.name === n;
+		  } );      
+		if (index !== -1) {
+		   muscles.splice(index, 1, {name: n});
+		   return true ;
+		  }
+	  return false ;
+	},
+	deleteMuscle: function (key) {
+		var elements = _.remove(muscles, 
+		   function(muscle) {
+				 return muscle.name === key;
+		   });
+		return elements;
+	 },
 	updateExerciseUnit: function(n, w, ns, nr) {
 		var index = _.findIndex(exerciseUnits, function(exerciseUnit) {
 			 return exerciseUnit.name === n;
@@ -4380,10 +4535,10 @@ var stubAPI = {
 		  }
 	  return false ;
 	},
-	addExerciseUnit : function(name, muscle_group) {
+	addExerciseUnit : function(n, mg) {
 	  var len = exerciseUnits.length ;
 	  var newL_len = exerciseUnits.push({
-		 muscle_group: muscle_group, name: name, weight:0, number_of_series :0,
+		 muscle_group: mg, name: n, weight:0, number_of_series :0,
 	   number_of_reps:0 }) ;
 	  return newL_len > len ;
 	 },
@@ -4422,6 +4577,12 @@ var stubAPI = {
 	 },
 	 getAllMuscles : function() {
 		return muscles; 
+	 },
+	 getAllExerciseConstants : function() {
+		return exerciseConstants; 
+	 },
+	 getAllMuscleConstants : function() {
+		return muscleConstants; 
 	 },
 	 getAllExerciseUnits : function() {
 		 return exerciseUnits;

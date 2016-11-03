@@ -366,26 +366,26 @@ var UserInfo = React.createClass({
 	render: function() {
 		return (
 		<div>
-		<div className="left-within-main">
-		 <table className="table">
-    <thead>
-      <tr>
-        <th>User name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>dob</td>
-      </tr>
-      <tr>
-        <td>number of sessions</td>
-      </tr>
-    </tbody>
-  </table>
-		</div>
-		<div className="right-within-main">
-		<img className="thumb" src="assets/users/4.jpg" alt="placeholder"/>
-		</div>
+			<div className="left-within-main">
+				 <table className="table">
+					<thead>
+					  <tr>
+						<th>User name</th>
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>dob</td>
+					  </tr>
+					  <tr>
+						<td>number of sessions</td>
+					  </tr>
+					</tbody>
+				</table>
+			</div>
+				<div className="right-within-main">
+				<img className="thumb" src="assets/users/4.jpg" alt="placeholder"/>
+			</div>
 		</div>
 		
 		)
@@ -444,7 +444,7 @@ var FilteredUsersList = React.createClass({
 		}) ;
             return (
 			<div className="main-content-with-search-box">
-                      <ul className="users">
+                      <ul className="listItems">
                           {displayedUsers}
                       </ul>
                     </div>
@@ -498,7 +498,7 @@ var ExerciseUnitToAdd = React.createClass({
 	}, 
 	render: function() {
 		var addHandler = this.handleAddExerciseUnit;
-		console.log(this.state.name);
+		//console.log(this.state.name);
 		return (
 		<tr >
 		  <td>
@@ -518,7 +518,7 @@ var MuscleGroupSessionList = React.createClass({
 		return (
 		<div className="main-content-without-search-box">
 			<div className="main-content">
-			  <ul className="users">
+			  <ul className="listItems">
 				  {displayedSessions}
 				  
 			  </ul>
@@ -536,10 +536,10 @@ var AddExerciseUnitForm = React.createClass({
 	render: function() {
 		var muscleGroup = this.props.exerciseUnitMuscleGroup;
 		var exercisesAdded = _.pluck(this.props.exerciseUnits, 'name');
-		console.log(exercisesAdded);		
-		console.log(muscleGroup);
+		//console.log(exercisesAdded);		
+		//console.log(muscleGroup);
 		var allExercisesAvailable = this.props.exercises;
-		console.log(allExercisesAvailable);
+		//console.log(allExercisesAvailable);
 		var muscleGroupExercisesAvailable = [];
 		if (exercisesAdded.length == 0) {
 			for(var i = 0; i < allExercisesAvailable.length; i++) {
@@ -554,7 +554,7 @@ var AddExerciseUnitForm = React.createClass({
 				}
 			}
 		}
-		console.log(muscleGroupExercisesAvailable);
+		//console.log(muscleGroupExercisesAvailable);
 		var addExerciseUnitButtons = muscleGroupExercisesAvailable.map(function(exerciseUnitToAdd){
                   return (
                    <ExerciseUnitToAdd key={exerciseUnitToAdd.name}  exerciseUnitToAdd={exerciseUnitToAdd} 
@@ -596,25 +596,80 @@ var AddExerciseForm = React.createClass({
 });
 
 var Muscle = React.createClass({
+	getInitialState : function() {
+		 return {
+			 status: '',
+		  name: this.props.muscle.name,
+		  initName: this.props.muscle.name
+		} ;
+	  },
+	handleNameChange: function(e) {
+	   this.setState({name: e.target.value});
+	},
+	handleDelete: function(e) {
+		e.preventDefault();
+		var muscleConstants = _.pluck(this.props.muscleConstants, 'name');
+		var name = this.state.name;
+		//console.log(muscleConstants);
+		//console.log(muscleConstants.indexOf(name));
+		//console.log(name);
+		if (muscleConstants.indexOf(name) == -1) {
+	       this.props.deleteMuscleHandler(this.state.name);
+		};
+	},
+	handleEdit: function(e) {
+		this.setState({ status : 'edit'} )
+	},
+	handleUpdate: function(e) {
+	   e.preventDefault();
+	   var name = this.state.name;
+	   console.log(this.state.initName);
+	   var muscleConstants = _.pluck(this.props.muscleConstants, 'name');
+	   console.log(muscleConstants.indexOf(this.state.initName));
+	   if ((muscleConstants.indexOf(this.state.initName)) === -1) {
+	       this.props.updateMuscleNameHandler(this.state.name);
+	   } else {
+		   this.setState({ name : this.state.initName});
+	   }
+	   this.setState({ status : ''} )
+	},
 	render: function() {
-		var muscle = this.props.muscle;
+		var updateHandler = this.handleUpdate;
+		var editHandler = this.handleEdit;
+		var deleteHandler = this.handleDelete;
+		var itemsToRender;
+		if(this.state.status == '') {
+			itemsToRender = [
+			<table className="table table-borderless">
+				<tbody>
+				  <tr>
+					<td key={'name'} className="col-md-6"><a href={"/sessions/" + this.state.name}>{this.state.name} </a></td>
+					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
+					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
+					<td className="col-md-2"></td>
+				  </tr>
+				</tbody>
+			</table>
+			];
+		} else {
+			itemsToRender = [
+			<table className="table table-borderless">
+				<tbody className="center">
+				  <tr>
+					<td key={'name'} className="col-md-4"><input type="text" className="form-control"  value={this.state.name} onChange={this.handleNameChange}/></td>
+					<td className="col-md-2"></td>
+					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
+					<td className="col-md-2"></td>
+				  </tr>
+				</tbody>
+			</table>
+			];
+		};
 		return (
-		
-		<li>
-		<div className="left-within-main">
-<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      <td className="col-md-6"><a  href={"/sessions/" + muscle.name}>{muscle.name} </a></td>
-    <td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit"/></td>
-    <td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete"/></td>
-    <td className="col-md-2"></td>
-      </tr>
-    </tbody>
-  </table>
-			 </div>
-		</li>
-		)
+			 <li className="left-within-main">
+				{itemsToRender}
+			 </li>
+		);
 	}
 });
 
@@ -622,15 +677,17 @@ var Muscle = React.createClass({
 var MuscleList = React.createClass({
 	render: function() {
 		var displayedMuscles = this.props.muscles.map((muscle) =>{
-			return <Muscle key={muscle.name} muscle={muscle} />;
+			return <Muscle key={muscle.name} muscle={muscle} muscleConstants={this.props.muscleConstants} 
+			updateMuscleNameHandler={this.props.updateMuscleNameHandler} deleteMuscleHandler={this.props.deleteMuscleHandler}/>;
 		}) ;
-            return (
-                    <div className="main-content">
-                      <ul className="users">
-                          {displayedMuscles}
-                      </ul>
-                    </div>
-              ) ;
+		return (
+			<div className="main-content-without-search-box">
+			  <ul className="listItems">
+				  {displayedMuscles}
+			  </ul>
+			  <AddMuscleForm addMuscleHandler={this.props.addMuscleHandler} muscleConstants={this.props.muscleConstants}/>
+			</div>
+		  ) ;
 	}
 });
 
@@ -665,7 +722,7 @@ var ExerciseList = React.createClass({
 		}) ;
             return (
                     <div className="main-content">
-                      <ul className="users">
+                      <ul className="listItems">
                           {Exercises}
                       </ul>
                     </div>
@@ -728,7 +785,7 @@ var ExerciseUnit = React.createClass({
 			];
 		} else {
 			itemsToRender = [
-			<tbody>
+			<tbody className="center">
 			  <tr>
 				<td  key={'weight'} className="col-md-2">kg</td>
 				<td key={'number_of_series'}className="col-md-2">no of series</td>
@@ -766,7 +823,7 @@ var ExerciseUnitList = React.createClass({
             return (
 			<div className="main-content-without-search-box">
                     <div className="main-content">
-                      <ul className="users">
+                      <ul className="listItems">
                           {displayedExercises}
                       </ul>
                     </div>
@@ -781,7 +838,7 @@ var TrainingSession = React.createClass({
 	render: function() {
 		var trainingSessionItem = this.props.trainingSessionItem;
 		return (
-		<li className="users">
+		<li className="listItems">
 			<a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
 		</li>
 		)
@@ -796,7 +853,7 @@ var TrainingSessionsList = React.createClass({
 		}) ;
             return (
 				<div className="main-content-without-search-box">
-				  <ul className="users">
+				  <ul className="listItems">
 					  {displayedTsessions}
 				  </ul>
 				</div>
@@ -858,26 +915,47 @@ var AddMuscleGroupSessionForm = React.createClass({
 });
 
 var AddMuscleForm = React.createClass({
+	getInitialState: function() {
+        return { 
+			name: ''
+		};
+    },
+	handleNameChange: function(e) {
+	   this.setState({name: e.target.value});
+    },
+	handleSubmit: function(e) {
+		var muscleConstants = _.pluck(this.props.muscleConstants, 'name');
+		e.preventDefault();
+		var name = this.state.name;
+		if (!name || muscleConstants.indexOf(name) != -1) {
+			this.setState({name: ''});
+            return;
+        }
+        this.props.addMuscleHandler(name);
+        this.setState({name: ''});
+	},
 	render: function() {
-            return (
-			
-				<div className="left-within-main">
+		return (
+		
+			<div className="left-within-main">
 				<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      
-    <td className="col-md-4"><input type="text" className="form-control" 
-				 placeholder="Add new muscle"/></td>
-    <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle"
-				   onClick={this.fillInLater} /> </td>
-				   <td className="col-md-1"></td>
-    <td className="col-md-4"> </td>
-      </tr>
-    </tbody>
-  </table>
-				
-				</div>
-				) ;
+				<tbody>
+				  <tr>
+					  
+				<td className="col-md-4"><input type="text" className="form-control"
+                     placeholder="Add new muscle"
+                     value={this.state.name}
+                     onChange={this.handleNameChange} /></td>
+				<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle"
+							   onClick={this.handleSubmit} /> </td>
+							   <td className="col-md-1"></td>
+				<td className="col-md-4"> </td>
+				  </tr>
+				</tbody>
+			  </table>
+			
+			</div>
+		) ;
 	}
 });
 
@@ -892,8 +970,8 @@ var MainContent = React.createClass({
 		
 		
 			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
-		{/*<MuscleList muscles={this.props.muscles}/>*/}
-		{/*<AddMuscleForm/>*/}
+		{/**/}
+		{/**/}
 		{/*<ExerciseList exercises={this.props.exercises}/>*/}
 		{/*<ExerciseInfo/>*/}
 		<div className="calendar">
@@ -915,6 +993,18 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  addNewMuscle: function(key) {
+		api.addMuscle(key);
+		this.setState({});
+	  },
+	  deleteMuscle: function(key) {
+		  api.deleteMuscle(key);
+		  this.setState( {} ) ;
+	  },
+	  updateMuscleName: function(name) {
+		 api.updateMuscleName(name);
+		 this.setState( {} ) ;
+	  },
 	  updateExerciseUnit: function(name, weight, number_of_series, number_of_reps) {
 		  api.updateExerciseUnit(name, weight, number_of_series, number_of_reps); 
 		this.setState( {} ) ;
@@ -993,6 +1083,8 @@ var GymProgressLogger = React.createClass({
 	  },
   render: function(){
 	   var users = api.getAllUsers();
+	   var muscleConstants = api.getAllMuscleConstants();
+	   var exerciseConstants = api.getAllExerciseConstants();
 	   var testUser = users[0];
 	   var userList = users.filter(function(p) {
 		   var name = p.first_name + ' ' + p.surname;
@@ -1020,15 +1112,18 @@ var GymProgressLogger = React.createClass({
 		{/*<SelectableDay users={users}/>*/}
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
-			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
+			{/*<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
 			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup} 
-			updateExerciseUnitHandler={this.updateExerciseUnit}/>
+			updateExerciseUnitHandler={this.updateExerciseUnit}/>*/}
 			
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
 		{/*<Chart data={this.state.data}/>*/}
 			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
 				{/*<TrainingSessionsList users={users} />*/}
+		<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
+		deleteMuscleHandler={this.deleteMuscle} addMuscleHandler={this.addNewMuscle}/>
+		
 		  <Footer />
 		  </div>
 	  );
