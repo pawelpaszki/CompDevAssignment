@@ -488,17 +488,22 @@ var ExerciseUnitToAdd = React.createClass({
 	getInitialState : function() {
 		 return {
 		  status : '',
-		  name: this.props.exerciseUnitToAdd.name,
+		  muscle_group: this.props.muscleGroup,
+		  name: this.props.exerciseUnitToAdd.name
 		 } ;
-	  },
-	  
+	},
+    handleAddExerciseUnit: function(e) {
+		  e.preventDefault();
+		  this.props.addExerciseUnitHandler(this.state.name, this.state.muscle_group);
+	}, 
 	render: function() {
+		var addHandler = this.handleAddExerciseUnit;
 		console.log(this.state.name);
 		return (
 		<tr >
 		  <td>
 			 <input type="button" className='btn btn-primary'
-				   value={this.state.name}  />
+				   value={this.state.name} onClick={addHandler} />
 		  </td>
 		</tr>
 		);
@@ -553,13 +558,13 @@ var AddExerciseUnitForm = React.createClass({
 		var addExerciseUnitButtons = muscleGroupExercisesAvailable.map(function(exerciseUnitToAdd){
                   return (
                    <ExerciseUnitToAdd key={exerciseUnitToAdd.name}  exerciseUnitToAdd={exerciseUnitToAdd} 
-                      />
+                     addExerciseUnitHandler= {this.props.addExerciseUnitHandler} muscleGroup={this.muscleGroup}/>
                     ) ;
                 }.bind(this) );
               return (
-                  <tbody >
+                  <div className="left-within-main" >
                       {addExerciseUnitButtons}
-                  </tbody>
+                  </div>
                 ) ;
 	}
 });
@@ -715,7 +720,8 @@ var ExerciseUnitList = React.createClass({
                           {displayedExercises}
                       </ul>
                     </div>
-					<AddExerciseUnitForm exerciseUnitMuscleGroup={this.props.exerciseUnitMuscleGroup} exerciseUnits={this.props.exerciseUnits} exercises={this.props.exercises}/>
+					<AddExerciseUnitForm exerciseUnitMuscleGroup={this.props.exerciseUnitMuscleGroup} exerciseUnits={this.props.exerciseUnits} exercises={this.props.exercises}
+					addExerciseUnitHandler= {this.props.addExerciseUnitHandler}/>
 					</div>
               ) ;
 	}
@@ -859,6 +865,10 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  addExerciseUnit: function(name, muscle_group) {
+		  api.addExerciseUnit(name, muscle_group) ;
+             this.setState({});
+	  },
 	  deleteExerciseUnit: function(key) {
 		  api.deleteExerciseUnit(key);
 		  this.setState( {} ) ;
@@ -956,7 +966,8 @@ var GymProgressLogger = React.createClass({
 		{/*<SelectableDay users={users}/>*/}
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
-			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup}/>
+			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
+			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup}/>
 			
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>

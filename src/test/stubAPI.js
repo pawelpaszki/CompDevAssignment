@@ -4370,6 +4370,13 @@ var exercises=[
   ];
  
 var stubAPI = {
+	addExerciseUnit : function(name, muscle_group) {
+	  var len = exerciseUnits.length ;
+	  var newL_len = exerciseUnits.push({
+		 muscle_group: muscle_group, name: name, weight:0, number_of_series :0,
+	   number_of_reps:0 }) ;
+	  return newL_len > len ;
+	 },
 	 deleteExerciseUnit: function (key) {
 		var elements = _.remove(exerciseUnits, 
 		   function(exerciseUnit) {
