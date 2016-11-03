@@ -4502,6 +4502,29 @@ var exercises=[
   ];
  
 var stubAPI = {
+	addExercise : function(n, g) {
+	  var len = exercises.length ;
+	  var newL_len = exercises.push({
+		 name: n, group: g}) ;
+	  return newL_len > len ;
+	 },
+	updateExercise: function(n, g) {
+		var index = _.findIndex(exercises, function(exercise) {
+			 return exercise.name === n;
+		  } );      
+		if (index !== -1) {
+		   exercises.splice(index, 1, {name: n, group: g});
+		   return true ;
+		  }
+	  return false ;
+	},
+	deleteExercise: function (key) {
+		var elements = _.remove(exercises, 
+		   function(exercise) {
+				 return exercise.name === key;
+		   });
+		return elements;
+	 },
 	addMuscle : function(n) {
 	  var len = muscles.length ;
 	  var newL_len = muscles.push({

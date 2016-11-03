@@ -570,28 +570,63 @@ var AddExerciseUnitForm = React.createClass({
 });
 
 var AddExerciseForm = React.createClass({
+    getInitialState: function() {
+        return { 
+			name: '',
+			group: ''
+		};
+    },
+	handleNameChange: function(e) {
+	   this.setState({name: e.target.value});
+    },
+	handleGroupChange: function(e) {
+	   this.setState({group: e.target.value});
+    },
+	handleSubmit: function(e) {
+		e.preventDefault();
+		console.log(this.props.muscles);
+		var muscles = _.pluck(this.props.muscles, 'name');
+		var exercises = _.pluck(this.props.exercises, 'name');
+		var name = this.state.name;
+		var group = this.state.group;
+		console.log(muscles);
+		console.log(exercises);
+		console.log(name);
+		console.log(group);
+		if (!name || !group || muscles.indexOf(group) == -1 || exercises.indexOf(name) != -1) {
+			this.setState({name: ''});
+			this.setState({group: ''});
+            return;
+        }
+        this.props.addExerciseHandler(name, group);
+        this.setState({name: '', group: ''});
+	},
 	render: function() {
-            return (
-			
-				<div className="left-within-main">
-										<table className="table table-borderless">
-    <tbody>
-      <tr>
-	      
-    <td className="col-md-4"><input type="text" className="form-control" 
-				 placeholder="Exercise name"
-		  /></td>
-    <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add new exercise"
-				   onClick={this.fillInLater} /> </td>
-				   <td className="col-md-1"></td>
-    <td className="col-md-4"> </td>
-      </tr>
-    </tbody>
-  </table>
-				</div>
+		return (
+		
+			<div className="left-within-main">
+				<table className="table table-borderless">
+				<tbody>
+				  <tr>
+					  
+				<td className="col-md-4"><input type="text" className="form-control"
+                     placeholder="Exercise name"
+                     value={this.state.name}
+                     onChange={this.handleNameChange} /></td>
+				<td className="col-md-4"> <input type="text" className="form-control"
+                     placeholder="Exercise group"
+                     value={this.state.group}
+                     onChange={this.handleGroupChange} /></td>
+				<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle"
+							   onClick={this.handleSubmit} /> </td>
+							   <td className="col-md-1"></td>
 				
-
-		  ) ;
+				  </tr>
+				</tbody>
+			  </table>
+			
+			</div>
+		) ;
 	}
 });
 
@@ -685,7 +720,7 @@ var MuscleList = React.createClass({
 			  <ul className="listItems">
 				  {displayedMuscles}
 			  </ul>
-			  <AddMuscleForm addMuscleHandler={this.props.addMuscleHandler} muscleConstants={this.props.muscleConstants}/>
+			  <AddMuscleForm addMuscleHandler={this.props.addMuscleHandler} muscles={this.props.muscles}/>
 			</div>
 		  ) ;
 	}
@@ -721,12 +756,16 @@ var ExerciseList = React.createClass({
 			return <Exercise key={exercise.name} exercise={exercise} />;
 		}) ;
             return (
-                    <div className="main-content">
-                      <ul className="listItems">
-                          {Exercises}
-                      </ul>
-                    </div>
-              ) ;
+			<div className="main-content-without-search-box">
+				<div className="main-content">
+				  <ul className="listItems">
+					  {Exercises}
+				  </ul>
+				  <AddExerciseForm exercises={this.props.exercises} muscles={this.props.muscles} 
+				  addExerciseHandler={this.props.addExerciseHandler}/>
+				</div>
+			</div>
+            );
 	}
 });
 
@@ -924,10 +963,10 @@ var AddMuscleForm = React.createClass({
 	   this.setState({name: e.target.value});
     },
 	handleSubmit: function(e) {
-		var muscleConstants = _.pluck(this.props.muscleConstants, 'name');
+		var muscles = _.pluck(this.props.muscles, 'name');
 		e.preventDefault();
 		var name = this.state.name;
-		if (!name || muscleConstants.indexOf(name) != -1) {
+		if (!name || muscles.indexOf(name) != -1) {
 			this.setState({name: ''});
             return;
         }
@@ -972,13 +1011,13 @@ var MainContent = React.createClass({
 			{/*<ExerciseUnitList exerciseUnits={this.props.exerciseUnits}/>*/}
 		{/**/}
 		{/**/}
-		{/*<ExerciseList exercises={this.props.exercises}/>*/}
+		{/**/}
 		{/*<ExerciseInfo/>*/}
 		<div className="calendar">
 		
 		{/*<AddMuscleGroupSessionForm/>*/}
 		{/**/}
-		{/*<AddExerciseForm/>*/}
+		{/**/}
 		</div>
 		</div>
 		)
@@ -993,6 +1032,18 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  addNewExercise: function(name, group) {
+		api.addExercise(name, group);
+		this.setState({});
+	  },
+	  deleteExercise: function(key) {
+		  api.deleteExercise(key);
+		  this.setState( {} ) ;
+	  },
+	  updateExercise: function(name, group) {
+		 api.updateExercise(name, group);
+		 this.setState( {} ) ;
+	  },
 	  addNewMuscle: function(key) {
 		api.addMuscle(key);
 		this.setState({});
@@ -1096,7 +1147,7 @@ var GymProgressLogger = React.createClass({
 	  var exercises = api.getAllExercises();
 	  var muscles = api.getAllMuscles();
 	  var exerciseUnits = api.getAllExerciseUnits();
-	  var exerciseUnitMuscleGroup = "back"; {/*parameterise later!!!!!!!*/}
+	  var exerciseUnitMuscleGroup = "back"; ///parameterise later!!!!!!
 	  var muscleSessions = api.getAllMuscleSessions();
 	  return (
 	  <div>
@@ -1121,9 +1172,10 @@ var GymProgressLogger = React.createClass({
 		{/*<Chart data={this.state.data}/>*/}
 			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
 				{/*<TrainingSessionsList users={users} />*/}
-		<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
-		deleteMuscleHandler={this.deleteMuscle} addMuscleHandler={this.addNewMuscle}/>
-		
+		{/*<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
+		deleteMuscleHandler={this.deleteMuscle} addMuscleHandler={this.addNewMuscle}/>*/}
+		<ExerciseList exercises={exercises} exerciseConstants={exerciseConstants} updateExerciseHandler={this.updateExercise} 
+		deleteExerciseHandler={this.deleteExercise} addExerciseHandler={this.addNewExercise} muscles={muscles}/>
 		  <Footer />
 		  </div>
 	  );
