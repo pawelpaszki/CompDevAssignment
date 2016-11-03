@@ -4370,6 +4370,16 @@ var exercises=[
   ];
  
 var stubAPI = {
+	updateExerciseUnit: function(n, w, ns, nr) {
+		var index = _.findIndex(exerciseUnits, function(exerciseUnit) {
+			 return exerciseUnit.name === n;
+		  } );      
+		if (index !== -1) {
+		   exerciseUnits.splice(index, 1, {name: n, weight: w, number_of_series : ns, number_of_reps: nr});
+		   return true ;
+		  }
+	  return false ;
+	},
 	addExerciseUnit : function(name, muscle_group) {
 	  var len = exerciseUnits.length ;
 	  var newL_len = exerciseUnits.push({

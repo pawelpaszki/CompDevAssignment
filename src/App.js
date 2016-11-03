@@ -676,33 +676,82 @@ var ExerciseList = React.createClass({
 var ExerciseUnit = React.createClass({
 	getInitialState : function() {
 		 return {
-		  name: this.props.exerciseUnit.name
+			 status: '',
+		  name: this.props.exerciseUnit.name,
+		  weight: this.props.exerciseUnit.weight,
+		  number_of_series: this.props.exerciseUnit.number_of_series,
+		  number_of_reps: this.props.exerciseUnit.number_of_reps
 		 } ;
 	  },
 	handleDeleteExerciseUnit: function(e) {
 	  e.preventDefault();
 	  this.props.deleteExerciseUnitHandler(this.state.name);
 	}, 
+	handleWeightChange: function(e) {
+	  this.setState({weight: e.target.value});
+	},
+	handleNoOfSeriesChange: function(e) {
+	  this.setState({number_of_series: e.target.value});
+	},
+	handleNoOfRepsChange: function(e) {
+	  this.setState({number_of_reps: e.target.value});
+	},
+	handleUpdate: function(e) {
+	  e.preventDefault();
+	  console.log(this.state.weight);
+	  var weight = this.state.weight;
+	  var number_of_series = this.state.number_of_series;
+	  var number_of_reps = this.state.number_of_reps;
+	  this.props.updateExerciseUnitHandler(this.state.name, weight, number_of_series, number_of_reps);
+	  this.setState({ status : ''} )
+	},
+	handleEdit: function(e) {
+		this.setState({ status : 'edit'} )
+	},
 	render: function() {
 		var deleteHandler = this.handleDeleteExerciseUnit;
+		var editHandler = this.handleEdit;
+		var updateHandler = this.handleUpdate;
 		var exerciseUnit = this.props.exerciseUnit;
+		var itemsToRender;
+		if(this.state.status == '') {
+			itemsToRender = [
+			<tbody>
+			  <tr>
+				<td className="col-md-6"><a  href={"/sessions/" + exerciseUnit.name}>{exerciseUnit.name} </a></td>
+				<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="edit" onClick={editHandler}/></td>
+				<td className="col-md-2">
+					<input type="button"  className="btn btn-danger btn-block" value="delete" onClick={deleteHandler}/></td>
+				<td className="col-md-2"></td>
+			  </tr>
+			  </tbody>
+			];
+		} else {
+			itemsToRender = [
+			<tbody>
+			  <tr>
+				<td  key={'weight'} className="col-md-2">kg</td>
+				<td key={'number_of_series'}className="col-md-2">no of series</td>
+				<td key={'number_of_reps'} className="col-md-2">no of reps</td>
+			  </tr>
+			  <tr>
+				<td key={'weight'} className="col-md-2"><input type="text" className="form-control"  value={this.state.weight} onChange={this.handleWeightChange}/></td>
+				<td key={'number_of_series'} className="col-md-2"><input type="text" className="form-control"  value={this.state.number_of_series} onChange={this.handleNoOfSeriesChange}/></td>
+				<td key={'number_of_reps'} className="col-md-2"><input type="text" className="form-control"  value={this.state.number_of_reps} onChange={this.handleNoOfRepsChange}/></td>
+				
+				<td className="col-md-5"><input type="button"  className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
+			  </tr>
+			</tbody>
+			];
+		};
 		return (
-		
-		<li>
-			<div className="left-within-main">
-				<table className="table table-borderless">
-					<tbody>
-					  <tr>
-						<td className="col-md-6"><a  href={"/sessions/" + exerciseUnit.name}>{exerciseUnit.name} </a></td>
-						<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="edit"/></td>
-						<td className="col-md-2">
-							<input type="button"  className="btn btn-danger btn-block" value="delete" onClick={deleteHandler}/></td>
-						<td className="col-md-2"></td>
-					  </tr>
-					</tbody>
-				</table>
-			</div>
-		</li>
+			 <li className="left-within-main">
+				 <table className="table table-borderless">
+					
+						{itemsToRender}
+					
+				 </table>
+			 </li>
 		)
 	}
 });
@@ -711,7 +760,8 @@ var ExerciseUnit = React.createClass({
 var ExerciseUnitList = React.createClass({
 	render: function() {
 		var displayedExercises = this.props.exerciseUnits.map((exercise) =>{
-			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} deleteExerciseUnitHandler={this.props.deleteExerciseUnitHandler}/>;
+			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} deleteExerciseUnitHandler={this.props.deleteExerciseUnitHandler}
+			updateExerciseUnitHandler={this.props.updateExerciseUnitHandler}/>;
 		}) ;
             return (
 			<div className="main-content-without-search-box">
@@ -865,6 +915,10 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  updateExerciseUnit: function(name, weight, number_of_series, number_of_reps) {
+		  api.updateExerciseUnit(name, weight, number_of_series, number_of_reps); 
+		this.setState( {} ) ;
+	  },
 	  addExerciseUnit: function(name, muscle_group) {
 		  api.addExerciseUnit(name, muscle_group) ;
              this.setState({});
@@ -967,7 +1021,8 @@ var GymProgressLogger = React.createClass({
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
 			<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
-			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup}/>
+			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup} 
+			updateExerciseUnitHandler={this.updateExerciseUnit}/>
 			
         <MainContent users={filteredList}  exerciseUnits={exerciseUnits} 
 		muscles={muscles} exercises={exercises}/>
