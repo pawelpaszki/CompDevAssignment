@@ -4079,7 +4079,7 @@ var users =[
                         }
                      ]
                   },
-                  {
+				  {
                      "muscle_group_session_id":144,
                      "name":"triceps",
                      "exercises":[
@@ -4136,6 +4136,158 @@ var users =[
 	}
 ]; 
 
+var training_sessions=[
+      {
+         "user_id":1,
+         "main_session_id":0,
+         "date":"04/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":1,
+         "date":"06/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":2,
+         "date":"08/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":3,
+         "date":"11/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":4,
+         "date":"13/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":5,
+         "date":"15/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":6,
+         "date":"18/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":7,
+         "date":"20/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":8,
+         "date":"22/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":9,
+         "date":"25/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":10,
+         "date":"27/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":11,
+         "date":"29/07/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":12,
+         "date":"01/08/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":13,
+         "date":"03/08/2016"
+      },
+      {
+         "user_id":1,
+         "main_session_id":14,
+         "date":"05/08/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":15,
+         "date":"04/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":16,
+         "date":"06/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":17,
+         "date":"08/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":18,
+         "date":"11/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":19,
+         "date":"13/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":20,
+         "date":"15/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":21,
+         "date":"18/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":22,
+         "date":"20/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":23,
+         "date":"22/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":24,
+         "date":"25/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":25,
+         "date":"27/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":26,
+         "date":"29/07/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":27,
+         "date":"01/08/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":28,
+         "date":"03/08/2016"
+      },
+      {
+         "user_id":2,
+         "main_session_id":29,
+         "date":"05/08/2016"
+      }
+   ];
 var exercises=[
 	{
 	   "name":"barbell flat bench press",
@@ -4502,6 +4654,13 @@ var exercises=[
   ];
  
 var stubAPI = {
+	deleteTrainingSession: function (key) {
+		var elements = _.remove(training_sessions, 
+		   function(training_session) {
+				 return training_session.main_session_id === key;
+		   });
+		return elements;
+	 },
 	addExercise : function(n, g) {
 	  var len = exercises.length ;
 	  var newL_len = exercises.push({
@@ -4594,6 +4753,9 @@ var stubAPI = {
 	 },
 	 getAllUsers : function() {
 		 return users ;
+	 },
+	 getAllTrainingSessions: function() {
+		 return training_sessions;
 	 },
 	 getAllExercises : function() {
 		return exercises; 

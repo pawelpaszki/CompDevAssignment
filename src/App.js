@@ -12,85 +12,11 @@ import UserInfo from './UserInfo';
 import SelectableDay from './SelectableDay';
 import Chart from './Chart';
 import ExerciseNamePick from './ExerciseNamePick';
+import EditProfileForm from './EditProfileForm';
+import TrainingSessionsList from './TrainingSessionsList';
 
 
 
-var EditProfileForm = React.createClass({
-	 getInitialState : function() {
-	   return {
-		status : '',
-		first_name: this.props.user.first_name,
-		surname: this.props.user.surname,
-		dob: this.props.user.dob,
-		training_from: this.props.user.training_from
-	   } ;
-	},
-	handleFirstNameChange: function(e) {
-        this.setState({first_name: e.target.value});
-    },
-	handleSurnameChange: function(e) {
-        this.setState({surname: e.target.value});
-    },
-	handleDOBChange: function(e) {
-        this.setState({dob: e.target.value});
-    },
-	handleTrainingFromChange: function(e) {
-        this.setState({training_from: e.target.value});
-    },
-	handleUpdateProfile: function(e) {
-		e.preventDefault();
-		
-		var first_name = this.state.first_name.trim();
-		var surname = this.state.surname.trim();
-		var dob = this.state.dob.trim();
-		var training_from = this.state.training_from.trim();
-		
-		var key = this.props.user.id;
-		if (isValidDate(dob) && isValidDate(training_from)) {
-			this.props.profileUpdateHandler(key, first_name, surname, dob, training_from);
-		} else {
-			this.setState({dob: 'dd/mm/yyyy date required'})
-			this.setState({training_from: 'dd/mm/yyyy date required'})
-		}
-	},
-	render() {
-		return (
-		<div className="main-content-without-search-box">
-			<div className="centered">
-			<table>
-			<tbody>
-			<td key={'first_name'}><input type="text" className="form-control" 
-                     placeholder="First name" value={this.state.first_name} onChange={this.handleFirstNameChange}/> </td>
-					 </tbody>
-			</table>  
-					 <table>
-			<tbody>
-                      <td key={'surname'}><input type="text" className="form-control" 
-                     placeholder="Surname" value={this.state.surname}
-                     onChange={this.handleSurnameChange} /> </td>
-					 </tbody>
-			</table>  
-					 <table>
-			<tbody>
-                      <td key={'dob'}><input type="text" className="form-control" 
-                     placeholder="DOB" value={this.state.dob} onChange={this.handleDOBChange}/> </td>
-					 </tbody>
-			</table>  
-					 <table>
-			<tbody>
-                      <td key={'training_from'}><input type="text" className="form-control" 
-                     placeholder="Training from" value={this.state.training_from} onChange={this.handleTrainingFromChange}/> </td>
-					 </tbody>
-			</table>  
-					 <table>
-						 <input type="fluid button" className="btn btn-primary btn-block" value="Submit"
-	onClick={this.handleUpdateProfile} />
-			</table>  
-		 </div>
-		 </div>
-		)
-	}
-});
 
 	function isValidDate(dateString)
 	{
@@ -665,32 +591,9 @@ var ExerciseUnitList = React.createClass({
 	}
 });
 
-var TrainingSession = React.createClass({
-	render: function() {
-		var trainingSessionItem = this.props.trainingSessionItem;
-		return (
-		<li className="listItems">
-			<a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a>
-		</li>
-		)
-	}
-});
 
-var TrainingSessionsList = React.createClass({
-	render: function() {
-		var user = this.props.users[0];
-		var displayedTsessions = user.training_sessions.map((tsession) =>{
-			return <TrainingSession key={tsession.id} trainingSessionItem={tsession} />;
-		}) ;
-            return (
-				<div className="main-content-without-search-box">
-				  <ul className="listItems">
-					  {displayedTsessions}
-				  </ul>
-				</div>
-		  ) ;	
-	}
-});
+
+
 
 var AddMuscleGroupSessionForm = React.createClass({
 	getInitialState : function() {
@@ -798,6 +701,10 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  deleteTrainingSession: function(key) {
+		  api.deleteTrainingSession(key);
+		  this.setState({});
+	  },
 	  addNewExercise: function(name, group) {
 		api.addExercise(name, group);
 		this.setState({});
@@ -915,6 +822,7 @@ var GymProgressLogger = React.createClass({
 	  var exerciseUnits = api.getAllExerciseUnits();
 	  var exerciseUnitMuscleGroup = "back"; ///parameterise later!!!!!!
 	  var muscleSessions = api.getAllMuscleSessions();
+	  var trainingSessions = api.getAllTrainingSessions();
 	  return (
 	  <div>
 	  
@@ -931,15 +839,15 @@ var GymProgressLogger = React.createClass({
 		
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
-			<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>
+			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
 			{/*<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
 			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup} 
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>*/}
 
-		<Chart data={this.state.data}/>
+		{/*<Chart data={this.state.data}/>*/}
 			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
-				{/*<TrainingSessionsList users={users} />*/}
+				<TrainingSessionsList trainingSessions={trainingSessions} deleteTrainingSessionHandler={this.deleteTrainingSession}/>
 		{/*<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
 		deleteMuscleHandler={this.deleteMuscle} addMuscleHandler={this.addNewMuscle}/>*/}
 		{/*<ExerciseList exercises={exercises} exerciseConstants={exerciseConstants} updateExerciseHandler={this.updateExercise} 
