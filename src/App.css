@@ -81,6 +81,13 @@
   overflow: hidden;
 }
 
+.right-aligned-form {
+  position: absolute;
+  left: 45%;
+  top: 16%;
+  overflow: hidden;
+}
+
 .exercisePicker {
   position: absolute;
   z-index: 100;

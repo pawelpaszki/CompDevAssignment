@@ -1,158 +1,19 @@
 import React from 'react';
 import Navbar from './Navbar';
 import Footer from './Footer';
-import DayPicker, { DateUtils } from 'react-day-picker';
-import 'react-day-picker/lib/style.css';
-import BarChart from 'react-bar-chart';
+
 import './App.css';
 //const low = require('lowdb');
 import api from './test/stubAPI';
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
-
-// Imagine you have a list of exercises that you'd like to autosuggest.
-
-const exercises = api.getAllExercises();
-
-// Teach Autosuggest how to calculate suggestions for any given input value.
-const getExerciseSuggestions = value => {
-  const inputValue = value.trim().toLowerCase();
-  const inputLength = inputValue.length;
-
-  return inputLength === 0 ? [] : exercises.filter(exercise =>
-    exercise.name.toLowerCase().slice(0, inputLength) === inputValue
-  );
-};
+import FilteredUsersList from './FilteredUsersList';
+import UserInfo from './UserInfo';
+import SelectableDay from './SelectableDay';
+import Chart from './Chart';
+import ExerciseNamePick from './ExerciseNamePick';
 
 
-// When suggestion is clicked, Autosuggest needs to populate the input element
-// based on the clicked suggestion. Teach Autosuggest how to calculate the
-// input value for every given suggestion.
-const getSuggestionValue = suggestion => suggestion.name;
-
-// Use your imagination to render suggestions.
-const renderSuggestion = suggestion => (
-  <div>
-    {suggestion.name}
-  </div>
-);
-
-class ExerciseNamePick extends React.Component {
-  constructor() {
-    super();
-
-    // Autosuggest is a controlled component.
-    // This means that you need to provide an input value
-    // and an onChange handler that updates this value (see below).
-    // Suggestions also need to be provided to the Autosuggest,
-    // and they are initially empty because the Autosuggest is closed.
-    this.state = {
-      value: '',
-      suggestions: []
-    };
-  }
-
-  onChange = (event, { newValue }) => {
-    this.setState({
-      value: newValue
-    });
-  };
-
-  // Autosuggest will call this function every time you need to update suggestions.
-  // You already implemented this logic above, so just use it.
-  onSuggestionsFetchRequested = ({ value }) => {
-    this.setState({
-      suggestions: getExerciseSuggestions(value)
-    });
-  };
-
-  // Autosuggest will call this function every time you need to clear suggestions.
-  onSuggestionsClearRequested = () => {
-    this.setState({
-      suggestions: []
-    });
-  };
-
-  
-  render() {
-    const { value, suggestions } = this.state;
-
-    // Autosuggest will pass through all these props to the input element.
-    const inputProps = {
-      placeholder: 'Type an exercise name',
-      value,
-      onChange: this.onChange
-    };
-
-    // Finally, render it!
-    return (
-	<div>
-	  <div className="exercisePicker">
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps} 
-      />
-	  
-	  </div>
-	  <ChartDataPicker exercise={this.state.value} generateChartHandler={this.props.generateChartHandler}/>
-	  </div>
-    );
-  }
-};
-
-
-export default class SelectableDay extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleDayClick = this.handleDayClick.bind(this);
-  }
-  
-  state = {
-    selectedDay: null,
-  };
-  handleDayClick(e, day, { selected }) {
-	 var user = this.props.users[0];
-     var trainingSessions = user.training_sessions;
-	 var trainingDays = _.pluck(trainingSessions, 'date');
-	 	console.log(trainingDays);
-	  var month = day.getMonth() + 1;
-	  var year = day.getYear() + 1900;
-	  var dayOfMonth = day.getDate();
-	  var dateClicked = dayOfMonth + '/' + month + '/' + year;
-	  console.log(dateClicked);
-	  var sessionFound = false;
-	  if(trainingDays.indexOf(dateClicked) !== -1) {
-		  sessionFound = true;
-		  console.log(sessionFound);
-	  }
-      if (!sessionFound) {
-        return;
-      } else {
-		  
-	  }
-      this.setState({
-        selectedDay: dateClicked
-      });
-  }
-  render() {
-    const { selectedDay } = this.state;
-    return (
-      <div className="centered"><div>
-        <DayPicker
-          selectedDays={ day => DateUtils.isSameDay(selectedDay, day) }
-          onDayClick={ this.handleDayClick }
-        />
-		</div>
-      </div>
-    );
-  }
-};
- 
-var margin = {top: 20, right: 20, bottom: 30, left: 40};
 
 var EditProfileForm = React.createClass({
 	 getInitialState : function() {
@@ -231,27 +92,6 @@ var EditProfileForm = React.createClass({
 	}
 });
 
-var Chart = React.createClass({
-  render() {
-    return (
-	
-        <div className="main-content-with-search-box">
-		<div style={{width: '50%'}}>
-		 
-                <BarChart ylabel='kg'
-                  width={600} //this.state.width
-                  height={400}
-                  margin={margin}
-                  data={this.props.data}/>
-			</div>
-            
-        </div>
- 
-    );
-  }
-});
-
-
 	function isValidDate(dateString)
 	{
 		// First check for the pattern
@@ -277,64 +117,9 @@ var Chart = React.createClass({
 		// Check the range of the day
 		return day > 0 && day <= monthLength[month - 1];
 	};
-var ChartDataPicker = React.createClass( {
-	getInitialState : function() {
-	   return {
-		status : '',
-		date_from: '',
-		date_to: ''
-	   } ;
-	},
-	handleDateFromChange: function(e) {
-        this.setState({date_from: e.target.value});
-    },
-    handleDateToChange: function(e) {
-	    this.setState({date_to: e.target.value});
-    },
-    handleGenereteChart: function(e) {
-		
 
-		
-		if(!isValidDate(this.state.date_from)) {
-			this.setState({date_from: "type valid date"});
-		} 
-		if(!isValidDate(this.state.date_to)) {
-			this.setState({date_to: "type valid date"});
-		}
-		if (isValidDate(this.state.date_from) && isValidDate(this.state.date_to)) {
-			var date_from = this.state.date_from;
-			var date_to = this.state.date_to;
-			var exercise = this.props.exercise;
-			this.props.generateChartHandler(exercise, date_from, date_to);
-			this.setState({date_from: ""});
-			this.setState({date_to: ""});
-		}
-		
-    },
-	
-	render: function(){
-		return (
-		<div className="search-box">
-		  <td>
-		  <input type="text" className="form-control"
-				 placeholder="Date from: dd/mm/yyyy" value={this.state.date_from}
-                     onChange={this.handleDateFromChange}
-		  />
-		  </td>
-		  <td>
-		  <input type="text" className="form-control" 
-				 placeholder="Date to: dd/mm/yyyy" value={this.state.date_to}
-                     onChange={this.handleDateToChange}
-		  />
-		  </td>
-		  <td>
-		  <input type="button" className="btn btn-primary" value="Generate chart"
-				   onClick={this.handleGenereteChart} />
-		  </td>
-      </div>
-		)
-	}
-})
+
+
 var SearchBox = React.createClass({
 	handleChange : function(e, type,value) {
            e.preventDefault();
@@ -360,37 +145,6 @@ var SearchBox = React.createClass({
       </div>
     );
   }
-});
-
-var UserInfo = React.createClass({
-	render: function() {
-		return (
-		<div className="main-content-without-search-box">
-			<div className="left-within-main">
-				 <table className="table">
-					<thead>
-					  <tr>
-						<th>User name</th>
-					  </tr>
-					</thead>
-					<tbody>
-					  <tr>
-						<td>dob</td>
-					  </tr>
-					  <tr>
-						<td>number of sessions</td>
-					  </tr>
-					</tbody>
-				</table>
-			</div>
-				<div className="right-within-main">
-				<img className="thumb" src="assets/users/4.jpg" alt="placeholder"/>
-			</div>
-		</div>
-		
-		)
-	}
-	
 });
 
 var ExerciseInfo = React.createClass({
@@ -424,33 +178,6 @@ var Sidebar = React.createClass({
   }	
 });
 
-var User = React.createClass({
-	render: function() {
-		var userItem = this.props.userItem;
-		return (
-		<li>
-			<img className="thumb" src={userItem.picture} alt={userItem.first_name}/>
-			<a href={"/users/" + userItem.id}>{userItem.first_name} {userItem.surname}</a>
-		</li>
-		)
-	}
-});
-	
-
-var FilteredUsersList = React.createClass({
-	render: function() {
-		var displayedUsers = this.props.users.map((user) =>{
-			return <User key={user.id} userItem={user} />;
-		}) ;
-            return (
-			<div className="main-content-with-search-box">
-                      <ul className="listItems">
-                          {displayedUsers}
-                      </ul>
-                    </div>
-              ) ;
-	}
-});
 
 var MuscleGroupSession = React.createClass({
 	getInitialState : function() {
@@ -1193,24 +920,24 @@ var GymProgressLogger = React.createClass({
 	  
 		<Navbar />
         <Sidebar/>
-		<FilteredUsersList users={userList}/>
+		{/*<FilteredUsersList users={userList}/>*/}
 		
 		{/*<ExerciseInfo/>*/}
 		{/*<UserInfo />*/}
 		{/*<MonthPicker/>*/}
-		<SearchBox onUserInput={this.handleChange } 
+		{/*<SearchBox onUserInput={this.handleChange } 
                            filterText={this.state.search} 
-                           sort={this.state.sort}/>
+                           sort={this.state.sort}/>*/}
 		
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
-			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
+			<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>
 			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
 			{/*<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
 			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup} 
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>*/}
 
-		{/*<Chart data={this.state.data}/>*/}
+		<Chart data={this.state.data}/>
 			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
 				{/*<TrainingSessionsList users={users} />*/}
 		{/*<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
