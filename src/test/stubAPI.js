@@ -4654,6 +4654,16 @@ var exercises=[
   ];
  
 var stubAPI = {
+	updateTrainingSession(key, d) {
+		var index = _.findIndex(training_sessions, function(training_session) {
+			 return training_session.main_session_id === key;
+		  } );      
+		if (index !== -1) {
+		   training_sessions.splice(index, 1, {date: d});
+		   return true ;
+		  }
+	  return false ;
+	},
 	deleteTrainingSession: function (key) {
 		var elements = _.remove(training_sessions, 
 		   function(training_session) {

@@ -50,7 +50,7 @@ var TrainingSessionItem = React.createClass({
 	   e.preventDefault();
 	   var date = this.state.date;
 	   if (isValidDate(date)) {
-	       this.props.updateSessionHandler(this.state.name);
+	       this.props.updateTrainingSessionHandler(this.state.id, this.state.date);
 	   } else {
 		   this.setState({ date : this.state.initDate});
 	   }
@@ -101,7 +101,8 @@ var TrainingSessionsList = React.createClass({
 	render: function() {
 		var displayedTsessions = this.props.trainingSessions.map((tsession) =>{
 			return <TrainingSessionItem key={tsession.main_session_id} trainingSessionItem={tsession} 
-			deleteTrainingSessionHandler={this.props.deleteTrainingSessionHandler}/>;
+			deleteTrainingSessionHandler={this.props.deleteTrainingSessionHandler}
+			updateTrainingSessionHandler={this.props.updateTrainingSessionHandler}/>;
 		}) ;
             return (
 				<div className="main-content-without-search-box">
