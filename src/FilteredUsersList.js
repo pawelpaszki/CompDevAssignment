@@ -19,13 +19,18 @@ var FilteredUsersList = React.createClass({
 			return <User key={user.id} userItem={user} />;
 		}) ;
 		return (
-		<div className="main-content-with-search-box">
-		  <ul className="listItems">
-			  {displayedUsers}
-		  </ul>
+		<div>
+			
+			<div className="main-content-with-search-box">
+			  <ul className="listItems">
+				  {displayedUsers}
+			  </ul>
+			</div>
 		</div>
 	    );
 	}
 });
+
+
 
 export default FilteredUsersList;
