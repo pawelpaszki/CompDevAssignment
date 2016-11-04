@@ -109,7 +109,7 @@ var TrainingSessionsList = React.createClass({
 				  <ul className="listItems">
 					  {displayedTsessions}
 				  </ul>
-				  <AddTrainingSessionForm/>
+			<AddTrainingSessionForm addTrainingSessionHandler={this.props.addTrainingSessionHandler}/>
 				</div>
 		  ) ;	
 	}
@@ -124,17 +124,16 @@ var AddTrainingSessionForm = React.createClass({
 	   } ;
 	},
 	handleDateChange: function(e) {
-        this.setState({name: e.target.value});
+        this.setState({date: e.target.value});
     },
-	
-	handleAddSession: function(e) {
+	handleAddTrainingSession: function(e) {
 		e.preventDefault();
-		var date = this.state.name.trim();
-		
+		var date = this.state.date.trim();
+		console.log(date);
 		if (isValidDate(date)) {
-			this.props.addSessionHandler(date);
+			this.props.addTrainingSessionHandler(date);
+			this.setState({date: ''});
 		};
-		this.setState({date: ''});
 	},
 	render: function() {
             return (
@@ -146,7 +145,7 @@ var AddTrainingSessionForm = React.createClass({
 						<td key={'date'} className="col-md-4"><input type="text" className="form-control" 
 						placeholder="Enter date" onChange={this.handleDateChange}/></td>
 						<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add session"
-									   onClick={this.handleAddSession} /> </td>
+									   onClick={this.handleAddTrainingSession} /> </td>
 									   <td className="col-md-1"></td>
 						<td className="col-md-2"> </td>
 						  </tr>

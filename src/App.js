@@ -701,6 +701,10 @@ var GymProgressLogger = React.createClass({
 		 data: [{text: '0', value: 0}]
 		};
       },
+	  addTrainingSession: function(date) {
+		api.addTrainingSession(date);
+		this.setState({});
+	  },
 	  updateTrainingSession: function(key, date) {
 		 api.updateTrainingSession(key, date);
 		 this.setState({});
@@ -852,7 +856,7 @@ var GymProgressLogger = React.createClass({
 		{/*<Chart data={this.state.data}/>*/}
 			{/*<EditProfileForm key={testUser.id} user={testUser} profileUpdateHandler={this.updateProfile}/>*/}
 				<TrainingSessionsList trainingSessions={trainingSessions} deleteTrainingSessionHandler={this.deleteTrainingSession}
-				updateTrainingSessionHandler={this.updateTrainingSession}/>
+				updateTrainingSessionHandler={this.updateTrainingSession} addTrainingSessionHandler={this.addTrainingSession}/>
 		{/*<MuscleList muscles={muscles} muscleConstants={muscleConstants} updateMuscleNameHandler={this.updateMuscleName} 
 		deleteMuscleHandler={this.deleteMuscle} addMuscleHandler={this.addNewMuscle}/>*/}
 		{/*<ExerciseList exercises={exercises} exerciseConstants={exerciseConstants} updateExerciseHandler={this.updateExercise} 

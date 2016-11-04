@@ -4654,6 +4654,12 @@ var exercises=[
   ];
  
 var stubAPI = {
+	addTrainingSession: function(d) {
+	  var len = training_sessions.length ;
+	  var newL_len = training_sessions.push({
+		 date: d, main_session_id: len+1}) ;
+	  return newL_len > len ;
+	 },
 	updateTrainingSession(key, d) {
 		var index = _.findIndex(training_sessions, function(training_session) {
 			 return training_session.main_session_id === key;
