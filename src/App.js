@@ -1193,19 +1193,19 @@ var GymProgressLogger = React.createClass({
 	  
 		<Navbar />
         <Sidebar/>
-		{/*<FilteredUsersList users={userList}/>*/}
+		<FilteredUsersList users={userList}/>
 		
 		{/*<ExerciseInfo/>*/}
 		{/*<UserInfo />*/}
 		{/*<MonthPicker/>*/}
-		{/*<SearchBox onUserInput={this.handleChange } 
+		<SearchBox onUserInput={this.handleChange } 
                            filterText={this.state.search} 
-                           sort={this.state.sort}/>*/}
+                           sort={this.state.sort}/>
 		
 		{/*<ChartDataPicker/>*/}
 		{/*<SelectableDay users={users}/>*/}
 			{/*<ExerciseNamePick exercises={exercises} generateChartHandler={this.generateChartData}/>*/}
-			<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>
+			{/*<MuscleGroupSessionList  msessions={muscleSessions} deleteSessionItemHandler={this.deleteSession} addMuscleGroupSessionHandler={this.addMuscleGroupSession}/>*/}
 			{/*<ExerciseUnitList exerciseUnits={exerciseUnits} exercises={exercises} deleteExerciseUnitHandler={this.deleteExerciseUnit} 
 			addExerciseUnitHandler={this.addExerciseUnit} exerciseUnitMuscleGroup={exerciseUnitMuscleGroup} 
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>*/}
