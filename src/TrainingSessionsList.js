@@ -69,7 +69,7 @@ var TrainingSessionItem = React.createClass({
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					<td key={'main_session_id'} className="col-md-4"><a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a></td>
+					<td key={'main_session_id'} className="col-md-4"><Link to={'/trainingsessions/' + trainingSessionItem.id}>{trainingSessionItem.date}</Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
 					<td className="col-md-2"></td>

@@ -2,25 +2,7 @@ import React from 'react';
 import './App.css';
 import api from './test/stubAPI';
 
-var ExerciseUnitList = React.createClass({
-	render: function() {
-		var displayedExercises = this.props.exerciseUnits.map((exercise) =>{
-			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} deleteExerciseUnitHandler={this.props.deleteExerciseUnitHandler}
-			updateExerciseUnitHandler={this.props.updateExerciseUnitHandler}/>;
-		}) ;
-		return (
-		<div className="main-content-without-search-box">
-			<div className="main-content">
-			  <ul className="listItems">
-				  {displayedExercises}
-			  </ul>
-			</div>
-			<AddExerciseUnitForm exerciseUnitMuscleGroup={this.props.exerciseUnitMuscleGroup} exerciseUnits={this.props.exerciseUnits} exercises={this.props.exercises}
-			addExerciseUnitHandler= {this.props.addExerciseUnitHandler}/>
-		</div>
-		  ) ;
-	}
-});
+
 
 var ExerciseUnit = React.createClass({
 	getInitialState : function() {
@@ -166,6 +148,26 @@ var ExerciseUnitToAdd = React.createClass({
 		  </td>
 		</tr>
 		);
+	}
+});
+
+var ExerciseUnitList = React.createClass({
+	render: function() {
+		var displayedExercises = this.props.exerciseUnits.map((exercise) =>{
+			return <ExerciseUnit key={exercise.name} exerciseUnit={exercise} deleteExerciseUnitHandler={this.props.deleteExerciseUnitHandler}
+			updateExerciseUnitHandler={this.props.updateExerciseUnitHandler}/>;
+		}) ;
+		return (
+		<div className="main-content-without-search-box">
+			<div className="main-content">
+			  <ul className="listItems">
+				  {displayedExercises}
+			  </ul>
+			</div>
+			<AddExerciseUnitForm exerciseUnitMuscleGroup={this.props.exerciseUnitMuscleGroup} exerciseUnits={this.props.exerciseUnits} exercises={this.props.exercises}
+			addExerciseUnitHandler= {this.props.addExerciseUnitHandler}/>
+		</div>
+		  ) ;
 	}
 });
 

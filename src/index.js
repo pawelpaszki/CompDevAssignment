@@ -40,6 +40,8 @@ ReactDOM.render( (
 	<Route path="/" component={App}>
 	   <IndexRoute component={GymProgressLogger}/>
 	   <Route path="users/:id" component={TrainingSessionsList} />
+	   <Route path="trainingsessions/:id" component={MuscleGroupSessionList} />
+	   <Route path="musclegroupsessions/:id" component={ExerciseUnitList} />
 	</Route>
   </Router>
 ),
