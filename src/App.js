@@ -132,7 +132,7 @@ var User = React.createClass({
 				<tbody>
 				  <tr>
 					<td key={'id'} className="col-md-2"><img className="thumb" src={userItem.picture} alt={userItem.first_name}/></td>
-					<td className="col-md-4"><a href={"/users/" + userItem.id}>{userItem.first_name} {userItem.surname}</a></td>
+					<td className="col-md-4"><Link to={'/users/' + userItem.id}>{userItem.first_name} {userItem.surname}</Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
 				  </tr>
@@ -286,7 +286,6 @@ var GymProgressLogger = React.createClass({
 	    return { 
 		 search: '', 
 		 sort: 'dob',
-		 data: [{text: '0', value: 0}],
 		 users: []
 		};
       },

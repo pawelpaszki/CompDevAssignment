@@ -26,7 +26,7 @@ var App = React.createClass({
   render : function() {
 	return (
 	  <div>
-	  <Navbar />
+	    <Navbar />
         <Sidebar />
 		{this.props.children}
 		<Footer />
@@ -39,6 +39,7 @@ ReactDOM.render( (
   <Router history={browserHistory} >
 	<Route path="/" component={App}>
 	   <IndexRoute component={GymProgressLogger}/>
+	   <Route path="users/:id" component={TrainingSessionsList} />
 	</Route>
   </Router>
 ),

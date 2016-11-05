@@ -1,5 +1,7 @@
 import React from 'react';
 import './App.css';
+import { Link } from 'react-router';
+import $ from "jquery";
 
 function isValidDate(dateString) {
 	// First check for the pattern
@@ -30,7 +32,7 @@ var TrainingSessionItem = React.createClass({
 	getInitialState : function() {
 		 return {
 			 status: '',
-			 id : this.props.trainingSessionItem.main_session_id,
+			 id : this.props.trainingSessionItem.id,
 		  date: this.props.trainingSessionItem.date,
 		  initDate: this.props.trainingSessionItem.date
 		} ;
@@ -67,7 +69,7 @@ var TrainingSessionItem = React.createClass({
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					<td key={'date'} className="col-md-4"><a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a></td>
+					<td key={'main_session_id'} className="col-md-4"><a  href={"/tsessions/" + trainingSessionItem.date}>{trainingSessionItem.date}</a></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
 					<td className="col-md-2"></td>
@@ -80,7 +82,7 @@ var TrainingSessionItem = React.createClass({
 			<table className="table table-borderless">
 				<tbody className="center">
 				  <tr>
-					<td key={'date'} className="col-md-4"><input type="text" className="form-control"  value={this.state.date} onChange={this.handleDateChange}/></td>
+					<td key={'main_session_id'} className="col-md-4"><input type="text" className="form-control"  value={this.state.date} onChange={this.handleDateChange}/></td>
 					<td className="col-md-2"></td>
 					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
 					<td className="col-md-2"></td>
@@ -97,27 +99,8 @@ var TrainingSessionItem = React.createClass({
 	}
 });
 
-var TrainingSessionsList = React.createClass({
-	render: function() {
-		var displayedTsessions = this.props.trainingSessions.map((tsession) =>{
-			return <TrainingSessionItem key={tsession.main_session_id} trainingSessionItem={tsession} 
-			deleteTrainingSessionHandler={this.props.deleteTrainingSessionHandler}
-			updateTrainingSessionHandler={this.props.updateTrainingSessionHandler}/>;
-		}) ;
-            return (
-				<div className="main-content-without-search-box">
-				  <ul className="listItems">
-					  {displayedTsessions}
-				  </ul>
-			<AddTrainingSessionForm addTrainingSessionHandler={this.props.addTrainingSessionHandler}/>
-				</div>
-		  ) ;	
-	}
-});
-
 var AddTrainingSessionForm = React.createClass({
 	getInitialState : function() {
-		
 	   return {
 		status : '',
 		date: ''
@@ -128,12 +111,11 @@ var AddTrainingSessionForm = React.createClass({
     },
 	handleAddTrainingSession: function(e) {
 		e.preventDefault();
-		var date = this.state.date.trim();
-		console.log(date);
+		var date = this.state.date;
 		if (isValidDate(date)) {
 			this.props.addTrainingSessionHandler(date);
-			this.setState({date: ''});
 		};
+		this.setState({date: ''});
 	},
 	render: function() {
             return (
@@ -155,6 +137,104 @@ var AddTrainingSessionForm = React.createClass({
 				</div>
 			</div>
 		  ) ;
+	}
+});
+
+var TrainingSessionsList = React.createClass({
+    getInitialState: function() {
+	    return {
+		 allTrainingSessions: [],
+		 userId: this.props.params.id
+		};
+      },
+	  componentDidMount(){
+        this.getTrainingSessionsFromServer('http://localhost:3000/trainingsessions/');
+      },
+        populateTrainingSessions: function(response) {
+            this.setState({
+                allTrainingSessions: response
+            });
+			
+     },
+	 getTrainingSessionsFromServer:function(URL){
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:URL,
+            success: function(response) {
+                this.populateTrainingSessions(response);
+				console.log(response);
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+      },
+	  deleteTrainingSession:function(id) {
+		  $.ajax({
+			url: 'http://localhost:3000/trainingsessions/' + id,
+			type: 'DELETE',
+			contentType: 'application/json'
+			});
+			document.location.reload(true);
+	  },
+	  updateTrainingSession: function(id, date) {
+		    $.ajax({
+			url: 'http://localhost:3000/trainingsessions/' + id,
+			type: 'PUT',
+			contentType: 'application/json',
+			data: JSON.stringify({
+				id: id,
+				date: date,
+				user_id: this.state.userId,
+			}),
+			dataType: 'json'
+		});
+		document.location.reload(true);
+	  },
+	  addTrainingSession:function(date) {
+		  var maxId= 0;
+		  var trainingSessions = this.state.allTrainingSessions;
+		  for (var i = 0; i < trainingSessions.length; i++) {
+			  if(trainingSessions[i].id > maxId) {
+				  maxId = trainingSessions[i].id;
+			  }
+		  };
+		   var id = maxId + 1;
+		    $.ajax({
+			url: 'http://localhost:3000/trainingsessions',
+			type: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({
+				user_id: this.state.userId,
+				id: id,
+				date: date,
+			}),
+			dataType: 'json'
+		});
+		this.setState({});
+		document.location.reload(true);
+	  },
+	render: function() {
+		var trainingSessions = [];
+		for(var i = 0; i < this.state.allTrainingSessions.length; i++) {
+			if(this.state.allTrainingSessions[i].user_id == this.state.userId) {
+				trainingSessions.push(this.state.allTrainingSessions[i]);
+			}
+		};
+		var displayedTsessions = trainingSessions.map((tsession) =>{
+			return <TrainingSessionItem key={tsession.main_session_id} trainingSessionItem={tsession} 
+			deleteTrainingSessionHandler={this.deleteTrainingSession}
+			updateTrainingSessionHandler={this.updateTrainingSession}/>;
+		}) ;
+            return (
+				<div className="main-content-without-search-box">
+				  <ul className="listItems">
+					  {displayedTsessions}
+				  </ul>
+			<AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>
+				</div>
+		  ) ;	
 	}
 });
 
