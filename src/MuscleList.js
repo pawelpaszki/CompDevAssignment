@@ -1,28 +1,14 @@
 import React from 'react';
 import './App.css';
 import api from './test/stubAPI';
-
-var MuscleList = React.createClass({
-	render: function() {
-		var displayedMuscles = this.props.muscles.map((muscle) =>{
-			return <Muscle key={muscle.name} muscle={muscle} muscleConstants={this.props.muscleConstants} 
-			updateMuscleNameHandler={this.props.updateMuscleNameHandler} deleteMuscleHandler={this.props.deleteMuscleHandler}/>;
-		}) ;
-		return (
-			<div className="main-content-without-search-box">
-			  <ul className="listItems">
-				  {displayedMuscles}
-			  </ul>
-			  <AddMuscleForm addMuscleHandler={this.props.addMuscleHandler} muscles={this.props.muscles}/>
-			</div>
-		  ) ;
-	}
-});
+import { Link } from 'react-router';
+import $ from "jquery";
 
 var Muscle = React.createClass({
 	getInitialState : function() {
 		 return {
 			 status: '',
+			 id: this.props.muscle.id,
 		  name: this.props.muscle.name,
 		  initName: this.props.muscle.name
 		} ;
@@ -32,13 +18,13 @@ var Muscle = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		var muscleConstants = _.pluck(this.props.muscleConstants, 'name');
+		var muscleConstants = this.props.muscleConstants;
 		var name = this.state.name;
 		//console.log(muscleConstants);
 		//console.log(muscleConstants.indexOf(name));
 		//console.log(name);
 		if (muscleConstants.indexOf(name) == -1) {
-	       this.props.deleteMuscleHandler(this.state.name);
+	       this.props.deleteMuscleHandler(this.state.id);
 		};
 	},
 	handleEdit: function(e) {
@@ -48,10 +34,11 @@ var Muscle = React.createClass({
 	   e.preventDefault();
 	   var name = this.state.name;
 	   console.log(this.state.initName);
-	   var muscleConstants = _.pluck(this.props.muscleConstants, 'name');
+	   var muscleConstants = this.props.muscleConstants;
+	   console.log("constantssss:  " + muscleConstants);
 	   console.log(muscleConstants.indexOf(this.state.initName));
 	   if ((muscleConstants.indexOf(this.state.initName)) === -1) {
-	       this.props.updateMuscleNameHandler(this.state.name);
+	       this.props.updateMuscleNameHandler(this.state.id, this.state.name);
 	   } else {
 		   this.setState({ name : this.state.initName});
 	   }
@@ -139,6 +126,122 @@ var AddMuscleForm = React.createClass({
 			
 			</div>
 		) ;
+	}
+});
+
+var MuscleList = React.createClass({
+	getInitialState: function() {
+	    return {
+		 allMuscles: [],
+		 constants: [],
+		};
+      },
+	  componentDidMount(){
+		this.getAllMuscleGroups('http://localhost:3000/muscles/');
+		this.getAllMuscleConstants('http://localhost:3000/constants/');
+      },
+	  populateMuscleConstants: function(response) {
+		this.setState({
+			constants: response
+		});
+	 },
+	 getAllMuscleConstants:function(URL){
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:URL,
+            success: function(response) {
+                this.populateMuscleConstants(response);
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+      },
+	  populateMuscleGroups: function(response) {
+		this.setState({
+			allMuscles: response
+		});
+	 },
+	 getAllMuscleGroups:function(URL){
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:URL,
+            success: function(response) {
+                this.populateMuscleGroups(response);
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+      },
+	  deleteMuscleGroup:function(id) {
+		  $.ajax({
+			url: 'http://localhost:3000/muscles/' + id,
+			type: 'DELETE',
+			contentType: 'application/json'
+			});
+			document.location.reload(true);
+	  },
+	  addMuscleGroup:function(name) {
+		  var maxId= 0;
+		  var allMuscles = this.state.allMuscles;
+		  for (var i = 0; i < allMuscles.length; i++) {
+			  if(allMuscles[i].id > maxId) {
+				  maxId = allMuscles[i].id;
+			  }
+		  };
+		  //console.log("name" + name);
+		  var id = maxId + 1;
+		  //console.log("id: " + id);
+		   
+		    $.ajax({
+			url: 'http://localhost:3000/muscles',
+			type: 'POST',
+			contentType: 'application/json',
+			data: JSON.stringify({
+				id: id,
+				name: name,
+			}),
+			dataType: 'json'
+		});
+		this.setState({});
+		document.location.reload(true);
+	  },
+	  updateMuscle: function(id, name) {
+		    $.ajax({
+			url: 'http://localhost:3000/muscles/' + id,
+			type: 'PUT',
+			contentType: 'application/json',
+			data: JSON.stringify({
+				id: id,
+				name: name,
+			}),
+			dataType: 'json'
+		});
+		document.location.reload(true);
+	  },
+	render: function() {
+		var muscleConstants = [];
+		console.log(this.state.constants);
+		for(var i = 0; i < this.state.constants.length; i++) {
+			console.log(this.state.constants[i].name);
+			muscleConstants.push(this.state.constants[i].name);
+		};
+		console.log("constants: " + muscleConstants);
+		var displayedMuscles = this.state.allMuscles.map((muscle) =>{
+			return <Muscle key={muscle.name} muscle={muscle} muscleConstants={muscleConstants} 
+			updateMuscleNameHandler={this.updateMuscle} deleteMuscleHandler={this.deleteMuscleGroup}/>;
+		}) ;
+		return (
+			<div className="main-content-without-search-box">
+			  <ul className="listItems">
+				  {displayedMuscles}
+			  </ul>
+			  <AddMuscleForm addMuscleHandler={this.addMuscleGroup} muscles={this.state.allMuscles}/>
+			</div>
+		  ) ;
 	}
 });
 

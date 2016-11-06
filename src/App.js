@@ -2,8 +2,6 @@ import React from 'react';
 import { Link } from 'react-router'; 
 
 import './App.css';
-//const low = require('lowdb');
-import api from './test/stubAPI';
 import _ from 'lodash';
 
 import $ from "jquery";
