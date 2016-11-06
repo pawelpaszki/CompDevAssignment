@@ -64,14 +64,20 @@ var User = React.createClass({
 	getInitialState : function() {
 	 return {
 		 status: '',
+		 initFname: this.props.userItem.first_name,
+		 initSurname: this.props.userItem.surname,
+		 initDOB: this.props.userItem.dob,
+		 initTrainingFrom: this.props.userItem.training_from,
+		 initWeight: this.props.userItem.body_weight,
+		 initHeight: this.props.userItem.height,
 		 picture: this.props.userItem.picture,
 		 id: this.props.userItem.id,
 		 first_name : this.props.userItem.first_name,
-	  surname: this.props.userItem.surname,
-	  dob: this.props.userItem.dob,
-	  training_from: this.props.userItem.training_from,
-	  body_weight: this.props.userItem.body_weight,
-	  height: this.props.userItem.height,
+	     surname: this.props.userItem.surname,
+	     dob: this.props.userItem.dob,
+	     training_from: this.props.userItem.training_from,
+	     body_weight: this.props.userItem.body_weight,
+	     height: this.props.userItem.height,
 	} ;
 	  },
 	handleFirstNameChange: function(e) {
@@ -92,13 +98,16 @@ var User = React.createClass({
 	handleHeightChange: function(e) {
 	   this.setState({height: e.target.value});
 	},
+	handleUndo: function(e) {
+	   this.setState({ status : ''});
+	},
 	handleDelete: function(e) {
 		e.preventDefault();
 		console.log(this.state.id);
 		this.props.deleteUserHandler(this.state.id);
 	},
 	handleEdit: function(e) {
-		this.setState({ status : 'edit'} )
+		this.setState({ status : 'edit'});
 	},
 	handleUpdate: function(e) {
 	   e.preventDefault();
@@ -108,6 +117,11 @@ var User = React.createClass({
 	   var training_from = this.state.training_from;
 	   var body_weight = this.state.body_weight;
 	   var height = this.state.height;
+	   if(first_name == this.state.initFname && surname == this.state.initSurname && dob == this.state.initDOB && 
+	   training_from == this.state.initDOB && body_weight == this.state.initWeight && height == this.state.initHeight) {
+		   this.setState({ status : ''});
+		   return;
+	   }
 	   if (isValidDate(training_from) && isValidDate(dob)) {
 	       this.props.updateUserHandler(this.state.id, first_name, surname, dob, training_from, body_weight, height, this.state.picture);
 	   } else {
@@ -118,7 +132,7 @@ var User = React.createClass({
 		   this.setState({weight: e.target.value});
 		   this.setState({height: e.target.value});
 	   }
-	   this.setState({ status : ''} )
+	   this.setState({ status : ''});
 	},
 	render: function() {
 		var userItem = this.props.userItem;
@@ -150,7 +164,8 @@ var User = React.createClass({
 					<td key={'training_from'} className="col-md-2"><input type="text" className="form-control"  value={this.state.training_from} onChange={this.handleTrainingFromChange}/></td>
 					<td key={'weight'} className="col-md-1"><input type="text" className="form-control"  value={this.state.body_weight} onChange={this.handleWeightChange}/></td>
 					<td key={'height'} className="col-md-1"><input type="text" className="form-control"  value={this.state.height} onChange={this.handleHeightChange}/></td>
-					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
+					<td className="col-md-1"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
+					<td className="col-md-1"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
 				  </tr>
 				</tbody>
 			</table>

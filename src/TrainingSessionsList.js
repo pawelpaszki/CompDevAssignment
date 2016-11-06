@@ -48,6 +48,9 @@ var TrainingSessionItem = React.createClass({
 	handleEdit: function(e) {
 		this.setState({ status : 'edit'} )
 	},
+	handleUndo: function(e) {
+		this.setState({ status : ''} )
+	},
 	handleUpdate: function(e) {
 	   e.preventDefault();
 	   var date = this.state.date;
@@ -83,7 +86,7 @@ var TrainingSessionItem = React.createClass({
 				<tbody className="center">
 				  <tr>
 					<td key={'main_session_id'} className="col-md-4"><input type="text" className="form-control"  value={this.state.date} onChange={this.handleDateChange}/></td>
-					<td className="col-md-2"></td>
+					<td className="col-md-2"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
 					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
 					<td className="col-md-2"></td>
 				  </tr>
