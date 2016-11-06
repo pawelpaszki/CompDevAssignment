@@ -43,6 +43,7 @@ ReactDOM.render( (
 	   <Route path="trainingsessions/:id" component={MuscleGroupSessionList} />
 	   <Route path="musclegroupsessions/:id" component={ExerciseUnitList} />
 	   <Route path="muscles" component={MuscleList} />
+	   <Route path="musclegroupexercises/:id" component={ExerciseList} />
 	</Route>
   </Router>
 ),

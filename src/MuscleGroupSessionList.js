@@ -193,7 +193,7 @@ var MuscleGroupSessionList = React.createClass({
 			  </ul>
 			</div>
 			<AddMuscleGroupSessionForm msessions={this.props.msessions} addMuscleGroupSessionHandler={this.addMuscleGroupSession} allMuscles={allMuscles}/>
-			</div>
+		</div>
 	  ) ;
 	}
 });

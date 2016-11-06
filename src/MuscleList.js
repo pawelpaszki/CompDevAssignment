@@ -54,7 +54,7 @@ var Muscle = React.createClass({
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					<td key={'name'} className="col-md-6"><a href={"/sessions/" + this.state.name}>{this.state.name} </a></td>
+					<td key={'name'} className="col-md-6"><Link to={"/musclegroupexercises/" + this.state.id}>{this.state.name} </Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
 					<td className="col-md-2"></td>
