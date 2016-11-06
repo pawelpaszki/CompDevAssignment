@@ -1,2679 +1,2922 @@
 {
-   "ExerciseUnits":[
-      {
-         "muscle_group_session_id":0,
-         "exercise_unit_id":0,
-         "name":"barbell flat bench press",
-         "weight":110,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":0,
-         "exercise_unit_id":1,
-         "name":"barbell incline bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":0,
-         "exercise_unit_id":2,
-         "name":"barbell decline bench press",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":1,
-         "exercise_unit_id":3,
-         "name":"barbell curl",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":1,
-         "exercise_unit_id":4,
-         "name":"concentration curls",
-         "weight":20,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":1,
-         "exercise_unit_id":5,
-         "name":"alternate hammer curl",
-         "weight":24,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":2,
-         "exercise_unit_id":22,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":2,
-         "exercise_unit_id":6,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":3,
-         "exercise_unit_id":7,
-         "name":"barbell full squat",
-         "weight":140,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":3,
-         "exercise_unit_id":8,
-         "name":"leg press",
-         "weight":320,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":3,
-         "exercise_unit_id":9,
-         "name":"leg extensions",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":3,
-         "exercise_unit_id":10,
-         "name":"lying leg curls",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":4,
-         "exercise_unit_id":11,
-         "name":"standing military press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":4,
-         "exercise_unit_id":12,
-         "name":"power partials",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":4,
-         "exercise_unit_id":13,
-         "name":"front dumbbell raise",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":5,
-         "exercise_unit_id":14,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":5,
-         "exercise_unit_id":15,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":6,
-         "exercise_unit_id":16,
-         "name":"deadlift",
-         "weight":180,
-         "number_of_series":4,
-         "number_of_reps":5
-      },
-      {
-         "muscle_group_session_id":6,
-         "exercise_unit_id":17,
-         "name":"reverse grip bent-over rows",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":6,
-         "exercise_unit_id":18,
-         "name":"t-bar row",
-         "weight":80,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":7,
-         "exercise_unit_id":19,
-         "name":"cable two arms extensions",
-         "weight":50,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":7,
-         "exercise_unit_id":20,
-         "name":"weighted bench dip",
-         "weight":50,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":7,
-         "exercise_unit_id":21,
-         "name":"reverse grip triceps pushdown",
-         "weight":30,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":8,
-         "exercise_unit_id":23,
-         "name":"barbell flat bench press",
-         "weight":112,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":8,
-         "exercise_unit_id":24,
-         "name":"barbell incline bench press",
-         "weight":82,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":8,
-         "exercise_unit_id":25,
-         "name":"barbell decline bench press",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":9,
-         "exercise_unit_id":26,
-         "name":"barbell curl",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":9,
-         "exercise_unit_id":27,
-         "name":"concentration curls",
-         "weight":20,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":9,
-         "exercise_unit_id":28,
-         "name":"alternate hammer curl",
-         "weight":24,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":10,
-         "exercise_unit_id":29,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":10,
-         "exercise_unit_id":30,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":11,
-         "exercise_unit_id":31,
-         "name":"barbell full squat",
-         "weight":140,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":11,
-         "exercise_unit_id":32,
-         "name":"leg press",
-         "weight":320,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":11,
-         "exercise_unit_id":33,
-         "name":"leg extensions",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":11,
-         "exercise_unit_id":34,
-         "name":"lying leg curls",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":12,
-         "exercise_unit_id":35,
-         "name":"standing military press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":12,
-         "exercise_unit_id":36,
-         "name":"power partials",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":12,
-         "exercise_unit_id":37,
-         "name":"front dumbbell raise",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":13,
-         "exercise_unit_id":38,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":13,
-         "exercise_unit_id":39,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":14,
-         "exercise_unit_id":40,
-         "name":"deadlift",
-         "weight":180,
-         "number_of_series":4,
-         "number_of_reps":5
-      },
-      {
-         "muscle_group_session_id":14,
-         "exercise_unit_id":41,
-         "name":"reverse grip bent-over rows",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":14,
-         "exercise_unit_id":42,
-         "name":"t-bar row",
-         "weight":80,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":15,
-         "exercise_unit_id":43,
-         "name":"cable two arms extensions",
-         "weight":50,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":15,
-         "exercise_unit_id":44,
-         "name":"weighted bench dip",
-         "weight":50,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":15,
-         "exercise_unit_id":45,
-         "name":"reverse grip triceps pushdown",
-         "weight":30,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":16,
-         "exercise_unit_id":46,
-         "name":"barbell flat bench press",
-         "weight":114,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":16,
-         "exercise_unit_id":47,
-         "name":"barbell incline bench press",
-         "weight":82,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":16,
-         "exercise_unit_id":48,
-         "name":"barbell decline bench press",
-         "weight":102,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":17,
-         "exercise_unit_id":49,
-         "name":"barbell curl",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":17,
-         "exercise_unit_id":50,
-         "name":"concentration curls",
-         "weight":20,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":17,
-         "exercise_unit_id":51,
-         "name":"alternate hammer curl",
-         "weight":24,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":18,
-         "exercise_unit_id":52,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":18,
-         "exercise_unit_id":53,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":19,
-         "exercise_unit_id":54,
-         "name":"barbell full squat",
-         "weight":140,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":19,
-         "exercise_unit_id":55,
-         "name":"leg press",
-         "weight":320,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":19,
-         "exercise_unit_id":56,
-         "name":"leg extensions",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":19,
-         "exercise_unit_id":57,
-         "name":"lying leg curls",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":20,
-         "exercise_unit_id":58,
-         "name":"standing military press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":20,
-         "exercise_unit_id":59,
-         "name":"power partials",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":20,
-         "exercise_unit_id":60,
-         "name":"front dumbbell raise",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":21,
-         "exercise_unit_id":61,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":21,
-         "exercise_unit_id":62,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":22,
-         "exercise_unit_id":63,
-         "name":"deadlift",
-         "weight":180,
-         "number_of_series":4,
-         "number_of_reps":5
-      },
-      {
-         "muscle_group_session_id":22,
-         "exercise_unit_id":64,
-         "name":"reverse grip bent-over rows",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":22,
-         "exercise_unit_id":65,
-         "name":"t-bar row",
-         "weight":80,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":23,
-         "exercise_unit_id":66,
-         "name":"cable two arms extensions",
-         "weight":50,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":23,
-         "exercise_unit_id":67,
-         "name":"weighted bench dip",
-         "weight":50,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":23,
-         "exercise_unit_id":68,
-         "name":"reverse grip triceps pushdown",
-         "weight":32,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":24,
-         "exercise_unit_id":69,
-         "name":"barbell flat bench press",
-         "weight":114,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":24,
-         "exercise_unit_id":70,
-         "name":"barbell incline bench press",
-         "weight":82,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":24,
-         "exercise_unit_id":71,
-         "name":"barbell decline bench press",
-         "weight":102,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":25,
-         "exercise_unit_id":72,
-         "name":"barbell curl",
-         "weight":62,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":25,
-         "exercise_unit_id":73,
-         "name":"concentration curls",
-         "weight":22,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":25,
-         "exercise_unit_id":74,
-         "name":"alternate hammer curl",
-         "weight":24,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":26,
-         "exercise_unit_id":75,
-         "name":"standing calf raise",
-         "weight":200,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":26,
-         "exercise_unit_id":76,
-         "name":"sitting calf raise",
-         "weight":250,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":27,
-         "exercise_unit_id":77,
-         "name":"barbell full squat",
-         "weight":140,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":27,
-         "exercise_unit_id":78,
-         "name":"leg press",
-         "weight":320,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":27,
-         "exercise_unit_id":79,
-         "name":"leg extensions",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":27,
-         "exercise_unit_id":80,
-         "name":"lying leg curls",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":28,
-         "exercise_unit_id":81,
-         "name":"standing military press",
-         "weight":82,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":28,
-         "exercise_unit_id":82,
-         "name":"power partials",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":28,
-         "exercise_unit_id":83,
-         "name":"front dumbbell raise",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":29,
-         "exercise_unit_id":84,
-         "name":"standing calf raise",
-         "weight":220,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":29,
-         "exercise_unit_id":85,
-         "name":"sitting calf raise",
-         "weight":260,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":30,
-         "exercise_unit_id":86,
-         "name":"deadlift",
-         "weight":180,
-         "number_of_series":4,
-         "number_of_reps":5
-      },
-      {
-         "muscle_group_session_id":30,
-         "exercise_unit_id":87,
-         "name":"reverse grip bent-over rows",
-         "weight":90,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":30,
-         "exercise_unit_id":88,
-         "name":"t-bar row",
-         "weight":80,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":31,
-         "exercise_unit_id":89,
-         "name":"cable two arms extensions",
-         "weight":50,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":31,
-         "exercise_unit_id":90,
-         "name":"weighted bench dip",
-         "weight":50,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":31,
-         "exercise_unit_id":91,
-         "name":"reverse grip triceps pushdown",
-         "weight":32,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":32,
-         "exercise_unit_id":92,
-         "name":"barbell flat bench press",
-         "weight":116,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":32,
-         "exercise_unit_id":93,
-         "name":"barbell incline bench press",
-         "weight":84,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":32,
-         "exercise_unit_id":94,
-         "name":"barbell decline bench press",
-         "weight":104,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":33,
-         "exercise_unit_id":95,
-         "name":"barbell curl",
-         "weight":62,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":33,
-         "exercise_unit_id":96,
-         "name":"concentration curls",
-         "weight":22,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":33,
-         "exercise_unit_id":97,
-         "name":"alternate hammer curl",
-         "weight":24,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":34,
-         "exercise_unit_id":98,
-         "name":"standing calf raise",
-         "weight":220,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":34,
-         "exercise_unit_id":99,
-         "name":"sitting calf raise",
-         "weight":260,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":35,
-         "exercise_unit_id":100,
-         "name":"barbell full squat",
-         "weight":150,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":35,
-         "exercise_unit_id":101,
-         "name":"leg press",
-         "weight":320,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":35,
-         "exercise_unit_id":102,
-         "name":"leg extensions",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":35,
-         "exercise_unit_id":103,
-         "name":"lying leg curls",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":36,
-         "exercise_unit_id":104,
-         "name":"standing military press",
-         "weight":82,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":36,
-         "exercise_unit_id":105,
-         "name":"power partials",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":36,
-         "exercise_unit_id":106,
-         "name":"front dumbbell raise",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":37,
-         "exercise_unit_id":107,
-         "name":"standing calf raise",
-         "weight":220,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":37,
-         "exercise_unit_id":108,
-         "name":"sitting calf raise",
-         "weight":260,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":38,
-         "exercise_unit_id":109,
-         "name":"deadlift",
-         "weight":185,
-         "number_of_series":4,
-         "number_of_reps":5
-      },
-      {
-         "muscle_group_session_id":38,
-         "exercise_unit_id":110,
-         "name":"reverse grip bent-over rows",
-         "weight":85,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":38,
-         "exercise_unit_id":111,
-         "name":"t-bar row",
-         "weight":85,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":39,
-         "exercise_unit_id":112,
-         "name":"cable two arms extensions",
-         "weight":50,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":39,
-         "exercise_unit_id":113,
-         "name":"weighted bench dip",
-         "weight":50,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":39,
-         "exercise_unit_id":114,
-         "name":"reverse grip triceps pushdown",
-         "weight":32,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":40,
-         "exercise_unit_id":115,
-         "name":"barbell flat bench press",
-         "weight":85,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":40,
-         "exercise_unit_id":116,
-         "name":"barbell incline bench press",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":40,
-         "exercise_unit_id":117,
-         "name":"barbell decline bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":41,
-         "exercise_unit_id":118,
-         "name":"barbell curl",
-         "weight":35,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":41,
-         "exercise_unit_id":119,
-         "name":"concentration curls",
-         "weight":12,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":41,
-         "exercise_unit_id":120,
-         "name":"alternate hammer curl",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":42,
-         "exercise_unit_id":121,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":42,
-         "exercise_unit_id":122,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":43,
-         "exercise_unit_id":123,
-         "name":"barbell full squat",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":43,
-         "exercise_unit_id":124,
-         "name":"leg press",
-         "weight":150,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":43,
-         "exercise_unit_id":125,
-         "name":"leg extensions",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":43,
-         "exercise_unit_id":126,
-         "name":"lying leg curls",
-         "weight":30,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":44,
-         "exercise_unit_id":127,
-         "name":"standing military press",
-         "weight":45,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":44,
-         "exercise_unit_id":128,
-         "name":"power partials",
-         "weight":10,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":44,
-         "exercise_unit_id":129,
-         "name":"front dumbbell raise",
-         "weight":14,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":45,
-         "exercise_unit_id":130,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":45,
-         "exercise_unit_id":131,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":46,
-         "exercise_unit_id":132,
-         "name":"deadlift",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":46,
-         "exercise_unit_id":133,
-         "name":"reverse grip bent-over rows",
-         "weight":70,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":46,
-         "exercise_unit_id":134,
-         "name":"t-bar row",
-         "weight":85,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":47,
-         "exercise_unit_id":135,
-         "name":"cable two arms extensions",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":47,
-         "exercise_unit_id":136,
-         "name":"weighted bench dip",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":47,
-         "exercise_unit_id":137,
-         "name":"reverse grip triceps pushdown",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":48,
-         "exercise_unit_id":138,
-         "name":"barbell flat bench press",
-         "weight":85,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":48,
-         "exercise_unit_id":139,
-         "name":"barbell incline bench press",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":48,
-         "exercise_unit_id":140,
-         "name":"barbell decline bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":49,
-         "exercise_unit_id":141,
-         "name":"barbell curl",
-         "weight":35,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":49,
-         "exercise_unit_id":142,
-         "name":"concentration curls",
-         "weight":12,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":49,
-         "exercise_unit_id":143,
-         "name":"alternate hammer curl",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":50,
-         "exercise_unit_id":144,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":50,
-         "exercise_unit_id":145,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":51,
-         "exercise_unit_id":146,
-         "name":"barbell full squat",
-         "weight":90,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":51,
-         "exercise_unit_id":147,
-         "name":"leg press",
-         "weight":160,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":51,
-         "exercise_unit_id":148,
-         "name":"leg extensions",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":51,
-         "exercise_unit_id":149,
-         "name":"lying leg curls",
-         "weight":30,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":52,
-         "exercise_unit_id":150,
-         "name":"standing military press",
-         "weight":45,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":52,
-         "exercise_unit_id":151,
-         "name":"power partials",
-         "weight":10,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":52,
-         "exercise_unit_id":152,
-         "name":"front dumbbell raise",
-         "weight":14,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":53,
-         "exercise_unit_id":153,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":53,
-         "exercise_unit_id":154,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":54,
-         "exercise_unit_id":155,
-         "name":"deadlift",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":54,
-         "exercise_unit_id":156,
-         "name":"reverse grip bent-over rows",
-         "weight":70,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":54,
-         "exercise_unit_id":157,
-         "name":"t-bar row",
-         "weight":85,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":55,
-         "exercise_unit_id":158,
-         "name":"cable two arms extensions",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":55,
-         "exercise_unit_id":159,
-         "name":"weighted bench dip",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":55,
-         "exercise_unit_id":160,
-         "name":"reverse grip triceps pushdown",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":56,
-         "exercise_unit_id":161,
-         "name":"barbell flat bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":56,
-         "exercise_unit_id":162,
-         "name":"barbell incline bench press",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":56,
-         "exercise_unit_id":163,
-         "name":"barbell decline bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":57,
-         "exercise_unit_id":164,
-         "name":"barbell curl",
-         "weight":35,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":57,
-         "exercise_unit_id":165,
-         "name":"concentration curls",
-         "weight":12,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":57,
-         "exercise_unit_id":166,
-         "name":"alternate hammer curl",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":58,
-         "exercise_unit_id":167,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":58,
-         "exercise_unit_id":168,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":59,
-         "exercise_unit_id":169,
-         "name":"barbell full squat",
-         "weight":95,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":59,
-         "exercise_unit_id":170,
-         "name":"leg press",
-         "weight":170,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":59,
-         "exercise_unit_id":171,
-         "name":"leg extensions",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":59,
-         "exercise_unit_id":172,
-         "name":"lying leg curls",
-         "weight":30,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":60,
-         "exercise_unit_id":173,
-         "name":"standing military press",
-         "weight":45,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":60,
-         "exercise_unit_id":174,
-         "name":"power partials",
-         "weight":10,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":60,
-         "exercise_unit_id":175,
-         "name":"front dumbbell raise",
-         "weight":14,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":61,
-         "exercise_unit_id":176,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":61,
-         "exercise_unit_id":177,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":62,
-         "exercise_unit_id":178,
-         "name":"deadlift",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":62,
-         "exercise_unit_id":179,
-         "name":"reverse grip bent-over rows",
-         "weight":70,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":62,
-         "exercise_unit_id":180,
-         "name":"t-bar row",
-         "weight":85,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":63,
-         "exercise_unit_id":181,
-         "name":"cable two arms extensions",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":63,
-         "exercise_unit_id":182,
-         "name":"weighted bench dip",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":63,
-         "exercise_unit_id":183,
-         "name":"reverse grip triceps pushdown",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":64,
-         "exercise_unit_id":184,
-         "name":"barbell flat bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":64,
-         "exercise_unit_id":185,
-         "name":"barbell incline bench press",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":64,
-         "exercise_unit_id":186,
-         "name":"barbell decline bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":65,
-         "exercise_unit_id":187,
-         "name":"barbell curl",
-         "weight":35,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":65,
-         "exercise_unit_id":188,
-         "name":"concentration curls",
-         "weight":12,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":65,
-         "exercise_unit_id":189,
-         "name":"alternate hammer curl",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":66,
-         "exercise_unit_id":190,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":66,
-         "exercise_unit_id":191,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":67,
-         "exercise_unit_id":192,
-         "name":"barbell full squat",
-         "weight":95,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":67,
-         "exercise_unit_id":193,
-         "name":"leg press",
-         "weight":170,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":67,
-         "exercise_unit_id":194,
-         "name":"leg extensions",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":67,
-         "exercise_unit_id":195,
-         "name":"lying leg curls",
-         "weight":30,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":68,
-         "exercise_unit_id":196,
-         "name":"standing military press",
-         "weight":45,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":68,
-         "exercise_unit_id":197,
-         "name":"power partials",
-         "weight":10,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":68,
-         "exercise_unit_id":198,
-         "name":"front dumbbell raise",
-         "weight":14,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":69,
-         "exercise_unit_id":199,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":69,
-         "exercise_unit_id":200,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":70,
-         "exercise_unit_id":201,
-         "name":"deadlift",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":70,
-         "exercise_unit_id":202,
-         "name":"reverse grip bent-over rows",
-         "weight":70,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":70,
-         "exercise_unit_id":203,
-         "name":"t-bar row",
-         "weight":85,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":71,
-         "exercise_unit_id":204,
-         "name":"cable two arms extensions",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":71,
-         "exercise_unit_id":205,
-         "name":"weighted bench dip",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":71,
-         "exercise_unit_id":206,
-         "name":"reverse grip triceps pushdown",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":72,
-         "exercise_unit_id":207,
-         "name":"barbell flat bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":72,
-         "exercise_unit_id":208,
-         "name":"barbell incline bench press",
-         "weight":60,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":72,
-         "exercise_unit_id":209,
-         "name":"barbell decline bench press",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":8
-      },
-      {
-         "muscle_group_session_id":73,
-         "exercise_unit_id":210,
-         "name":"barbell curl",
-         "weight":35,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":73,
-         "exercise_unit_id":211,
-         "name":"concentration curls",
-         "weight":12,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":73,
-         "exercise_unit_id":212,
-         "name":"alternate hammer curl",
-         "weight":16,
-         "number_of_series":3,
-         "number_of_reps":10
-      },
-      {
-         "muscle_group_session_id":74,
-         "exercise_unit_id":213,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":74,
-         "exercise_unit_id":214,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":75,
-         "exercise_unit_id":215,
-         "name":"barbell full squat",
-         "weight":95,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":75,
-         "exercise_unit_id":216,
-         "name":"leg press",
-         "weight":170,
-         "number_of_series":4,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":75,
-         "exercise_unit_id":217,
-         "name":"leg extensions",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":75,
-         "exercise_unit_id":218,
-         "name":"lying leg curls",
-         "weight":30,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":76,
-         "exercise_unit_id":219,
-         "name":"standing military press",
-         "weight":45,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":76,
-         "exercise_unit_id":220,
-         "name":"power partials",
-         "weight":10,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":76,
-         "exercise_unit_id":221,
-         "name":"front dumbbell raise",
-         "weight":14,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":77,
-         "exercise_unit_id":222,
-         "name":"standing calf raise",
-         "weight":80,
-         "number_of_series":4,
-         "number_of_reps":20
-      },
-      {
-         "muscle_group_session_id":77,
-         "exercise_unit_id":223,
-         "name":"sitting calf raise",
-         "weight":100,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":78,
-         "exercise_unit_id":224,
-         "name":"deadlift",
-         "weight":100,
-         "number_of_series":4,
-         "number_of_reps":6
-      },
-      {
-         "muscle_group_session_id":78,
-         "exercise_unit_id":225,
-         "name":"reverse grip bent-over rows",
-         "weight":70,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":78,
-         "exercise_unit_id":226,
-         "name":"t-bar row",
-         "weight":85,
-         "number_of_series":3,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":79,
-         "exercise_unit_id":227,
-         "name":"cable two arms extensions",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":12
-      },
-      {
-         "muscle_group_session_id":79,
-         "exercise_unit_id":228,
-         "name":"weighted bench dip",
-         "weight":40,
-         "number_of_series":3,
-         "number_of_reps":15
-      },
-      {
-         "muscle_group_session_id":79,
-         "exercise_unit_id":229,
-         "name":"reverse grip triceps pushdown",
-         "weight":40,
-         "number_of_series":4,
-         "number_of_reps":10
-      }
-   ],
-   "MuscleGroupSessions":[
-      {
-         "muscle_group_session_id":0,
-         "main_session_id":0,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":1,
-         "main_session_id":0,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":2,
-         "main_session_id":0,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":3,
-         "main_session_id":1,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":4,
-         "main_session_id":1,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":5,
-         "main_session_id":1,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":6,
-         "main_session_id":2,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":7,
-         "main_session_id":2,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":8,
-         "main_session_id":3,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":9,
-         "main_session_id":3,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":10,
-         "main_session_id":3,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":11,
-         "main_session_id":4,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":12,
-         "main_session_id":4,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":13,
-         "main_session_id":4,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":14,
-         "main_session_id":5,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":15,
-         "main_session_id":5,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":16,
-         "main_session_id":6,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":17,
-         "main_session_id":6,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":18,
-         "main_session_id":6,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":19,
-         "main_session_id":7,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":20,
-         "main_session_id":7,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":21,
-         "main_session_id":7,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":22,
-         "main_session_id":8,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":23,
-         "main_session_id":8,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":24,
-         "main_session_id":9,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":25,
-         "main_session_id":9,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":26,
-         "main_session_id":9,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":27,
-         "main_session_id":10,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":28,
-         "main_session_id":10,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":29,
-         "main_session_id":10,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":30,
-         "main_session_id":11,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":31,
-         "main_session_id":11,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":32,
-         "main_session_id":12,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":33,
-         "main_session_id":12,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":34,
-         "main_session_id":12,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":35,
-         "main_session_id":13,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":36,
-         "main_session_id":13,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":37,
-         "main_session_id":13,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":38,
-         "main_session_id":14,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":39,
-         "main_session_id":14,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":40,
-         "main_session_id":15,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":41,
-         "main_session_id":15,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":42,
-         "main_session_id":15,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":43,
-         "main_session_id":16,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":44,
-         "main_session_id":16,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":45,
-         "main_session_id":16,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":46,
-         "main_session_id":17,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":47,
-         "main_session_id":17,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":48,
-         "main_session_id":18,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":49,
-         "main_session_id":18,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":50,
-         "main_session_id":18,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":51,
-         "main_session_id":19,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":52,
-         "main_session_id":19,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":53,
-         "main_session_id":19,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":54,
-         "main_session_id":20,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":55,
-         "main_session_id":20,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":56,
-         "main_session_id":21,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":57,
-         "main_session_id":21,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":58,
-         "main_session_id":21,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":59,
-         "main_session_id":22,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":60,
-         "main_session_id":22,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":61,
-         "main_session_id":22,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":62,
-         "main_session_id":23,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":63,
-         "main_session_id":23,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":64,
-         "main_session_id":24,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":65,
-         "main_session_id":24,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":66,
-         "main_session_id":24,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":67,
-         "main_session_id":25,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":68,
-         "main_session_id":25,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":69,
-         "main_session_id":25,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":70,
-         "main_session_id":26,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":71,
-         "main_session_id":26,
-         "name":"triceps"
-      },
-      {
-         "muscle_group_session_id":72,
-         "main_session_id":27,
-         "name":"chest"
-      },
-      {
-         "muscle_group_session_id":73,
-         "main_session_id":27,
-         "name":"biceps"
-      },
-      {
-         "muscle_group_session_id":74,
-         "main_session_id":27,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":75,
-         "main_session_id":28,
-         "name":"leg"
-      },
-      {
-         "muscle_group_session_id":76,
-         "main_session_id":28,
-         "name":"shoulders"
-      },
-      {
-         "muscle_group_session_id":77,
-         "main_session_id":28,
-         "name":"calf"
-      },
-      {
-         "muscle_group_session_id":78,
-         "main_session_id":29,
-         "name":"back"
-      },
-      {
-         "muscle_group_session_id":79,
-         "main_session_id":29,
-         "name":"triceps"
-      }
-   ],
-   "Training_sessions":[
-      {
-         "user_id":1,
-         "main_session_id":0,
-         "date":"04/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":1,
-         "date":"06/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":2,
-         "date":"08/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":3,
-         "date":"11/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":4,
-         "date":"13/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":5,
-         "date":"15/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":6,
-         "date":"18/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":7,
-         "date":"20/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":8,
-         "date":"22/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":9,
-         "date":"25/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":10,
-         "date":"27/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":11,
-         "date":"29/07/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":12,
-         "date":"01/08/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":13,
-         "date":"03/08/2016"
-      },
-      {
-         "user_id":1,
-         "main_session_id":14,
-         "date":"05/08/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":15,
-         "date":"04/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":16,
-         "date":"06/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":17,
-         "date":"08/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":18,
-         "date":"11/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":19,
-         "date":"13/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":20,
-         "date":"15/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":22,
-         "date":"18/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":22,
-         "date":"20/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":23,
-         "date":"22/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":24,
-         "date":"25/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":25,
-         "date":"27/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":26,
-         "date":"29/07/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":27,
-         "date":"01/08/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":28,
-         "date":"03/08/2016"
-      },
-      {
-         "user_id":2,
-         "main_session_id":29,
-         "date":"05/08/2016"
-      }
-   ],
-   "Users":[
-      {
-         "id":1,
-         "first_name":"Mitch",
-         "surname":"Hitt",
-         "picture":"assets/users/1.jpg",
-         "dob":"12/05/1986",
-         "training_from":"05/12/1986"
-      },
-      {
-         "id":2,
-         "first_name":"Tyree",
-         "surname":"Layman",
-         "dob":"12/11/1989",
-         "picture":"assets/users/2.jpg",
-         "training_from":"14/07/2008"
-      },
-      {
-         "id":3,
-         "first_name":"Gus",
-         "surname":"Hathaway",
-         "dob":"30/11/1978",
-         "picture":"assets/users/3.jpg",
-         "training_from":"21/01/1992"
-      },
-      {
-         "id":4,
-         "first_name":"Alphonse",
-         "surname":"Wetzel",
-         "dob":"25/03/1983",
-         "picture":"assets/users/4.jpg",
-         "training_from":"19/12/1999"
-      },
-      {
-         "id":5,
-         "first_name":"Darell",
-         "surname":"Kent",
-         "dob":"10/09/1998",
-         "picture":"assets/users/5.jpg",
-         "training_from":"12/09/2014"
-      }
-   ],
-   "Exercises":[
-      {
-         "name":"barbell flat bench press",
-         "group":"chest",
-         "picture":"assets/exercises/flatbench.jpg"
-      },
-      {
-         "name":"barbell incline bench press",
-         "group":"chest",
-         "picture":"assets/exercises/incline.jpg"
-      },
-      {
-         "name":"barbell decline bench press",
-         "group":"chest",
-         "picture":"assets/exercises/declinebench.jpg"
-      },
-      {
-         "name":"barbell curl",
-         "group":"biceps",
-         "picture":"assets/exercises/barbellcurl.jpg"
-      },
-      {
-         "name":"concentration curls",
-         "group":"biceps",
-         "picture":"assets/exercises/concentrationcurl.jpg"
-      },
-      {
-         "name":"alternate hammer curl",
-         "group":"biceps",
-         "picture":"assets/exercises/hammercurl.jpg"
-      },
-      {
-         "name":"standing calf raise",
-         "group":"calf",
-         "picture":"assets/exercises/standingcalfraise.jpg"
-      },
-      {
-         "name":"sitting calf raise",
-         "group":"calf",
-         "picture":"assets/exercises/sittingcalfraise.jpg"
-      },
-      {
-         "name":"barbell full squat",
-         "group":"leg",
-         "picture":"assets/exercises/barbellsquat.jpg"
-      },
-      {
-         "name":"leg press",
-         "group":"leg",
-         "picture":"assets/exercises/legpress.jpg"
-      },
-      {
-         "name":"leg extensions",
-         "group":"leg",
-         "picture":"assets/exercises/legextensions.jpg"
-      },
-      {
-         "name":"lying leg curls",
-         "group":"leg",
-         "picture":"assets/exercises/lyinglegcurls.jpg"
-      },
-      {
-         "name":"cable two arms extensions",
-         "group":"triceps",
-         "picture":"assets/exercises/cabletwoarmsextensions.jpg"
-      },
-      {
-         "name":"weighted bench dip",
-         "group":"triceps",
-         "picture":"assets/exercises/weightedbenchdips.jpg"
-      },
-      {
-         "name":"reverse grip triceps pushdown",
-         "group":"triceps",
-         "picture":"assets/exercises/reversepushdown.jpg"
-      },
-      {
-         "name":"standing military press",
-         "group":"shoulders",
-         "picture":"assets/exercises/militarypress.jpg"
-      },
-      {
-         "name":"power partials",
-         "group":"shoulders",
-         "picture":"assets/exercises/powerpartials.jpg"
-      },
-      {
-         "name":"front dumbbell raise",
-         "group":"shoulders",
-         "picture":"assets/exercises/frontraise.jpg"
-      },
-      {
-         "name":"deadlift",
-         "group":"back",
-         "picture":"assets/exercises/deadlift.jpg"
-      },
-      {
-         "name":"reverse grip bent-over rows",
-         "group":"back",
-         "picture":"assets/exercises/bentoverrows.jpg"
-      },
-      {
-         "name":"t-bar row",
-         "group":"back",
-         "picture":"assets/exercises/tbarrows.jpg"
-      }
-   ],
-   "ExerciseConstants":[
-      {
-         "name":"barbell flat bench press",
-         "group":"chest"
-      },
-      {
-         "name":"barbell incline bench press",
-         "group":"chest"
-      },
-      {
-         "name":"barbell decline bench press",
-         "group":"chest"
-      },
-      {
-         "name":"barbell curl",
-         "group":"biceps"
-      },
-      {
-         "name":"concentration curls",
-         "group":"biceps"
-      },
-      {
-         "name":"alternate hammer curl",
-         "group":"biceps"
-      },
-      {
-         "name":"standing calf raise",
-         "group":"calf"
-      },
-      {
-         "name":"sitting calf raise",
-         "group":"calf"
-      },
-      {
-         "name":"barbell full squat",
-         "group":"leg"
-      },
-      {
-         "name":"leg press",
-         "group":"leg"
-      },
-      {
-         "name":"leg extensions",
-         "group":"leg"
-      },
-      {
-         "name":"lying leg curls",
-         "group":"leg"
-      },
-      {
-         "name":"cable two arms extensions",
-         "group":"triceps"
-      },
-      {
-         "name":"weighted bench dip",
-         "group":"triceps"
-      },
-      {
-         "name":"reverse grip triceps pushdown",
-         "group":"triceps"
-      },
-      {
-         "name":"standing military press",
-         "group":"shoulders"
-      },
-      {
-         "name":"power partials",
-         "group":"shoulders"
-      },
-      {
-         "name":"front dumbbell raise",
-         "group":"shoulders"
-      },
-      {
-         "name":"deadlift",
-         "group":"back"
-      },
-      {
-         "name":"reverse grip bent-over rows",
-         "group":"back"
-      },
-      {
-         "name":"t-bar row",
-         "group":"back"
-      }
-   ],
-   "Muscles":[
-      {
-         "name":"chest"
-      },
-      {
-         "name":"biceps"
-      },
-      {
-         "name":"calf"
-      },
-      {
-         "name":"triceps"
-      },
-      {
-         "name":"leg"
-      },
-      {
-         "name":"shoulders"
-      },
-      {
-         "name":"back"
-      }
-   ],
-   "MuscleConstants":[
-      {
-         "name":"chest"
-      },
-      {
-         "name":"biceps"
-      },
-      {
-         "name":"calf"
-      },
-      {
-         "name":"triceps"
-      },
-      {
-         "name":"leg"
-      },
-      {
-         "name":"shoulders"
-      },
-      {
-         "name":"back"
-      }
-   ]
+  "ExerciseUnits": [
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 0,
+      "id": 0,
+      "name": "barbell flat bench press",
+      "weight": 110,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 0,
+      "id": 1,
+      "name": "barbell incline bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 0,
+      "id": 2,
+      "name": "barbell decline bench press",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 1,
+      "id": 3,
+      "name": "barbell curl",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 1,
+      "id": 4,
+      "name": "concentration curls",
+      "weight": 20,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 1,
+      "id": 5,
+      "name": "alternate hammer curl",
+      "weight": 24,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 2,
+      "id": 22,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 2,
+      "id": 6,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 3,
+      "id": 7,
+      "name": "barbell full squat",
+      "weight": 140,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 3,
+      "id": 8,
+      "name": "leg press",
+      "weight": 320,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 3,
+      "id": 9,
+      "name": "leg extensions",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 3,
+      "id": 10,
+      "name": "lying leg curls",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 4,
+      "id": 11,
+      "name": "standing military press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 4,
+      "id": 12,
+      "name": "power partials",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 4,
+      "id": 13,
+      "name": "front dumbbell raise",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 5,
+      "id": 14,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 5,
+      "id": 15,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 6,
+      "id": 16,
+      "name": "deadlift",
+      "weight": 180,
+      "number_of_series": 4,
+      "number_of_reps": 5
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 6,
+      "id": 17,
+      "name": "reverse grip bent-over rows",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 6,
+      "id": 18,
+      "name": "t-bar row",
+      "weight": 80,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 7,
+      "id": 19,
+      "name": "cable two arms extensions",
+      "weight": 50,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 7,
+      "id": 20,
+      "name": "weighted bench dip",
+      "weight": 50,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 7,
+      "id": 21,
+      "name": "reverse grip triceps pushdown",
+      "weight": 30,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 8,
+      "id": 23,
+      "name": "barbell flat bench press",
+      "weight": 112,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 8,
+      "id": 24,
+      "name": "barbell incline bench press",
+      "weight": 82,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 8,
+      "id": 25,
+      "name": "barbell decline bench press",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 9,
+      "id": 26,
+      "name": "barbell curl",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 9,
+      "id": 27,
+      "name": "concentration curls",
+      "weight": 20,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 9,
+      "id": 28,
+      "name": "alternate hammer curl",
+      "weight": 24,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 10,
+      "id": 29,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 10,
+      "id": 30,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 11,
+      "id": 31,
+      "name": "barbell full squat",
+      "weight": 140,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 11,
+      "id": 32,
+      "name": "leg press",
+      "weight": 320,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 11,
+      "id": 33,
+      "name": "leg extensions",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 11,
+      "id": 34,
+      "name": "lying leg curls",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 12,
+      "id": 35,
+      "name": "standing military press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 12,
+      "id": 36,
+      "name": "power partials",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 12,
+      "id": 37,
+      "name": "front dumbbell raise",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 13,
+      "id": 38,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 13,
+      "id": 39,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 14,
+      "id": 40,
+      "name": "deadlift",
+      "weight": 180,
+      "number_of_series": 4,
+      "number_of_reps": 5
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 14,
+      "id": 41,
+      "name": "reverse grip bent-over rows",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 14,
+      "id": 42,
+      "name": "t-bar row",
+      "weight": 80,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 15,
+      "id": 43,
+      "name": "cable two arms extensions",
+      "weight": 50,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 15,
+      "id": 44,
+      "name": "weighted bench dip",
+      "weight": 50,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 15,
+      "id": 45,
+      "name": "reverse grip triceps pushdown",
+      "weight": 30,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 16,
+      "id": 46,
+      "name": "barbell flat bench press",
+      "weight": 114,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 16,
+      "id": 47,
+      "name": "barbell incline bench press",
+      "weight": 82,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 16,
+      "id": 48,
+      "name": "barbell decline bench press",
+      "weight": 102,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 17,
+      "id": 49,
+      "name": "barbell curl",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 17,
+      "id": 50,
+      "name": "concentration curls",
+      "weight": 20,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 17,
+      "id": 51,
+      "name": "alternate hammer curl",
+      "weight": 24,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 18,
+      "id": 52,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 18,
+      "id": 53,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 19,
+      "id": 54,
+      "name": "barbell full squat",
+      "weight": 140,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 19,
+      "id": 55,
+      "name": "leg press",
+      "weight": 320,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 19,
+      "id": 56,
+      "name": "leg extensions",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 19,
+      "id": 57,
+      "name": "lying leg curls",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 20,
+      "id": 58,
+      "name": "standing military press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 20,
+      "id": 59,
+      "name": "power partials",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 20,
+      "id": 60,
+      "name": "front dumbbell raise",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 21,
+      "id": 61,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 21,
+      "id": 62,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 22,
+      "id": 63,
+      "name": "deadlift",
+      "weight": 180,
+      "number_of_series": 4,
+      "number_of_reps": 5
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 22,
+      "id": 64,
+      "name": "reverse grip bent-over rows",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 22,
+      "id": 65,
+      "name": "t-bar row",
+      "weight": 80,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 23,
+      "id": 66,
+      "name": "cable two arms extensions",
+      "weight": 50,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 23,
+      "id": 67,
+      "name": "weighted bench dip",
+      "weight": 50,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 23,
+      "id": 68,
+      "name": "reverse grip triceps pushdown",
+      "weight": 32,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 24,
+      "id": 69,
+      "name": "barbell flat bench press",
+      "weight": 114,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 24,
+      "id": 70,
+      "name": "barbell incline bench press",
+      "weight": 82,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 24,
+      "id": 71,
+      "name": "barbell decline bench press",
+      "weight": 102,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 25,
+      "id": 72,
+      "name": "barbell curl",
+      "weight": 62,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 25,
+      "id": 73,
+      "name": "concentration curls",
+      "weight": 22,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 25,
+      "id": 74,
+      "name": "alternate hammer curl",
+      "weight": 24,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 26,
+      "id": 75,
+      "name": "standing calf raise",
+      "weight": 200,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 26,
+      "id": 76,
+      "name": "sitting calf raise",
+      "weight": 250,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 27,
+      "id": 77,
+      "name": "barbell full squat",
+      "weight": 140,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 27,
+      "id": 78,
+      "name": "leg press",
+      "weight": 320,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 27,
+      "id": 79,
+      "name": "leg extensions",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 27,
+      "id": 80,
+      "name": "lying leg curls",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 28,
+      "id": 81,
+      "name": "standing military press",
+      "weight": 82,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 28,
+      "id": 82,
+      "name": "power partials",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 28,
+      "id": 83,
+      "name": "front dumbbell raise",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 29,
+      "id": 84,
+      "name": "standing calf raise",
+      "weight": 220,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 29,
+      "id": 85,
+      "name": "sitting calf raise",
+      "weight": 260,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 30,
+      "id": 86,
+      "name": "deadlift",
+      "weight": 180,
+      "number_of_series": 4,
+      "number_of_reps": 5
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 30,
+      "id": 87,
+      "name": "reverse grip bent-over rows",
+      "weight": 90,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 30,
+      "id": 88,
+      "name": "t-bar row",
+      "weight": 80,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 31,
+      "id": 89,
+      "name": "cable two arms extensions",
+      "weight": 50,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 31,
+      "id": 90,
+      "name": "weighted bench dip",
+      "weight": 50,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 31,
+      "id": 91,
+      "name": "reverse grip triceps pushdown",
+      "weight": 32,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 32,
+      "id": 92,
+      "name": "barbell flat bench press",
+      "weight": 116,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 32,
+      "id": 93,
+      "name": "barbell incline bench press",
+      "weight": 84,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 32,
+      "id": 94,
+      "name": "barbell decline bench press",
+      "weight": 104,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 33,
+      "id": 95,
+      "name": "barbell curl",
+      "weight": 62,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 33,
+      "id": 96,
+      "name": "concentration curls",
+      "weight": 22,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 33,
+      "id": 97,
+      "name": "alternate hammer curl",
+      "weight": 24,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 34,
+      "id": 98,
+      "name": "standing calf raise",
+      "weight": 220,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 34,
+      "id": 99,
+      "name": "sitting calf raise",
+      "weight": 260,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 35,
+      "id": 100,
+      "name": "barbell full squat",
+      "weight": 150,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 35,
+      "id": 101,
+      "name": "leg press",
+      "weight": 320,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 35,
+      "id": 102,
+      "name": "leg extensions",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 35,
+      "id": 103,
+      "name": "lying leg curls",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 36,
+      "id": 104,
+      "name": "standing military press",
+      "weight": 82,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 36,
+      "id": 105,
+      "name": "power partials",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 36,
+      "id": 106,
+      "name": "front dumbbell raise",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 37,
+      "id": 107,
+      "name": "standing calf raise",
+      "weight": 220,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 37,
+      "id": 108,
+      "name": "sitting calf raise",
+      "weight": 260,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 38,
+      "id": 109,
+      "name": "deadlift",
+      "weight": 185,
+      "number_of_series": 4,
+      "number_of_reps": 5
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 38,
+      "id": 110,
+      "name": "reverse grip bent-over rows",
+      "weight": 85,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 38,
+      "id": 111,
+      "name": "t-bar row",
+      "weight": 85,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 39,
+      "id": 112,
+      "name": "cable two arms extensions",
+      "weight": 50,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 39,
+      "id": 113,
+      "name": "weighted bench dip",
+      "weight": 50,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 39,
+      "id": 114,
+      "name": "reverse grip triceps pushdown",
+      "weight": 32,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 40,
+      "id": 115,
+      "name": "barbell flat bench press",
+      "weight": 85,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 40,
+      "id": 116,
+      "name": "barbell incline bench press",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 40,
+      "id": 117,
+      "name": "barbell decline bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 41,
+      "id": 118,
+      "name": "barbell curl",
+      "weight": 35,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 41,
+      "id": 119,
+      "name": "concentration curls",
+      "weight": 12,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 41,
+      "id": 120,
+      "name": "alternate hammer curl",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 42,
+      "id": 121,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 42,
+      "id": 122,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 43,
+      "id": 123,
+      "name": "barbell full squat",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 43,
+      "id": 124,
+      "name": "leg press",
+      "weight": 150,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 43,
+      "id": 125,
+      "name": "leg extensions",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 43,
+      "id": 126,
+      "name": "lying leg curls",
+      "weight": 30,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 44,
+      "id": 127,
+      "name": "standing military press",
+      "weight": 45,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 44,
+      "id": 128,
+      "name": "power partials",
+      "weight": 10,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 44,
+      "id": 129,
+      "name": "front dumbbell raise",
+      "weight": 14,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 45,
+      "id": 130,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 45,
+      "id": 131,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 46,
+      "id": 132,
+      "name": "deadlift",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 46,
+      "id": 133,
+      "name": "reverse grip bent-over rows",
+      "weight": 70,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 46,
+      "id": 134,
+      "name": "t-bar row",
+      "weight": 85,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 47,
+      "id": 135,
+      "name": "cable two arms extensions",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 47,
+      "id": 136,
+      "name": "weighted bench dip",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 47,
+      "id": 137,
+      "name": "reverse grip triceps pushdown",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 48,
+      "id": 138,
+      "name": "barbell flat bench press",
+      "weight": 85,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 48,
+      "id": 139,
+      "name": "barbell incline bench press",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 48,
+      "id": 140,
+      "name": "barbell decline bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 49,
+      "id": 141,
+      "name": "barbell curl",
+      "weight": 35,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 49,
+      "id": 142,
+      "name": "concentration curls",
+      "weight": 12,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 49,
+      "id": 143,
+      "name": "alternate hammer curl",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 50,
+      "id": 144,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 50,
+      "id": 145,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 51,
+      "id": 146,
+      "name": "barbell full squat",
+      "weight": 90,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 51,
+      "id": 147,
+      "name": "leg press",
+      "weight": 160,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 51,
+      "id": 148,
+      "name": "leg extensions",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 51,
+      "id": 149,
+      "name": "lying leg curls",
+      "weight": 30,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 52,
+      "id": 150,
+      "name": "standing military press",
+      "weight": 45,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 52,
+      "id": 151,
+      "name": "power partials",
+      "weight": 10,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 52,
+      "id": 152,
+      "name": "front dumbbell raise",
+      "weight": 14,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 53,
+      "id": 153,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 53,
+      "id": 154,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 54,
+      "id": 155,
+      "name": "deadlift",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 54,
+      "id": 156,
+      "name": "reverse grip bent-over rows",
+      "weight": 70,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 54,
+      "id": 157,
+      "name": "t-bar row",
+      "weight": 85,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 55,
+      "id": 158,
+      "name": "cable two arms extensions",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 55,
+      "id": 159,
+      "name": "weighted bench dip",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 55,
+      "id": 160,
+      "name": "reverse grip triceps pushdown",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 56,
+      "id": 161,
+      "name": "barbell flat bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 56,
+      "id": 162,
+      "name": "barbell incline bench press",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 56,
+      "id": 163,
+      "name": "barbell decline bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 57,
+      "id": 164,
+      "name": "barbell curl",
+      "weight": 35,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 57,
+      "id": 165,
+      "name": "concentration curls",
+      "weight": 12,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 57,
+      "id": 166,
+      "name": "alternate hammer curl",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 58,
+      "id": 167,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 58,
+      "id": 168,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 59,
+      "id": 169,
+      "name": "barbell full squat",
+      "weight": 95,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 59,
+      "id": 170,
+      "name": "leg press",
+      "weight": 170,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 59,
+      "id": 171,
+      "name": "leg extensions",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 59,
+      "id": 172,
+      "name": "lying leg curls",
+      "weight": 30,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 60,
+      "id": 173,
+      "name": "standing military press",
+      "weight": 45,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 60,
+      "id": 174,
+      "name": "power partials",
+      "weight": 10,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 60,
+      "id": 175,
+      "name": "front dumbbell raise",
+      "weight": 14,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 61,
+      "id": 176,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 61,
+      "id": 177,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 62,
+      "id": 178,
+      "name": "deadlift",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 62,
+      "id": 179,
+      "name": "reverse grip bent-over rows",
+      "weight": 70,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 62,
+      "id": 180,
+      "name": "t-bar row",
+      "weight": 85,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 63,
+      "id": 181,
+      "name": "cable two arms extensions",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 63,
+      "id": 182,
+      "name": "weighted bench dip",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 63,
+      "id": 183,
+      "name": "reverse grip triceps pushdown",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 64,
+      "id": 184,
+      "name": "barbell flat bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 64,
+      "id": 185,
+      "name": "barbell incline bench press",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 64,
+      "id": 186,
+      "name": "barbell decline bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 65,
+      "id": 187,
+      "name": "barbell curl",
+      "weight": 35,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 65,
+      "id": 188,
+      "name": "concentration curls",
+      "weight": 12,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 65,
+      "id": 189,
+      "name": "alternate hammer curl",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 66,
+      "id": 190,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 66,
+      "id": 191,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 67,
+      "id": 192,
+      "name": "barbell full squat",
+      "weight": 95,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 67,
+      "id": 193,
+      "name": "leg press",
+      "weight": 170,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 67,
+      "id": 194,
+      "name": "leg extensions",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 67,
+      "id": 195,
+      "name": "lying leg curls",
+      "weight": 30,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 68,
+      "id": 196,
+      "name": "standing military press",
+      "weight": 45,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 68,
+      "id": 197,
+      "name": "power partials",
+      "weight": 10,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 68,
+      "id": 198,
+      "name": "front dumbbell raise",
+      "weight": 14,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 69,
+      "id": 199,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 69,
+      "id": 200,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 70,
+      "id": 201,
+      "name": "deadlift",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 70,
+      "id": 202,
+      "name": "reverse grip bent-over rows",
+      "weight": 70,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 70,
+      "id": 203,
+      "name": "t-bar row",
+      "weight": 85,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {"muscle_group": "triceps";
+      "muscle_group_session_id": 71,
+      "id": 204,
+      "name": "cable two arms extensions",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 71,
+      "id": 205,
+      "name": "weighted bench dip",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {"muscle_group": "triceps";
+      "muscle_group_session_id": 71,
+      "id": 206,
+      "name": "reverse grip triceps pushdown",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 72,
+      "id": 207,
+      "name": "barbell flat bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 72,
+      "id": 208,
+      "name": "barbell incline bench press",
+      "weight": 60,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "chest";
+      "muscle_group_session_id": 72,
+      "id": 209,
+      "name": "barbell decline bench press",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 8
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 73,
+      "id": 210,
+      "name": "barbell curl",
+      "weight": 35,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 73,
+      "id": 211,
+      "name": "concentration curls",
+      "weight": 12,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "biceps";
+      "muscle_group_session_id": 73,
+      "id": 212,
+      "name": "alternate hammer curl",
+      "weight": 16,
+      "number_of_series": 3,
+      "number_of_reps": 10
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 74,
+      "id": 213,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 74,
+      "id": 214,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 75,
+      "id": 215,
+      "name": "barbell full squat",
+      "weight": 95,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 75,
+      "id": 216,
+      "name": "leg press",
+      "weight": 170,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 75,
+      "id": 217,
+      "name": "leg extensions",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "leg";
+      "muscle_group_session_id": 75,
+      "id": 218,
+      "name": "lying leg curls",
+      "weight": 30,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+	{
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 76,
+      "id": 219,
+      "name": "standing military press",
+      "weight": 45,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 76,
+      "id": 220,
+      "name": "power partials",
+      "weight": 10,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "shoulders";
+      "muscle_group_session_id": 76,
+      "id": 221,
+      "name": "front dumbbell raise",
+      "weight": 14,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 77,
+      "id": 222,
+      "name": "standing calf raise",
+      "weight": 80,
+      "number_of_series": 4,
+      "number_of_reps": 20
+    },
+    {
+	"muscle_group": "calf";
+      "muscle_group_session_id": 77,
+      "id": 223,
+      "name": "sitting calf raise",
+      "weight": 100,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 78,
+      "id": 224,
+      "name": "deadlift",
+      "weight": 100,
+      "number_of_series": 4,
+      "number_of_reps": 6
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 78,
+      "id": 225,
+      "name": "reverse grip bent-over rows",
+      "weight": 70,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "back";
+      "muscle_group_session_id": 78,
+      "id": 226,
+      "name": "t-bar row",
+      "weight": 85,
+      "number_of_series": 3,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 79,
+      "id": 227,
+      "name": "cable two arms extensions",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 12
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 79,
+      "id": 228,
+      "name": "weighted bench dip",
+      "weight": 40,
+      "number_of_series": 3,
+      "number_of_reps": 15
+    },
+    {
+	"muscle_group": "triceps";
+      "muscle_group_session_id": 79,
+      "id": 229,
+      "name": "reverse grip triceps pushdown",
+      "weight": 40,
+      "number_of_series": 4,
+      "number_of_reps": 10
+    }
+  ],
+  "MuscleGroupSessions": [
+    {
+      "id": 0,
+      "main_session_id": 0,
+      "name": "chest"
+    },
+    {
+      "id": 1,
+      "main_session_id": 0,
+      "name": "biceps"
+    },
+    {
+      "id": 2,
+      "main_session_id": 0,
+      "name": "calf"
+    },
+    {
+      "id": 3,
+      "main_session_id": 1,
+      "name": "leg"
+    },
+    {
+      "id": 4,
+      "main_session_id": 1,
+      "name": "shoulders"
+    },
+    {
+      "id": 5,
+      "main_session_id": 1,
+      "name": "calf"
+    },
+    {
+      "id": 6,
+      "main_session_id": 2,
+      "name": "back"
+    },
+    {
+      "id": 7,
+      "main_session_id": 2,
+      "name": "triceps"
+    },
+    {
+      "id": 8,
+      "main_session_id": 3,
+      "name": "chest"
+    },
+    {
+      "id": 9,
+      "main_session_id": 3,
+      "name": "biceps"
+    },
+    {
+      "id": 10,
+      "main_session_id": 3,
+      "name": "calf"
+    },
+    {
+      "id": 11,
+      "main_session_id": 4,
+      "name": "leg"
+    },
+    {
+      "id": 12,
+      "main_session_id": 4,
+      "name": "shoulders"
+    },
+    {
+      "id": 13,
+      "main_session_id": 4,
+      "name": "calf"
+    },
+    {
+      "id": 14,
+      "main_session_id": 5,
+      "name": "back"
+    },
+    {
+      "id": 15,
+      "main_session_id": 5,
+      "name": "triceps"
+    },
+    {
+      "id": 16,
+      "main_session_id": 6,
+      "name": "chest"
+    },
+    {
+      "id": 17,
+      "main_session_id": 6,
+      "name": "biceps"
+    },
+    {
+      "id": 18,
+      "main_session_id": 6,
+      "name": "calf"
+    },
+    {
+      "id": 19,
+      "main_session_id": 7,
+      "name": "leg"
+    },
+    {
+      "id": 20,
+      "main_session_id": 7,
+      "name": "shoulders"
+    },
+    {
+      "id": 21,
+      "main_session_id": 7,
+      "name": "calf"
+    },
+    {
+      "id": 22,
+      "main_session_id": 8,
+      "name": "back"
+    },
+    {
+      "id": 23,
+      "main_session_id": 8,
+      "name": "triceps"
+    },
+    {
+      "id": 24,
+      "main_session_id": 9,
+      "name": "chest"
+    },
+    {
+      "id": 25,
+      "main_session_id": 9,
+      "name": "biceps"
+    },
+    {
+      "id": 26,
+      "main_session_id": 9,
+      "name": "calf"
+    },
+    {
+      "id": 27,
+      "main_session_id": 10,
+      "name": "leg"
+    },
+    {
+      "id": 28,
+      "main_session_id": 10,
+      "name": "shoulders"
+    },
+    {
+      "id": 29,
+      "main_session_id": 10,
+      "name": "calf"
+    },
+    {
+      "id": 30,
+      "main_session_id": 11,
+      "name": "back"
+    },
+    {
+      "id": 31,
+      "main_session_id": 11,
+      "name": "triceps"
+    },
+    {
+      "id": 32,
+      "main_session_id": 12,
+      "name": "chest"
+    },
+    {
+      "id": 33,
+      "main_session_id": 12,
+      "name": "biceps"
+    },
+    {
+      "id": 34,
+      "main_session_id": 12,
+      "name": "calf"
+    },
+    {
+      "id": 35,
+      "main_session_id": 13,
+      "name": "leg"
+    },
+    {
+      "id": 36,
+      "main_session_id": 13,
+      "name": "shoulders"
+    },
+    {
+      "id": 37,
+      "main_session_id": 13,
+      "name": "calf"
+    },
+    {
+      "id": 38,
+      "main_session_id": 14,
+      "name": "back"
+    },
+    {
+      "id": 39,
+      "main_session_id": 14,
+      "name": "triceps"
+    },
+    {
+      "id": 40,
+      "main_session_id": 15,
+      "name": "chest"
+    },
+    {
+      "id": 41,
+      "main_session_id": 15,
+      "name": "biceps"
+    },
+    {
+      "id": 42,
+      "main_session_id": 15,
+      "name": "calf"
+    },
+    {
+      "id": 43,
+      "main_session_id": 16,
+      "name": "leg"
+    },
+    {
+      "id": 44,
+      "main_session_id": 16,
+      "name": "shoulders"
+    },
+    {
+      "id": 45,
+      "main_session_id": 16,
+      "name": "calf"
+    },
+    {
+      "id": 46,
+      "main_session_id": 17,
+      "name": "back"
+    },
+    {
+      "id": 47,
+      "main_session_id": 17,
+      "name": "triceps"
+    },
+    {
+      "id": 48,
+      "main_session_id": 18,
+      "name": "chest"
+    },
+    {
+      "id": 49,
+      "main_session_id": 18,
+      "name": "biceps"
+    },
+    {
+      "id": 50,
+      "main_session_id": 18,
+      "name": "calf"
+    },
+    {
+      "id": 51,
+      "main_session_id": 19,
+      "name": "leg"
+    },
+    {
+      "id": 52,
+      "main_session_id": 19,
+      "name": "shoulders"
+    },
+    {
+      "id": 53,
+      "main_session_id": 19,
+      "name": "calf"
+    },
+    {
+      "id": 54,
+      "main_session_id": 20,
+      "name": "back"
+    },
+    {
+      "id": 55,
+      "main_session_id": 20,
+      "name": "triceps"
+    },
+    {
+      "id": 56,
+      "main_session_id": 21,
+      "name": "chest"
+    },
+    {
+      "id": 57,
+      "main_session_id": 21,
+      "name": "biceps"
+    },
+    {
+      "id": 58,
+      "main_session_id": 21,
+      "name": "calf"
+    },
+    {
+      "id": 59,
+      "main_session_id": 22,
+      "name": "leg"
+    },
+    {
+      "id": 60,
+      "main_session_id": 22,
+      "name": "shoulders"
+    },
+    {
+      "id": 61,
+      "main_session_id": 22,
+      "name": "calf"
+    },
+    {
+      "id": 62,
+      "main_session_id": 23,
+      "name": "back"
+    },
+    {
+      "id": 63,
+      "main_session_id": 23,
+      "name": "triceps"
+    },
+    {
+      "id": 64,
+      "main_session_id": 24,
+      "name": "chest"
+    },
+    {
+      "id": 65,
+      "main_session_id": 24,
+      "name": "biceps"
+    },
+    {
+      "id": 66,
+      "main_session_id": 24,
+      "name": "calf"
+    },
+    {
+      "id": 67,
+      "main_session_id": 25,
+      "name": "leg"
+    },
+    {
+      "id": 68,
+      "main_session_id": 25,
+      "name": "shoulders"
+    },
+    {
+      "id": 69,
+      "main_session_id": 25,
+      "name": "calf"
+    },
+    {
+      "id": 70,
+      "main_session_id": 26,
+      "name": "back"
+    },
+    {
+      "id": 71,
+      "main_session_id": 26,
+      "name": "triceps"
+    },
+    {
+      "id": 72,
+      "main_session_id": 27,
+      "name": "chest"
+    },
+    {
+      "id": 73,
+      "main_session_id": 27,
+      "name": "biceps"
+    },
+    {
+      "id": 74,
+      "main_session_id": 27,
+      "name": "calf"
+    },
+    {
+      "id": 75,
+      "main_session_id": 28,
+      "name": "leg"
+    },
+    {
+      "id": 76,
+      "main_session_id": 28,
+      "name": "shoulders"
+    },
+    {
+      "id": 77,
+      "main_session_id": 28,
+      "name": "calf"
+    },
+    {
+      "id": 78,
+      "main_session_id": 29,
+      "name": "back"
+    },
+    {
+      "id": 79,
+      "main_session_id": 29,
+      "name": "triceps"
+    }
+  ],
+  "TrainingSessions": [
+    {
+      "user_id": 1,
+      "id": 0,
+      "date": "04/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 1,
+      "date": "06/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 2,
+      "date": "08/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 3,
+      "date": "11/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 4,
+      "date": "13/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 5,
+      "date": "15/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 6,
+      "date": "18/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 7,
+      "date": "20/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 8,
+      "date": "22/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 9,
+      "date": "25/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 10,
+      "date": "27/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 11,
+      "date": "29/07/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 12,
+      "date": "01/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 13,
+      "date": "03/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 14,
+      "date": "05/08/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 15,
+      "date": "04/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 16,
+      "date": "06/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 17,
+      "date": "08/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 18,
+      "date": "11/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 19,
+      "date": "13/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 20,
+      "date": "15/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 21,
+      "date": "18/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 22,
+      "date": "20/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 23,
+      "date": "22/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 24,
+      "date": "25/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 25,
+      "date": "27/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 26,
+      "date": "29/07/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 27,
+      "date": "01/08/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 28,
+      "date": "03/08/2016"
+    },
+    {
+      "user_id": 2,
+      "id": 29,
+      "date": "05/08/2016"
+    },
+    {
+      "user_id": 3,
+      "id": 30,
+      "date": "05/08/2016"
+    }
+  ],
+  "Users": [
+    {
+      "id": 1,
+      "first_name": "Mitch",
+      "surname": "Hitt",
+      "picture": "assets/users/1.jpg",
+      "body_weight": 95,
+      "height": 183,
+      "dob": "12/05/1986",
+      "training_from": "05/12/1986"
+    },
+    {
+      "id": 2,
+      "first_name": "Tyree",
+      "surname": "Layman",
+      "dob": "12/11/1989",
+      "body_weight": 80,
+      "height": 183,
+      "picture": "assets/users/2.jpg",
+      "training_from": "14/07/2008"
+    },
+    {
+      "id": 3,
+      "first_name": "Gus",
+      "surname": "Hathaway",
+      "dob": "30/11/1978",
+      "body_weight": 99,
+      "height": 178,
+      "picture": "assets/users/3.jpg",
+      "training_from": "21/01/1992"
+    },
+    {
+      "id": 4,
+      "first_name": "Alphonse",
+      "surname": "Wetzel",
+      "dob": "25/03/1983",
+      "body_weight": 92,
+      "height": 172,
+      "picture": "assets/users/4.jpg",
+      "training_from": "19/12/1999"
+    },
+    {
+      "id": 5,
+      "first_name": "Darell",
+      "surname": "Kent",
+      "dob": "10/09/1998",
+      "body_weight": 112,
+      "height": 191,
+      "picture": "assets/users/5.jpg",
+      "training_from": "12/09/2014"
+    }
+  ],
+  "Exercises": [
+    {
+      "name": "barbell flat bench press",
+      "group": "chest",
+      "picture": "assets/exercises/flatbench.jpg"
+    },
+    {
+      "name": "barbell incline bench press",
+      "group": "chest",
+      "picture": "assets/exercises/incline.jpg"
+    },
+    {
+      "name": "barbell decline bench press",
+      "group": "chest",
+      "picture": "assets/exercises/declinebench.jpg"
+    },
+    {
+      "name": "barbell curl",
+      "group": "biceps",
+      "picture": "assets/exercises/barbellcurl.jpg"
+    },
+    {
+      "name": "concentration curls",
+      "group": "biceps",
+      "picture": "assets/exercises/concentrationcurl.jpg"
+    },
+    {
+      "name": "alternate hammer curl",
+      "group": "biceps",
+      "picture": "assets/exercises/hammercurl.jpg"
+    },
+    {
+      "name": "standing calf raise",
+      "group": "calf",
+      "picture": "assets/exercises/standingcalfraise.jpg"
+    },
+    {
+      "name": "sitting calf raise",
+      "group": "calf",
+      "picture": "assets/exercises/sittingcalfraise.jpg"
+    },
+    {
+      "name": "barbell full squat",
+      "group": "leg",
+      "picture": "assets/exercises/barbellsquat.jpg"
+    },
+    {
+      "name": "leg press",
+      "group": "leg",
+      "picture": "assets/exercises/legpress.jpg"
+    },
+    {
+      "name": "leg extensions",
+      "group": "leg",
+      "picture": "assets/exercises/legextensions.jpg"
+    },
+    {
+      "name": "lying leg curls",
+      "group": "leg",
+      "picture": "assets/exercises/lyinglegcurls.jpg"
+    },
+    {
+      "name": "cable two arms extensions",
+      "group": "triceps",
+      "picture": "assets/exercises/cabletwoarmsextensions.jpg"
+    },
+    {
+      "name": "weighted bench dip",
+      "group": "triceps",
+      "picture": "assets/exercises/weightedbenchdips.jpg"
+    },
+    {
+      "name": "reverse grip triceps pushdown",
+      "group": "triceps",
+      "picture": "assets/exercises/reversepushdown.jpg"
+    },
+    {
+      "name": "standing military press",
+      "group": "shoulders",
+      "picture": "assets/exercises/militarypress.jpg"
+    },
+    {
+      "name": "power partials",
+      "group": "shoulders",
+      "picture": "assets/exercises/powerpartials.jpg"
+    },
+    {
+      "name": "front dumbbell raise",
+      "group": "shoulders",
+      "picture": "assets/exercises/frontraise.jpg"
+    },
+    {
+      "name": "deadlift",
+      "group": "back",
+      "picture": "assets/exercises/deadlift.jpg"
+    },
+    {
+      "name": "reverse grip bent-over rows",
+      "group": "back",
+      "picture": "assets/exercises/bentoverrows.jpg"
+    },
+    {
+      "name": "t-bar row",
+      "group": "back",
+      "picture": "assets/exercises/tbarrows.jpg"
+    }
+  ],
+  "ExerciseConstants": [
+    {
+      "name": "barbell flat bench press",
+      "group": "chest"
+    },
+    {
+      "name": "barbell incline bench press",
+      "group": "chest"
+    },
+    {
+      "name": "barbell decline bench press",
+      "group": "chest"
+    },
+    {
+      "name": "barbell curl",
+      "group": "biceps"
+    },
+    {
+      "name": "concentration curls",
+      "group": "biceps"
+    },
+    {
+      "name": "alternate hammer curl",
+      "group": "biceps"
+    },
+    {
+      "name": "standing calf raise",
+      "group": "calf"
+    },
+    {
+      "name": "sitting calf raise",
+      "group": "calf"
+    },
+    {
+      "name": "barbell full squat",
+      "group": "leg"
+    },
+    {
+      "name": "leg press",
+      "group": "leg"
+    },
+    {
+      "name": "leg extensions",
+      "group": "leg"
+    },
+    {
+      "name": "lying leg curls",
+      "group": "leg"
+    },
+    {
+      "name": "cable two arms extensions",
+      "group": "triceps"
+    },
+    {
+      "name": "weighted bench dip",
+      "group": "triceps"
+    },
+    {
+      "name": "reverse grip triceps pushdown",
+      "group": "triceps"
+    },
+    {
+      "name": "standing military press",
+      "group": "shoulders"
+    },
+    {
+      "name": "power partials",
+      "group": "shoulders"
+    },
+    {
+      "name": "front dumbbell raise",
+      "group": "shoulders"
+    },
+    {
+      "name": "deadlift",
+      "group": "back"
+    },
+    {
+      "name": "reverse grip bent-over rows",
+      "group": "back"
+    },
+    {
+      "name": "t-bar row",
+      "group": "back"
+    }
+  ],
+  "Muscles": [
+    {
+      "name": "chest"
+    },
+    {
+      "name": "biceps"
+    },
+    {
+      "name": "calf"
+    },
+    {
+      "name": "triceps"
+    },
+    {
+      "name": "leg"
+    },
+    {
+      "name": "shoulders"
+    },
+    {
+      "name": "back"
+    }
+  ],
+  "MuscleConstants": [
+    {
+      "name": "chest"
+    },
+    {
+      "name": "biceps"
+    },
+    {
+      "name": "calf"
+    },
+    {
+      "name": "triceps"
+    },
+    {
+      "name": "leg"
+    },
+    {
+      "name": "shoulders"
+    },
+    {
+      "name": "back"
+    }
+  ]
 }
