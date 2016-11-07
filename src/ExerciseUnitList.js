@@ -94,16 +94,22 @@ var AddExerciseUnitForm = React.createClass({
 	
 	render: function() {
 		var muscleGroup = this.props.muscleGroup;
-		var exercisesAdded = _.pluck(this.props.exerciseUnits, 'name');
+		var exercisesAdded = [];
+		var exercisesAvailable = [];
+		if(this.props.exerciseUnits != null) {
+		   exercisesAdded = _.pluck(this.props.exerciseUnits, 'name');
+		} else {
+			exercisesAvailable = this.props.exercisesAvailable;
+		}
 		console.log("exercises added: " + exercisesAdded);	
 		var allExercisesAvailable = this.props.exercises;
-		var exercisesAvailable = [];
+		
 		for(var i=0; i < allExercisesAvailable.length; i++) {
 			if(allExercisesAvailable[i].group == muscleGroup) {
 				exercisesAvailable.push(allExercisesAvailable[i].name);
 			}
-		}
-		//console.log("all exercises: " + allExercisesAvailable);
+		};
+		console.log("exercises available: " + exercisesAvailable);
 		var muscleGroupExercisesAvailable = [];
 		if (exercisesAdded.length == 0) {
 				muscleGroupExercisesAvailable = exercisesAvailable;
@@ -113,8 +119,8 @@ var AddExerciseUnitForm = React.createClass({
 					muscleGroupExercisesAvailable.push(allExercisesAvailable[i]);
 				}
 			}
-		}
-		console.log("muscle group exercises available: " + muscleGroupExercisesAvailable);
+		};
+		console.log(muscleGroupExercisesAvailable);
 		var addExerciseUnitButtons = muscleGroupExercisesAvailable.map(function(exerciseUnitToAdd){
                   return (
                    <ExerciseUnitToAdd key={exerciseUnitToAdd.name}  exerciseUnitToAdd={exerciseUnitToAdd} 
@@ -286,6 +292,14 @@ var ExerciseUnitList = React.createClass({
 				exerciseUnits.push(allExerciseUnits[i]);
 			}
 		};
+		var availableExercises = [];
+		for(i = 0; i < exercises.length; i++) {
+			if(exercises[i].group == muscleGroup) {
+				availableExercises.push(exercises[i].name);
+			}
+		}
+		console.log("units");
+		console.log(exerciseUnits);
 		var displayedExercises = exerciseUnits.map((exercise) =>{
 			return <ExerciseUnit key={exercise.id} exerciseUnit={exercise} deleteExerciseUnitHandler={this.deleteExerciseUnit}
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>;
@@ -298,7 +312,7 @@ var ExerciseUnitList = React.createClass({
 			  </ul>
 			</div>
 			<AddExerciseUnitForm muscleGroup={muscleGroup} exerciseUnits={exerciseUnits} exercises={exercises}
-			addExerciseUnitHandler= {this.addExerciseUnit}/>
+			addExerciseUnitHandler= {this.addExerciseUnit} availableExercises={availableExercises}/>
 		</div>
 		  );
 	}

@@ -1,24 +1,6 @@
 {
   "ExerciseUnits": [
     {
-      "muscle_group": "chest",
-      "muscle_group_session_id": 0,
-      "id": 0,
-      "name": "barbell flat bench press",
-      "weight": 110,
-      "number_of_series": 4,
-      "number_of_reps": 8
-    },
-    {
-      "muscle_group": "chest",
-      "muscle_group_session_id": 0,
-      "id": 1,
-      "name": "barbell incline bench press",
-      "weight": 80,
-      "number_of_series": 4,
-      "number_of_reps": 8
-    },
-    {
       "muscle_group": "biceps",
       "muscle_group_session_id": 1,
       "id": 3,
@@ -2062,13 +2044,43 @@
       "number_of_reps": 10
     },
     {
-      "muscle_group": "chest",
+      "muscle_group": {
+        "id": 0,
+        "main_session_id": 0,
+        "name": "chest"
+      },
       "muscle_group_session_id": 0,
-      "id": 230,
+      "id": 232,
+      "name": "barbell incline bench press",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
+    },
+    {
+      "muscle_group": {
+        "id": 0,
+        "main_session_id": 0,
+        "name": "chest"
+      },
+      "muscle_group_session_id": 0,
+      "id": 233,
+      "name": "barbell flat bench press",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
+    },
+    {
+      "muscle_group": {
+        "id": 0,
+        "main_session_id": 0,
+        "name": "chest"
+      },
+      "muscle_group_session_id": 0,
+      "id": 234,
       "name": "barbell decline bench press",
-      "weight": 111,
-      "number_of_series": 3,
-      "number_of_reps": 1
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
     }
   ],
   "MuscleGroupSessions": [
@@ -2081,11 +2093,6 @@
       "id": 1,
       "main_session_id": 0,
       "name": "biceps"
-    },
-    {
-      "id": 2,
-      "main_session_id": 0,
-      "name": "calf"
     },
     {
       "id": 3,
@@ -2471,6 +2478,11 @@
       "id": 79,
       "main_session_id": 29,
       "name": "triceps"
+    },
+    {
+      "id": 80,
+      "main_session_id": 0,
+      "name": "leg"
     }
   ],
   "TrainingSessions": [
