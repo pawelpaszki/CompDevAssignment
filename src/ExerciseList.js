@@ -64,10 +64,9 @@ var Exercise = React.createClass({
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					<td key={'id'} className="col-md-6"><a href={"/sessions/" + this.state.name}>{this.state.name} </a></td>
+					<td key={'id'} className="col-md-8"><Link to={"/exerciseInfo/" + this.state.id}>{this.state.name} </Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
-					<td className="col-md-2"></td>
 				  </tr>
 				</tbody>
 			</table>
@@ -77,11 +76,9 @@ var Exercise = React.createClass({
 			<table className="table table-borderless">
 				<tbody className="center">
 				  <tr>
-					<td key={'id'} className="col-md-4"><input type="text" className="form-control"  value={this.state.name} onChange={this.handleNameChange}/></td>
-					<td className="col-md-2"></td>
+					<td key={'id'} className="col-md-8"><input type="text" className="form-control"  value={this.state.name} onChange={this.handleNameChange}/></td>
 					<td className="col-md-2"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
 					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
-					<td className="col-md-2"></td>
 				  </tr>
 				</tbody>
 			</table>

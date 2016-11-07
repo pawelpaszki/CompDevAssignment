@@ -2693,7 +2693,7 @@
       "id": 2,
       "name": "barbell incline bench press",
       "group": "chest",
-      "picture": "assets/exercises/incline.jpg"
+      "picture": "assets/exercises/inclinebench.jpg"
     },
     {
       "id": 3,
@@ -2711,7 +2711,7 @@
       "id": 5,
       "name": "concentration curls",
       "group": "biceps",
-      "picture": "assets/exercises/concentrationcurl.jpg"
+      "picture": "assets/exercises/contentrationcurl.jpg"
     },
     {
       "id": 6,

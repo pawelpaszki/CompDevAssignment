@@ -8,9 +8,7 @@ import Sidebar from './Sidebar';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import Autosuggest from 'react-autosuggest';
-import UserInfo from './UserInfo';
 import SelectableDay from './SelectableDay';
-import Chart from './Chart';
 import ExerciseNamePick from './ExerciseNamePick';
 import EditProfileForm from './EditProfileForm';
 import TrainingSessionsList from './TrainingSessionsList';
@@ -44,6 +42,9 @@ ReactDOM.render( (
 	   <Route path="musclegroupsessions/:id" component={ExerciseUnitList} />
 	   <Route path="muscles" component={MuscleList} />
 	   <Route path="musclegroupexercises/:id" component={ExerciseList} />
+	   <Route path="exerciseInfo/:id" component={ExerciseInfo}/>
+	   <Route path="charts/:id" component={ExerciseNamePick}/>
+	   <Route path="calendar/:id" component={SelectableDay}/>
 	</Route>
   </Router>
 ),

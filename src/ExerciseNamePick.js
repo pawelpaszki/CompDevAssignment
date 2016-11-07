@@ -2,8 +2,15 @@ import React from 'react';
 
 import './App.css';
 import api from './test/stubAPI';
+import { Link } from 'react-router';
+import $ from "jquery";
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
+import BarChart from 'react-bar-chart';
+import Dropdown from 'react-dropdown';
+import Select from 'react-select';
+import 'react-select/dist/react-select.css';
+
 
 function isValidDate(dateString) {
 	// First check for the pattern
@@ -32,6 +39,7 @@ function isValidDate(dateString) {
 
 // Imagine you have a list of exercises that you'd like to autosuggest.
 
+
 const exercises = api.getAllExercises();
 
 // Teach Autosuggest how to calculate suggestions for any given input value.
@@ -52,7 +60,7 @@ const getSuggestionValue = suggestion => suggestion.name;
 
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => (
-  <div>
+  <div className="autocomplete">
     {suggestion.name}
   </div>
 );
@@ -68,10 +76,112 @@ export default class ExerciseNamePick extends React.Component {
     // and they are initially empty because the Autosuggest is closed.
     this.state = {
       value: '',
-      suggestions: []
+	  data: [],
+	  users : [],
+      suggestions: [],
+	  exerciseUnits : [],
+	  muscleGroupSessions : [],
+	  trainingSessions : [],
+	  exercises : [],
     };
   }
-
+  componentDidMount(){
+	 this.getAllExerciseUnits('http://localhost:3000/exerciseunits/');
+	 this.getAllMuscleGroupSessions('http://localhost:3000/musclegroupsessions/');
+	 this.getAllTrainingSessions('http://localhost:3000/trainingsessions/');
+	 this.getAllExercises('http://localhost:3000/exercises/');
+	 this.getAllUsers('http://localhost:3000/users/');
+  };
+  populateExerciseUnits = (response) => {
+		this.setState({
+			exerciseUnits: response
+		});
+	 };
+	 populateMuscleGroupSessions = (response) => {
+		this.setState({
+			muscleGroupSessions: response
+		});
+	 };
+	 populateTrainingSessions = (response) => {
+		this.setState({
+			trainingSessions: response
+		});
+	 };
+	 populateExercises = (response) => {
+		this.setState({
+			exercises: response
+		});
+	 };
+	 populateUsers = (response) => {
+		this.setState({
+			users: response
+		});
+	 };
+  getAllExerciseUnits = (URL) => {
+	$.ajax({
+		type:"GET",
+		dataType:"json",
+		url:URL,
+		success: function(response) {
+			this.populateExerciseUnits(response);
+		}.bind(this),
+		error: function(xhr, status, err) {
+			console.error(this.props.url, status, err.toString());
+		}.bind(this)
+	});
+  };
+  getAllMuscleGroupSessions = (URL) => {
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:URL,
+            success: function(response) {
+                this.populateMuscleGroupSessions(response);
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+      };
+  getAllTrainingSessions = (URL) => {
+	$.ajax({
+		type:"GET",
+		dataType:"json",
+		url:URL,
+		success: function(response) {
+			this.populateTrainingSessions(response);
+		}.bind(this),
+		error: function(xhr, status, err) {
+			console.error(this.props.url, status, err.toString());
+		}.bind(this)
+	});
+  };
+  getAllExercises = (URL) => {
+	$.ajax({
+		type:"GET",
+		dataType:"json",
+		url:URL,
+		success: function(response) {
+			this.populateExercises(response);
+		}.bind(this),
+		error: function(xhr, status, err) {
+			console.error(this.props.url, status, err.toString());
+		}.bind(this)
+	});
+  };
+  getAllUsers = (URL) => {
+	$.ajax({
+		type:"GET",
+		dataType:"json",
+		url:URL,
+		success: function(response) {
+			this.populateUsers(response);
+		}.bind(this),
+		error: function(xhr, status, err) {
+			console.error(this.props.url, status, err.toString());
+		}.bind(this)
+	});
+  };
   onChange = (event, { newValue }) => {
     this.setState({
       value: newValue
@@ -92,7 +202,75 @@ export default class ExerciseNamePick extends React.Component {
       suggestions: []
     });
   };
-
+  generateChartData = (exercise, date_from, date_to) => {
+	  
+		  console.log(exercise);
+		  console.log(date_from);
+		  console.log(date_to);
+		  
+		  var dateFromComponents = date_from.split("/");
+		  var dateFrom = new Date(dateFromComponents[2], dateFromComponents[1] -1, dateFromComponents[0]);
+		  console.log(dateFrom);
+		  var dateToComponents = date_to.split("/");
+		  var dateTo = new Date(dateToComponents[2], dateToComponents[1] -1, dateToComponents[0]);
+		  console.log(dateTo);
+		  
+		  var users = this.state.users;
+		  var user = users[this.props.params.id];
+		  console.log("user: " + user);
+		  console.log("id: " + this.props.params.id);
+		  var trainingDays = [];
+		  var trainingSessionIds = [];
+		  for(var i = 0; i < this.state.trainingSessions.length; i++) {
+			  if(this.state.trainingSessions[i].user_id == this.props.params.id) {
+				  trainingDays.push({'date': this.state.trainingSessions[i].date, 'training_session_id': this.state.trainingSessions[i].id});
+			  }
+		  };
+		  var muscleGroup = '';
+		  for(i = 0; i < this.state.exercises.length; i++) {
+			    if(this.state.exercises[i].name == exercise) {
+					muscleGroup = this.state.exercises[i].group;
+				}
+		  };
+		  var daysTakenIntoAccount = [];
+		  var tempDate;
+		  var tempDateComponents;
+		  var data = [];
+		  for (i = 0; i < trainingDays.length; i++) {
+			  tempDateComponents = trainingDays[i].date.split("/");
+		      tempDate = new Date(tempDateComponents[2], tempDateComponents[1] - 1, tempDateComponents[0]);
+			  if (tempDate >= dateFrom && tempDate <= dateTo) {
+				  daysTakenIntoAccount.push(trainingDays[i].date);
+			  }
+		  };
+		  console.log(daysTakenIntoAccount);
+		  for(i = 0; i < trainingDays.length; i++) {
+			  for(var j = 0; j < trainingDays.length; j++) {
+				  
+			  }
+		  }
+		  
+		  console.log("muscleGroupSessions");
+		  console.log(this.state.muscleGroupSessions);
+		  for(i = 0; i < trainingDays.length; i++) {
+			  for(var j = 0; j < this.state.muscleGroupSessions.length; j++) {
+				  for(var k = 0; k < this.state.exerciseUnits.length; k++) {
+					  if(this.state.muscleGroupSessions[j].name == muscleGroup) {
+						  if(this.state.muscleGroupSessions[j].main_session_id == trainingDays[i].training_session_id) {
+							  if(this.state.exerciseUnits[k].name == exercise && this.state.exerciseUnits[k].muscle_group_session_id == this.state.muscleGroupSessions[j].id) {
+								  data.push({'text': trainingDays[i].date, 'value': this.state.exerciseUnits[k].weight});
+							  } 
+						  }
+					  }
+				  }
+		      };
+		  };
+		  console.log("data");
+		  console.log(data);
+		  
+		  this.setState ({data});
+			
+	  };
   
   render() {
     const { value, suggestions } = this.state;
@@ -118,7 +296,8 @@ export default class ExerciseNamePick extends React.Component {
       />
 	  
 	  </div>
-	  <ChartDataPicker exercise={this.state.value} generateChartHandler={this.props.generateChartHandler}/>
+	  <ChartDataPicker exercise={this.state.value} generateChartHandler={this.generateChartData} users={this.state.users}/>
+	  <Chart data={this.state.data}/>
 	  </div>
     );
   }
@@ -129,9 +308,13 @@ var ChartDataPicker = React.createClass( {
 	   return {
 		status : '',
 		date_from: '',
-		date_to: ''
-	   } ;
+		date_to: '',
+		user: '',
+	   };
 	},
+	componentDidMount(){
+		this.setState({users: this.props.users});
+      },
 	handleDateFromChange: function(e) {
         this.setState({date_from: e.target.value});
     },
@@ -149,11 +332,16 @@ var ChartDataPicker = React.createClass( {
 			var date_from = this.state.date_from;
 			var date_to = this.state.date_to;
 			var exercise = this.props.exercise;
-			this.props.generateChartHandler(exercise, date_from, date_to);
+			this.props.generateChartHandler(exercise,date_from, date_to);
 			this.setState({date_from: ""});
 			this.setState({date_to: ""});
 		}
     },
+	handleNameChange: function(e) {
+		this.setState({user: e.target.value});
+		console.log(this.state.user);
+	},
+	
 	
 	render: function(){
 		return (
@@ -177,4 +365,22 @@ var ChartDataPicker = React.createClass( {
       </div>
 		)
 	}
+});
+
+var margin = {top: 20, right: 20, bottom: 30, left: 40};
+
+var Chart = React.createClass({
+  render() {
+    return (
+        <div className="main-content-with-search-box">
+		<div style={{width: '50%'}}>
+                <BarChart ylabel='kg'
+                  width={600} //this.state.width
+                  height={400}
+                  margin={margin}
+                  data={this.props.data}/>
+			</div>
+        </div>
+    );
+  }
 });

@@ -88,10 +88,17 @@
   overflow: hidden;
 }
 
+.chart-data-form {
+  position: absolute;
+  left: 45%;
+  top: 16%;
+  overflow: show;
+}
 .exercisePicker {
   position: absolute;
   z-index: 100;
-  left: 24%;
+  left: 25%;
+  width: 16%;
   top: 16.7%;
   height: 30px;
   overflow: show; 
@@ -133,4 +140,17 @@ margin-bottom: 1.5em;
 .floatLeft {
 	margin-top:12%;
 	float: left;
+}
+
+.autocomplete {
+	background-color: white;
+	font-color: black;
+}
+
+.overflow {
+	  position: absolute;
+  z-index: 100;
+  min-width: 100px;
+  overflow: show; 
+  width: 100%;
 }
