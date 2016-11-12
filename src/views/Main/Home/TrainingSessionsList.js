@@ -95,7 +95,7 @@ var TrainingSessionItem = React.createClass({
 			];
 		};
 		return (
-			 <li className="left-within-main">
+			 <li className="list-group">
 				{itemsToRender}
 			 </li>
 		);
@@ -151,7 +151,7 @@ var TrainingSessionsList = React.createClass({
 		};
       },
 	  componentDidMount(){
-        this.getTrainingSessionsFromServer('http://localhost:3000/trainingsessions/');
+        this.getTrainingSessionsFromServer('http://localhost:3001/trainingsessions/');
       },
         populateTrainingSessions: function(response) {
             this.setState({
@@ -175,7 +175,7 @@ var TrainingSessionsList = React.createClass({
       },
 	  deleteTrainingSession:function(id) {
 		  $.ajax({
-			url: 'http://localhost:3000/trainingsessions/' + id,
+			url: 'http://localhost:3001/trainingsessions/' + id,
 			type: 'DELETE',
 			contentType: 'application/json'
 			});
@@ -183,7 +183,7 @@ var TrainingSessionsList = React.createClass({
 	  },
 	  updateTrainingSession: function(id, date) {
 		    $.ajax({
-			url: 'http://localhost:3000/trainingsessions/' + id,
+			url: 'http://localhost:3001/trainingsessions/' + id,
 			type: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -205,7 +205,7 @@ var TrainingSessionsList = React.createClass({
 		  };
 		   var id = maxId + 1;
 		    $.ajax({
-			url: 'http://localhost:3000/trainingsessions',
+			url: 'http://localhost:3001/trainingsessions',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -232,7 +232,7 @@ var TrainingSessionsList = React.createClass({
 		}) ;
             return (
 				<div className="main-content-without-search-box">
-				  <ul className="listItems">
+				  <ul className="list-group">
 					  {displayedTsessions}
 				  </ul>
 			<AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>

@@ -2044,17 +2044,13 @@
       "number_of_reps": 10
     },
     {
-      "muscle_group": {
-        "id": 0,
-        "main_session_id": 0,
-        "name": "chest"
-      },
+      "muscle_group": "chest",
       "muscle_group_session_id": 0,
       "id": 232,
       "name": "barbell incline bench press",
-      "weight": 0,
-      "number_of_series": 0,
-      "number_of_reps": 0
+      "weight": 110,
+      "number_of_series": 4,
+      "number_of_reps": 12
     },
     {
       "muscle_group": {
@@ -2485,6 +2481,12 @@
       "name": "leg"
     }
   ],
+  "loginState": [
+    {
+      "id": 1,
+      "isLoggedIn": "false"
+    }
+  ],
   "TrainingSessions": [
     {
       "user_id": 1,
@@ -2690,8 +2692,8 @@
       "dob": "10/09/1998",
       "body_weight": 112,
       "height": 191,
-      "picture": "assets/users/5.jpg",
-      "training_from": "12/09/2014"
+      "training_from": "12/09/2013",
+      "picture": "assets/users/5.jpg"
     }
   ],
   "Exercises": [

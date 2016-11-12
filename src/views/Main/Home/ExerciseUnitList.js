@@ -79,11 +79,9 @@ var ExerciseUnit = React.createClass({
 			];
 		};
 		return (
-			 <li className="left-within-main">
+			 <li className="list-group">
 				 <table className="table table-borderless">
-					
 						{itemsToRender}
-					
 				 </table>
 			 </li>
 		)
@@ -167,9 +165,9 @@ var ExerciseUnitList = React.createClass({
 		};
       },
 	  componentDidMount(){
-		this.getMuscleGroupSession('http://localhost:3000/musclegroupsessions/' + this.props.params.id);
-        this.getAllExerciseUnitsFromServer('http://localhost:3000/exerciseunits/');
-		this.getAllExercises('http://localhost:3000/exercises/');
+		this.getMuscleGroupSession('http://localhost:3001/musclegroupsessions/' + this.props.params.id);
+        this.getAllExerciseUnitsFromServer('http://localhost:3001/exerciseunits/');
+		this.getAllExercises('http://localhost:3001/exercises/');
       },
 	  populateExercises: function(response) {
 		this.setState({
@@ -228,7 +226,7 @@ var ExerciseUnitList = React.createClass({
 	  updateExerciseUnit: function(id, name, weight, number_of_series, number_of_reps) {
 		  console.log("updateee");
 		    $.ajax({
-			url: 'http://localhost:3000/exerciseunits/' + id,
+			url: 'http://localhost:3001/exerciseunits/' + id,
 			type: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -246,7 +244,7 @@ var ExerciseUnitList = React.createClass({
 	  },
 	  deleteExerciseUnit:function(id) {
 		  $.ajax({
-			url: 'http://localhost:3000/exerciseunits/' + id,
+			url: 'http://localhost:3001/exerciseunits/' + id,
 			type: 'DELETE',
 			contentType: 'application/json'
 			});
@@ -265,7 +263,7 @@ var ExerciseUnitList = React.createClass({
 		  console.log("id: " + id);
 		  console.log("muscle session id: " + this.state.muscleGroupSessionId);
 		    $.ajax({
-			url: 'http://localhost:3000/exerciseunits',
+			url: 'http://localhost:3001/exerciseunits',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -307,7 +305,7 @@ var ExerciseUnitList = React.createClass({
 		return (
 		<div className="main-content-without-search-box">
 			<div className="main-content">
-			  <ul className="listItems">
+			  <ul className="list-group">
 				  {displayedExercises}
 			  </ul>
 			</div>

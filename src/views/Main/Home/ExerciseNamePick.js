@@ -7,9 +7,6 @@ import $ from "jquery";
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
 import BarChart from 'react-bar-chart';
-import Dropdown from 'react-dropdown';
-import Select from 'react-select';
-import 'react-select/dist/react-select.css';
 
 
 function isValidDate(dateString) {
@@ -86,11 +83,11 @@ export default class ExerciseNamePick extends React.Component {
     };
   }
   componentDidMount(){
-	 this.getAllExerciseUnits('http://localhost:3000/exerciseunits/');
-	 this.getAllMuscleGroupSessions('http://localhost:3000/musclegroupsessions/');
-	 this.getAllTrainingSessions('http://localhost:3000/trainingsessions/');
-	 this.getAllExercises('http://localhost:3000/exercises/');
-	 this.getAllUsers('http://localhost:3000/users/');
+	 this.getAllExerciseUnits('http://localhost:3001/exerciseunits/');
+	 this.getAllMuscleGroupSessions('http://localhost:3001/musclegroupsessions/');
+	 this.getAllTrainingSessions('http://localhost:3001/trainingsessions/');
+	 this.getAllExercises('http://localhost:3001/exercises/');
+	 this.getAllUsers('http://localhost:3001/users/');
   };
   populateExerciseUnits = (response) => {
 		this.setState({

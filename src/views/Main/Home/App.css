@@ -1,0 +1,160 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  width: 100%;
+  line-height: 60px; /* Vertically center the text there */
+  text-align: center;
+  color: white; 
+  background: black;
+  font-color: #000000
+}
+
+.listItems {
+  list-style: none;
+}
+.side-bar {
+  position: absolute;
+  left: 5%;
+  top: 16%;
+  width: 15%;
+}
+
+.main-content-with-search-box, .main-content-without-search-box {
+  position: absolute;
+  left: 24%;
+  width: 75%;
+  bottom: 10%;
+  word-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.main-content-with-search-box {
+	top: 24%;
+	z-index: -1;
+}
+
+.main-content-without-search-box {
+  top: 16%;
+}
+
+.left-within-main {
+	float: left;
+	width: 55%;
+}
+
+.right-within-main {
+	float: right;
+	width: 44%;
+}
+
+.search-box {
+  position: absolute;
+  left: 25%;
+  top: 16%;
+  overflow: hidden;
+}
+
+.right-aligned-form {
+  position: absolute;
+  left: 45%;
+  top: 16%;
+  overflow: hidden;
+}
+
+.chart-data-form {
+  position: absolute;
+  left: 45%;
+  top: 16%;
+  overflow: show;
+}
+.exercisePicker {
+  position: absolute;
+  z-index: 100;
+  left: 25%;
+  width: 16%;
+  top: 16.7%;
+  height: 30px;
+  overflow: show; 
+}
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.main-child {
+	width: 100%;
+}
+
+.thumb {
+  margin: -0.5em 2.5em 1.5em 0;
+}
+
+
+.centered {
+  width: 30%;
+  margin-left: 35%;
+  text-align: center;
+}
+
+.center {
+  text-align: center;
+}
+
+input[type=text], .txtarea{
+margin-bottom: 1.5em;
+
+ }
+ 
+ .table-borderless tbody tr td, .table-borderless tbody tr th, .table-borderless thead tr th {
+    border-top: none !important;
+}
+
+.floatLeft {
+	margin-top:12%;
+	float: left;
+}
+
+.autocomplete {
+	background-color: white;
+	font-color: black;
+}
+
+.overflow {
+	  position: absolute;
+  z-index: 100;
+  min-width: 100px;
+  overflow: show; 
+  width: 100%;
+}
+
+.rightTop {
+	float: right;
+}

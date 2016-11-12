@@ -6,7 +6,7 @@ import { browserHistory } from 'react-router'
 var Sidebar = React.createClass({
   render: function(){
 	  return (
-		<div className="side-bar">
+		<div style={{marginLeft: 5 + '%', marginTop: 16 + '%', width: 15 + '%'}}>
 		  <div className="list-group">
 		  <Link to="/" style={{ textDecoration: 'none' }}>
 			<button className="btn btn-default btn-block">Home</button>

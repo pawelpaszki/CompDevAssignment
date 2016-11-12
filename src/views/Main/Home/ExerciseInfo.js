@@ -12,7 +12,7 @@ var ExerciseInfo = React.createClass({
 		};
       },
 	  componentDidMount(){
-		this.getExercise('http://localhost:3000/exercises/');
+		this.getExercise('http://localhost:3001/exercises/');
       },
 	  getExerciseInfo: function(response) {
 		var exercises = response;

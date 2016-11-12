@@ -18,7 +18,7 @@ var MuscleGroupSession = React.createClass({
 		var deleteHandler = this.handleDeleteSessionItem;
 		var sessionItem = this.props.sessionItem;
 		return (
-		<li>
+		<li className="list-group">
 		<div className="left-within-main">
 			<table className="table table-borderless">
 				<tbody>
@@ -97,8 +97,8 @@ var MuscleGroupSessionList = React.createClass({
 		};
       },
 	  componentDidMount(){
-        this.getMuscleGroupSessionsFromServer('http://localhost:3000/musclegroupsessions/');
-		this.getAllMuscleGroups('http://localhost:3000/muscles/');
+        this.getMuscleGroupSessionsFromServer('http://localhost:3001/musclegroupsessions/');
+		this.getAllMuscleGroups('http://localhost:3001/muscles/');
       },
         populateMuscleGroupSessions: function(response) {
             this.setState({
@@ -140,7 +140,7 @@ var MuscleGroupSessionList = React.createClass({
       },
 	  deleteMuscleGroupSession:function(id) {
 		  $.ajax({
-			url: 'http://localhost:3000/musclegroupsessions/' + id,
+			url: 'http://localhost:3001/musclegroupsessions/' + id,
 			type: 'DELETE',
 			contentType: 'application/json'
 			});
@@ -160,7 +160,7 @@ var MuscleGroupSessionList = React.createClass({
 		  console.log("main session id: " + this.state.trainingSessionId);
 		   
 		    $.ajax({
-			url: 'http://localhost:3000/musclegroupsessions',
+			url: 'http://localhost:3001/musclegroupsessions',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -188,7 +188,7 @@ var MuscleGroupSessionList = React.createClass({
 		return (
 		<div className="main-content-without-search-box">
 			<div className="main-content">
-			  <ul className="listItems">
+			  <ul className="list-group">
 				  {displayedSessions}
 			  </ul>
 			</div>

@@ -85,7 +85,7 @@ var Exercise = React.createClass({
 			];
 		};
 		return (
-			 <li className="left-within-main">
+			 <li className="list-group">
 				{itemsToRender}
 			 </li>
 			 )
@@ -157,9 +157,9 @@ var ExerciseList = React.createClass({
 		};
       },
 	  componentDidMount(){
-		this.getAllExercises('http://localhost:3000/exercises/');
-		this.getAllMuscles('http://localhost:3000/muscles/');
-		this.getAllMuscleConstants('http://localhost:3000/constants/');
+		this.getAllExercises('http://localhost:3001/exercises/');
+		this.getAllMuscles('http://localhost:3001/muscles/');
+		this.getAllMuscleConstants('http://localhost:3001/constants/');
       },
 	  populateMuscleConstants: function(response) {
 		this.setState({
@@ -222,7 +222,7 @@ var ExerciseList = React.createClass({
       },
 	  deleteExercise:function(id) {
 		  $.ajax({
-			url: 'http://localhost:3000/exercises/' + id,
+			url: 'http://localhost:3001/exercises/' + id,
 			type: 'DELETE',
 			contentType: 'application/json'
 			});
@@ -230,7 +230,7 @@ var ExerciseList = React.createClass({
 	  },
 	  updateExercise: function(id, name) {
 		    $.ajax({
-			url: 'http://localhost:3000/exercises/' + id,
+			url: 'http://localhost:3001/exercises/' + id,
 			type: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -256,7 +256,7 @@ var ExerciseList = React.createClass({
 		  //console.log("id: " + id);
 		   
 		    $.ajax({
-			url: 'http://localhost:3000/exercises',
+			url: 'http://localhost:3001/exercises',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -299,7 +299,7 @@ var ExerciseList = React.createClass({
 		return (
 		<div className="main-content-without-search-box">
 			<div className="main-content">
-			  <ul className="listItems">
+			  <ul className="list-group">
 				  {Exercises}
 			  </ul>
 			  <AddExerciseForm exercises={this.state.exercises} muscles={this.state.muscles} 

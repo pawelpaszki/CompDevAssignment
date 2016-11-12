@@ -77,7 +77,7 @@ var Muscle = React.createClass({
 			];
 		};
 		return (
-			 <li className="left-within-main">
+			 <li className="list-group">
 				{itemsToRender}
 			 </li>
 		);
@@ -137,8 +137,8 @@ var MuscleList = React.createClass({
 		};
       },
 	  componentDidMount(){
-		this.getAllMuscleGroups('http://localhost:3000/muscles/');
-		this.getAllMuscleConstants('http://localhost:3000/constants/');
+		this.getAllMuscleGroups('http://localhost:3001/muscles/');
+		this.getAllMuscleConstants('http://localhost:3001/constants/');
       },
 	  populateMuscleConstants: function(response) {
 		this.setState({
@@ -178,7 +178,7 @@ var MuscleList = React.createClass({
       },
 	  deleteMuscleGroup:function(id) {
 		  $.ajax({
-			url: 'http://localhost:3000/muscles/' + id,
+			url: 'http://localhost:3001/muscles/' + id,
 			type: 'DELETE',
 			contentType: 'application/json'
 			});
@@ -197,7 +197,7 @@ var MuscleList = React.createClass({
 		  //console.log("id: " + id);
 		   
 		    $.ajax({
-			url: 'http://localhost:3000/muscles',
+			url: 'http://localhost:3001/muscles',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -211,7 +211,7 @@ var MuscleList = React.createClass({
 	  },
 	  updateMuscle: function(id, name) {
 		    $.ajax({
-			url: 'http://localhost:3000/muscles/' + id,
+			url: 'http://localhost:3001/muscles/' + id,
 			type: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -236,7 +236,7 @@ var MuscleList = React.createClass({
 		}) ;
 		return (
 			<div className="main-content-without-search-box">
-			  <ul className="listItems">
+			  <ul className="list-group">
 				  {displayedMuscles}
 			  </ul>
 			  <AddMuscleForm addMuscleHandler={this.addMuscleGroup} muscles={this.state.allMuscles}/>
