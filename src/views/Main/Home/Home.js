@@ -2,12 +2,12 @@ import React, { PropTypes as T } from 'react'
 import {Button} from 'react-bootstrap'
 import AuthService from 'utils/AuthService'
 import { Link } from 'react-router'; 
+import { browserHistory } from 'react-router'
 
 import './App.css';
 import _ from 'lodash';
 
 import $ from "jquery";
-import Sidebar from './Sidebar';
 
 function isValidDate(dateString) {
 	// First check for the pattern
@@ -149,11 +149,13 @@ var User = React.createClass({
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					<td key={'id'} className="col-md-2"><img src={userItem.picture} alt={userItem.first_name}/></td>
+				    <td className="col-md-1"></td>
+					<td key={'id'} className="col-md-2"><img src={"/assets/" + userItem.picture} alt={userItem.first_name}/></td>
 					<td className="col-md-2"><Link to={'/users/' + userItem.id}>{userItem.first_name} {userItem.surname}</Link></td>
 					<td className="col-md-2"><Link to={'/charts/' + userItem.id}><input type="button" className="btn btn-info btn-block" value="charts"/></Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
+					<td className="col-md-1"></td>
 				  </tr>
 				</tbody>
 			</table>
@@ -424,7 +426,7 @@ var GymProgressLogger = React.createClass({
 				}.bind(this) );
 	   var filteredList = _.sortBy(userList, this.state.sort) ;
 	  return (
-	  <div>
+	  <div >
 			<SearchBox onUserInput={this.handleChange } 
 								   filterText={this.state.search} 
 								   sort={this.state.sort}/>
@@ -462,10 +464,14 @@ export class Home extends React.Component {
     const { profile } = this.state
     return (
       <div>
-	  <Button style={{marginRight: 2 + 'em', marginTop: 1 + 'em', paddingLeft: 1 + 'em'}} className="nav navbar-nav navbar-right"onClick={this.logout.bind(this)}>Logout</Button>
-		<p>Welcome {profile.name}</p>
-		<Sidebar/>
-	    <GymProgressLogger/>
+	    
+		<Button style={{marginRight: 2 + 'em', marginTop: 1 + 'em', paddingLeft: 1 + 'em'}} className="nav navbar-nav navbar-right"onClick={this.logout.bind(this)}>Logout</Button>
+	  	<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+		<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+		<h3> Welcome {profile.name}</h3>
+		<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+		
+		<GymProgressLogger/>
       </div>
     )
   }

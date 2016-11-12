@@ -3,6 +3,8 @@ import './App.css';
 import api from './test/stubAPI';
 import { Link } from 'react-router';
 import $ from "jquery";
+import {Button} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 var MuscleGroupSession = React.createClass({
 	getInitialState : function() {
@@ -19,14 +21,15 @@ var MuscleGroupSession = React.createClass({
 		var sessionItem = this.props.sessionItem;
 		return (
 		<li className="list-group">
-		<div className="left-within-main">
-			<table className="table table-borderless">
+		<div>
+			<table className="table">
 				<tbody>
 				  <tr>
-				<td className="col-md-3"><Link to={'/musclegroupsessions/' + sessionItem.id}>{sessionItem.name} </Link></td>
-				<td className="col-md-6"><input type="button"  className="btn btn-warning" value="delete" onClick={deleteHandler}/></td>
-				<td className="col-md-2"></td>
-				<td className="col-md-1"></td>
+				 <td className="col-md-1"></td>
+				<td className="col-md-2"><Link to={'/musclegroupsessions/' + sessionItem.id}>{sessionItem.name} </Link></td>
+				<td className="col-md-2"><input type="button"  className="btn btn-warning" value="delete" onClick={deleteHandler}/></td>
+				<td className="col-md-7"></td>
+				
 				  </tr>
 				</tbody>
 			  </table>
@@ -66,23 +69,20 @@ var AddMuscleGroupSessionForm = React.createClass({
 	},
 	render: function() {
             return (
-			<div className="calendar">
-				<div className="left-within-main">
+				<div>
 				<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					  
-				<td key={'name'} className="col-md-6"><input type="text" className="form-control" 
+				<td key={'name'} className="col-md-2"><input type="text" className="form-control" 
 				placeholder="Type muscle group" onChange={this.handleMuscleNameChange}/></td>
-				<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle group"
+				<td className="col-md-2"><input type="button" className="btn btn-primary" value="Add muscle group"
 							   onClick={this.handleAddMuscle} /> </td>
 							   <td className="col-md-1"></td>
-				<td className="col-md-2"> </td>
+				<td className="col-md-7"> </td>
 				  </tr>
 				</tbody>
 			  </table>
 				
-				</div>
 				</div>
 		  ) ;
 	}
@@ -188,7 +188,10 @@ var MuscleGroupSessionList = React.createClass({
 		return (
 		<div className="main-content-without-search-box">
 			<div className="main-content">
-			  <ul className="list-group">
+				<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+				<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+				<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+					<ul className="list-group">
 				  {displayedSessions}
 			  </ul>
 			</div>

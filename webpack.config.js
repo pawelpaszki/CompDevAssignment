@@ -27,7 +27,7 @@ var config = getConfig({
         title: 'auth0 React Sample',
         publicPath: isDev ? 'http://localhost:3000/' : '',
         meta: {
-          'name': 'auth0 React Sample',
+          'name': 'Gym Progress Logger',
           'description': 'A minimal reactJS sample application showing auth0 integration'
         }
       })

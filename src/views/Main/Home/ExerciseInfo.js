@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { Link } from 'react-router';
 import $ from "jquery";
+import {Button} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 var ExerciseInfo = React.createClass({
 	getInitialState: function() {
@@ -41,13 +43,12 @@ var ExerciseInfo = React.createClass({
 		console.log(imagePath);
 		return (
 		
-		<div className="main-content-without-search-box">
-			<div className="left-within-main">
-				 <h3>{this.state.exercise.name}</h3>
-				</div>
-				<div className="right-within-main">
-				<img src={"/" + imagePath}  alt="placeholder"/>
-			</div>
+		<div>
+		   <Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+		   <Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+				<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+			 <h3>{this.state.exercise.name}</h3>
+			<img src={"/" + imagePath}  alt="placeholder"/>
 		</div>
 		)
 	}

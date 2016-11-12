@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { Link } from 'react-router';
 import $ from "jquery";
+import {Button} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 
 var ExerciseUnit = React.createClass({
@@ -52,28 +54,37 @@ var ExerciseUnit = React.createClass({
 			itemsToRender = [
 			<tbody>
 			  <tr>
-				<td className="col-md-6">{exerciseUnit.name} </td>
-				<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="edit" onClick={editHandler}/></td>
-				<td className="col-md-2">
+			    <td className="col-md-1"></td>
+				<td className="col-md-3">{exerciseUnit.name} </td>
+				<td className="col-md-1"><input type="button"  className="btn btn-warning btn-block" value="edit" onClick={editHandler}/></td>
+				<td className="col-md-1">
 					<input type="button"  className="btn btn-danger btn-block" value="delete" onClick={deleteHandler}/></td>
-				<td className="col-md-2"></td>
+				<td className="col-md-7"></td>
 			  </tr>
 			  </tbody>
 			];
 		} else {
 			itemsToRender = [
-			<tbody className="center">
+			<tbody>
 			  <tr>
-				<td key={'weight'} className="col-md-2">kg</td>
+			    <td className="col-md-1"></td>
+			    <td className="col-md-3">{exerciseUnit.name}</td>
+				<td key={'weight'} className="col-md-1">kg</td>
 				<td key={'number_of_series'}className="col-md-2">no of series</td>
 				<td key={'number_of_reps'} className="col-md-2">no of reps</td>
+				<td className="col-md-1"></td>
+				<td className="col-md-2"></td>
+				
 			  </tr>
 			  <tr>
+			    <td className="col-md-1"></td>
+				<td className="col-md-3"></td>
 				<td key={'weight'} className="col-md-2"><input type="text" className="form-control"  value={this.state.weight} onChange={this.handleWeightChange}/></td>
-				<td key={'number_of_series'} className="col-md-2"><input type="text" className="form-control"  value={this.state.number_of_series} onChange={this.handleNoOfSeriesChange}/></td>
-				<td key={'number_of_reps'} className="col-md-2"><input type="text" className="form-control"  value={this.state.number_of_reps} onChange={this.handleNoOfRepsChange}/></td>
-				<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
-				<td className="col-md-4"><input type="button"  className="btn btn-success btn-block" value="confirm" onClick={this.handleUpdate}/></td>
+				<td key={'number_of_series'} className="col-md-1"><input type="text" className="form-control"  value={this.state.number_of_series} onChange={this.handleNoOfSeriesChange}/></td>
+				<td key={'number_of_reps'} className="col-md-1"><input type="text" className="form-control"  value={this.state.number_of_reps} onChange={this.handleNoOfRepsChange}/></td>
+				<td className="col-md-1"><input type="button"  className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
+				<td className="col-md-1"><input type="button"  className="btn btn-success btn-block" value="confirm" onClick={this.handleUpdate}/></td>
+				<td className="col-md-1"></td>
 			  </tr>
 			</tbody>
 			];
@@ -303,12 +314,14 @@ var ExerciseUnitList = React.createClass({
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>;
 		}) ;
 		return (
-		<div className="main-content-without-search-box">
-			<div className="main-content">
-			  <ul className="list-group">
-				  {displayedExercises}
-			  </ul>
-			</div>
+		<div>
+			<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+			<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+			<h3> {muscleGroup}'s exercises</h3>
+			<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+		    <ul className="list-group">
+			  {displayedExercises}
+			</ul>
 			<AddExerciseUnitForm muscleGroup={muscleGroup} exerciseUnits={exerciseUnits} exercises={exercises}
 			addExerciseUnitHandler= {this.addExerciseUnit} availableExercises={availableExercises}/>
 		</div>

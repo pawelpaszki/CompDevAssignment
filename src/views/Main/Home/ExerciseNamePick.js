@@ -7,6 +7,8 @@ import $ from "jquery";
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
 import BarChart from 'react-bar-chart';
+import {Button} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 
 function isValidDate(dateString) {
@@ -57,7 +59,7 @@ const getSuggestionValue = suggestion => suggestion.name;
 
 // Use your imagination to render suggestions.
 const renderSuggestion = suggestion => (
-  <div className="autocomplete">
+  <div >
     {suggestion.name}
   </div>
 );
@@ -281,20 +283,30 @@ export default class ExerciseNamePick extends React.Component {
 
     // Finally, render it!
     return (
-	<div>
-	  <div className="exercisePicker">
-      <Autosuggest
-        suggestions={suggestions}
-        onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-        onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-        getSuggestionValue={getSuggestionValue}
-        renderSuggestion={renderSuggestion}
-        inputProps={inputProps} 
-      />
-	  
-	  </div>
-	  <ChartDataPicker exercise={this.state.value} generateChartHandler={this.generateChartData} users={this.state.users}/>
-	  <Chart data={this.state.data}/>
+	  <div >
+	  	    <Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+		<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+		<h3></h3>
+		<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+		<table className="table table-borderless">
+				<tbody>
+				  <tr>
+					<td className="col-md-2">
+					 <Autosuggest 
+						suggestions={suggestions}
+						onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+						onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+						getSuggestionValue={getSuggestionValue}
+						renderSuggestion={renderSuggestion}
+						inputProps={inputProps} 
+					  />
+					  </td>
+					  <td className="col-md-6"><ChartDataPicker exercise={this.state.value} generateChartHandler={this.generateChartData} users={this.state.users}/></td>
+					  <td className="col-md-4"></td>
+				  </tr>
+				</tbody>
+			</table>
+	    <Chart data={this.state.data}/>
 	  </div>
     );
   }
@@ -342,7 +354,7 @@ var ChartDataPicker = React.createClass( {
 	
 	render: function(){
 		return (
-		<div className="right-aligned-form">
+		<div >
 		  <td>
 		  <input type="text" className="form-control"
 				 placeholder="Date from: dd/mm/yyyy" value={this.state.date_from}
@@ -369,11 +381,12 @@ var margin = {top: 20, right: 20, bottom: 30, left: 40};
 var Chart = React.createClass({
   render() {
     return (
-        <div className="main-content-with-search-box">
-		<div style={{width: '50%'}}>
+        <div>
+		
+		<div className="col-md-6 col-md-offset-3">
                 <BarChart ylabel='kg'
-                  width={600} //this.state.width
-                  height={400}
+                  width={800} //this.state.width
+                  height={600}
                   margin={margin}
                   data={this.props.data}/>
 			</div>

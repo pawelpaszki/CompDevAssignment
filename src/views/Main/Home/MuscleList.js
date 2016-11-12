@@ -3,6 +3,8 @@ import './App.css';
 import api from './test/stubAPI';
 import { Link } from 'react-router';
 import $ from "jquery";
+import {Button} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 var Muscle = React.createClass({
 	getInitialState : function() {
@@ -30,6 +32,9 @@ var Muscle = React.createClass({
 	handleEdit: function(e) {
 		this.setState({ status : 'edit'} )
 	},
+	handleUndo: function(e) {
+		this.setState({ status : ''} )
+	},
 	handleUpdate: function(e) {
 	   e.preventDefault();
 	   var name = this.state.name;
@@ -54,10 +59,11 @@ var Muscle = React.createClass({
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
-					<td key={'name'} className="col-md-6"><Link to={"/musclegroupexercises/" + this.state.id}>{this.state.name} </Link></td>
-					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
-					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
-					<td className="col-md-2"></td>
+				    <td className="col-md-1"></td>
+					<td key={'name'} className="col-md-2"><Link to={"/musclegroupexercises/" + this.state.id}>{this.state.name} </Link></td>
+					<td className="col-md-1"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
+					<td className="col-md-1"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
+					<td className="col-md-7"></td>
 				  </tr>
 				</tbody>
 			</table>
@@ -65,12 +71,13 @@ var Muscle = React.createClass({
 		} else {
 			itemsToRender = [
 			<table className="table table-borderless">
-				<tbody className="center">
+				<tbody>
 				  <tr>
-					<td key={'name'} className="col-md-4"><input type="text" className="form-control"  value={this.state.name} onChange={this.handleNameChange}/></td>
-					<td className="col-md-2"></td>
-					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
-					<td className="col-md-2"></td>
+				    <td className="col-md-1"></td>
+					<td key={'name'} className="col-md-2"><input type="text" className="form-control"  value={this.state.name} onChange={this.handleNameChange}/></td>
+					<td className="col-md-1"><input type="button" className="btn btn-primary btn-block"  value="undo" onChange={this.handleUndo}/></td>
+					<td className="col-md-1"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
+					<td className="col-md-7"></td>
 				  </tr>
 				</tbody>
 			</table>
@@ -112,14 +119,14 @@ var AddMuscleForm = React.createClass({
 				<tbody>
 				  <tr>
 					  
-				<td className="col-md-4"><input type="text" className="form-control"
+				<td className="col-md-2"><input type="text" className="form-control"
                      placeholder="Add new muscle"
                      value={this.state.name}
                      onChange={this.handleNameChange} /></td>
-				<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add muscle"
+				<td className="col-md-2"><input type="button" className="btn btn-primary" value="Add muscle"
 							   onClick={this.handleSubmit} /> </td>
 							   <td className="col-md-1"></td>
-				<td className="col-md-4"> </td>
+				<td className="col-md-7"> </td>
 				  </tr>
 				</tbody>
 			  </table>
@@ -235,7 +242,11 @@ var MuscleList = React.createClass({
 			updateMuscleNameHandler={this.updateMuscle} deleteMuscleHandler={this.deleteMuscleGroup}/>;
 		}) ;
 		return (
-			<div className="main-content-without-search-box">
+			<div>
+			<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+			<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+			<h3> Muscles</h3>
+			<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
 			  <ul className="list-group">
 				  {displayedMuscles}
 			  </ul>

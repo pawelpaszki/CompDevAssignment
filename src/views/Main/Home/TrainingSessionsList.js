@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import { Link } from 'react-router';
 import $ from "jquery";
+import {Button} from 'react-bootstrap';
+import { browserHistory } from 'react-router';
 
 function isValidDate(dateString) {
 	// First check for the pattern
@@ -69,9 +71,10 @@ var TrainingSessionItem = React.createClass({
 		var itemsToRender;
 		if(this.state.status == '') {
 			itemsToRender = [
-			<table className="table table-borderless">
+			<table >
 				<tbody>
 				  <tr>
+				    <td className="col-md-1"></td>
 					<td key={'main_session_id'} className="col-md-4"><Link to={'/trainingsessions/' + trainingSessionItem.id}>{trainingSessionItem.date}</Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
@@ -82,9 +85,10 @@ var TrainingSessionItem = React.createClass({
 			];
 		} else {
 			itemsToRender = [
-			<table className="table table-borderless">
-				<tbody className="center">
+			<table>
+				<tbody>
 				  <tr>
+				    <td className="col-md-1"></td>
 					<td key={'main_session_id'} className="col-md-4"><input type="text" className="form-control"  value={this.state.date} onChange={this.handleDateChange}/></td>
 					<td className="col-md-2"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
 					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
@@ -147,11 +151,13 @@ var TrainingSessionsList = React.createClass({
     getInitialState: function() {
 	    return {
 		 allTrainingSessions: [],
-		 userId: this.props.params.id
+		 userId: this.props.params.id,
+		 users: []
 		};
       },
 	  componentDidMount(){
         this.getTrainingSessionsFromServer('http://localhost:3001/trainingsessions/');
+		this.getUsersFromServer('http://localhost:3001/users/');
       },
         populateTrainingSessions: function(response) {
             this.setState({
@@ -159,6 +165,24 @@ var TrainingSessionsList = React.createClass({
             });
 			
      },
+	 populateUsers: function(response) {
+            this.setState({
+                users: response
+            });
+     },
+     getUsersFromServer:function(URL){
+        $.ajax({
+            type:"GET",
+            dataType:"json",
+            url:URL,
+            success: function(response) {
+                this.populateUsers(response);
+            }.bind(this),
+            error: function(xhr, status, err) {
+                console.error(this.props.url, status, err.toString());
+            }.bind(this)
+        });
+      },
 	 getTrainingSessionsFromServer:function(URL){
         $.ajax({
             type:"GET",
@@ -219,6 +243,7 @@ var TrainingSessionsList = React.createClass({
 		document.location.reload(true);
 	  },
 	render: function() {
+		var user = this.state.users[this.props.params.id - 1];
 		var trainingSessions = [];
 		for(var i = 0; i < this.state.allTrainingSessions.length; i++) {
 			if(this.state.allTrainingSessions[i].user_id == this.state.userId) {
@@ -231,11 +256,16 @@ var TrainingSessionsList = React.createClass({
 			updateTrainingSessionHandler={this.updateTrainingSession}/>;
 		}) ;
             return (
-				<div className="main-content-without-search-box">
+			
+				<div>
+					<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+					<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+					<h3> {user.first_name} {user.surname}'s sessions</h3>
+					<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
 				  <ul className="list-group">
 					  {displayedTsessions}
 				  </ul>
-			<AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>
+					<AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>
 				</div>
 		  ) ;	
 	}

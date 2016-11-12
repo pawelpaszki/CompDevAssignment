@@ -19,15 +19,6 @@
       "number_of_reps": 12
     },
     {
-      "muscle_group": "biceps",
-      "muscle_group_session_id": 1,
-      "id": 5,
-      "name": "alternate hammer curl",
-      "weight": 24,
-      "number_of_series": 3,
-      "number_of_reps": 10
-    },
-    {
       "muscle_group": "calf",
       "muscle_group_session_id": 2,
       "id": 22,
@@ -2050,7 +2041,7 @@
       "name": "barbell incline bench press",
       "weight": 110,
       "number_of_series": 4,
-      "number_of_reps": 12
+      "number_of_reps": 13
     },
     {
       "muscle_group": {
@@ -2077,6 +2068,15 @@
       "weight": 0,
       "number_of_series": 0,
       "number_of_reps": 0
+    },
+    {
+      "muscle_group": "biceps",
+      "muscle_group_session_id": 1,
+      "id": 235,
+      "name": "alternate hammer curl",
+      "weight": 28,
+      "number_of_series": 4,
+      "number_of_reps": 12
     }
   ],
   "MuscleGroupSessions": [
@@ -2489,9 +2489,9 @@
   ],
   "TrainingSessions": [
     {
-      "user_id": 1,
       "id": 0,
-      "date": "04/07/2016"
+      "date": "04/07/2016",
+      "user_id": 1
     },
     {
       "user_id": 1,

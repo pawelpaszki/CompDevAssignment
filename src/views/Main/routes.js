@@ -4,9 +4,6 @@ import AuthService from 'utils/AuthService'
 import Container from './Container'
 import Home from './Home/Home'
 import Login from './Login/Login'
-import Sidebar from './Home/Sidebar';
-import Navbar from './Home/Navbar';
-import Footer from './Home/Footer';
 import Autosuggest from 'react-autosuggest';
 import ExerciseNamePick from './Home/ExerciseNamePick';
 import EditProfileForm from './Home/EditProfileForm';
@@ -27,19 +24,6 @@ const requireAuth = (nextState, replace) => {
     replace({ pathname: '/login' })
   }
 }
-
-var App = React.createClass({
-  render : function() {
-		return (
-		  <div>
-			<Navbar />
-			<Sidebar />
-			{this.props.children}
-			<Footer />
-		  </div>
-		)
-	}
-});
 
 export const makeMainRoutes = () => {
   return (
