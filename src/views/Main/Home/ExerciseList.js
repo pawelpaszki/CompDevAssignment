@@ -107,52 +107,151 @@ var Exercise = React.createClass({
 var AddExerciseForm = React.createClass({
     getInitialState: function() {
         return { 
+		    status: '',
 			name: '',
+			step1: '',
+			step2: '',
+			step3: '',
+			step4: '',
+			step5: '',
+			picture1: '',
+			picture2: '',
 			group: this.props.muscleGroup,
 		};
     },
 	handleNameChange: function(e) {
 	   this.setState({name: e.target.value});
     },
+	handleStep1Change: function(e) {
+	   this.setState({step1: e.target.value});
+    },
+	handleStep2Change: function(e) {
+	   this.setState({step2: e.target.value});
+    },
+	handleStep3Change: function(e) {
+	   this.setState({step3: e.target.value});
+    },
+	handleStep4Change: function(e) {
+	   this.setState({step4: e.target.value});
+    },
+	handleStep5Change: function(e) {
+	   this.setState({step5: e.target.value});
+    },
+	handlePicture1Change: function(e) {
+	   this.setState({picture1: e.target.value});
+    },
+	handlePicture2Change: function(e) {
+	   this.setState({picture2: e.target.value});
+    },
+	handleAdd: function() {
+		this.setState({status: 'add'})
+	},
+	handleUndo: function() {
+		this.setState({status: ''})
+	},
 	handleSubmit: function(e) {
 		e.preventDefault();
-		console.log(this.props.muscles);
+		//console.log(this.props.muscles);
 		var muscles = _.pluck(this.props.muscles, 'name');
 		var exercises = _.pluck(this.props.exercises, 'name');
 		var name = this.state.name;
 		var group = this.props.muscleGroup;
-		console.log(group);
-		console.log(muscles);
-		console.log(exercises);
-		console.log(name);
+		var pictures = [{"start": this.state.picture1, "finish": this.state.picture2}
+		];
+		var descriptions = [{"id" : 1, "step": this.state.step1}, 
+		{"id" : 2, "step": this.state.step2},
+		{"id" : 3, "step": this.state.step3},
+		{"id" : 4, "step": this.state.step4},
+		{"id" : 5, "step": this.state.step5},]
+		//console.log(group);
+		//console.log(muscles);
+		//console.log(exercises);
+		//console.log(name);
 		if (!name || !group || exercises.indexOf(name) != -1) {
 			this.setState({name: ''});
             return;
         }
-        this.props.addExerciseHandler(name, group);
-        this.setState({name: ''});
+        this.props.addExerciseHandler(name, group, descriptions, pictures);
+        this.setState({name: '', status: ''});
 	},
 	render: function() {
-		return (
-		
-			<div className="left-within-main">
-				<table className="table table-borderless">
+		var itemsToRender;
+		if (this.state.status == 'add') {
+			itemsToRender = [
+			
 				<tbody>
-				  <tr>
-					  
-				<td key={'name'} className="col-md-2"><input type="text" className="form-control"
+				<tr><td key={'name'} className="col-md-2"><input type="text" className="form-control"
                      placeholder="Exercise name"
                      value={this.state.name}
                      onChange={this.handleNameChange} /></td>
-				<td className="col-md-2"><input type="button" className="btn btn-primary" value="Add exercise"
-							   onClick={this.handleSubmit} /> </td>
+					 <td key={'step1'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Step 1"
+                     value={this.state.step1}
+                     onChange={this.handleStep1Change} /></td>
+					 </tr>
+				  <tr>
+				      <td key={'step2'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Step 2"
+                     value={this.state.step2}
+                     onChange={this.handleStep2Change} /></td>
+				     <td key={'step3'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Step 3"
+                     value={this.state.step3}
+                     onChange={this.handleStep3Change} /></td></tr>
+				  <tr>
+				     <td key={'step4'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Step 4"
+                     value={this.state.step4}
+                     onChange={this.handleStep4Change} /></td><td key={'step5'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Step 5"
+                     value={this.state.step5}
+                     onChange={this.handleStep5Change} /></td>
+					 </tr>
+				  <tr><td key={'picture1'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Picture 1 url "
+                     value={this.state.picture1}
+                     onChange={this.handlePicture1Change} /></td>
+					 <td key={'picture2'} className="col-md-6"><input type="text" className="form-control"
+                     placeholder="Picture 2 url "
+                     value={this.state.picture2}
+                     onChange={this.handlePicture2Change} /></td></tr>
+				  <tr>
+				<td className="col-md-2">
+				<div class="btn-group">
+				  <input type="button" className="btn btn-primary" value="Undo"
+							   onClick={this.handleUndo} />
+				  <input type="button" className="btn btn-success" value="Confirm"
+							   onClick={this.handleSubmit} />
+				</div>
+				
+				  </td>
+							   
 							   <td className="col-md-1"></td>
 							   <td className="col-md-7"> </td>
-				
+							   
 				  </tr>
 				</tbody>
-			  </table>
-			
+			];
+		} else {
+			itemsToRender = [
+			<tbody>
+			<tr>
+				<td className="col-md-2">
+				<input type="button" className="btn btn-primary" value="Add exercise"
+							   onClick={this.handleAdd} />
+				
+				 </td>
+							   <td className="col-md-1"></td>
+							   <td className="col-md-7"> </td>
+				  </tr>
+			</tbody>
+			];
+		}
+		return (
+		<div className="left-within-main">
+			<table className="table table-borderless">
+			{itemsToRender}
+			 </table>
 			</div>
 		) ;
 	}
@@ -256,7 +355,7 @@ var ExerciseList = React.createClass({
 		});
 		document.location.reload(true);
 	  },
-	  addExercise:function(name, group) {
+	  addExercise:function(name, group, descriptions, pictures) {
 		  var maxId= 0;
 		  var allExercises = this.state.exercises;
 		  for (var i = 0; i < allExercises.length; i++) {
@@ -276,7 +375,8 @@ var ExerciseList = React.createClass({
 				id: id,
 				name: name,
 				group: group,
-				picture: "assets/exercises/default.jpg"
+				descriptions: descriptions,
+				pictures: pictures
 			}),
 			dataType: 'json'
 		});
