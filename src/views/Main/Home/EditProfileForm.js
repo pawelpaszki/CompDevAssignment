@@ -1,10 +1,9 @@
 import React from 'react';
-import './App.css';
 
 function isValidDate(dateString) {
 	// First check for the pattern
 	if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
-		return false;
+  return false;
 
 	// Parse the date parts to integers
 	var parts = dateString.split("/");
@@ -27,27 +26,27 @@ function isValidDate(dateString) {
 };
 
 var EditProfileForm = React.createClass({
-	 getInitialState : function() {
-	   return {
-		status : '',
-		first_name: this.props.user.first_name,
-		surname: this.props.user.surname,
-		dob: this.props.user.dob,
-		training_from: this.props.user.training_from
-	   } ;
+	getInitialState : function() {
+	  return {
+      status : '',
+      first_name: this.props.user.first_name,
+      surname: this.props.user.surname,
+      dob: this.props.user.dob,
+      training_from: this.props.user.training_from
+    };
 	},
 	handleFirstNameChange: function(e) {
-        this.setState({first_name: e.target.value});
-    },
+    this.setState({first_name: e.target.value});
+  },
 	handleSurnameChange: function(e) {
-        this.setState({surname: e.target.value});
-    },
+    this.setState({surname: e.target.value});
+  },
 	handleDOBChange: function(e) {
-        this.setState({dob: e.target.value});
-    },
+    this.setState({dob: e.target.value});
+  },
 	handleTrainingFromChange: function(e) {
-        this.setState({training_from: e.target.value});
-    },
+    this.setState({training_from: e.target.value});
+  },
 	handleUpdateProfile: function(e) {
 		e.preventDefault();
 		
@@ -55,7 +54,6 @@ var EditProfileForm = React.createClass({
 		var surname = this.state.surname.trim();
 		var dob = this.state.dob.trim();
 		var training_from = this.state.training_from.trim();
-		
 		var key = this.props.user.id;
 		if (isValidDate(dob) && isValidDate(training_from)) {
 			this.props.profileUpdateHandler(key, first_name, surname, dob, training_from);
@@ -66,39 +64,40 @@ var EditProfileForm = React.createClass({
 	},
 	render() {
 		return (
-		<div className="main-content-without-search-box">
-			<div className="centered">
-			<table>
-			<tbody>
-			<td key={'first_name'}><input type="text" className="form-control" 
-                     placeholder="First name" value={this.state.first_name} onChange={this.handleFirstNameChange}/> </td>
-					 </tbody>
-			</table>  
-					 <table>
-			<tbody>
-                      <td key={'surname'}><input type="text" className="form-control" 
-                     placeholder="Surname" value={this.state.surname}
-                     onChange={this.handleSurnameChange} /> </td>
-					 </tbody>
-			</table>  
-					 <table>
-			<tbody>
-                      <td key={'dob'}><input type="text" className="form-control" 
-                     placeholder="DOB" value={this.state.dob} onChange={this.handleDOBChange}/> </td>
-					 </tbody>
-			</table>  
-					 <table>
-			<tbody>
-                      <td key={'training_from'}><input type="text" className="form-control" 
-                     placeholder="Training from" value={this.state.training_from} onChange={this.handleTrainingFromChange}/> </td>
-					 </tbody>
-			</table>  
-					 <table>
-						 <input type="fluid button" className="btn btn-primary btn-block" value="Submit"
-				onClick={this.handleUpdateProfile} />
-			</table>  
-		 </div>
-		 </div>
+			<div>
+        <table>
+          <tbody>
+            <td key={'first_name'}><input type="text" className="form-control" 
+              placeholder="First name" value={this.state.first_name} onChange={this.handleFirstNameChange}/>
+            </td>
+          </tbody>
+        </table>  
+        <table>
+          <tbody>
+            <td key={'surname'}><input type="text" className="form-control" 
+              placeholder="Surname" value={this.state.surname} onChange={this.handleSurnameChange} />
+            </td>
+          </tbody>
+        </table>  
+        <table>
+          <tbody>
+            <td key={'dob'}><input type="text" className="form-control" 
+              placeholder="DOB" value={this.state.dob} onChange={this.handleDOBChange}/> 
+            </td>
+          </tbody>
+        </table>  
+        <table>
+          <tbody>
+            <td key={'training_from'}><input type="text" className="form-control" 
+              placeholder="Training from" value={this.state.training_from} onChange={this.handleTrainingFromChange}/>
+            </td>
+          </tbody>
+        </table>  
+        <table>
+          <input type="fluid button" className="btn btn-primary btn-block" value="Submit"
+            onClick={this.handleUpdateProfile} />
+        </table>
+	  	</div>
 		)
 	}
 });

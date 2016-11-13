@@ -31,13 +31,13 @@ export const makeMainRoutes = () => {
       <IndexRedirect to="/home" />
       <Route path="home" component={Home} onEnter={requireAuth} />
       <Route path="login" component={Login} />
-	  <Route path="users/:id" component={TrainingSessionsList} onEnter={requireAuth} />
-	  <Route path="trainingsessions/:id" component={MuscleGroupSessionList} onEnter={requireAuth}/>
-	  <Route path="musclegroupsessions/:id" component={ExerciseUnitList} onEnter={requireAuth}/>
-	  <Route path="muscles" component={MuscleList} />
-	  <Route path="musclegroupexercises/:id" component={ExerciseList} />
-	  <Route path="exerciseInfo/:id" component={ExerciseInfo}/>
-	  <Route path="charts/:id" component={ExerciseNamePick} onEnter={requireAuth}/>
+      <Route path="users/:id" component={TrainingSessionsList} onEnter={requireAuth} />
+      <Route path="trainingsessions/:id" component={MuscleGroupSessionList} onEnter={requireAuth}/>
+      <Route path="musclegroupsessions/:id" component={ExerciseUnitList} onEnter={requireAuth}/>
+      <Route path="muscles" component={MuscleList} />
+      <Route path="musclegroupexercises/:id" component={ExerciseList} />
+      <Route path="exerciseInfo/:id" component={ExerciseInfo}/>
+      <Route path="charts/:id" component={ExerciseNamePick} onEnter={requireAuth}/>
     </Route>
   )
 }

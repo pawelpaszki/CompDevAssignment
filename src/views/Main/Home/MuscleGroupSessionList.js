@@ -8,10 +8,10 @@ import { browserHistory } from 'react-router';
 
 var MuscleGroupSession = React.createClass({
 	getInitialState : function() {
-		 return {
+		return {
 		  id: this.props.sessionItem.id
-		 } ;
-	  },
+		};
+	},
 	handleDeleteSessionItem : function(e) {
 	  e.preventDefault();
 	  this.props.deleteSessionItemHandler(this.props.sessionItem.id);
@@ -20,46 +20,43 @@ var MuscleGroupSession = React.createClass({
 		var deleteHandler = this.handleDeleteSessionItem;
 		var sessionItem = this.props.sessionItem;
 		return (
-		<li className="list-group">
-		<div>
-			<table className="table">
-				<tbody>
-				  <tr>
-				 <td className="col-md-1"></td>
-				<td className="col-md-2"><Link to={'/musclegroupsessions/' + sessionItem.id}>{sessionItem.name} </Link></td>
-				<td className="col-md-2"><input type="button"  className="btn btn-warning" value="delete" onClick={deleteHandler}/></td>
-				<td className="col-md-7"></td>
-				
-				  </tr>
-				</tbody>
-			  </table>
-			 </div>
-		</li>
+      <li className="list-group">
+        <div>
+          <table className="table">
+            <tbody>
+              <tr>
+                <td className="col-md-1"></td>
+                <td className="col-md-2"><Link to={'/musclegroupsessions/' + sessionItem.id}>{sessionItem.name} </Link></td>
+                <td className="col-md-2"><input type="button"  className="btn btn-warning" value="delete" onClick={deleteHandler}/></td>
+                <td className="col-md-7"></td>
+              </tr>
+            </tbody>
+          </table>
+         </div>
+      </li>
 		)
 	}
 });
 
 var AddMuscleGroupSessionForm = React.createClass({
 	getInitialState : function() {
-		
-	   return {
-		status : '',
-		name: ''
-	   } ;
+		return {
+      status : '',
+      name: ''
+	  };
 	},
 	handleMuscleNameChange: function(e) {
-        this.setState({name: e.target.value});
-    },
+    this.setState({name: e.target.value});
+  },
 	
 	handleAddMuscle: function(e) {
 		e.preventDefault();
-		
 		var name = this.state.name.trim();
 		var muscleNames = _.pluck(this.props.allMuscles, 'name');
 		var musclesInSession = _.pluck(this.props.msessions, 'name');
-		console.log(musclesInSession);
-		console.log(muscleNames);
-		console.log(name);
+		//console.log(musclesInSession);
+		//console.log(muscleNames);
+		//console.log(name);
 		
 		if (muscleNames.indexOf(name) !== -1 && musclesInSession.indexOf(name) === -1) {
 			this.props.addMuscleGroupSessionHandler(name);
@@ -68,23 +65,24 @@ var AddMuscleGroupSessionForm = React.createClass({
 		}
 	},
 	render: function() {
-            return (
-				<div>
+    return (
+      <div>
 				<table className="table table-borderless">
-				<tbody>
-				  <tr>
-				<td key={'name'} className="col-md-2"><input type="text" className="form-control" 
-				placeholder="Type muscle group" onChange={this.handleMuscleNameChange}/></td>
-				<td className="col-md-2"><input type="button" className="btn btn-primary" value="Add muscle group"
-							   onClick={this.handleAddMuscle} /> </td>
-							   <td className="col-md-1"></td>
-				<td className="col-md-7"> </td>
-				  </tr>
-				</tbody>
-			  </table>
-				
-				</div>
-		  ) ;
+          <tbody>
+            <tr>
+              <td key={'name'} className="col-md-2"><input type="text" className="form-control" 
+                placeholder="Type muscle group" onChange={this.handleMuscleNameChange}/>
+              </td>
+              <td className="col-md-2"><input type="button" className="btn btn-primary" value="Add muscle group"
+                onClick={this.handleAddMuscle} /> 
+              </td>
+              <td className="col-md-1"></td>
+              <td className="col-md-7"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    );
 	}
 });
 

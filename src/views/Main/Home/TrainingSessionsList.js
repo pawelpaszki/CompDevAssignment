@@ -32,15 +32,15 @@ function isValidDate(dateString) {
 
 var TrainingSessionItem = React.createClass({
 	getInitialState : function() {
-		 return {
-			 status: '',
-			 id : this.props.trainingSessionItem.id,
-		  date: this.props.trainingSessionItem.date,
-		  initDate: this.props.trainingSessionItem.date
-		} ;
-	  },
+		return {
+		 status: '',
+		 id : this.props.trainingSessionItem.id,
+		 date: this.props.trainingSessionItem.date,
+		 initDate: this.props.trainingSessionItem.date
+    };
+  },
 	handleDateChange: function(e) {
-	   this.setState({date: e.target.value});
+	  this.setState({date: e.target.value});
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
@@ -54,14 +54,14 @@ var TrainingSessionItem = React.createClass({
 		this.setState({ status : ''} )
 	},
 	handleUpdate: function(e) {
-	   e.preventDefault();
-	   var date = this.state.date;
-	   if (isValidDate(date)) {
-	       this.props.updateTrainingSessionHandler(this.state.id, this.state.date);
-	   } else {
-		   this.setState({ date : this.state.initDate});
-	   }
-	   this.setState({ status : ''} )
+	  e.preventDefault();
+	  var date = this.state.date;
+	  if (isValidDate(date)) {
+	    this.props.updateTrainingSessionHandler(this.state.id, this.state.date);
+	  } else {
+		  this.setState({ date : this.state.initDate});
+	  }
+	  this.setState({ status : ''} )
 	},
 	render: function() {
 		var trainingSessionItem = this.props.trainingSessionItem;
@@ -71,51 +71,51 @@ var TrainingSessionItem = React.createClass({
 		var itemsToRender;
 		if(this.state.status == '') {
 			itemsToRender = [
-			<table >
-				<tbody>
-				  <tr>
-				    <td className="col-md-1"></td>
-					<td key={'main_session_id'} className="col-md-4"><Link to={'/trainingsessions/' + trainingSessionItem.id}>{trainingSessionItem.date}</Link></td>
-					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
-					<td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
-					<td className="col-md-2"></td>
-				  </tr>
-				</tbody>
-			</table>
+        <table >
+          <tbody>
+            <tr>
+              <td className="col-md-1"></td>
+              <td key={'main_session_id'} className="col-md-4"><Link to={'/trainingsessions/' + trainingSessionItem.id}>{trainingSessionItem.date}</Link></td>
+              <td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
+              <td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
+              <td className="col-md-2"></td>
+            </tr>
+          </tbody>
+        </table>
 			];
 		} else {
 			itemsToRender = [
-			<table>
-				<tbody>
-				  <tr>
-				    <td className="col-md-1"></td>
-					<td key={'main_session_id'} className="col-md-4"><input type="text" className="form-control"  value={this.state.date} onChange={this.handleDateChange}/></td>
-					<td className="col-md-2"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
-					<td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
-					<td className="col-md-2"></td>
-				  </tr>
-				</tbody>
-			</table>
+        <table>
+          <tbody>
+            <tr>
+              <td className="col-md-1"></td>
+              <td key={'main_session_id'} className="col-md-4"><input type="text" className="form-control"  value={this.state.date} onChange={this.handleDateChange}/></td>
+              <td className="col-md-2"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
+              <td className="col-md-2"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
+              <td className="col-md-2"></td>
+            </tr>
+          </tbody>
+        </table>
 			];
 		};
 		return (
-			 <li className="list-group">
+			<li className="list-group">
 				{itemsToRender}
-			 </li>
+			</li>
 		);
 	}
 });
 
 var AddTrainingSessionForm = React.createClass({
 	getInitialState : function() {
-	   return {
-		status : '',
-		date: ''
-	   } ;
+	  return {
+      status : '',
+      date: ''
+	  };
 	},
 	handleDateChange: function(e) {
-        this.setState({date: e.target.value});
-    },
+    this.setState({date: e.target.value});
+  },
 	handleAddTrainingSession: function(e) {
 		e.preventDefault();
 		var date = this.state.date;
@@ -125,100 +125,92 @@ var AddTrainingSessionForm = React.createClass({
 		this.setState({date: ''});
 	},
 	render: function() {
-            return (
-			<div className="calendar">
-				<div className="left-within-main">
-					<table className="table table-borderless">
-						<tbody>
-						  <tr>
-						<td key={'date'} className="col-md-4"><input type="text" className="form-control" 
-						placeholder="Enter date" onChange={this.handleDateChange}/></td>
-						<td className="col-md-3"><input type="button" className="btn btn-primary" value="Add session"
-									   onClick={this.handleAddTrainingSession} /> </td>
-									   <td className="col-md-1"></td>
-						<td className="col-md-2"> </td>
-						  </tr>
-						</tbody>
-				  </table>
-				
-				</div>
-			</div>
-		  ) ;
+    return (
+      <table className="table table-borderless">
+        <tbody>
+          <tr>
+            <td key={'date'} className="col-md-4"><input type="text" className="form-control" placeholder="Enter date" onChange={this.handleDateChange}/></td>
+            <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add session" onClick={this.handleAddTrainingSession} /> </td>
+            <td className="col-md-1"></td>
+            <td className="col-md-2"> </td>
+          </tr>
+        </tbody>
+      </table>
+    );
 	}
 });
 
 var TrainingSessionsList = React.createClass({
-    getInitialState: function() {
-	    return {
-		 allTrainingSessions: [],
-		 userId: this.props.params.id,
-		 users: []
+  getInitialState: function() {
+    return {
+	  	allTrainingSessions: [],
+		  userId: this.props.params.id,
+		  users: []
 		};
-      },
-	  componentDidMount(){
-        this.getTrainingSessionsFromServer('http://localhost:3001/trainingsessions/');
-		this.getUsersFromServer('http://localhost:3001/users/');
-      },
-        populateTrainingSessions: function(response) {
-            this.setState({
-                allTrainingSessions: response
-            });
-			
-     },
-	 populateUsers: function(response) {
-            this.setState({
-                users: response
-            });
-     },
-     getUsersFromServer:function(URL){
-        $.ajax({
-            type:"GET",
-            dataType:"json",
-            url:URL,
-            success: function(response) {
-                this.populateUsers(response);
-            }.bind(this),
-            error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-      },
-	 getTrainingSessionsFromServer:function(URL){
-        $.ajax({
-            type:"GET",
-            dataType:"json",
-            url:URL,
-            success: function(response) {
-                this.populateTrainingSessions(response);
-				console.log(response);
-            }.bind(this),
-            error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-      },
-	  deleteTrainingSession:function(id) {
-		  $.ajax({
-			url: 'http://localhost:3001/trainingsessions/' + id,
-			type: 'DELETE',
-			contentType: 'application/json'
-			});
-			document.location.reload(true);
-	  },
-	  updateTrainingSession: function(id, date) {
-		    $.ajax({
-			url: 'http://localhost:3001/trainingsessions/' + id,
-			type: 'PUT',
-			contentType: 'application/json',
-			data: JSON.stringify({
-				id: id,
-				date: date,
-				user_id: this.state.userId,
-			}),
-			dataType: 'json'
-		});
-		document.location.reload(true);
-	  },
+  },
+  componentDidMount(){
+    this.getTrainingSessionsFromServer('http://localhost:3001/trainingsessions/');
+    this.getUsersFromServer('http://localhost:3001/users/');
+  },
+  populateTrainingSessions: function(response) {
+    this.setState({
+      allTrainingSessions: response
+    });
+  },
+	populateUsers: function(response) {
+    this.setState({
+      users: response
+    });
+  },
+  getUsersFromServer:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+        this.populateUsers(response);
+      }.bind(this),
+        error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+	getTrainingSessionsFromServer:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+        this.populateTrainingSessions(response);
+      //console.log(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  deleteTrainingSession:function(id) {
+    $.ajax({
+      url: 'http://localhost:3001/trainingsessions/' + id,
+      type: 'DELETE',
+      contentType: 'application/json'
+    });
+    document.location.reload(true);
+  },
+  updateTrainingSession: function(id, date) {
+    $.ajax({
+    url: 'http://localhost:3001/trainingsessions/' + id,
+    type: 'PUT',
+    contentType: 'application/json',
+    data: JSON.stringify({
+      id: id,
+      date: date,
+      user_id: this.state.userId,
+    }),
+    dataType: 'json'
+    });
+    document.location.reload(true);
+  },
 	  addTrainingSession:function(date) {
 		  var maxId= 0;
 		  var trainingSessions = this.state.allTrainingSessions;
@@ -227,8 +219,8 @@ var TrainingSessionsList = React.createClass({
 				  maxId = trainingSessions[i].id;
 			  }
 		  };
-		   var id = maxId + 1;
-		    $.ajax({
+		  var id = maxId + 1;
+      $.ajax({
 			url: 'http://localhost:3001/trainingsessions',
 			type: 'POST',
 			contentType: 'application/json',
@@ -241,7 +233,7 @@ var TrainingSessionsList = React.createClass({
 		});
 		this.setState({});
 		document.location.reload(true);
-	  },
+  },
 	render: function() {
 		var user = this.state.users[this.props.params.id - 1];
 		var trainingSessions = [];
@@ -255,19 +247,18 @@ var TrainingSessionsList = React.createClass({
 			deleteTrainingSessionHandler={this.deleteTrainingSession}
 			updateTrainingSessionHandler={this.updateTrainingSession}/>;
 		}) ;
-            return (
-			
-				<div>
-					<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
-					<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
-					<h3> {user.first_name} {user.surname}'s sessions</h3>
-					<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
-				  <ul className="list-group">
-					  {displayedTsessions}
-				  </ul>
-					<AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>
-				</div>
-		  ) ;	
+    return (
+      <div>
+        <Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
+        <Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+        <h3> {user.first_name} {user.surname}'s sessions</h3>
+        <Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+        <ul className="list-group">
+          {displayedTsessions}
+        </ul>
+        <AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>
+      </div>
+		 );	
 	}
 });
 
