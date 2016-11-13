@@ -24,7 +24,7 @@ var config = getConfig({
   html: function (context) {
     return {
       'index.html': context.defaultTemplate({
-        title: 'auth0 React Sample',
+        title: 'gym progress logger',
         publicPath: isDev ? 'http://localhost:3000/' : '',
         meta: {
           'name': 'Gym Progress Logger',
@@ -87,6 +87,7 @@ config.module.loaders.push({
   loader: 'style-loader!css-loader'
 })
 
+
 // postcss
 config.postcss = [].concat([
   require('precss')({}),
@@ -106,6 +107,16 @@ config.resolve.alias = {
   'styles': join(src, 'styles')
 }
 // end Roots
+
+loaders: [
+    {
+        test: /\.(jpe?g|png|gif|svg)$/i,
+        loaders: [
+            'file?hash=sha512&digest=hex&name=[hash].[ext]',
+            'image-webpack?bypassOnDebug&optimizationLevel=7&interlaced=false'
+        ]
+    }
+]
 
 // Testing
 if (isTest) {

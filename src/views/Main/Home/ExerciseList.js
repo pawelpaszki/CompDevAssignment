@@ -14,7 +14,9 @@ var Exercise = React.createClass({
 		  name: this.props.exercise.name,
 		  group: this.props.exercise.group,
 		  initName: this.props.exercise.name,
-		} ;
+		  descriptions: this.props.exercise.descriptions,
+		  pictures: this.props.exercise.pictures,
+		};
 	  },
 	handleNameChange: function(e) {
 	   this.setState({name: e.target.value});
@@ -39,6 +41,9 @@ var Exercise = React.createClass({
 	handleUndo: function(e) {
 		this.setState({ status : ''} )
 	},
+	handleStepChange: function(e) {
+		console.log(e.target.value);
+	},
 	handleUpdate: function(e) {
 	   e.preventDefault();
 	   var name = this.state.name;
@@ -48,7 +53,7 @@ var Exercise = React.createClass({
 	   var exerciseConstants = _.pluck(this.props.exerciseConstants, 'name');
 	   console.log(exerciseConstants.indexOf(this.state.initName));
 	   if ((exerciseConstants.indexOf(this.state.initName)) == -1) {
-	       this.props.updateExerciseHandler(this.state.id, name);
+	       this.props.updateExerciseHandler(this.state.id, name, this.state.descriptions, this.state.pictures);
 		   this.setState({ name : this.state.name});
 		   console.log(this.state.name);
 	   } else {
@@ -77,6 +82,7 @@ var Exercise = React.createClass({
 			];
 		} else {
 			itemsToRender = [
+			
 			<table className="table table-borderless">
 				<tbody className="center">
 				  <tr>
@@ -234,7 +240,7 @@ var ExerciseList = React.createClass({
 			});
 			document.location.reload(true);
 	  },
-	  updateExercise: function(id, name) {
+	  updateExercise: function(id, name, descriptions, pictures) {
 		    $.ajax({
 			url: 'http://localhost:3001/exercises/' + id,
 			type: 'PUT',
@@ -243,7 +249,8 @@ var ExerciseList = React.createClass({
 				id: id,
 				name: name,
 				group: this.state.group,
-				picture: "assets/exercises/default.jpg"
+				descriptions: descriptions,
+				pictures: pictures
 			}),
 			dataType: 'json'
 		});

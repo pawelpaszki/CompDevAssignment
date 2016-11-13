@@ -39,16 +39,25 @@ var ExerciseInfo = React.createClass({
         });
       },
 	render: function() {
-		var imagePath = this.state.exercise.picture;
-		console.log(imagePath);
+		var imagePath1 = this.state.exercise.pictures[0].start;
+		var imagePath2 = this.state.exercise.pictures[0].finish;
+		var descriptions = this.state.exercise.descriptions.map(function(description, index){
+			return (
+				<ul className="list-group" key={index} >
+				   <p> 
+				   {description.step} </p>
+				 </ul> );
+		  });
 		return (
 		
 		<div>
 		   <Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
 		   <Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
 				<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
-			 <h3>{this.state.exercise.name}</h3>
-			<img src={"/" + imagePath}  alt="placeholder"/>
+			<h2 style={{marginLeft: 5 + '%'}}>{this.state.exercise.name}</h2>
+			<div style={{marginLeft: 5 + '%', marginRight: 5 + '%'}}>{descriptions}</div>
+			<img src={imagePath1} style={{width: 40 + '%', marginLeft: 7 + '%'}} alt="placeholder"/>
+			<img src={imagePath2} style={{width: 40 + '%', marginLeft: 6 + '%'}} alt="placeholder"/>
 		</div>
 		)
 	}

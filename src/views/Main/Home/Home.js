@@ -144,13 +144,14 @@ var User = React.createClass({
 		var editHandler = this.handleEdit;
 		var deleteHandler = this.handleDelete;
 		var itemsToRender;
+		var path = userItem.picture;
 		if(this.state.status == '') {
 			itemsToRender = [
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
 				    <td className="col-md-1"></td>
-					<td key={'id'} className="col-md-2"><img src={"/assets/" + userItem.picture} alt={userItem.first_name}/></td>
+					<td key={'id'} className="col-md-2"><img src={path} alt={userItem.first_name} style={{width: 100 + 'px', height: 100 + 'px'}}/></td>
 					<td className="col-md-2"><Link to={'/users/' + userItem.id}>{userItem.first_name} {userItem.surname}</Link></td>
 					<td className="col-md-2"><Link to={'/charts/' + userItem.id}><input type="button" className="btn btn-info btn-block" value="charts"/></Link></td>
 					<td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
@@ -399,7 +400,7 @@ var GymProgressLogger = React.createClass({
 				dob: dob,
 				body_weight: body_weight,
 				height: height,
-				picture: "assets/users/default.jpg",
+				picture: "https://s17.postimg.org/91vave2pr/default.jpg",
 				training_from: training_from,
 			}),
 			dataType: 'json'
