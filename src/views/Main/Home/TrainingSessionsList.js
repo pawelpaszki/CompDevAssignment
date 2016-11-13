@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import $ from "jquery";
 import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
+import Header from './Header';
 
 function isValidDate(dateString) {
 	// First check for the pattern
@@ -246,13 +247,11 @@ var TrainingSessionsList = React.createClass({
 			return <TrainingSessionItem key={tsession.main_session_id} trainingSessionItem={tsession} 
 			deleteTrainingSessionHandler={this.deleteTrainingSession}
 			updateTrainingSessionHandler={this.updateTrainingSession}/>;
-		}) ;
+		});
+    var headerValue = user.first_name + " " +  user.surname + "'s sessions";
     return (
       <div>
-        <Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
-        <Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
-        <h3> {user.first_name} {user.surname}'s sessions</h3>
-        <Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
+        <Header headerValue={headerValue}/>
         <ul className="list-group">
           {displayedTsessions}
         </ul>

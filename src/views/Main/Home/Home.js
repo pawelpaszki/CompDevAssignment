@@ -1,6 +1,6 @@
-import React, { PropTypes as T } from 'react'
-import {Button} from 'react-bootstrap'
-import AuthService from 'utils/AuthService'
+import React, { PropTypes as T } from 'react';
+import {Button} from 'react-bootstrap';
+import AuthService from 'utils/AuthService';
 import { Link } from 'react-router'; 
 import { browserHistory } from 'react-router';
 import _ from 'lodash';

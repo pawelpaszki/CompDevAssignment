@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import $ from "jquery";
 import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
+import Header from './Header';
 
 var MuscleGroupSession = React.createClass({
 	getInitialState : function() {
@@ -88,76 +89,76 @@ var AddMuscleGroupSessionForm = React.createClass({
 
 var MuscleGroupSessionList = React.createClass({
 	getInitialState: function() {
-	    return {
-		 allMuscleGroupSessions: [],
-		 allMuscles: [],
-		 trainingSessionId: this.props.params.id
+	  return {
+      allMuscleGroupSessions: [],
+      allMuscles: [],
+      trainingSessionId: this.props.params.id
 		};
-      },
-	  componentDidMount(){
-        this.getMuscleGroupSessionsFromServer('http://localhost:3001/musclegroupsessions/');
-		this.getAllMuscleGroups('http://localhost:3001/muscles/');
-      },
-        populateMuscleGroupSessions: function(response) {
-            this.setState({
-                allMuscleGroupSessions: response
-            });
-     },
-	 populateMuscleGroups: function(response) {
+  },
+  componentDidMount(){
+    this.getMuscleGroupSessionsFromServer('http://localhost:3001/musclegroupsessions/');
+    this.getAllMuscleGroups('http://localhost:3001/muscles/');
+  },
+  populateMuscleGroupSessions: function(response) {
+    this.setState({
+      allMuscleGroupSessions: response
+    });
+  },
+	populateMuscleGroups: function(response) {
 		this.setState({
 			allMuscles: response
 		});
-	 },
-	 getAllMuscleGroups:function(URL){
-        $.ajax({
-            type:"GET",
-            dataType:"json",
-            url:URL,
-            success: function(response) {
-                this.populateMuscleGroups(response);
-				console.log(response);
-            }.bind(this),
-            error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-      },
-	 getMuscleGroupSessionsFromServer:function(URL){
-        $.ajax({
-            type:"GET",
-            dataType:"json",
-            url:URL,
-            success: function(response) {
-                this.populateMuscleGroupSessions(response);
-				console.log(response);
-            }.bind(this),
-            error: function(xhr, status, err) {
-                console.error(this.props.url, status, err.toString());
-            }.bind(this)
-        });
-      },
-	  deleteMuscleGroupSession:function(id) {
-		  $.ajax({
-			url: 'http://localhost:3001/musclegroupsessions/' + id,
-			type: 'DELETE',
-			contentType: 'application/json'
-			});
-			document.location.reload(true);
-	  },
-	  addMuscleGroupSession:function(name) {
-		  var maxId= 0;
-		  var muscleGroupSessions = this.state.allMuscleGroupSessions;
-		  for (var i = 0; i < muscleGroupSessions.length; i++) {
-			  if(muscleGroupSessions[i].id > maxId) {
-				  maxId = muscleGroupSessions[i].id;
-			  }
-		  };
-		  console.log("name" + name);
-		  var id = maxId + 1;
-		  console.log("id: " + id);
-		  console.log("main session id: " + this.state.trainingSessionId);
-		   
-		    $.ajax({
+	},
+	getAllMuscleGroups:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+        this.populateMuscleGroups(response);
+      //console.log(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+	getMuscleGroupSessionsFromServer:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+        this.populateMuscleGroupSessions(response);
+        //console.log(response);
+      }.bind(this),
+        error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  deleteMuscleGroupSession:function(id) {
+    $.ajax({
+      url: 'http://localhost:3001/musclegroupsessions/' + id,
+      type: 'DELETE',
+      contentType: 'application/json'
+    });
+    document.location.reload(true);
+  },
+  addMuscleGroupSession:function(name) {
+    var maxId= 0;
+    var muscleGroupSessions = this.state.allMuscleGroupSessions;
+    for (var i = 0; i < muscleGroupSessions.length; i++) {
+      if(muscleGroupSessions[i].id > maxId) {
+        maxId = muscleGroupSessions[i].id;
+      }
+    };
+    //console.log("name" + name);
+    var id = maxId + 1;
+    //console.log("id: " + id);
+    //console.log("main session id: " + this.state.trainingSessionId);
+     
+    $.ajax({
 			url: 'http://localhost:3001/musclegroupsessions',
 			type: 'POST',
 			contentType: 'application/json',
@@ -170,10 +171,10 @@ var MuscleGroupSessionList = React.createClass({
 		});
 		this.setState({});
 		document.location.reload(true);
-	  },
+  },
 	render: function() {
 		var allMuscles = this.state.allMuscles;
-		console.log(allMuscles);
+		//console.log(allMuscles);
 		var muscleGroupSessions = [];
 		for(var i = 0; i < this.state.allMuscleGroupSessions.length; i++) {
 			if(this.state.allMuscleGroupSessions[i].main_session_id == this.state.trainingSessionId) {
@@ -182,17 +183,14 @@ var MuscleGroupSessionList = React.createClass({
 		};
 		var displayedSessions = muscleGroupSessions.map((session) =>{
 			return <MuscleGroupSession key={session.id} sessionItem={session} deleteSessionItemHandler={this.deleteMuscleGroupSession} />;
-		}) ;
+		});
+    var headerValue = '';
 		return (
-		<div className="main-content-without-search-box">
-			<div className="main-content">
-				<Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
-				<Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
-				<Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
-					<ul className="list-group">
-				  {displayedSessions}
-			  </ul>
-			</div>
+		<div >
+			<Header headerValue={headerValue}/>
+      <ul className="list-group">
+        {displayedSessions}
+      </ul>
 			<AddMuscleGroupSessionForm msessions={this.props.msessions} addMuscleGroupSessionHandler={this.addMuscleGroupSession} allMuscles={allMuscles}/>
 		</div>
 	  ) ;
