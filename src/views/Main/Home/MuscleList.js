@@ -31,10 +31,10 @@ var Muscle = React.createClass({
 		};
 	},
 	handleEdit: function(e) {
-		this.setState({ status : 'edit'} )
+		this.setState({ status : 'edit'});
 	},
-	handleUndo: function(e) {
-		this.setState({ status : ''} )
+	handleUndo: function() {
+		this.setState({ status : ''});
 	},
 	handleUpdate: function(e) {
 	  e.preventDefault();
@@ -76,7 +76,7 @@ var Muscle = React.createClass({
             <tr>
               <td className="col-md-1"></td>
               <td key={'name'} className="col-md-2"><input type="text" className="form-control"  value={this.state.name} onChange={this.handleNameChange}/></td>
-              <td className="col-md-1"><input type="button" className="btn btn-primary btn-block"  value="undo" onChange={this.handleUndo}/></td>
+              <td className="col-md-1"><input type="button" className="btn btn-primary btn-block" value="undo" onChange={this.handleUndo}/></td>
               <td className="col-md-1"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
               <td className="col-md-7"></td>
             </tr>

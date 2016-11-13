@@ -50,8 +50,8 @@ var SearchBox = React.createClass({
         Sort by:
         <select id="sort" value={this.props.order} 
           onChange={this.handleSortChange} >
-        <option value="dob">Newest</option>
-		    <option value="training_from">Training (Years)</option>
+        <option value="surname">name</option>
+		    <option value="body_weight">weight</option>
         </select>
       </div>
     );
@@ -89,6 +89,9 @@ var User = React.createClass({
 	},
 	handleTrainingFromChange: function(e) {
 	  this.setState({training_from: e.target.value});
+	},
+  handlePictureChange: function(e) {
+	  this.setState({picture: e.target.value});
 	},
 	handleWeightChange: function(e) {
 	  this.setState({body_weight: e.target.value});
@@ -144,36 +147,37 @@ var User = React.createClass({
 		var path = userItem.picture;
 		if(this.state.status == '') {
 			itemsToRender = [
-			<table className="table table-borderless">
-				<tbody>
-				  <tr>
-				    <td key={'empty'} className="col-md-1"></td>
-		  			<td key={'id'} className="col-md-2"><img src={path} alt={userItem.first_name} style={{width: 100 + 'px', height: 100 + 'px'}}/></td>
-			  		<td key={'training_sessions'}className="col-md-2"><Link to={'/users/' + userItem.id}>{userItem.first_name} {userItem.surname}</Link></td>
-				  	<td key={'charts'} className="col-md-2"><Link to={'/charts/' + userItem.id}><input type="button" className="btn btn-info btn-block" value="charts"/></Link></td>
-					  <td key={'edit'} className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
-			  		<td key={'delete'} className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
-			  		<td key={'empty2'} className="col-md-1"></td>
-				  </tr>
-				</tbody>
-			</table>
+        <table className="table table-borderless">
+          <tbody>
+            <tr>
+              <td key={'empty'} className="col-md-1"></td>
+              <td key={'id'} className="col-md-2"><img src={path} alt={userItem.first_name} style={{width: 100 + 'px', height: 100 + 'px'}}/></td>
+              <td key={'training_sessions'}className="col-md-2"><Link to={'/users/' + userItem.id}>{userItem.first_name} {userItem.surname}</Link></td>
+              <td key={'charts'} className="col-md-2"><Link to={'/charts/' + userItem.id}><input type="button" className="btn btn-info btn-block" value="charts"/></Link></td>
+              <td key={'edit'} className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
+              <td key={'delete'} className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
+              <td key={'empty2'} className="col-md-1"></td>
+            </tr>
+          </tbody>
+        </table>
 			];
 		} else {
 			itemsToRender = [
-			<table className="table table-borderless">
-				<tbody>
-				  <tr>
-					<td key={'first_name'} className="col-md-2"><input type="text" className="form-control"  value={this.state.first_name} onChange={this.handleFirstNameChange}/></td>
-					<td key={'surname'} className="col-md-2"><input type="text" className="form-control"  value={this.state.surname} onChange={this.handleSurnameChange}/></td>
-					<td key={'dob'} className="col-md-2"><input type="text" className="form-control"  value={this.state.dob} onChange={this.handleDOBChange}/></td>
-					<td key={'training_from'} className="col-md-2"><input type="text" className="form-control"  value={this.state.training_from} onChange={this.handleTrainingFromChange}/></td>
-					<td key={'weight'} className="col-md-1"><input type="text" className="form-control"  value={this.state.body_weight} onChange={this.handleWeightChange}/></td>
-					<td key={'height'} className="col-md-1"><input type="text" className="form-control"  value={this.state.height} onChange={this.handleHeightChange}/></td>
-					<td key={'undo'} className="col-md-1"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
-					<td key={'update'} className="col-md-1"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
-				  </tr>
-				</tbody>
-			</table>
+        <table className="table table-borderless">
+          <tbody>
+            <tr>
+            <td key={'first_name'} className="col-md-2"><input type="text" className="form-control"  value={this.state.first_name} onChange={this.handleFirstNameChange}/></td>
+            <td key={'surname'} className="col-md-2"><input type="text" className="form-control"  value={this.state.surname} onChange={this.handleSurnameChange}/></td>
+            <td key={'dob'} className="col-md-1"><input type="text" className="form-control"  value={this.state.dob} onChange={this.handleDOBChange}/></td>
+            <td key={'training_from'} className="col-md-1"><input type="text" className="form-control"  value={this.state.training_from} onChange={this.handleTrainingFromChange}/></td>
+            <td key={'picture'} className="col-md-2"><input type="text" className="form-control"  value={this.state.picture} onChange={this.handlePictureChange}/></td>
+            <td key={'weight'} className="col-md-1"><input type="text" className="form-control"  value={this.state.body_weight} onChange={this.handleWeightChange}/></td>
+            <td key={'height'} className="col-md-1"><input type="text" className="form-control"  value={this.state.height} onChange={this.handleHeightChange}/></td>
+            <td key={'undo'} className="col-md-1"><input type="button" className="btn btn-primary btn-block" value="undo" onClick={this.handleUndo}/></td>
+            <td key={'update'} className="col-md-1"><input type="button" className="btn btn-success btn-block" value="confirm" onClick={updateHandler}/></td>
+            </tr>
+          </tbody>
+        </table>
 			];
 		};
 		return (

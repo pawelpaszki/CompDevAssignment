@@ -2077,6 +2077,19 @@
       "weight": 28,
       "number_of_series": 4,
       "number_of_reps": 12
+    },
+    {
+      "muscle_group": {
+        "id": 81,
+        "main_session_id": 31,
+        "name": "leg"
+      },
+      "muscle_group_session_id": 81,
+      "id": 237,
+      "name": "barbell full squat",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
     }
   ],
   "MuscleGroupSessions": [
@@ -2479,6 +2492,11 @@
       "id": 80,
       "main_session_id": 0,
       "name": "leg"
+    },
+    {
+      "id": 81,
+      "main_session_id": 31,
+      "name": "leg"
     }
   ],
   "loginState": [
@@ -2642,6 +2660,11 @@
       "user_id": 3,
       "id": 30,
       "date": "05/08/2016"
+    },
+    {
+      "user_id": 5,
+      "id": 31,
+      "date": "04/07/2016"
     }
   ],
   "Users": [
@@ -2649,11 +2672,11 @@
       "id": 1,
       "first_name": "Mitch",
       "surname": "Hitt",
-      "picture": "https://s17.postimg.org/8vhlsatkv/1.jpg",
+      "dob": "12/05/1986",
       "body_weight": 95,
       "height": 183,
-      "dob": "12/05/1986",
-      "training_from": "05/12/1986"
+      "training_from": "05/12/1998",
+      "picture": "https://s17.postimg.org/8vhlsatkv/1.jpg"
     },
     {
       "id": 2,
@@ -2690,7 +2713,7 @@
       "first_name": "Darell",
       "surname": "Kent",
       "dob": "10/09/1998",
-      "body_weight": 112,
+      "body_weight": 111,
       "height": 191,
       "training_from": "12/09/2013",
       "picture": "https://s17.postimg.org/b55q322in/5.jpg"

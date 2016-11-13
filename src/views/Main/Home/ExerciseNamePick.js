@@ -319,8 +319,6 @@ var ChartDataPicker = React.createClass( {
 			var date_to = this.state.date_to;
 			var exercise = this.props.exercise;
 			this.props.generateChartHandler(exercise,date_from, date_to);
-			this.setState({date_from: ""});
-			this.setState({date_to: ""});
 		}
   },
 	handleNameChange: function(e) {
@@ -351,7 +349,7 @@ var Chart = React.createClass({
   render() {
     return (
       <div className="col-md-6 col-md-offset-3">
-        <BarChart ylabel='kg' width={800} height={600} margin={margin} data={this.props.data}/>
+        <BarChart ylabel='kg' width={800} height={500} margin={margin} data={this.props.data}/>
 			</div>
     );
   }
