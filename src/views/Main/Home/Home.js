@@ -108,7 +108,6 @@ var User = React.createClass({
 		this.props.deleteUserHandler(this.state.id);
 	},
 	handleEdit: function(e) {
-		console.log(this.props.loggedIn[0].value);
 		this.setState({ status : 'edit'});
 	},
 	handleUpdate: function(e) {
@@ -297,28 +296,50 @@ var GymProgressLogger = React.createClass({
       search: '', 
       sort: 'dob',
       users: [],
-      loggedIn: [],
+      trainingSessions: [],
+      muscleGroupSessions: [],
+      exerciseUnits: [],
     };
   },
 	componentDidMount(){
     this.getUsersFromServer('http://localhost:3001/users/');
-		this.getLoginState('http://localhost:3001/loginState/');
+    this.getTrainingSessions('http://localhost:3001/trainingsessions');
+    this.getMuscleGroupSessions('http://localhost:3001/musclegroupsessions');
+    this.getExerciseUnits('http://localhost:3001/exerciseunits');
   },
-	getState: function(response) {
+  populateExerciseUnits: function(response) {
     this.setState({
-      loggedIn : response
+      exerciseUnits: response
     });
   },
-  getLoginState:function(URL){
+  getExerciseUnits:function(URL){
     $.ajax({
       type:"GET",
       dataType:"json",
       url:URL,
       success: function(response) {
-        this.getState(response);
+          this.populateExerciseUnits(response);
       }.bind(this),
       error: function(xhr, status, err) {
-      console.error(this.props.url, status, err.toString());
+          console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  populateMuscleGroupSessions: function(response) {
+    this.setState({
+      muscleGroupSessions: response
+    });
+  },
+  getMuscleGroupSessions:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+          this.populateMuscleGroupSessions(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
       }.bind(this)
     });
   },
@@ -340,12 +361,66 @@ var GymProgressLogger = React.createClass({
       }.bind(this)
     });
   },
+  populateTrainingSessions: function(response) {
+    this.setState({
+      trainingSessions: response
+    });
+  },
+  getTrainingSessions:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+          this.populateTrainingSessions(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
   deleteUser:function(id) {
     $.ajax({
       url: 'http://localhost:3001/users/' + id,
       type: 'DELETE',
       contentType: 'application/json'
     });
+    var trainingSessionsIds = [];
+    var muscleGroupSessionsIds = [];
+    var exerciseUnitsIds = [];
+    for(var a = 0; a < this.state.trainingSessions.length; a++) {
+      if(this.state.trainingSessions[a].user_id == id) {
+        trainingSessionsIds.push(this.state.trainingSessions[a].id);
+        $.ajax({
+          url: 'http://localhost:3001/trainingsessions/' + this.state.trainingSessions[a].id,
+          type: 'DELETE',
+          contentType: 'application/json'
+        });
+      }
+    };
+    //console.log(trainingSessionsIds);
+    for(a = 0; a < this.state.muscleGroupSessions.length; a++) {
+      if(trainingSessionsIds.indexOf(this.state.muscleGroupSessions[a].main_session_id) != -1) {
+        muscleGroupSessionsIds.push(this.state.muscleGroupSessions[a].id);
+        $.ajax({
+          url: 'http://localhost:3001/musclegroupsessions/' + this.state.muscleGroupSessions[a].id,
+          type: 'DELETE',
+          contentType: 'application/json'
+        });
+      }
+    }
+    //console.log(muscleGroupSessionsIds);
+    for(a = 0; a < this.state.exerciseUnits.length; a++) {
+      if(muscleGroupSessionsIds.indexOf(this.state.exerciseUnits[a].muscle_group_session_id) != -1) {
+        exerciseUnitsIds.push(this.state.exerciseUnits[a].id);
+        $.ajax({
+          url: 'http://localhost:3001/exerciseunits/' + this.state.exerciseUnits[a].id,
+          type: 'DELETE',
+          contentType: 'application/json'
+        });
+      }
+    }
+    //console.log(exerciseUnitsIds);
     document.location.reload(true);
   },
   updateUser: function(id, first_name, surname, dob, training_from, body_weight, height, picture) {
@@ -451,7 +526,6 @@ export class Home extends React.Component {
     return (
       <div>
         <Button style={{marginRight: 2 + 'em', marginTop: 1 + 'em', paddingLeft: 1 + 'em'}} className="nav navbar-nav navbar-right"onClick={this.logout.bind(this)}><span className="glyphicon glyphicon-log-out"></span> Logout</Button>
-        <Link to="/home" ><button style={{marginRight: 1 + 'em', marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Home</button></Link>
         <Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
         <h3> Welcome {profile.name}</h3>
         <Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>

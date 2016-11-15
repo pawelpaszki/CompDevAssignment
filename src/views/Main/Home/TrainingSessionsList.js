@@ -133,7 +133,7 @@ var AddTrainingSessionForm = React.createClass({
             <td key={'date'} className="col-md-2"><input type="text" className="form-control" placeholder="Enter date" onChange={this.handleDateChange}/></td>
             <td className="col-md-3"><input type="button" className="btn btn-primary" value="Add session" onClick={this.handleAddTrainingSession} /> </td>
             <td className="col-md-1"></td>
-            <td className="col-md-7"> </td>
+            <td className="col-md-6"> </td>
           </tr>
         </tbody>
       </table>

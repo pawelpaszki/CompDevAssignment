@@ -50,9 +50,9 @@ var Exercise = React.createClass({
 	  var name = this.state.name;
 	  var group = this.state.group;
 	  var muscles = _.pluck(this.props.muscles, 'name');
-	  console.log(this.state.initName);
+	  //console.log(this.state.initName);
 	  var exerciseConstants = _.pluck(this.props.exerciseConstants, 'name');
-	  console.log(exerciseConstants.indexOf(this.state.initName));
+	  //console.log(exerciseConstants.indexOf(this.state.initName));
 	  if ((exerciseConstants.indexOf(this.state.initName)) == -1) {
 	    this.props.updateExerciseHandler(this.state.id, name, this.state.descriptions, this.state.pictures);
 		  this.setState({ name : this.state.name});

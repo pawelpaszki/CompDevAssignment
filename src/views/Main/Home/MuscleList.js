@@ -31,9 +31,11 @@ var Muscle = React.createClass({
 		};
 	},
 	handleEdit: function(e) {
+    e.preventDefault();
 		this.setState({ status : 'edit'});
 	},
 	handleUndo: function() {
+    e.preventDefault();
 		this.setState({ status : ''});
 	},
 	handleUpdate: function(e) {
@@ -55,7 +57,7 @@ var Muscle = React.createClass({
 		var editHandler = this.handleEdit;
 		var deleteHandler = this.handleDelete;
 		var itemsToRender;
-		if(this.state.status == '') {
+		if(this.state.status != 'edit') {
 			itemsToRender = [
         <table className="table table-borderless">
           <tbody>

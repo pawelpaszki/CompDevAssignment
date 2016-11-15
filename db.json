@@ -2499,12 +2499,6 @@
       "name": "leg"
     }
   ],
-  "loginState": [
-    {
-      "id": 1,
-      "isLoggedIn": "false"
-    }
-  ],
   "TrainingSessions": [
     {
       "id": 0,

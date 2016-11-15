@@ -343,13 +343,13 @@ var ChartDataPicker = React.createClass( {
 	}
 });
 
-var margin = {top: 20, right: 20, bottom: 30, left: 40};
+var margin = {top: 20, right: 20, bottom: 20, left: 40};
 
 var Chart = React.createClass({
   render() {
     return (
       <div className="col-md-6 col-md-offset-3">
-        <BarChart ylabel='kg' width={800} height={500} margin={margin} data={this.props.data}/>
+        <BarChart ylabel='kg' width={800} height={450} margin={margin} data={this.props.data}/>
 			</div>
     );
   }
