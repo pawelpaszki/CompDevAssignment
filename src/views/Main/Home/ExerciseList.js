@@ -256,12 +256,12 @@ var ExerciseList = React.createClass({
       group: '',
     };
   },
-	  componentDidMount(){
+	componentDidMount(){
 		this.getAllExercises('http://localhost:3001/exercises/');
 		this.getAllMuscles('http://localhost:3001/muscles/');
 		this.getAllMuscleConstants('http://localhost:3001/constants/');
       },
-	  populateMuscleConstants: function(response) {
+	populateMuscleConstants: function(response) {
 		this.setState({
 			constants: response
 		});

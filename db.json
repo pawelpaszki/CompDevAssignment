@@ -2090,6 +2090,24 @@
       "weight": 0,
       "number_of_series": 0,
       "number_of_reps": 0
+    },
+    {
+      "muscle_group": "biceps",
+      "muscle_group_session_id": 81,
+      "id": 241,
+      "name": "barbell curl",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
+    },
+    {
+      "muscle_group": "leg",
+      "muscle_group_session_id": 82,
+      "id": 242,
+      "name": "barbell full squat",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
     }
   ],
   "MuscleGroupSessions": [
@@ -2496,7 +2514,12 @@
     {
       "id": 81,
       "main_session_id": 31,
-      "name": "chest"
+      "name": "biceps"
+    },
+    {
+      "id": 82,
+      "main_session_id": 31,
+      "name": "leg"
     }
   ],
   "TrainingSessions": [

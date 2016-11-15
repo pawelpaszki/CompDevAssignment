@@ -93,13 +93,33 @@ var MuscleGroupSessionList = React.createClass({
       allMuscleGroupSessions: [],
       allMuscles: [],
       exerciseUnits: [],
-      trainingSessionId: this.props.params.id
+      trainingSessionId: this.props.params.id,
+      exercises : [],
 		};
   },
   componentDidMount(){
     this.getMuscleGroupSessionsFromServer('http://localhost:3001/musclegroupsessions/');
     this.getAllMuscleGroups('http://localhost:3001/muscles/');
     this.getExerciseUnits('http://localhost:3001/exerciseunits');
+    this.getAllExercises('http://localhost:3001/exercises/');
+  },
+  populateExercises: function(response) {
+		this.setState({
+			exercises: response
+		});
+	},
+	getAllExercises:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+        this.populateExercises(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+        console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   },
   populateExerciseUnits: function(response) {
     this.setState({
@@ -189,7 +209,7 @@ var MuscleGroupSessionList = React.createClass({
     //console.log("main session id: " + this.state.trainingSessionId);
      
     $.ajax({
-			url: 'http://localhost:3001/musclegroupsessions',
+			url: 'http://localhost:3001/MuscleGroupSessions',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
@@ -199,6 +219,37 @@ var MuscleGroupSessionList = React.createClass({
 			}),
 			dataType: 'json'
 		});
+    // adding default exercise unit
+    var exerciseUnitName;
+    for(i = 0; i < this.state.exercises.length; i++) {
+      if(this.state.exercises[i].group == name) {
+        exerciseUnitName = this.state.exercises[i].name;
+        break;
+      }
+    };
+    maxId= 0;
+    var exerciseUnits = this.state.exerciseUnits;
+    for (var i = 0; i < exerciseUnits.length; i++) {
+      if(exerciseUnits[i].id > maxId) {
+        maxId = exerciseUnits[i].id;
+      }
+    };
+    var exUnitId = maxId + 1;
+    $.ajax({
+      url: 'http://localhost:3001/exerciseunits',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        muscle_group: name,
+        muscle_group_session_id: id,
+        id: exUnitId,
+        name: exerciseUnitName,
+        weight: 0,
+        number_of_series: 0,
+        number_of_reps: 0,
+      }),
+      dataType: 'json'
+    });
 		this.setState({});
 		document.location.reload(true);
   },

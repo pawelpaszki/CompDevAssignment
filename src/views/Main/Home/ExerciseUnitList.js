@@ -19,7 +19,9 @@ var ExerciseUnit = React.createClass({
 	},
 	handleDeleteExerciseUnit: function(e) {
 	  e.preventDefault();
-	  this.props.deleteExerciseUnitHandler(this.state.id);
+    if (this.props.exerciseUnits.length > 1) {
+	    this.props.deleteExerciseUnitHandler(this.state.id);
+    }
 	}, 
 	handleWeightChange: function(e) {
 	  this.setState({weight: e.target.value});
@@ -118,15 +120,12 @@ var AddExerciseUnitForm = React.createClass({
 		};
 		//console.log("exercises available: " + exercisesAvailable);
 		var muscleGroupExercisesAvailable = [];
-		if (exercisesAdded.length == 0) {
-			muscleGroupExercisesAvailable = exercisesAvailable;
-		} else {
-			for(var i = 0; i < allExercisesAvailable.length; i++) {
-				if (allExercisesAvailable[i].group == muscleGroup && exercisesAdded.indexOf(allExercisesAvailable[i].name) == -1) {
-					muscleGroupExercisesAvailable.push(allExercisesAvailable[i]);
-				}
-			}
-		};
+		
+    for(var i = 0; i < allExercisesAvailable.length; i++) {
+      if (allExercisesAvailable[i].group == muscleGroup && exercisesAdded.indexOf(allExercisesAvailable[i].name) == -1) {
+        muscleGroupExercisesAvailable.push(allExercisesAvailable[i]);
+      }
+    };
 		//console.log(muscleGroupExercisesAvailable);
 		var addExerciseUnitButtons = muscleGroupExercisesAvailable.map(function(exerciseUnitToAdd){
       return (
@@ -307,7 +306,7 @@ var ExerciseUnitList = React.createClass({
 		//console.log("units");
 		//console.log(exerciseUnits);
 		var displayedExercises = exerciseUnits.map((exercise) =>{
-			return <ExerciseUnit key={exercise.id} exerciseUnit={exercise} deleteExerciseUnitHandler={this.deleteExerciseUnit}
+			return <ExerciseUnit key={exercise.id} exerciseUnit={exercise} exerciseUnits={exerciseUnits} deleteExerciseUnitHandler={this.deleteExerciseUnit}
 			updateExerciseUnitHandler={this.updateExerciseUnit}/>;
 		});
     var headerValue = muscleGroup + "'s exercises";
