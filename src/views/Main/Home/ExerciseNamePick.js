@@ -206,6 +206,11 @@ export default class ExerciseNamePick extends React.Component {
     //console.log(dateFrom);
     var dateToComponents = date_to.split("/");
     var dateTo = new Date(dateToComponents[2], dateToComponents[1] -1, dateToComponents[0]);
+    if (dateTo < dateFrom) {
+      data = [];
+      this.setState ({data});
+      return;
+    }
     //console.log(dateTo);
     
     var users = this.state.users;
@@ -219,6 +224,7 @@ export default class ExerciseNamePick extends React.Component {
         trainingDays.push({'date': this.state.trainingSessions[i].date, 'training_session_id': this.state.trainingSessions[i].id});
       }
     };
+    //console.log(trainingDays);
     var muscleGroup = '';
     for(i = 0; i < this.state.exercises.length; i++) {
         if(this.state.exercises[i].name == exercise) {
@@ -229,23 +235,39 @@ export default class ExerciseNamePick extends React.Component {
     var tempDate;
     var tempDateComponents;
     var data = [];
+    var validTrainingDaysIndices = [];
     for (i = 0; i < trainingDays.length; i++) {
       tempDateComponents = trainingDays[i].date.split("/");
       tempDate = new Date(tempDateComponents[2], tempDateComponents[1] - 1, tempDateComponents[0]);
+      //console.log(tempDate);
       if (tempDate >= dateFrom && tempDate <= dateTo) {
+        //console.log(tempDate);
+        //console.log(dateFrom);
+        //console.log(dateTo);
         daysTakenIntoAccount.push(trainingDays[i].date);
-      }
+        validTrainingDaysIndices.push(i);
+      } 
     };
-    
+    console.log(validTrainingDaysIndices);
+    var trainingDaysToDisplay = [];
+    if (validTrainingDaysIndices.length == 0) {
+      data = [];
+      this.setState ({data});
+      return;
+    } else {
+      for (i = 0; i < validTrainingDaysIndices.length; i++) {
+        trainingDaysToDisplay.push(trainingDays[validTrainingDaysIndices[i]]);
+      }
+    }
     //console.log("muscleGroupSessions");
     //console.log(this.state.muscleGroupSessions);
-    for(i = 0; i < trainingDays.length; i++) {
+    for(i = 0; i < trainingDaysToDisplay.length; i++) {
       for(var j = 0; j < this.state.muscleGroupSessions.length; j++) {
         for(var k = 0; k < this.state.exerciseUnits.length; k++) {
           if(this.state.muscleGroupSessions[j].name == muscleGroup) {
-            if(this.state.muscleGroupSessions[j].main_session_id == trainingDays[i].training_session_id) {
+            if(this.state.muscleGroupSessions[j].main_session_id == trainingDaysToDisplay[i].training_session_id) {
               if(this.state.exerciseUnits[k].name == exercise && this.state.exerciseUnits[k].muscle_group_session_id == this.state.muscleGroupSessions[j].id) {
-                data.push({'text': trainingDays[i].date, 'value': this.state.exerciseUnits[k].weight});
+                data.push({'text': trainingDaysToDisplay[i].date, 'value': this.state.exerciseUnits[k].weight});
               } 
             }
           }
