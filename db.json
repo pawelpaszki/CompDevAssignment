@@ -2080,12 +2080,12 @@
     },
     {
       "muscle_group": {
-        "id": 81,
+        "id": 82,
         "main_session_id": 31,
         "name": "leg"
       },
-      "muscle_group_session_id": 81,
-      "id": 237,
+      "muscle_group_session_id": 82,
+      "id": 240,
       "name": "barbell full squat",
       "weight": 0,
       "number_of_series": 0,
@@ -2496,7 +2496,7 @@
     {
       "id": 81,
       "main_session_id": 31,
-      "name": "leg"
+      "name": "chest"
     }
   ],
   "TrainingSessions": [
@@ -2658,7 +2658,7 @@
     {
       "user_id": 5,
       "id": 31,
-      "date": "04/07/2016"
+      "date": "11/11/2011"
     }
   ],
   "Users": [

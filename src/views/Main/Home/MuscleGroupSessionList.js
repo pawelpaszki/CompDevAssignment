@@ -92,12 +92,32 @@ var MuscleGroupSessionList = React.createClass({
 	  return {
       allMuscleGroupSessions: [],
       allMuscles: [],
+      exerciseUnits: [],
       trainingSessionId: this.props.params.id
 		};
   },
   componentDidMount(){
     this.getMuscleGroupSessionsFromServer('http://localhost:3001/musclegroupsessions/');
     this.getAllMuscleGroups('http://localhost:3001/muscles/');
+    this.getExerciseUnits('http://localhost:3001/exerciseunits');
+  },
+  populateExerciseUnits: function(response) {
+    this.setState({
+      exerciseUnits: response
+    });
+  },
+  getExerciseUnits:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+          this.populateExerciseUnits(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   },
   populateMuscleGroupSessions: function(response) {
     this.setState({
@@ -143,6 +163,16 @@ var MuscleGroupSessionList = React.createClass({
       type: 'DELETE',
       contentType: 'application/json'
     });
+    var exerciseUnitsIds = [];
+    for(var a = 0; a < this.state.exerciseUnits.length; a++) {
+      if(this.state.exerciseUnits[a].muscle_group_session_id == id) {
+        $.ajax({
+          url: 'http://localhost:3001/exerciseunits/' + this.state.exerciseUnits[a].id,
+          type: 'DELETE',
+          contentType: 'application/json'
+        });
+      }
+    }
     document.location.reload(true);
   },
   addMuscleGroupSession:function(name) {

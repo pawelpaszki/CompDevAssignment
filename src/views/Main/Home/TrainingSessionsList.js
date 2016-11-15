@@ -144,18 +144,58 @@ var AddTrainingSessionForm = React.createClass({
 var TrainingSessionsList = React.createClass({
   getInitialState: function() {
     return {
-	  	allTrainingSessions: [],
+	  	trainingSessions: [],
 		  userId: this.props.params.id,
-		  users: []
+		  users: [],
+      muscleGroupSessions: [],
+      exerciseUnits: [],
 		};
   },
   componentDidMount(){
     this.getTrainingSessionsFromServer('http://localhost:3001/trainingsessions/');
     this.getUsersFromServer('http://localhost:3001/users/');
+    this.getMuscleGroupSessions('http://localhost:3001/musclegroupsessions');
+    this.getExerciseUnits('http://localhost:3001/exerciseunits');
+  },
+  populateExerciseUnits: function(response) {
+    this.setState({
+      exerciseUnits: response
+    });
+  },
+  getExerciseUnits:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+          this.populateExerciseUnits(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  populateMuscleGroupSessions: function(response) {
+    this.setState({
+      muscleGroupSessions: response
+    });
+  },
+  getMuscleGroupSessions:function(URL){
+    $.ajax({
+      type:"GET",
+      dataType:"json",
+      url:URL,
+      success: function(response) {
+          this.populateMuscleGroupSessions(response);
+      }.bind(this),
+      error: function(xhr, status, err) {
+          console.error(this.props.url, status, err.toString());
+      }.bind(this)
+    });
   },
   populateTrainingSessions: function(response) {
     this.setState({
-      allTrainingSessions: response
+      trainingSessions: response
     });
   },
 	populateUsers: function(response) {
@@ -191,6 +231,30 @@ var TrainingSessionsList = React.createClass({
     });
   },
   deleteTrainingSession:function(id) {
+    var muscleGroupSessionsIds = [];
+    var exerciseUnitsIds = [];
+    for(var a = 0; a < this.state.muscleGroupSessions.length; a++) {
+      if(this.state.muscleGroupSessions[a].main_session_id == id) {
+        muscleGroupSessionsIds.push(this.state.muscleGroupSessions[a].id);
+        $.ajax({
+          url: 'http://localhost:3001/musclegroupsessions/' + this.state.muscleGroupSessions[a].id,
+          type: 'DELETE',
+          contentType: 'application/json'
+        });
+      }
+    }
+    console.log(muscleGroupSessionsIds);
+    for(a = 0; a < this.state.exerciseUnits.length; a++) {
+      if(muscleGroupSessionsIds.indexOf(this.state.exerciseUnits[a].muscle_group_session_id) != -1) {
+        exerciseUnitsIds.push(this.state.exerciseUnits[a].id);
+        $.ajax({
+          url: 'http://localhost:3001/exerciseunits/' + this.state.exerciseUnits[a].id,
+          type: 'DELETE',
+          contentType: 'application/json'
+        });
+      }
+    }
+    console.log(exerciseUnitsIds);
     $.ajax({
       url: 'http://localhost:3001/trainingsessions/' + id,
       type: 'DELETE',
@@ -214,7 +278,7 @@ var TrainingSessionsList = React.createClass({
   },
 	  addTrainingSession:function(date) {
 		  var maxId= 0;
-		  var trainingSessions = this.state.allTrainingSessions;
+		  var trainingSessions = this.state.trainingSessions;
 		  for (var i = 0; i < trainingSessions.length; i++) {
 			  if(trainingSessions[i].id > maxId) {
 				  maxId = trainingSessions[i].id;
@@ -238,9 +302,9 @@ var TrainingSessionsList = React.createClass({
 	render: function() {
 		var user = this.state.users[this.props.params.id - 1];
 		var trainingSessions = [];
-		for(var i = 0; i < this.state.allTrainingSessions.length; i++) {
-			if(this.state.allTrainingSessions[i].user_id == this.state.userId) {
-				trainingSessions.push(this.state.allTrainingSessions[i]);
+		for(var i = 0; i < this.state.trainingSessions.length; i++) {
+			if(this.state.trainingSessions[i].user_id == this.state.userId) {
+				trainingSessions.push(this.state.trainingSessions[i]);
 			}
 		};
 		var displayedTsessions = trainingSessions.map((tsession) =>{
