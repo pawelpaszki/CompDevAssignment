@@ -116,6 +116,6 @@ Date validation is provided, so only valid date format (dd/mm/yyyy) will allow t
 Date validation was taken from [here](http://stackoverflow.com/questions/6177975/how-to-validate-date-with-format-mm-dd-yyyy-in-javascript
 )
 
-Chart component used in the app is available [here](https://www.npmjs.com/package/react-bar-chart)
+Chart component used in the app is available [here](https://www.npmjs.com/package/react-easy-chart)
 
 ![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/chartGenerated.jpg)
