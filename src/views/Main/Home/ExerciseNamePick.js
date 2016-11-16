@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 import $ from "jquery";
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
-import BarChart from 'react-bar-chart';
+import {BarChart} from 'react-easy-chart';
 import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
@@ -248,7 +248,7 @@ export default class ExerciseNamePick extends React.Component {
         validTrainingDaysIndices.push(i);
       } 
     };
-    console.log(validTrainingDaysIndices);
+    //console.log(validTrainingDaysIndices);
     var trainingDaysToDisplay = [];
     if (validTrainingDaysIndices.length == 0) {
       data = [];
@@ -267,7 +267,7 @@ export default class ExerciseNamePick extends React.Component {
           if(this.state.muscleGroupSessions[j].name == muscleGroup) {
             if(this.state.muscleGroupSessions[j].main_session_id == trainingDaysToDisplay[i].training_session_id) {
               if(this.state.exerciseUnits[k].name == exercise && this.state.exerciseUnits[k].muscle_group_session_id == this.state.muscleGroupSessions[j].id) {
-                data.push({'text': trainingDaysToDisplay[i].date, 'value': this.state.exerciseUnits[k].weight});
+                data.push({'x': trainingDaysToDisplay[i].date, 'y': this.state.exerciseUnits[k].weight});
               } 
             }
           }
@@ -276,6 +276,19 @@ export default class ExerciseNamePick extends React.Component {
     };
     //console.log("data");
     //console.log(data);
+    //console.log(data.length);
+    if(data.length >8) {
+      for (i = 0; i < data.length; i++) {
+        var newText = data[i].x.substring(0,5);
+        data[i].x = newText;
+      }
+    }
+    if(data.length > 18) {
+      for (i = 0; i < data.length; i++) {
+        data[i].text = "";
+      }
+    }
+    console.log(data);
     this.setState ({data});
   };
   
@@ -371,7 +384,17 @@ var Chart = React.createClass({
   render() {
     return (
       <div className="col-md-6 col-md-offset-3">
-        <BarChart ylabel='kg' width={800} height={450} margin={margin} data={this.props.data}/>
+        <BarChart 
+          axes 
+          grid 
+          axisLabels={{x: 'Date', y: 'Weight'}} 
+          colorBars 
+          width={800} 
+          height={450} 
+          margin={margin} 
+          data={this.props.data} 
+          margin={{top: 0, right: 0, bottom: 30, left: 80}}
+          />
 			</div>
     );
   }

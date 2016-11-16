@@ -214,7 +214,7 @@ var AddExerciseForm = React.createClass({
           </tr>
 				  <tr>
             <td className="col-md-2">
-              <div class="btn-group">
+              <div className="btn-group">
                 <input type="button" className="btn btn-primary" value="Undo" onClick={this.handleUndo} />
                 <input type="button" className="btn btn-success" value="Confirm" onClick={this.handleSubmit} />
               </div>

@@ -2108,6 +2108,69 @@
       "weight": 0,
       "number_of_series": 0,
       "number_of_reps": 0
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 83,
+      "id": 244,
+      "name": "standing calf raise",
+      "weight": 225,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 84,
+      "id": 245,
+      "name": "standing calf raise",
+      "weight": 220,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 85,
+      "id": 246,
+      "name": "standing calf raise",
+      "weight": 230,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 86,
+      "id": 247,
+      "name": "standing calf raise",
+      "weight": 235,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 87,
+      "id": 248,
+      "name": "standing calf raise",
+      "weight": 215,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 88,
+      "id": 249,
+      "name": "standing calf raise",
+      "weight": 245,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 89,
+      "id": 250,
+      "name": "standing calf raise",
+      "weight": 250,
+      "number_of_series": 4,
+      "number_of_reps": 15
     }
   ],
   "MuscleGroupSessions": [
@@ -2520,6 +2583,41 @@
       "id": 82,
       "main_session_id": 31,
       "name": "leg"
+    },
+    {
+      "id": 83,
+      "main_session_id": 32,
+      "name": "calf"
+    },
+    {
+      "id": 84,
+      "main_session_id": 33,
+      "name": "calf"
+    },
+    {
+      "id": 85,
+      "main_session_id": 34,
+      "name": "calf"
+    },
+    {
+      "id": 86,
+      "main_session_id": 35,
+      "name": "calf"
+    },
+    {
+      "id": 87,
+      "main_session_id": 37,
+      "name": "calf"
+    },
+    {
+      "id": 88,
+      "main_session_id": 38,
+      "name": "calf"
+    },
+    {
+      "id": 89,
+      "main_session_id": 39,
+      "name": "calf"
     }
   ],
   "TrainingSessions": [
@@ -2682,6 +2780,46 @@
       "user_id": 5,
       "id": 31,
       "date": "11/11/2011"
+    },
+    {
+      "user_id": 1,
+      "id": 32,
+      "date": "08/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 33,
+      "date": "10/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 34,
+      "date": "15/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 35,
+      "date": "17/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 36,
+      "date": "22/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 37,
+      "date": "24/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 38,
+      "date": "29/08/2016"
+    },
+    {
+      "user_id": 1,
+      "id": 39,
+      "date": "31/08/2016"
     }
   ],
   "Users": [
