@@ -277,15 +277,10 @@ export default class ChartGenerator extends React.Component {
     //console.log("data");
     //console.log(data);
     //console.log(data.length);
-    if(data.length >8) {
+    if(data.length > 8) {
       for (i = 0; i < data.length; i++) {
         var newText = data[i].x.substring(0,5);
         data[i].x = newText;
-      }
-    }
-    if(data.length > 18) {
-      for (i = 0; i < data.length; i++) {
-        data[i].text = "";
       }
     }
     console.log(data);
@@ -393,7 +388,7 @@ var Chart = React.createClass({
           height={450} 
           margin={margin} 
           data={this.props.data} 
-          margin={{top: 0, right: 0, bottom: 30, left: 80}}
+          margin={{top: 20, right: 60, bottom: 60, left: 60}}
           />
 			</div>
     );

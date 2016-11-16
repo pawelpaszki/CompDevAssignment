@@ -2044,17 +2044,13 @@
       "number_of_reps": 13
     },
     {
-      "muscle_group": {
-        "id": 0,
-        "main_session_id": 0,
-        "name": "chest"
-      },
+      "muscle_group": "chest",
       "muscle_group_session_id": 0,
       "id": 233,
       "name": "barbell flat bench press",
-      "weight": 0,
-      "number_of_series": 0,
-      "number_of_reps": 0
+      "weight": 120,
+      "number_of_series": 4,
+      "number_of_reps": 12
     },
     {
       "muscle_group": {
@@ -2169,6 +2165,15 @@
       "id": 250,
       "name": "standing calf raise",
       "weight": 250,
+      "number_of_series": 4,
+      "number_of_reps": 15
+    },
+    {
+      "muscle_group": "calf",
+      "muscle_group_session_id": 90,
+      "id": 251,
+      "name": "standing calf raise",
+      "weight": 220,
       "number_of_series": 4,
       "number_of_reps": 15
     }
@@ -3625,134 +3630,6 @@
       "id": 7,
       "constant": true,
       "name": "back"
-    }
-  ],
-  "Constants": [
-    {
-      "id": 1,
-      "name": "chest",
-      "exercises": [
-        {
-          "id": 1,
-          "name": "barbell flat bench press"
-        },
-        {
-          "id": 2,
-          "name": "barbell incline bench press"
-        },
-        {
-          "id": 3,
-          "name": "barbell decline bench press"
-        }
-      ]
-    },
-    {
-      "id": 2,
-      "name": "biceps",
-      "exercises": [
-        {
-          "id": 4,
-          "name": "barbell curl"
-        },
-        {
-          "id": 5,
-          "name": "concentration curls"
-        },
-        {
-          "id": 6,
-          "name": "alternate hammer curl"
-        }
-      ]
-    },
-    {
-      "id": 3,
-      "name": "calf",
-      "exercises": [
-        {
-          "id": 7,
-          "name": "standing calf raise"
-        },
-        {
-          "id": 8,
-          "name": "sitting calf raise"
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "name": "triceps",
-      "exercises": [
-        {
-          "id": 9,
-          "name": "cable two arms extensions"
-        },
-        {
-          "id": 10,
-          "name": "weighted bench dip"
-        },
-        {
-          "id": 11,
-          "name": "reverse grip triceps pushdown"
-        }
-      ]
-    },
-    {
-      "id": 5,
-      "name": "leg",
-      "exercises": [
-        {
-          "id": 12,
-          "name": "barbell full squat"
-        },
-        {
-          "id": 13,
-          "name": "leg press"
-        },
-        {
-          "id": 14,
-          "name": "leg extensions"
-        },
-        {
-          "id": 15,
-          "name": "lying leg curls"
-        }
-      ]
-    },
-    {
-      "id": 6,
-      "name": "shoulders",
-      "exercises": [
-        {
-          "id": 16,
-          "name": "standing military press"
-        },
-        {
-          "id": 17,
-          "name": "power partials"
-        },
-        {
-          "id": 18,
-          "name": "front dumbbell raise"
-        }
-      ]
-    },
-    {
-      "id": 7,
-      "name": "back",
-      "exercises": [
-        {
-          "id": 19,
-          "name": "deadlift"
-        },
-        {
-          "id": 20,
-          "name": "reverse grip bent-over rows"
-        },
-        {
-          "id": 21,
-          "name": "t-bar row"
-        }
-      ]
     }
   ]
 }

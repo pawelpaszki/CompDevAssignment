@@ -7,6 +7,10 @@ import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
 
+function isString(value) {
+  return typeof value === 'string';
+};
+
 var Exercise = React.createClass({
 	getInitialState : function() {
 		return {
@@ -44,7 +48,7 @@ var Exercise = React.createClass({
 	  var name = this.state.name;
 	  var group = this.state.group;
 	  //console.log(this.state.initName);
-	  if (this.props.exercise.constant != true) {
+	  if (this.props.exercise.constant != true && isString(name)) {
 	    this.props.updateExerciseHandler(this.state.id, name, this.state.descriptions, this.state.pictures);
 		  this.setState({ name : this.state.name});
 		  //console.log(this.state.name);

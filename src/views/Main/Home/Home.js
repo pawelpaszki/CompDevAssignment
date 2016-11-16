@@ -6,6 +6,10 @@ import { browserHistory } from 'react-router';
 import _ from 'lodash';
 import $ from "jquery";
 
+function isString(value) {
+  return typeof value === 'string';
+};
+
 function isValidDate(dateString) {
 	// First check for the pattern
 	if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
@@ -29,6 +33,10 @@ function isValidDate(dateString) {
 
 	// Check the range of the day
 	return day > 0 && day <= monthLength[month - 1];
+};
+
+function isNumber(value) {
+  return typeof(value) === 'number';
 };
 
 var SearchBox = React.createClass({
@@ -68,7 +76,8 @@ var User = React.createClass({
 		 initTrainingFrom: this.props.userItem.training_from,
 		 initWeight: this.props.userItem.body_weight,
 		 initHeight: this.props.userItem.height,
-		 picture: this.props.userItem.picture,
+     picture: this.props.userItem.picture,
+		 initPicture: this.props.userItem.picture,
 		 id: this.props.userItem.id,
 		 first_name : this.props.userItem.first_name,
 	   surname: this.props.userItem.surname,
@@ -118,20 +127,22 @@ var User = React.createClass({
 	  var training_from = this.state.training_from;
 	  var body_weight = this.state.body_weight;
 	  var height = this.state.height;
+    
 	  if(first_name == this.state.initFname && surname == this.state.initSurname && dob == this.state.initDOB && 
-	  training_from == this.state.initDOB && body_weight == this.state.initWeight && height == this.state.initHeight) {
+	    training_from == this.state.initTrainingFrom && body_weight == this.state.initWeight && height == this.state.initHeight) {
 		  this.setState({ status : ''});
 		  return;
 	  }
-	  if (isValidDate(training_from) && isValidDate(dob)) {
+	  if (isString(first_name) && isString(surname) && isValidDate(training_from) && isValidDate(dob) && isNumber(body_weight) && isNumber(height)) {
 	    this.props.updateUserHandler(this.state.id, first_name, surname, dob, training_from, body_weight, height, this.state.picture);
 	  } else {
-		  this.setState({first_name: e.target.value});
-		  this.setState({surname: e.target.value});
-		  this.setState({dob: 'dd/mm/yyyy'});
-		  this.setState({training_from: 'dd/mm/yyyy'});
-		  this.setState({weight: e.target.value});
-		  this.setState({height: e.target.value});
+		  this.setState({first_name: initFname});
+		  this.setState({surname: initSurname});
+		  this.setState({dob: initDOB});
+		  this.setState({training_from: initTrainingFrom});
+		  this.setState({weight: initWeight});
+		  this.setState({height: initHeight});
+      this.setState({picture: initPicture});
 	  }
 	  this.setState({ status : ''});
 	},
@@ -243,14 +254,15 @@ var AddUserForm = React.createClass({
 		var training_from = this.state.training_from;
 		var body_weight = this.state.body_weight;
 		var height = this.state.height;
-		if (!first_name || !surname || !dob || !training_from || !isValidDate(dob) || !isValidDate(training_from)) {
+		if (!first_name || !surname || !dob || !training_from || !isValidDate(dob) || !isValidDate(training_from) 
+      || !(isString(first_name) && isString(surname) && isValidDate(training_from) && isValidDate(dob) && isNumber(body_weight) && isNumber(height))) {
 			this.setState({first_name: ''});
 			this.setState({surname: ''});
 			this.setState({dob: ''});
 			this.setState({training_from: ''});
 			this.setState({body_weight: ''});
 			this.setState({height: ''});
-    return;
+      return;
     } else {
 			this.props.addUserHandler(first_name, surname, dob, training_from, body_weight, height);
 			this.setState({first_name: ''});

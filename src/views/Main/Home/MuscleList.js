@@ -7,6 +7,10 @@ import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
 
+function isString(value) {
+  return typeof value === 'string';
+};
+
 var Muscle = React.createClass({
 	getInitialState : function() {
 		return {
@@ -36,7 +40,7 @@ var Muscle = React.createClass({
 	handleUpdate: function(e) {
 	  e.preventDefault();
 	  var name = this.state.name;
-	  if (this.props.muscle.constant != true) {
+	  if (this.props.muscle.constant != true && isString(name)) {
 	    this.props.updateMuscleNameHandler(this.state.id, this.state.name);
 	  } else {
 		  this.setState({ name : this.state.initName});
