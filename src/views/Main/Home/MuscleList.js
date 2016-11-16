@@ -21,13 +21,8 @@ var Muscle = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		var muscleConstants = this.props.muscleConstants;
-		var name = this.state.name;
-		//console.log(muscleConstants);
-		//console.log(muscleConstants.indexOf(name));
-		//console.log(name);
-		if (muscleConstants.indexOf(name) == -1) {
-	       this.props.deleteMuscleHandler(this.state.id);
+		if (this.props.muscle.constant != true) {
+	       this.props.deleteMuscleHandler(this.state.id, this.state.name);
 		};
 	},
 	handleEdit: function(e) {
@@ -41,11 +36,7 @@ var Muscle = React.createClass({
 	handleUpdate: function(e) {
 	  e.preventDefault();
 	  var name = this.state.name;
-	  //console.log(this.state.initName);
-	  var muscleConstants = this.props.muscleConstants;
-	  //console.log("constantssss:  " + muscleConstants);
-	  //console.log(muscleConstants.indexOf(this.state.initName));
-	  if ((muscleConstants.indexOf(this.state.initName)) === -1) {
+	  if (this.props.muscle.constant != true) {
 	    this.props.updateMuscleNameHandler(this.state.id, this.state.name);
 	  } else {
 		  this.setState({ name : this.state.initName});
@@ -136,25 +127,25 @@ var MuscleList = React.createClass({
 	getInitialState: function() {
 	  return {
 		  allMuscles: [],
-		  constants: [],
+      exercises: [],
 		};
   },
   componentDidMount(){
 		this.getAllMuscleGroups('http://localhost:3001/muscles/');
-		this.getAllMuscleConstants('http://localhost:3001/constants/');
+    this.getAllExercises('http://localhost:3001/exercises/');
   },
-  populateMuscleConstants: function(response) {
+  populateExercises: function(response) {
 		this.setState({
-			constants: response
+			exercises: response
 		});
 	},
-	getAllMuscleConstants:function(URL){
+	getAllExercises:function(URL){
     $.ajax({
       type:"GET",
       dataType:"json",
       url:URL,
       success: function(response) {
-        this.populateMuscleConstants(response);
+        this.populateExercises(response);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -179,7 +170,24 @@ var MuscleList = React.createClass({
       }.bind(this)
     });
   },
-  deleteMuscleGroup:function(id) {
+  deleteMuscleGroup:function(id, name) {
+    //console.log(name);
+    var muscleGroupExerciseIDs = [];
+    for(var a = 0; a < this.state.exercises.length; a++) {
+      if(this.state.exercises[a].group == name) {
+        //console.log(true);
+        muscleGroupExerciseIDs.push(this.state.exercises[a].id);
+      }
+    }
+    //console.log(muscleGroupExerciseIDs);
+    
+    for(a = 0; a < muscleGroupExerciseIDs.length; a++) {
+      $.ajax({
+        url: 'http://localhost:3001/exercises/' + muscleGroupExerciseIDs[a],
+        type: 'DELETE',
+        contentType: 'application/json'
+      });
+    }
     $.ajax({
       url: 'http://localhost:3001/muscles/' + id,
       type: 'DELETE',
@@ -205,6 +213,7 @@ var MuscleList = React.createClass({
 			contentType: 'application/json',
 			data: JSON.stringify({
 				id: id,
+        constant: false,
 				name: name,
 			}),
 			dataType: 'json'
@@ -219,6 +228,7 @@ var MuscleList = React.createClass({
 			contentType: 'application/json',
 			data: JSON.stringify({
 				id: id,
+        constant: false,
 				name: name,
 			}),
 			dataType: 'json'
@@ -226,15 +236,8 @@ var MuscleList = React.createClass({
 		document.location.reload(true);
   },
 	render: function() {
-		var muscleConstants = [];
-		//console.log(this.state.constants);
-		for(var i = 0; i < this.state.constants.length; i++) {
-			//console.log(this.state.constants[i].name);
-			muscleConstants.push(this.state.constants[i].name);
-		};
-		//console.log("constants: " + muscleConstants);
 		var displayedMuscles = this.state.allMuscles.map((muscle) =>{
-			return <Muscle key={muscle.name} muscle={muscle} muscleConstants={muscleConstants} 
+			return <Muscle key={muscle.name} muscle={muscle}
 			updateMuscleNameHandler={this.updateMuscle} deleteMuscleHandler={this.deleteMuscleGroup}/>;
 		});
     var headerValue = "Muscles";

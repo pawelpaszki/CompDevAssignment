@@ -59,7 +59,7 @@ const renderSuggestion = suggestion => (
   </div>
 );
 
-export default class ExerciseNamePick extends React.Component {
+export default class ChartGenerator extends React.Component {
   constructor() {
     super();
 

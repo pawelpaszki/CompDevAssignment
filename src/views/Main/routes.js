@@ -5,7 +5,7 @@ import Container from './Container'
 import Home from './Home/Home'
 import Login from './Login/Login'
 import Autosuggest from 'react-autosuggest';
-import ExerciseNamePick from './Home/ExerciseNamePick';
+import ChartGenerator from './Home/ChartGenerator';
 import EditProfileForm from './Home/EditProfileForm';
 import TrainingSessionsList from './Home/TrainingSessionsList';
 import MuscleGroupSessionList from './Home/MuscleGroupSessionList';
@@ -37,7 +37,7 @@ export const makeMainRoutes = () => {
       <Route path="muscles" component={MuscleList} />
       <Route path="musclegroupexercises/:id" component={ExerciseList} />
       <Route path="exerciseInfo/:id" component={ExerciseInfo}/>
-      <Route path="charts/:id" component={ExerciseNamePick} onEnter={requireAuth}/>
+      <Route path="charts/:id" component={ChartGenerator} onEnter={requireAuth}/>
     </Route>
   )
 }
