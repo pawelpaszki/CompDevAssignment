@@ -24,13 +24,7 @@ var Exercise = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		var exerciseConstants = _.pluck(this.props.exerciseConstants, 'name');
-		var name = this.state.name;
-		var group = this.state.group;
-		console.log(exerciseConstants);
-		console.log(exerciseConstants.indexOf(name));
-		console.log(name);
-		if (exerciseConstants.indexOf(name) == -1) {
+		if (this.props.exercise.constant != true) {
       this.props.deleteExerciseHandler(this.state.id);
 		} else {
 		  this.setState({status: ''})	;
@@ -49,11 +43,8 @@ var Exercise = React.createClass({
 	  e.preventDefault();
 	  var name = this.state.name;
 	  var group = this.state.group;
-	  var muscles = _.pluck(this.props.muscles, 'name');
 	  //console.log(this.state.initName);
-	  var exerciseConstants = _.pluck(this.props.exerciseConstants, 'name');
-	  //console.log(exerciseConstants.indexOf(this.state.initName));
-	  if ((exerciseConstants.indexOf(this.state.initName)) == -1) {
+	  if (this.props.exercise.constant != true) {
 	    this.props.updateExerciseHandler(this.state.id, name, this.state.descriptions, this.state.pictures);
 		  this.setState({ name : this.state.name});
 		  //console.log(this.state.name);
@@ -251,7 +242,6 @@ var ExerciseList = React.createClass({
 	  return {
       exercises: [],
       muscles: [],
-      constants: [],
       muscleId: this.props.params.id,
       group: '',
     };
@@ -259,25 +249,6 @@ var ExerciseList = React.createClass({
 	componentDidMount(){
 		this.getAllExercises('http://localhost:3001/exercises/');
 		this.getAllMuscles('http://localhost:3001/muscles/');
-		this.getAllMuscleConstants('http://localhost:3001/constants/');
-      },
-	populateMuscleConstants: function(response) {
-		this.setState({
-			constants: response
-		});
-	},
-	getAllMuscleConstants:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-        this.populateMuscleConstants(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
   },
   populateMuscles: function(response) {
 		this.setState({
@@ -335,6 +306,7 @@ var ExerciseList = React.createClass({
       contentType: 'application/json',
       data: JSON.stringify({
         id: id,
+        constant: false,
         name: name,
         group: this.state.group,
         descriptions: descriptions,
@@ -362,6 +334,7 @@ var ExerciseList = React.createClass({
 			contentType: 'application/json',
 			data: JSON.stringify({
 				id: id,
+        constant: false,
 				name: name,
 				group: group,
 				descriptions: descriptions,
@@ -380,23 +353,15 @@ var ExerciseList = React.createClass({
 				muscleGroup = this.state.muscles[a].name;
 			}
 		};
-		//console.log(muscleGroup);
-		var constants = this.state.constants;
-		var exerciseConstants = [];
-		for(var i = 0; i < constants.length; i++) {
-			for(var j = 0; j < constants[i].exercises.length; j++) {
-				exerciseConstants.push(constants[i].exercises[j]);
-			}
-		};
 		var exercises = [];
-		for (i = 0; i < this.state.exercises.length; i++) {
-			if(this.state.exercises[i].group == muscleGroup) {
-				exercises.push(this.state.exercises[i]);
+		for (a = 0; a < this.state.exercises.length; a++) {
+			if(this.state.exercises[a].group == muscleGroup) {
+				exercises.push(this.state.exercises[a]);
 			}
 		};
 		var Exercises = exercises.map((exercise) =>{
 			return <Exercise key={exercise.id} exercise={exercise} deleteExerciseHandler={this.deleteExercise}
-			updateExerciseHandler={this.updateExercise} exerciseConstants={exerciseConstants} muscles={this.state.muscles} />;
+			updateExerciseHandler={this.updateExercise} muscles={this.state.muscles} />;
 		});
     var headerValue = "Exercises (" + muscleGroup + ")";
 		return (
