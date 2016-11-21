@@ -5,6 +5,7 @@ import $ from "jquery";
 import _ from 'lodash';
 import Autosuggest from 'react-autosuggest';
 import {BarChart} from 'react-easy-chart';
+import {Legend} from 'react-easy-chart';
 import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
@@ -70,13 +71,14 @@ export default class ChartGenerator extends React.Component {
     // and they are initially empty because the Autosuggest is closed.
     this.state = {
       value: '',
-	  data: [],
-	  users : [],
-    suggestions: [],
-	  exerciseUnits : [],
-	  muscleGroupSessions : [],
-	  trainingSessions : [],
-	  exercises : [],
+      data: [],
+      legendData: [],
+      users : [],
+      suggestions: [],
+      exerciseUnits : [],
+      muscleGroupSessions : [],
+      trainingSessions : [],
+      exercises : [],
     };
   }
   componentDidMount(){
@@ -272,18 +274,31 @@ export default class ChartGenerator extends React.Component {
             }
           }
         }
-      };
+      }
     };
     //console.log("data");
     //console.log(data);
     //console.log(data.length);
+    var newText = '';
+    // trimming dates to shortest possible format
     if(data.length > 8) {
       for (i = 0; i < data.length; i++) {
-        var newText = data[i].x.substring(0,5);
+        newText = data[i].x.substring(0,5);
+        if(data[i].x.substring(0,1) == '0') {
+          newText = data[i].x.substring(1,5);
+        } 
+        if(newText.substring(2,4) == '/0'){ 
+          newText = newText.substring(0,3) + newText.substring(4);
+        }
+        
+        if (newText.substring(1,3) == '/0') {
+          newText = newText.substring(0,2) + newText.substring(3);
+        }
+        
         data[i].x = newText;
       }
     }
-    console.log(data);
+    //console.log(data);
     this.setState ({data});
   };
   
@@ -313,7 +328,7 @@ export default class ChartGenerator extends React.Component {
             </tr>
           </tbody>
         </table>
-        <Chart data={this.state.data}/>
+        <Chart data={this.state.data} legendData={this.state.legendData}/>
       </div>
     );
   }
@@ -322,11 +337,11 @@ export default class ChartGenerator extends React.Component {
 var ChartDataPicker = React.createClass( {
 	getInitialState : function() {
 	  return {
-		status : '',
-		date_from: '',
-		date_to: '',
-		user: '',
-	   };
+      status : '',
+      date_from: '',
+      date_to: '',
+      user: '',
+    };
 	},
 	componentDidMount(){
 		this.setState({users: this.props.users});
@@ -380,15 +395,15 @@ var Chart = React.createClass({
     return (
       <div className="col-md-6 col-md-offset-3">
         <BarChart 
-          axes 
-          grid 
+          axes
+          grid
           axisLabels={{x: 'Date', y: 'Weight'}} 
           colorBars 
           width={800} 
           height={450} 
-          margin={margin} 
+          margin={margin}
           data={this.props.data} 
-          margin={{top: 20, right: 60, bottom: 60, left: 60}}
+          margin={{top: 20, right: 60, bottom: 60, left: 80}}
           />
 			</div>
     );

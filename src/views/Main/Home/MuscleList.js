@@ -92,7 +92,7 @@ var Muscle = React.createClass({
 var AddMuscleForm = React.createClass({
 	getInitialState: function() {
     return { 
-      name: ''
+        
 		};
   },
 	handleNameChange: function(e) {
