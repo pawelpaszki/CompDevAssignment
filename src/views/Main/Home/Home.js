@@ -199,6 +199,13 @@ var User = React.createClass({
 });
 
 var FilteredUsersList = React.createClass({
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.props.users.length !== nextProps.users.length) {
+      return true;
+    } else {
+      return false;
+    }
+  },
 	render: function() {
 		var displayedUsers = this.props.users.map((user) =>{
 			return <User key={user.id} userItem={user} updateUserHandler={this.props.updateUserHandler} deleteUserHandler={this.props.deleteUserHandler} loggedIn={this.props.loggedIn}/>;
@@ -481,13 +488,14 @@ var GymProgressLogger = React.createClass({
 		});
 		document.location.reload(true);
 	  },
-	  handleChange : function(type,value) {
-      if ( type == 'search' ) {
-        this.setState( { search: value } ) ;
-      } else {
-        this.setState( { sort: value } ) ;
-      }
-    }, 
+  handleChange : function(type,value) {
+    if ( type == 'search' ) {
+      this.setState( { search: value } ) ;
+    } else {
+      this.setState( { sort: value } ) ;
+    }
+  }, 
+  
 
   render: function(){
 	  var loggedIn = this.state.loggedIn;
