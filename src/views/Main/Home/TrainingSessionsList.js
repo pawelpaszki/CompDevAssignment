@@ -319,7 +319,7 @@ var TrainingSessionsList = React.createClass({
         <ul className="list-group">
           {displayedTsessions}
         </ul>
-        <AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}/>
+        <AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}z/>
       </div>
 		 );	
 	}

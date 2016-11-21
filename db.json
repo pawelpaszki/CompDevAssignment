@@ -2169,13 +2169,13 @@
       "number_of_reps": 15
     },
     {
-      "muscle_group": "calf",
-      "muscle_group_session_id": 90,
-      "id": 251,
-      "name": "standing calf raise",
-      "weight": 220,
-      "number_of_series": 4,
-      "number_of_reps": 15
+      "muscle_group": "chest",
+      "muscle_group_session_id": 91,
+      "id": 252,
+      "name": "barbell flat bench press",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
     }
   ],
   "MuscleGroupSessions": [
