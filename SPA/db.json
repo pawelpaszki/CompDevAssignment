@@ -2176,6 +2176,54 @@
       "weight": 0,
       "number_of_series": 0,
       "number_of_reps": 0
+    },
+    {
+      "muscle_group": {
+        "id": 80,
+        "main_session_id": 0,
+        "name": "leg"
+      },
+      "muscle_group_session_id": 80,
+      "id": 253,
+      "name": "barbell full squat",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
+    },
+    {
+      "muscle_group": {
+        "id": 80,
+        "main_session_id": 0,
+        "name": "leg"
+      },
+      "muscle_group_session_id": 80,
+      "id": 254,
+      "name": "leg press",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
+    },
+    {
+      "muscle_group": "triceps",
+      "muscle_group_session_id": 90,
+      "id": 255,
+      "name": "cable two arms extensions",
+      "weight": 12,
+      "number_of_series": 12,
+      "number_of_reps": 12
+    },
+    {
+      "muscle_group": {
+        "id": 90,
+        "main_session_id": 0,
+        "name": "triceps"
+      },
+      "muscle_group_session_id": 90,
+      "id": 256,
+      "name": "weighted bench dip",
+      "weight": 0,
+      "number_of_series": 0,
+      "number_of_reps": 0
     }
   ],
   "MuscleGroupSessions": [
@@ -2623,6 +2671,11 @@
       "id": 89,
       "main_session_id": 39,
       "name": "calf"
+    },
+    {
+      "id": 90,
+      "main_session_id": 0,
+      "name": "triceps"
     }
   ],
   "TrainingSessions": [
@@ -3630,6 +3683,11 @@
       "id": 7,
       "constant": true,
       "name": "back"
+    },
+    {
+      "id": 8,
+      "constant": false,
+      "name": "abssssss"
     }
   ]
 }
