@@ -1,5 +1,5 @@
-var mongoose = require('mongoose')
-  , Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
+    Schema = mongoose.Schema;
 
 var userSchema = new Schema({
     _id  : Schema.Types.ObjectId,

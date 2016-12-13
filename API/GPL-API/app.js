@@ -3,7 +3,7 @@
 var express = require('express'),
   routes = require('./routes'),
   http = require('http'),
-  users = require('./routes/users'),
+  
   mongoose = require('mongoose');
 
 // MongoDB Connection 
@@ -27,11 +27,8 @@ app.configure('development', function(){
 });
 
 app.get('/', routes.index);
-app.get('/users', users.index);
-app.get('/users/:id', users.show);
-app.post('/users', users.create);
-app.put('/users/:id', users.update);
-app.del('/users/:id', users.destroy);
+
+require('./controllers/users')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port %s",  app.get('port'));
