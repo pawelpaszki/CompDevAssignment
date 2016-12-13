@@ -29,9 +29,6 @@ npm install jquery
 ```
 npm install -g json-server
 ```
-```
-npm install --save react-bar-chart
-```
 
 It is also mandatory to have **.env** file in the root directory, which is needed to deal with Auth0 authentication features
                                   
