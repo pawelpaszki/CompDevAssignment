@@ -44,69 +44,69 @@ npm start
 ## Features
 Authentication is required to see the content of the application:
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/login.jpg)
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/login2.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/login.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/login2.jpg)
 
 Home screen displays list of users, who can be deleted. Their performance can be graphically displayed by 
 pressing charts button. After pressing User's name - his/her list of training sessions is displayed
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/home.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/home.jpg)
 
 Each user's details can be edited. To display user's image, url to online picture must be provided
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/homeEdit.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/homeEdit.jpg)
 
 Training sessions can be deleted
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/trainingSessions.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/trainingSessions.jpg)
 
  Training sessions can also be edited (date can be edited from here. more specific details from subsequent views)
  
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/trainingSessionsEdit.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/trainingSessionsEdit.jpg)
 
  For each of training sessions list of muscle group sessions is displayed (if any). It is only possible to enter existing
  muscle group to create new session. Each muscle group session can also be deleted
  
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/muscleGroupSessions.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/muscleGroupSessions.jpg)
 
 Exercise units can be added by pressing button representing exercise, which is available to add for the muscle group.
 
 By default, when adding new exercise, weight, reps and series will be set to 0, which can be edited once an exercise is added
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/exerciseUnitList.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/exerciseUnitList.jpg)
 
 When Button "Muscles & Exercises" is pressed - list of all muscle groups is shown. In general muscle groups can be added
 and removed / edited. The only exception is, that predefined 7 muscle groups shown below, can't be edited or removed
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/muscleList.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/muscleList.jpg)
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/muscleListEdit.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/muscleListEdit.jpg)
 
 When link representing muscle group is pressed, all exercises available for the muscle group are displayed
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/exerciseList.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/exerciseList.jpg)
 
 The same rule applies for exercises - new ones can be added
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/exerciseListAdd.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/exerciseListAdd.jpg)
 
 But there are predefined exercises, which cannot be removed or edited
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/exerciseListEdit.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/exerciseListEdit.jpg)
 
 Once button representing exercise name is presses - exercise details are displayed. This is the static view. In order 
 to make changes to not predefined exercise, it has to be removed and then added again. Predefined exercises are not editable 
 in any sense. Reason behind this is that it certain list of muscles and exercises has to be available all the time
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/exerciseInfo.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/exerciseInfo.jpg)
 
 Charts generation for each user (providing that any sessions for him/her are recorded) is available. 
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/chartsEmpty.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/chartsEmpty.jpg)
 
 [autosuggest](https://github.com/moroshko/react-autosuggest) is used to display available exercises.
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/chartsAuto.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/chartsAuto.jpg)
 
 Date validation is provided, so only valid date format (dd/mm/yyyy) will allow to generate data for the chart.
 
@@ -115,4 +115,4 @@ Date validation was taken from [here](http://stackoverflow.com/questions/6177975
 
 Chart component used in the app is available [here](https://www.npmjs.com/package/react-easy-chart)
 
-![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/assets/readmeImages/chartGenerated.jpg)
+![alt tag](https://github.com/pawelpaszki/CompDevAssignment/blob/master/SPA/assets/readmeImages/chartGenerated.jpg)
