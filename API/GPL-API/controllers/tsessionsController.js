@@ -1,4 +1,6 @@
-var Tsession = require('../models/tsession').Tsession; 
+var Tsession = require('../models/tsession').Tsession;
+var Msession = require('../models/msession').Msession;
+var Exerciseunit = require('../models/exerciseunit').Exerciseunit;  
 
 exports.index = function(req, res) {
   Tsession.find({'user_id': req.params.user_id}, function(err, docs) {
@@ -66,6 +68,20 @@ exports.destroy = function(req, res) {
   Tsession.findById(id, function(err, doc) {
     if(!err && doc) {
       doc.remove();
+      Exerciseunit.remove({tsession_id: id}, function(err) {
+        if (err) {
+          res.json(500, {message: "Error: " + err});
+        } else {
+          res.end('all exercise units removed');
+        }
+      });
+      Msession.remove({tsession_id: id}, function(err) {
+        if (err) {
+          res.json(500, {message: "Error: " + err});
+        } else {
+          res.end('all muscle group sessions removed');
+        }
+      });
       res.json(200, { message: "Training session removed."});
     } else if(!err) {
       res.json(404, { message: "Could not find training session."});
