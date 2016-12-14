@@ -41,8 +41,6 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   
   var id = req.params.id; 
-  var user_id = req.params.user_id; 
-  var date = req.body.date;
 
   Tsession.findById(id, function(err, doc) {
     if(!err && doc) {
