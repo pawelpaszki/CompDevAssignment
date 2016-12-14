@@ -1,7 +1,7 @@
 var Tsession = require('../models/tsession').Tsession; 
 
 exports.index = function(req, res) {
-  Tsession.find({}, function(err, docs) {
+  Tsession.find({'user_id': req.params.user_id}, function(err, docs) {
     if(!err) {
       res.json(200, { tsessions: docs });  
     } else {
@@ -10,9 +10,10 @@ exports.index = function(req, res) {
   });
 }
 
+// 2 ids required??
 exports.show = function(req, res) {
   var id = req.params.id; 
-  Tsession.findById(id, function(err, doc) {
+  Tsession.find({'user_id': req.params.user_id, '_id': req.params.id}, function(err, doc) {
     if(!err && doc) {
       res.json(200, doc);
     } else if(err) {
@@ -26,7 +27,6 @@ exports.show = function(req, res) {
 exports.create = function(req, res) {
 
     var newTsession = new Tsession(); 
-
     newTsession.date = req.body.date; 
     newTsession.user_id = req.params.user_id;
     newTsession.save(function(err) {
