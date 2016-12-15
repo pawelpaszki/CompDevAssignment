@@ -1,6 +1,19 @@
 var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
+var _ = require('lodash');
+var Muscle = require('../models/muscle').Muscle;
+
+var muscles = [];
+Muscle.find({}, function(err, docs) {
+  if(!err) {
+    muscles: docs;
+  }
+});
+if(muscles.length > 0) {
+  var musclenames = _.map(muscles, 'name');
+}
+    
 var msessionSchema = new Schema({
     _id  : Schema.Types.ObjectId,
     user_id  : { type: String, required: true},

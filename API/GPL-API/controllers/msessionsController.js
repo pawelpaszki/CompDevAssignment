@@ -11,7 +11,6 @@ exports.index = function(req, res) {
   });
 }
 
-// 2 ids required??
 exports.show = function(req, res) {
   var id = req.params.id; 
   Msession.findById(id, function(err, doc) {
@@ -27,17 +26,18 @@ exports.show = function(req, res) {
 
 exports.create = function(req, res) {
 
-    var newMsession = new Msession(); 
-    newMsession.name = req.body.name; 
-    newMsession.user_id = req.params.user_id;
-    newMsession.tsession_id = req.params.tsession_id;
-    newMsession.save(function(err) {
-      if(!err) {
-        res.json(201, newMsession);    
-      } else {
-        res.json(500, {message: "Could not create muscle group session. Error: " + err});
-      }
-    });
+  var newMsession = new Msession(); 
+  newMsession.name = req.body.name; 
+  newMsession.user_id = req.params.user_id;
+  newMsession.tsession_id = req.params.tsession_id;
+  newMsession.save(function(err) {
+    if(!err) {
+      res.json(201, newMsession);    
+    } else {
+      res.json(500, {message: "Could not create muscle group session. Error: " + err});
+    }
+  });
+  
 }
 
 exports.update = function(req, res) {
