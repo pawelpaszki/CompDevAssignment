@@ -12,7 +12,6 @@ exports.index = function(req, res) {
   });
 }
 
-// 2 ids required??
 exports.show = function(req, res) {
   var id = req.params.id; 
   Tsession.find({'user_id': req.params.user_id, '_id': req.params.id}, function(err, doc) {

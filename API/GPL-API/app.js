@@ -33,6 +33,7 @@ require('./routes/tsessions')(app);
 require('./routes/msessions')(app);
 require('./routes/exerciseunits')(app);
 require('./routes/muscles')(app);
+require('./routes/exercises')(app);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port %s",  app.get('port'));
