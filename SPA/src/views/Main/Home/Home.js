@@ -70,15 +70,8 @@ var User = React.createClass({
 	getInitialState : function() {
 	 return {
 		 status: '',
-		 initFname: this.props.userItem.first_name,
-		 initSurname: this.props.userItem.surname,
-		 initDOB: this.props.userItem.dob,
-		 initTrainingFrom: this.props.userItem.training_from,
-		 initWeight: this.props.userItem.body_weight,
-		 initHeight: this.props.userItem.height,
      picture: this.props.userItem.picture,
-		 initPicture: this.props.userItem.picture,
-		 id: this.props.userItem.id,
+		 id: this.props.userItem._id,
 		 first_name : this.props.userItem.first_name,
 	   surname: this.props.userItem.surname,
 	   dob: this.props.userItem.dob,
@@ -120,36 +113,19 @@ var User = React.createClass({
 		this.setState({ status : 'edit'});
 	},
 	handleUpdate: function(e) {
-	  e.preventDefault();
+	  //e.preventDefault();
 	  var first_name = this.state.first_name;
 	  var surname = this.state.surname;
 	  var dob = this.state.dob;
 	  var training_from = this.state.training_from;
 	  var body_weight = this.state.body_weight;
 	  var height = this.state.height;
-    
-	  if(first_name == this.state.initFname && surname == this.state.initSurname && dob == this.state.initDOB && 
-	    training_from == this.state.initTrainingFrom && body_weight == this.state.initWeight && height == this.state.initHeight) {
-		  this.setState({ status : ''});
-		  return;
-	  }
-	  if (isString(first_name) && isString(surname) && isValidDate(training_from) && isValidDate(dob) && isNumber(body_weight) && isNumber(height)) {
-	    this.props.updateUserHandler(this.state.id, first_name, surname, dob, training_from, body_weight, height, this.state.picture);
-	  } else {
-		  this.setState({first_name: initFname});
-		  this.setState({surname: initSurname});
-		  this.setState({dob: initDOB});
-		  this.setState({training_from: initTrainingFrom});
-		  this.setState({weight: initWeight});
-		  this.setState({height: initHeight});
-      this.setState({picture: initPicture});
-	  }
+	  this.props.updateUserHandler(this.state.id, first_name, surname, dob, training_from, body_weight, height, this.state.picture);
 	  this.setState({ status : ''});
 	},
 	render: function() {
 		var userItem = this.props.userItem;
-		//console.log(userItem.picture);
-		//console.log(userItem.first_name);
+		console.log(userItem.picture);
 		var updateHandler = this.handleUpdate;
 		var editHandler = this.handleEdit;
 		var deleteHandler = this.handleDelete;
@@ -208,7 +184,7 @@ var FilteredUsersList = React.createClass({
   },
 	render: function() {
 		var displayedUsers = this.props.users.map((user) =>{
-			return <User key={user.id} userItem={user} updateUserHandler={this.props.updateUserHandler} deleteUserHandler={this.props.deleteUserHandler} loggedIn={this.props.loggedIn}/>;
+			return <User key={user.id} userItem={user} updateUserHandler={this.props.updateUserHandler} deleteUserHandler={this.props.deleteUserHandler} />;
 		}) ;
 		return (
 		<div>
@@ -253,32 +229,13 @@ var AddUserForm = React.createClass({
 	  this.setState({height: e.target.value});
   },
 	handleSubmit: function(e) {
-		e.preventDefault();
-		//console.log(this.props.muscles);
 		var first_name = this.state.first_name;
 		var surname = this.state.surname;
 		var dob = this.state.dob;
 		var training_from = this.state.training_from;
 		var body_weight = this.state.body_weight;
 		var height = this.state.height;
-		if (!first_name || !surname || !dob || !training_from || !isValidDate(dob) || !isValidDate(training_from) 
-      || !(isString(first_name) && isString(surname) && isValidDate(training_from) && isValidDate(dob) && isNumber(body_weight) && isNumber(height))) {
-			this.setState({first_name: ''});
-			this.setState({surname: ''});
-			this.setState({dob: ''});
-			this.setState({training_from: ''});
-			this.setState({body_weight: ''});
-			this.setState({height: ''});
-      return;
-    } else {
-			this.props.addUserHandler(first_name, surname, dob, training_from, body_weight, height);
-			this.setState({first_name: ''});
-			this.setState({surname: ''});
-			this.setState({dob: ''});
-			this.setState({training_from: ''});
-			this.setState({body_weight: ''});
-			this.setState({height: ''});
-		}
+	  this.props.addUserHandler(first_name, surname, dob, training_from, body_weight, height);
 	},
 	render: function() {
 		return (
@@ -315,52 +272,10 @@ var GymProgressLogger = React.createClass({
       search: '', 
       sort: 'dob',
       users: [],
-      trainingSessions: [],
-      muscleGroupSessions: [],
-      exerciseUnits: [],
     };
   },
 	componentDidMount(){
-    this.getUsersFromServer('http://localhost:3001/users/');
-    this.getTrainingSessions('http://localhost:3001/trainingsessions');
-    this.getMuscleGroupSessions('http://localhost:3001/musclegroupsessions');
-    this.getExerciseUnits('http://localhost:3001/exerciseunits');
-  },
-  populateExerciseUnits: function(response) {
-    this.setState({
-      exerciseUnits: response
-    });
-  },
-  getExerciseUnits:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-          this.populateExerciseUnits(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-          console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  populateMuscleGroupSessions: function(response) {
-    this.setState({
-      muscleGroupSessions: response
-    });
-  },
-  getMuscleGroupSessions:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-          this.populateMuscleGroupSessions(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-          console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    this.getUsersFromServer('http://localhost:3001/api/users/');
   },
   populateUsers: function(response) {
     this.setState({
@@ -372,6 +287,7 @@ var GymProgressLogger = React.createClass({
       type:"GET",
       dataType:"json",
       url:URL,
+      contentType : 'application/json',
       success: function(response) {
           this.populateUsers(response);
       }.bind(this),
@@ -380,71 +296,17 @@ var GymProgressLogger = React.createClass({
       }.bind(this)
     });
   },
-  populateTrainingSessions: function(response) {
-    this.setState({
-      trainingSessions: response
-    });
-  },
-  getTrainingSessions:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-          this.populateTrainingSessions(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-          console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
   deleteUser:function(id) {
     $.ajax({
-      url: 'http://localhost:3001/users/' + id,
+      url: 'http://localhost:3001/api/users/' + id,
       type: 'DELETE',
       contentType: 'application/json'
     });
-    var trainingSessionsIds = [];
-    var muscleGroupSessionsIds = [];
-    var exerciseUnitsIds = [];
-    for(var a = 0; a < this.state.trainingSessions.length; a++) {
-      if(this.state.trainingSessions[a].user_id == id) {
-        trainingSessionsIds.push(this.state.trainingSessions[a].id);
-        $.ajax({
-          url: 'http://localhost:3001/trainingsessions/' + this.state.trainingSessions[a].id,
-          type: 'DELETE',
-          contentType: 'application/json'
-        });
-      }
-    };
-    //console.log(trainingSessionsIds);
-    for(a = 0; a < this.state.muscleGroupSessions.length; a++) {
-      if(trainingSessionsIds.indexOf(this.state.muscleGroupSessions[a].main_session_id) != -1) {
-        muscleGroupSessionsIds.push(this.state.muscleGroupSessions[a].id);
-        $.ajax({
-          url: 'http://localhost:3001/musclegroupsessions/' + this.state.muscleGroupSessions[a].id,
-          type: 'DELETE',
-          contentType: 'application/json'
-        });
-      }
-    }
-    //console.log(muscleGroupSessionsIds);
-    for(a = 0; a < this.state.exerciseUnits.length; a++) {
-      if(muscleGroupSessionsIds.indexOf(this.state.exerciseUnits[a].muscle_group_session_id) != -1) {
-        exerciseUnitsIds.push(this.state.exerciseUnits[a].id);
-        $.ajax({
-          url: 'http://localhost:3001/exerciseunits/' + this.state.exerciseUnits[a].id,
-          type: 'DELETE',
-          contentType: 'application/json'
-        });
-      }
-    }
-    //console.log(exerciseUnitsIds);
     document.location.reload(true);
   },
   updateUser: function(id, first_name, surname, dob, training_from, body_weight, height, picture) {
     $.ajax({
-      url: 'http://localhost:3001/users/' + id,
+      url: 'http://localhost:3001/api/users/' + id,
       type: 'PUT',
       contentType: 'application/json',
       data: JSON.stringify({
@@ -462,32 +324,24 @@ var GymProgressLogger = React.createClass({
 		document.location.reload(true);
   },
   addUser:function(first_name, surname, dob, training_from, body_weight, height) {
-    var maxId= 0;
-    var users = this.state.users;
-    for (var i = 0; i < users.length; i++) {
-      if(users[i].id > maxId) {
-        maxId = users[i].id;
-      }
-    };
-    var id = maxId + 1;
+    
     $.ajax({
-			url: 'http://localhost:3001/users',
+			url: 'http://localhost:3001/api/users',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
-				id: id,
 				first_name: first_name,
 				surname: surname,
 				dob: dob,
 				body_weight: body_weight,
 				height: height,
 				picture: "https://s17.postimg.org/91vave2pr/default.jpg",
-				training_from: training_from,
+				training_from: training_from
 			}),
 			dataType: 'json'
 		});
 		document.location.reload(true);
-	  },
+	},
   handleChange : function(type,value) {
     if ( type == 'search' ) {
       this.setState( { search: value } ) ;
@@ -495,23 +349,20 @@ var GymProgressLogger = React.createClass({
       this.setState( { sort: value } ) ;
     }
   }, 
-  
-
   render: function(){
-	  var loggedIn = this.state.loggedIn;
-	  //console.log(loggedIn);
-	  var users = this.state.users;
+	  var users = this.state.users.users;
+    console.log(users);
 	  var userList = users.filter(function(p) {
-	  var name = p.first_name + ' ' + p.surname;
-		return name.toLowerCase().search(
-		  this.state.search.toLowerCase() ) != -1 ;
+      var name = p.first_name + ' ' + p.surname;
+      return name.toLowerCase().search(
+        this.state.search.toLowerCase() ) != -1 ;
 		}.bind(this) );
 	  var filteredList = _.sortBy(userList, this.state.sort) ;
 	  return (
       <div>
         <SearchBox onUserInput={this.handleChange } 
            filterText={this.state.search} sort={this.state.sort}/>
-        <FilteredUsersList loggedIn={loggedIn} users={filteredList} addUserHandler={this.addUser} updateUserHandler={this.updateUser} deleteUserHandler={this.deleteUser}/>
+        <FilteredUsersList users={filteredList} addUserHandler={this.addUser} updateUserHandler={this.updateUser} deleteUserHandler={this.deleteUser}/>
       </div>
 	  );
   }

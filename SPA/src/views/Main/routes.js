@@ -28,16 +28,16 @@ const requireAuth = (nextState, replace) => {
 export const makeMainRoutes = () => {
   return (
     <Route path="/" component={Container} auth={auth}>
-      <IndexRedirect to="/home" />
-      <Route path="home" component={Home} onEnter={requireAuth} />
-      <Route path="login" component={Login} />
-      <Route path="users/:id" component={TrainingSessionsList} onEnter={requireAuth} />
-      <Route path="trainingsessions/:id" component={MuscleGroupSessionList} onEnter={requireAuth}/>
-      <Route path="musclegroupsessions/:id" component={ExerciseUnitList} onEnter={requireAuth}/>
-      <Route path="muscles" component={MuscleList} />
-      <Route path="musclegroupexercises/:id" component={ExerciseList} />
-      <Route path="exerciseInfo/:id" component={ExerciseInfo}/>
-      <Route path="charts/:id" component={ChartGenerator} onEnter={requireAuth}/>
+      <IndexRedirect to="api/users" />
+      <Route path="api/users" component={Home} onEnter={requireAuth} />
+      <Route path="api/login" component={Login} />
+      <Route path="api/users/:id" component={TrainingSessionsList} onEnter={requireAuth} />
+      <Route path="api/trainingsessions/:id" component={MuscleGroupSessionList} onEnter={requireAuth}/>
+      <Route path="api/musclegroupsessions/:id" component={ExerciseUnitList} onEnter={requireAuth}/>
+      <Route path="api/muscles" component={MuscleList} />
+      <Route path="api/musclegroupexercises/:id" component={ExerciseList} />
+      <Route path="api/exerciseInfo/:id" component={ExerciseInfo}/>
+      <Route path="api/charts/:id" component={ChartGenerator} onEnter={requireAuth}/>
     </Route>
   )
 }
