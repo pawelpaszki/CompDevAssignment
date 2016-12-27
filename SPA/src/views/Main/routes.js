@@ -21,7 +21,7 @@ const auth = new AuthService(__AUTH0_CLIENT_ID__, __AUTH0_DOMAIN__);
 // onEnter callback to validate authentication in private routes
 const requireAuth = (nextState, replace) => {
   if (!auth.loggedIn()) {
-    replace({ pathname: '/login' })
+    replace({ pathname: '/api/login' })
   }
 }
 
@@ -31,13 +31,13 @@ export const makeMainRoutes = () => {
       <IndexRedirect to="api/users" />
       <Route path="api/users" component={Home} onEnter={requireAuth} />
       <Route path="api/login" component={Login} />
-      <Route path="api/users/:id" component={TrainingSessionsList} onEnter={requireAuth} />
-      <Route path="api/trainingsessions/:id" component={MuscleGroupSessionList} onEnter={requireAuth}/>
+      <Route path="api/users/:user_id/tsessions" component={TrainingSessionsList} onEnter={requireAuth} />
+      <Route path="api/users/:user_id/tsessions/:tsession_id/msessions" component={MuscleGroupSessionList} onEnter={requireAuth}/>
       <Route path="api/musclegroupsessions/:id" component={ExerciseUnitList} onEnter={requireAuth}/>
       <Route path="api/muscles" component={MuscleList} />
       <Route path="api/musclegroupexercises/:id" component={ExerciseList} />
       <Route path="api/exerciseInfo/:id" component={ExerciseInfo}/>
-      <Route path="api/charts/:id" component={ChartGenerator} onEnter={requireAuth}/>
+      <Route path="api/users/:_id/charts" component={ChartGenerator} onEnter={requireAuth}/>
     </Route>
   )
 }

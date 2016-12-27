@@ -6,38 +6,13 @@ import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
 
-function isValidDate(dateString) {
-	// First check for the pattern
-	if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
-		return false;
-
-	// Parse the date parts to integers
-	var parts = dateString.split("/");
-	var day = parseInt(parts[0], 10);
-	var month = parseInt(parts[1], 10);
-	var year = parseInt(parts[2], 10);
-
-	// Check the ranges of month and year
-	if(year < 1000 || year > 3000 || month == 0 || month > 12)
-		return false;
-
-	var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-
-	// Adjust for leap years
-	if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-		monthLength[1] = 29;
-
-	// Check the range of the day
-	return day > 0 && day <= monthLength[month - 1];
-};
-
 var TrainingSessionItem = React.createClass({
 	getInitialState : function() {
 		return {
 		 status: '',
-		 id : this.props.trainingSessionItem.id,
-		 date: this.props.trainingSessionItem.date,
-		 initDate: this.props.trainingSessionItem.date
+     user_id: this.props.user_id,
+		 _id : this.props.id,
+		 date: this.props.date.substring(0,10)
     };
   },
 	handleDateChange: function(e) {
@@ -45,8 +20,8 @@ var TrainingSessionItem = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		console.log(this.state.id);
-		this.props.deleteTrainingSessionHandler(this.state.id);
+		console.log(this.state._id);
+		this.props.deleteTrainingSessionHandler(this.state._id);
 	},
 	handleEdit: function(e) {
 		this.setState({ status : 'edit'} )
@@ -57,15 +32,16 @@ var TrainingSessionItem = React.createClass({
 	handleUpdate: function(e) {
 	  e.preventDefault();
 	  var date = this.state.date;
-	  if (isValidDate(date)) {
-	    this.props.updateTrainingSessionHandler(this.state.id, this.state.date);
-	  } else {
-		  this.setState({ date : this.state.initDate});
-	  }
+    console.log(date);
+    console.log(this.state._id);
+	  this.props.updateTrainingSessionHandler(this.state._id, this.state.date);
 	  this.setState({ status : ''} )
 	},
 	render: function() {
-		var trainingSessionItem = this.props.trainingSessionItem;
+		var id = this.state._id;
+    var date = this.state.date.substring(0,10);
+    var user_id = this.state.user_id;
+    var tsession_id = this.state._id;
 		var updateHandler = this.handleUpdate;
 		var editHandler = this.handleEdit;
 		var deleteHandler = this.handleDelete;
@@ -76,7 +52,7 @@ var TrainingSessionItem = React.createClass({
           <tbody>
             <tr>
               <td className="col-md-1"></td>
-              <td key={'main_session_id'} className="col-md-4"><Link to={'/trainingsessions/' + trainingSessionItem.id}>{trainingSessionItem.date}</Link></td>
+              <td key={'index'} className="col-md-4"><Link to={'/api/users/' + user_id + '/tsessions/' + tsession_id +'/msessions'}>{date}</Link></td>
               <td className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
               <td className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
               <td className="col-md-2"></td>
@@ -111,6 +87,7 @@ var AddTrainingSessionForm = React.createClass({
 	getInitialState : function() {
 	  return {
       status : '',
+      user_id: this.props.user_id,
       date: ''
 	  };
 	},
@@ -120,10 +97,8 @@ var AddTrainingSessionForm = React.createClass({
 	handleAddTrainingSession: function(e) {
 		e.preventDefault();
 		var date = this.state.date;
-		if (isValidDate(date)) {
-			this.props.addTrainingSessionHandler(date);
-		};
-		this.setState({date: ''});
+    var user_id = this.state.user_id;
+	  this.props.addTrainingSessionHandler(date, user_id);
 	},
 	render: function() {
     return (
@@ -145,71 +120,31 @@ var TrainingSessionsList = React.createClass({
   getInitialState: function() {
     return {
 	  	trainingSessions: [],
-		  userId: this.props.params.id,
-		  users: [],
-      muscleGroupSessions: [],
-      exerciseUnits: [],
+		  user: ''
 		};
   },
   componentDidMount(){
-    this.getTrainingSessionsFromServer('http://localhost:3001/trainingsessions/');
-    this.getUsersFromServer('http://localhost:3001/users/');
-    this.getMuscleGroupSessions('http://localhost:3001/musclegroupsessions');
-    this.getExerciseUnits('http://localhost:3001/exerciseunits');
-  },
-  populateExerciseUnits: function(response) {
-    this.setState({
-      exerciseUnits: response
-    });
-  },
-  getExerciseUnits:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-          this.populateExerciseUnits(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-          console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  },
-  populateMuscleGroupSessions: function(response) {
-    this.setState({
-      muscleGroupSessions: response
-    });
-  },
-  getMuscleGroupSessions:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-          this.populateMuscleGroupSessions(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-          console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+    this.getTrainingSessionsFromServer('http://localhost:3001/api/users/' + this.props.params.user_id + '/tsessions/');
+    this.getUserFromServer('http://localhost:3001/api/users/' + this.props.params.user_id);
   },
   populateTrainingSessions: function(response) {
     this.setState({
       trainingSessions: response
     });
   },
-	populateUsers: function(response) {
+	populateUser: function(response) {
     this.setState({
-      users: response
+      user: response
     });
   },
-  getUsersFromServer:function(URL){
+  getUserFromServer:function(URL){
     $.ajax({
       type:"GET",
       dataType:"json",
       url:URL,
       success: function(response) {
-        this.populateUsers(response);
+        this.populateUser(response);
+        console.log(response);
       }.bind(this),
         error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -223,7 +158,7 @@ var TrainingSessionsList = React.createClass({
       url:URL,
       success: function(response) {
         this.populateTrainingSessions(response);
-      //console.log(response);
+        console.log(response);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -231,95 +166,67 @@ var TrainingSessionsList = React.createClass({
     });
   },
   deleteTrainingSession:function(id) {
-    var muscleGroupSessionsIds = [];
-    var exerciseUnitsIds = [];
-    for(var a = 0; a < this.state.muscleGroupSessions.length; a++) {
-      if(this.state.muscleGroupSessions[a].main_session_id == id) {
-        muscleGroupSessionsIds.push(this.state.muscleGroupSessions[a].id);
-        $.ajax({
-          url: 'http://localhost:3001/musclegroupsessions/' + this.state.muscleGroupSessions[a].id,
-          type: 'DELETE',
-          contentType: 'application/json'
-        });
-      }
-    }
-    console.log(muscleGroupSessionsIds);
-    for(a = 0; a < this.state.exerciseUnits.length; a++) {
-      if(muscleGroupSessionsIds.indexOf(this.state.exerciseUnits[a].muscle_group_session_id) != -1) {
-        exerciseUnitsIds.push(this.state.exerciseUnits[a].id);
-        $.ajax({
-          url: 'http://localhost:3001/exerciseunits/' + this.state.exerciseUnits[a].id,
-          type: 'DELETE',
-          contentType: 'application/json'
-        });
-      }
-    }
-    console.log(exerciseUnitsIds);
+    var user_id = this.props.params.user_id;
     $.ajax({
-      url: 'http://localhost:3001/trainingsessions/' + id,
+      url: 'http://localhost:3001/api/users/' + user_id + '/tsessions/' + id,
       type: 'DELETE',
       contentType: 'application/json'
     });
     document.location.reload(true);
   },
   updateTrainingSession: function(id, date) {
+    var user_id = this.props.params.user_id;
     $.ajax({
-    url: 'http://localhost:3001/trainingsessions/' + id,
-    type: 'PUT',
-    contentType: 'application/json',
-    data: JSON.stringify({
-      id: id,
-      date: date,
-      user_id: this.state.userId,
-    }),
-    dataType: 'json'
+      url: 'http://localhost:3001/api/users/' + user_id + '/tsessions/' + id,
+      type: 'PUT',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        date: date
+      }),
+      dataType: 'json'
     });
     document.location.reload(true);
   },
-	  addTrainingSession:function(date) {
-		  var maxId= 0;
-		  var trainingSessions = this.state.trainingSessions;
-		  for (var i = 0; i < trainingSessions.length; i++) {
-			  if(trainingSessions[i].id > maxId) {
-				  maxId = trainingSessions[i].id;
-			  }
-		  };
-		  var id = maxId + 1;
-      $.ajax({
-			url: 'http://localhost:3001/trainingsessions',
-			type: 'POST',
-			contentType: 'application/json',
-			data: JSON.stringify({
-				user_id: this.state.userId,
-				id: id,
-				date: date,
-			}),
-			dataType: 'json'
-		});
-		this.setState({});
-		document.location.reload(true);
+  addTrainingSession:function(date, user_id) {
+    $.ajax({
+      url: 'http://localhost:3001/api/users/' + user_id + '/tsessions',
+      type: 'POST',
+      contentType: 'application/json',
+      data: JSON.stringify({
+        user_id: user_id,
+        date: date
+      }),
+      dataType: 'json'
+    });
+    this.setState({});
+    document.location.reload(true);
   },
 	render: function() {
-		var user = this.state.users[this.props.params.id - 1];
-		var trainingSessions = [];
-		for(var i = 0; i < this.state.trainingSessions.length; i++) {
-			if(this.state.trainingSessions[i].user_id == this.state.userId) {
-				trainingSessions.push(this.state.trainingSessions[i]);
-			}
-		};
-		var displayedTsessions = trainingSessions.map((tsession) =>{
-			return <TrainingSessionItem key={tsession.main_session_id} trainingSessionItem={tsession} 
-			deleteTrainingSessionHandler={this.deleteTrainingSession}
-			updateTrainingSessionHandler={this.updateTrainingSession}/>;
-		});
+    console.log(this.state.user);
+    var user = this.state.user;
+    console.log(this.state.trainingSessions.tsessions);
+    console.log(this.props.params.user_id)
+    var trainingSessions = [];
+    var user_id = this.props.params.user_id;
+    for(var i = 0; i < this.state.trainingSessions.tsessions.length; i++) {
+      trainingSessions.push(this.state.trainingSessions.tsessions[i]);
+    };
+    var displayedTsessions = trainingSessions.map(function(tsession, index) {
+      return (
+        <TrainingSessionItem id={tsession._id} key={index} user_id={tsession.user_id} 
+          date = {tsession.date} deleteTrainingSessionHandler={this.deleteTrainingSession}
+			updateTrainingSessionHandler={this.updateTrainingSession}
+        />
+      );
+    }.bind(this));
     var headerValue = user.first_name + " " +  user.surname + "'s sessions";
     return (
       <div>
         <Header headerValue={headerValue}/>
         <ul className="list-group">
-          {displayedTsessions}
+        {displayedTsessions }
         </ul>
-        <AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession}z/>
+        <AddTrainingSessionForm addTrainingSessionHandler={this.addTrainingSession} user_id={user_id}/>
       </div>
 		 );	
 	}

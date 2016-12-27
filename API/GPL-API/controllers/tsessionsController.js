@@ -42,10 +42,11 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   
   var id = req.params.id; 
-
+  console.log(id);
   Tsession.findById(id, function(err, doc) {
     if(!err && doc) {
       doc.date = req.body.date; 
+      console.log(doc.date);
       doc.save(function(err) {
         if(!err) {
           res.json(200, {message: "Training session updated: " + date});    

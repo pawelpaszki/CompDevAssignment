@@ -6,39 +6,6 @@ import { browserHistory } from 'react-router';
 import _ from 'lodash';
 import $ from "jquery";
 
-function isString(value) {
-  return typeof value === 'string';
-};
-
-function isValidDate(dateString) {
-	// First check for the pattern
-	if(!/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(dateString))
-		return false;
-
-	// Parse the date parts to integers
-	var parts = dateString.split("/");
-	var day = parseInt(parts[0], 10);
-	var month = parseInt(parts[1], 10);
-	var year = parseInt(parts[2], 10);
-
-	// Check the ranges of month and year
-	if(year < 1000 || year > 3000 || month == 0 || month > 12)
-		return false;
-
-	var monthLength = [ 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
-
-	// Adjust for leap years
-	if(year % 400 == 0 || (year % 100 != 0 && year % 4 == 0))
-		monthLength[1] = 29;
-
-	// Check the range of the day
-	return day > 0 && day <= monthLength[month - 1];
-};
-
-function isNumber(value) {
-  return typeof(value) === 'number';
-};
-
 var SearchBox = React.createClass({
   handleChange : function(e, type,value) {
     e.preventDefault();
@@ -138,8 +105,8 @@ var User = React.createClass({
             <tr>
               <td key={'empty'} className="col-md-1"></td>
               <td key={'id'} className="col-md-2"><img src={path} alt={userItem.first_name} style={{width: 100 + 'px', height: 100 + 'px'}}/></td>
-              <td key={'training_sessions'}className="col-md-2"><Link to={'/users/' + userItem.id}>{userItem.first_name} {userItem.surname}</Link></td>
-              <td key={'charts'} className="col-md-2"><Link to={'/charts/' + userItem.id}><input type="button" className="btn btn-info btn-block" value="charts"/></Link></td>
+              <td key={'training_sessions'}className="col-md-2"><Link to={'/api/users/' + userItem._id + '/tsessions'}>{userItem.first_name} {userItem.surname}</Link></td>
+              <td key={'charts'} className="col-md-2"><Link to={'/api/users/' + userItem._id + '/charts'}><input type="button" className="btn btn-info btn-block" value="charts"/></Link></td>
               <td key={'edit'} className="col-md-2"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
               <td key={'delete'} className="col-md-2"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
               <td key={'empty2'} className="col-md-1"></td>
@@ -389,7 +356,7 @@ export class Home extends React.Component {
 
   logout(){
     this.props.auth.logout()
-    this.context.router.push('/login');
+    this.context.router.push('/api/login');
   }
 
   render(){
@@ -397,7 +364,7 @@ export class Home extends React.Component {
     return (
       <div>
         <Button style={{marginRight: 2 + 'em', marginTop: 1 + 'em', paddingLeft: 1 + 'em'}} className="nav navbar-nav navbar-right"onClick={this.logout.bind(this)}><span className="glyphicon glyphicon-log-out"></span> Logout</Button>
-        <Link to="/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
+        <Link to="/api/muscles" ><button style={{marginRight: 1 + 'em',  marginTop: 1 + 'em', paddingLeft: 10 + 'px', paddingRight: 6 + 'px'}} className="nav btn-primary navbar-nav navbar-right">Muscles & Exercises</button></Link>
         <h3> Welcome {profile.name}</h3>
         <Button style={{marginLeft: 2 + 'em', marginTop: 1 + 'em', marginBottom: 1 + 'em', paddingLeft: 1 + 'em'}} className="btn primary-btn"onClick={browserHistory.goBack}>Go back</Button>
         <GymProgressLogger/>
