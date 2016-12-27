@@ -32,8 +32,6 @@ var TrainingSessionItem = React.createClass({
 	handleUpdate: function(e) {
 	  e.preventDefault();
 	  var date = this.state.date;
-    console.log(date);
-    console.log(this.state._id);
 	  this.props.updateTrainingSessionHandler(this.state._id, this.state.date);
 	  this.setState({ status : ''} )
 	},
@@ -202,10 +200,10 @@ var TrainingSessionsList = React.createClass({
     document.location.reload(true);
   },
 	render: function() {
-    console.log(this.state.user);
+    //console.log(this.state.user);
     var user = this.state.user;
-    console.log(this.state.trainingSessions.tsessions);
-    console.log(this.props.params.user_id)
+    //console.log(this.state.trainingSessions.tsessions);
+    //console.log(this.props.params.user_id)
     var trainingSessions = [];
     var user_id = this.props.params.user_id;
     for(var i = 0; i < this.state.trainingSessions.tsessions.length; i++) {

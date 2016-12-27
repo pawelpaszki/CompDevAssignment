@@ -7,17 +7,12 @@ import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
 
-function isString(value) {
-  return typeof value === 'string';
-};
-
 var Muscle = React.createClass({
 	getInitialState : function() {
 		return {
 			status: '',
-			id: this.props.muscle.id,
-		  name: this.props.muscle.name,
-		  initName: this.props.muscle.name
+			id: this.props.id,
+		  name: this.props.name
 		};
 	},
 	handleNameChange: function(e) {
@@ -25,9 +20,7 @@ var Muscle = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		if (this.props.muscle.constant != true) {
-	       this.props.deleteMuscleHandler(this.state.id, this.state.name);
-		};
+	  this.props.deleteMuscleHandler(this.state.id);
 	},
 	handleEdit: function(e) {
     e.preventDefault();
@@ -40,10 +33,8 @@ var Muscle = React.createClass({
 	handleUpdate: function(e) {
 	  e.preventDefault();
 	  var name = this.state.name;
-	  if (this.props.muscle.constant != true && isString(name)) {
+	  if (name.length > 2) {
 	    this.props.updateMuscleNameHandler(this.state.id, this.state.name);
-	  } else {
-		  this.setState({ name : this.state.initName});
 	  }
 	  this.setState({ status : ''} )
 	},
@@ -58,7 +49,7 @@ var Muscle = React.createClass({
           <tbody>
             <tr>
               <td className="col-md-1"></td>
-              <td key={'name'} className="col-md-2"><Link to={"/musclegroupexercises/" + this.state.id}>{this.state.name} </Link></td>
+              <td key={'name'} className="col-md-2"><Link to={"/api/muscles/" + this.state.id + '/exercises'}>{this.state.name} </Link></td>
               <td className="col-md-1"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
               <td className="col-md-1"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
               <td className="col-md-7"></td>
@@ -92,20 +83,15 @@ var Muscle = React.createClass({
 var AddMuscleForm = React.createClass({
 	getInitialState: function() {
     return { 
-        
+      name: ''
 		};
   },
 	handleNameChange: function(e) {
     this.setState({name: e.target.value});
   },
 	handleSubmit: function(e) {
-		var muscles = _.pluck(this.props.muscles, 'name');
 		e.preventDefault();
 		var name = this.state.name;
-		if (!name || muscles.indexOf(name) != -1) {
-			this.setState({name: ''});
-      return;
-    }
     this.props.addMuscleHandler(name);
     this.setState({name: ''});
 	},
@@ -130,35 +116,15 @@ var AddMuscleForm = React.createClass({
 var MuscleList = React.createClass({
 	getInitialState: function() {
 	  return {
-		  allMuscles: [],
-      exercises: [],
+		  muscles: []
 		};
   },
   componentDidMount(){
-		this.getAllMuscleGroups('http://localhost:3001/muscles/');
-    this.getAllExercises('http://localhost:3001/exercises/');
-  },
-  populateExercises: function(response) {
-		this.setState({
-			exercises: response
-		});
-	},
-	getAllExercises:function(URL){
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-        this.populateExercises(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
+		this.getAllMuscleGroups('http://localhost:3001/api/muscles/');
   },
   populateMuscleGroups: function(response) {
 		this.setState({
-			allMuscles: response
+			muscles: response
 		});
 	},
 	getAllMuscleGroups:function(URL){
@@ -174,50 +140,20 @@ var MuscleList = React.createClass({
       }.bind(this)
     });
   },
-  deleteMuscleGroup:function(id, name) {
-    //console.log(name);
-    var muscleGroupExerciseIDs = [];
-    for(var a = 0; a < this.state.exercises.length; a++) {
-      if(this.state.exercises[a].group == name) {
-        //console.log(true);
-        muscleGroupExerciseIDs.push(this.state.exercises[a].id);
-      }
-    }
-    //console.log(muscleGroupExerciseIDs);
-    
-    for(a = 0; a < muscleGroupExerciseIDs.length; a++) {
-      $.ajax({
-        url: 'http://localhost:3001/exercises/' + muscleGroupExerciseIDs[a],
-        type: 'DELETE',
-        contentType: 'application/json'
-      });
-    }
+  deleteMuscleGroup:function(id) {
     $.ajax({
-      url: 'http://localhost:3001/muscles/' + id,
+      url: 'http://localhost:3001/api/muscles/' + id,
       type: 'DELETE',
       contentType: 'application/json'
     });
     document.location.reload(true);
   },
-  addMuscleGroup:function(name) {
-    var maxId= 0;
-    var allMuscles = this.state.allMuscles;
-    for (var i = 0; i < allMuscles.length; i++) {
-      if(allMuscles[i].id > maxId) {
-        maxId = allMuscles[i].id;
-      }
-    };
-    //console.log("name" + name);
-    var id = maxId + 1;
-    //console.log("id: " + id);
-		   
+  addMuscleGroup:function(name) { 
     $.ajax({
-			url: 'http://localhost:3001/muscles',
+			url: 'http://localhost:3001/api/muscles/',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
-				id: id,
-        constant: false,
 				name: name,
 			}),
 			dataType: 'json'
@@ -227,12 +163,10 @@ var MuscleList = React.createClass({
   },
   updateMuscle: function(id, name) {
     $.ajax({
-			url: 'http://localhost:3001/muscles/' + id,
+			url: 'http://localhost:3001/api/muscles/' + id,
 			type: 'PUT',
 			contentType: 'application/json',
 			data: JSON.stringify({
-				id: id,
-        constant: false,
 				name: name,
 			}),
 			dataType: 'json'
@@ -240,10 +174,18 @@ var MuscleList = React.createClass({
 		document.location.reload(true);
   },
 	render: function() {
-		var displayedMuscles = this.state.allMuscles.map((muscle) =>{
-			return <Muscle key={muscle.name} muscle={muscle}
-			updateMuscleNameHandler={this.updateMuscle} deleteMuscleHandler={this.deleteMuscleGroup}/>;
-		});
+    var muscles = [];
+    console.log(this.state.muscles);
+    for(var i = 0; i < this.state.muscles.muscles.length; i++) {
+      muscles.push(this.state.muscles.muscles[i]);
+    };
+    var displayedMuscles = muscles.map(function(muscle, index) {
+      return (
+        <Muscle id={muscle._id} key={index} name = {muscle.name} 
+        deleteMuscleHandler={this.deleteMuscleGroup} updateMuscleNameHandler={this.updateMuscle}
+        />
+      );
+    }.bind(this));
     var headerValue = "Muscles";
 		return (
 			<div>
@@ -251,7 +193,7 @@ var MuscleList = React.createClass({
         <ul className="list-group">
           {displayedMuscles}
         </ul>
-        <AddMuscleForm addMuscleHandler={this.addMuscleGroup} muscles={this.state.allMuscles}/>
+        <AddMuscleForm addMuscleHandler={this.addMuscleGroup}/>
 			</div>
     );
 	}
