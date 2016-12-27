@@ -215,7 +215,7 @@ var TrainingSessionsList = React.createClass({
       return (
         <TrainingSessionItem id={tsession._id} key={index} user_id={tsession.user_id} 
           date = {tsession.date} deleteTrainingSessionHandler={this.deleteTrainingSession}
-			updateTrainingSessionHandler={this.updateTrainingSession}
+			    updateTrainingSessionHandler={this.updateTrainingSession}
         />
       );
     }.bind(this));

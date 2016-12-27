@@ -149,9 +149,6 @@ var MuscleGroupSessionList = React.createClass({
 		for(var i = 0; i < this.state.muscleGroupSessions.msessions.length; i++) {
       muscleGroupSessions.push(this.state.muscleGroupSessions.msessions[i]);
     };
-		var displayedSessions = muscleGroupSessions.map((session) =>{
-			return <MuscleGroupSession key={session.id} sessionItem={session} deleteSessionItemHandler={this.deleteMuscleGroupSession} />;
-		});
     var displayedMsessions = muscleGroupSessions.map(function(msession, index) {
       return (
         <MuscleGroupSession id={msession._id} key={index} user_id={msession.user_id} tsession_id={msession.tsession_id}
