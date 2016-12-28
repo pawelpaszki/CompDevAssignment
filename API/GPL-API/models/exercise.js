@@ -6,7 +6,7 @@ var exerciseSchema = new Schema({
     muscle_id  : { type: String, required: true},
     group  : { type: String, required: true , trim: true },
     constant  : { type: Boolean, default: false },
-    name : { type: String, required: true, trim: true},
+    name : { type: String, required: true, trim: true, unique: true},
     descriptions: Schema.Types.Mixed,
     pictures: Schema.Types.Mixed
 });

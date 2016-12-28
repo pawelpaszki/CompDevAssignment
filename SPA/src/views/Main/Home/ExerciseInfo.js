@@ -9,22 +9,16 @@ import Header from './Header';
 var ExerciseInfo = React.createClass({
 	getInitialState: function() {
 	  return {
-      exercise: '',
-      id: this.props.params.id,
-      path: '',
+      exercise: ''
 		};
   },
   componentDidMount(){
-		this.getExercise('http://localhost:3001/exercises/');
+		this.getExercise('http://localhost:3001/api/muscles/' + this.props.params.muscle_id + '/exercises/' + this.props.params.exercise_id);
   },
-  getExerciseInfo: function(response) {
-		var exercises = response;
-		for (var i = 0; i < exercises.length; i++) {
-			if(this.state.id == exercises[i].id) {
-				this.setState({exercise: exercises[i]});
-				this.setState({path: exercises[i].picture});
-			}
-		}
+  setExerciseInfo: function(response) {
+    this.setState({
+      exercise: response
+    });
 	},
   getExercise:function(URL){
     $.ajax({
@@ -32,7 +26,7 @@ var ExerciseInfo = React.createClass({
       dataType:"json",
       url:URL,
       success: function(response) {
-        this.getExerciseInfo(response);
+        this.setExerciseInfo(response);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -40,6 +34,7 @@ var ExerciseInfo = React.createClass({
     });
   },
 	render: function() {
+    console.log(this.state.exercise);
 		var imagePath1 = this.state.exercise.pictures[0].start;
 		var imagePath2 = this.state.exercise.pictures[0].finish;
 		var descriptions = this.state.exercise.descriptions.map(function(description, index){

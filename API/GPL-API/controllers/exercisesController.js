@@ -72,7 +72,6 @@ exports.update = function(req, res) {
 }
 
 exports.destroy = function(req, res) {
-
   var id = req.params.id; 
   Exercise.findById(id, function(err, doc) {
     if(!err && doc) {

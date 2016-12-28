@@ -15,12 +15,9 @@ var Exercise = React.createClass({
 	getInitialState : function() {
 		return {
 		  status: '',
-			id: this.props.exercise.id,
-		  name: this.props.exercise.name,
-		  group: this.props.exercise.group,
-		  initName: this.props.exercise.name,
-		  descriptions: this.props.exercise.descriptions,
-		  pictures: this.props.exercise.pictures,
+			id: this.props.id,
+		  name: this.props.name,
+		  muscle_id: this.props.muscle_id
 		};
 	},
 	handleNameChange: function(e) {
@@ -28,11 +25,7 @@ var Exercise = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		if (this.props.exercise.constant != true) {
-      this.props.deleteExerciseHandler(this.state.id);
-		} else {
-		  this.setState({status: ''})	;
-		};
+    this.props.deleteExerciseHandler(this.state.id);
 	},
 	handleEdit: function(e) {
 		this.setState({ status : 'edit'} )
@@ -40,21 +33,11 @@ var Exercise = React.createClass({
 	handleUndo: function(e) {
 		this.setState({ status : ''} )
 	},
-	handleStepChange: function(e) {
-		console.log(e.target.value);
-	},
 	handleUpdate: function(e) {
 	  e.preventDefault();
 	  var name = this.state.name;
-	  var group = this.state.group;
-	  //console.log(this.state.initName);
-	  if (this.props.exercise.constant != true && isString(name)) {
-	    this.props.updateExerciseHandler(this.state.id, name, this.state.descriptions, this.state.pictures);
-		  this.setState({ name : this.state.name});
-		  //console.log(this.state.name);
-	  } else {
-		  this.setState({ name : this.state.initName});
-	  }
+	  this.props.updateExerciseHandler(this.state.id, name);
+		this.setState({ name : this.state.name});
 	  this.setState({ status : ''})
 	},
 	render:function(){
@@ -62,13 +45,15 @@ var Exercise = React.createClass({
 		var editHandler = this.handleEdit;
 		var deleteHandler = this.handleDelete;
 		var itemsToRender;
+    var muscle_id = this.state.muscle_id;
+    var id = this.state.id;
 		if(this.state.status == '') {
 			itemsToRender = [
 			<table className="table table-borderless">
 				<tbody>
 				  <tr>
 				    <td className="col-md-1"> </td>
-					  <td key={'id'} className="col-md-3"><Link to={"/exerciseInfo/" + this.state.id}>{this.state.name} </Link> </td>
+					  <td key={'id'} className="col-md-3"><Link to={'/api/muscles/' + muscle_id + '/exercises/' + id + '/exerciseinfo/'}>{this.state.name} </Link> </td>
             <td className="col-md-1"><input type="button"  className="btn btn-primary btn-block" value="edit" onClick={editHandler}/></td>
             <td className="col-md-1"><input type="button"  className="btn btn-warning btn-block" value="delete" onClick={deleteHandler}/></td>
             <td className="col-md-7"></td>
@@ -110,8 +95,7 @@ var AddExerciseForm = React.createClass({
 			step4: '',
 			step5: '',
 			picture1: '',
-			picture2: '',
-			group: this.props.muscleGroup,
+			picture2: ''
 		};
   },
 	handleNameChange: function(e) {
@@ -146,11 +130,7 @@ var AddExerciseForm = React.createClass({
 	},
 	handleSubmit: function(e) {
 		e.preventDefault();
-		//console.log(this.props.muscles);
-		var muscles = _.pluck(this.props.muscles, 'name');
-		var exercises = _.pluck(this.props.exercises, 'name');
 		var name = this.state.name;
-		var group = this.props.muscleGroup;
 		var pictures = [{"start": this.state.picture1, "finish": this.state.picture2}];
 		var descriptions = [
       {"id" : 1, "step": this.state.step1}, 
@@ -159,15 +139,7 @@ var AddExerciseForm = React.createClass({
       {"id" : 4, "step": this.state.step4},
       {"id" : 5, "step": this.state.step5},
     ];
-		//console.log(group);
-		//console.log(muscles);
-		//console.log(exercises);
-		//console.log(name);
-		if (!name || !group || exercises.indexOf(name) != -1) {
-			this.setState({name: ''});
-      return;
-    }
-    this.props.addExerciseHandler(name, group, descriptions, pictures);
+    this.props.addExerciseHandler(name, descriptions, pictures);
     this.setState({name: '', status: ''});
 	},
 	render: function() {
@@ -245,32 +217,25 @@ var ExerciseList = React.createClass({
 	getInitialState: function() {
 	  return {
       exercises: [],
-      muscles: [],
-      muscleId: this.props.params.id,
-      group: '',
+      muscleGroup: ''
     };
   },
 	componentDidMount(){
-		this.getAllExercises('http://localhost:3001/exercises/');
-		this.getAllMuscles('http://localhost:3001/muscles/');
+		this.getExercises('http://localhost:3001/api/muscles/' + this.props.params.muscle_id + '/exercises/');
+		this.getMuscleGroup('http://localhost:3001/api/muscles/' + this.props.params.muscle_id);
   },
-  populateMuscles: function(response) {
+  setMuscle: function(response) {
 		this.setState({
-			muscles: response
+			muscleGroup: response
 		});
-		for (var i = 0; i < this.state.muscles.length; i++) {
-			if(this.state.muscleId == this.state.muscles[i].id) {
-				this.setState({group: this.state.muscles[i].name});
-			}
-		}
 	},
-	getAllMuscles:function(URL){
+	getMuscleGroup:function(URL){
     $.ajax({
       type:"GET",
       dataType:"json",
       url:URL,
       success: function(response) {
-        this.populateMuscles(response);
+        this.setMuscle(response);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -282,7 +247,7 @@ var ExerciseList = React.createClass({
 			exercises: response
 		});
 	},
-	getAllExercises:function(URL){
+	getExercises:function(URL){
     $.ajax({
       type:"GET",
       dataType:"json",
@@ -296,49 +261,36 @@ var ExerciseList = React.createClass({
     });
   },
   deleteExercise:function(id) {
+    var muscle_id = this.props.params.muscle_id;
     $.ajax({
-      url: 'http://localhost:3001/exercises/' + id,
+      url: 'http://localhost:3001/api/muscles/' + muscle_id + '/exercises/' + id,
       type: 'DELETE',
       contentType: 'application/json'
     });
     document.location.reload(true);
   },
-  updateExercise: function(id, name, descriptions, pictures) {
+  updateExercise: function(id, name) {
+    var muscle_id = this.props.params.muscle_id;
     $.ajax({
-      url: 'http://localhost:3001/exercises/' + id,
+      url: 'http://localhost:3001/api/muscles/' + muscle_id + '/exercises/' + id,
       type: 'PUT',
       contentType: 'application/json',
       data: JSON.stringify({
-        id: id,
-        constant: false,
-        name: name,
-        group: this.state.group,
-        descriptions: descriptions,
-        pictures: pictures
+        name: name
       }),
       dataType: 'json'
     });
     document.location.reload(true);
   },
-  addExercise:function(name, group, descriptions, pictures) {
-    var maxId= 0;
-    var allExercises = this.state.exercises;
-    for (var i = 0; i < allExercises.length; i++) {
-      if(allExercises[i].id > maxId) {
-        maxId = allExercises[i].id;
-      }
-    };
-    //console.log("name" + name);
-    var id = maxId + 1;
-    //console.log("id: " + id);
-     
+  addExercise:function(name, descriptions, pictures) {
+    var muscle_id = this.props.params.muscle_id;
+    var group = this.state.muscleGroup.name;
     $.ajax({
-			url: 'http://localhost:3001/exercises',
+			url: 'http://localhost:3001/api/muscles/' + muscle_id + '/exercises/',
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify({
-				id: id,
-        constant: false,
+				muscle_id: muscle_id,
 				name: name,
 				group: group,
 				descriptions: descriptions,
@@ -350,32 +302,34 @@ var ExerciseList = React.createClass({
 		document.location.reload(true);
   },
 	render: function() {
-		//console.log(this.state.group);
-		var muscleGroup;
-		for (var a = 0; a < this.state.muscles.length; a++) {
-			if(this.state.muscles[a].id == this.state.muscleId) {
-				muscleGroup = this.state.muscles[a].name;
-			}
-		};
-		var exercises = [];
-		for (a = 0; a < this.state.exercises.length; a++) {
-			if(this.state.exercises[a].group == muscleGroup) {
-				exercises.push(this.state.exercises[a]);
-			}
-		};
-		var Exercises = exercises.map((exercise) =>{
-			return <Exercise key={exercise.id} exercise={exercise} deleteExerciseHandler={this.deleteExercise}
-			updateExerciseHandler={this.updateExercise} muscles={this.state.muscles} />;
-		});
+		var muscleGroup = '';
+    var exercises = [];
+    
+		for(var i = 0; i < this.state.exercises.exercises.length; i++) {
+      exercises.push(this.state.exercises.exercises[i]);
+    };
+    console.log(exercises);
+    if(exercises.length <1) {
+      muscleGroup = this.state.muscleGroup.name;
+    } else {
+      muscleGroup = exercises[0].group;
+    }
+		
+    var displayedExercises = exercises.map(function(exercise, index) {
+      return (
+        <Exercise id={exercise._id} key={index} muscle_id={exercise.muscle_id} name={exercise.name}
+          deleteExerciseHandler={this.deleteExercise} updateExerciseHandler={this.updateExercise}
+        />
+      );
+    }.bind(this));
     var headerValue = "Exercises (" + muscleGroup + ")";
 		return (
 			<div>
 				<Header headerValue={headerValue}/>
         <ul className="list-group">
-          {Exercises}
+          {displayedExercises}
         </ul>
-        <AddExerciseForm exercises={this.state.exercises} muscles={this.state.muscles} 
-          addExerciseHandler={this.addExercise} muscleGroup={this.state.group}/>
+        <AddExerciseForm addExerciseHandler={this.addExercise}/>
     </div>
 		);
 	}

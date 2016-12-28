@@ -36,7 +36,7 @@ export const makeMainRoutes = () => {
       <Route path="api/users/:user_id/tsessions/:tsession_id/msessions/:msession_id/exerciseunits" component={ExerciseUnitList} onEnter={requireAuth}/>
       <Route path="api/muscles" component={MuscleList} />
       <Route path="api/muscles/:muscle_id/exercises" component={ExerciseList} />
-      <Route path="api/exerciseInfo/:id" component={ExerciseInfo}/>
+      <Route path="api/muscles/:muscle_id/exercises/:exercise_id/exerciseinfo" component={ExerciseInfo}/>
       <Route path="api/users/:user_id/charts" component={ChartGenerator} onEnter={requireAuth}/>
     </Route>
   )
