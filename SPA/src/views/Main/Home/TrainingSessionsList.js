@@ -20,7 +20,7 @@ var TrainingSessionItem = React.createClass({
 	},
 	handleDelete: function(e) {
 		e.preventDefault();
-		console.log(this.state._id);
+		//console.log(this.state._id);
 		this.props.deleteTrainingSessionHandler(this.state._id);
 	},
 	handleEdit: function(e) {

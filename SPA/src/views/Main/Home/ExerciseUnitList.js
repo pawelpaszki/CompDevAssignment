@@ -245,7 +245,7 @@ var ExerciseUnitList = React.createClass({
 		for(var i = 0; i < this.state.exerciseUnits.exerciseunits.length; i++) {
       exerciseUnits.push(this.state.exerciseUnits.exerciseunits[i]);
     };
-    console.log(exerciseUnits);
+    //console.log(exerciseUnits);
     if(exerciseUnits.length <1) {
       muscleGroup = this.state.muscleGroup.name;
     } else {

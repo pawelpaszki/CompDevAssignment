@@ -175,7 +175,7 @@ var MuscleList = React.createClass({
   },
 	render: function() {
     var muscles = [];
-    console.log(this.state.muscles);
+    //console.log(this.state.muscles);
     for(var i = 0; i < this.state.muscles.muscles.length; i++) {
       muscles.push(this.state.muscles.muscles[i]);
     };

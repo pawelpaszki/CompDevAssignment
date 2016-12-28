@@ -7,10 +7,6 @@ import {Button} from 'react-bootstrap';
 import { browserHistory } from 'react-router';
 import Header from './Header';
 
-function isString(value) {
-  return typeof value === 'string';
-};
-
 var Exercise = React.createClass({
 	getInitialState : function() {
 		return {
@@ -308,7 +304,7 @@ var ExerciseList = React.createClass({
 		for(var i = 0; i < this.state.exercises.exercises.length; i++) {
       exercises.push(this.state.exercises.exercises[i]);
     };
-    console.log(exercises);
+    //console.log(exercises);
     if(exercises.length <1) {
       muscleGroup = this.state.muscleGroup.name;
     } else {

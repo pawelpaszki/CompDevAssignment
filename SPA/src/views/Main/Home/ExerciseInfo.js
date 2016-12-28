@@ -34,7 +34,7 @@ var ExerciseInfo = React.createClass({
     });
   },
 	render: function() {
-    console.log(this.state.exercise);
+    //console.log(this.state.exercise);
 		var imagePath1 = this.state.exercise.pictures[0].start;
 		var imagePath2 = this.state.exercise.pictures[0].finish;
 		var descriptions = this.state.exercise.descriptions.map(function(description, index){

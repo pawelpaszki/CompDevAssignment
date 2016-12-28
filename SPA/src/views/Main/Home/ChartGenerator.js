@@ -73,29 +73,18 @@ export default class ChartGenerator extends React.Component {
       value: '',
       data: [],
       legendData: [],
-      users : [],
       suggestions: [],
       exerciseUnits : [],
-      muscleGroupSessions : [],
-      trainingSessions : [],
-      exercises : [],
+      trainingSessions : []
     };
   }
   componentDidMount(){
-	  this.getAllExerciseUnits('http://localhost:3001/exerciseunits/');
-	  this.getAllMuscleGroupSessions('http://localhost:3001/musclegroupsessions/');
-	  this.getAllTrainingSessions('http://localhost:3001/trainingsessions/');
-	  this.getAllExercises('http://localhost:3001/exercises/');
-	  this.getAllUsers('http://localhost:3001/users/');
+	  this.getAllExerciseUnits('http://localhost:3001/api/users/' + this.props.params.user_id + '/exerciseunits/');
+	  this.getAllTrainingSessions('http://localhost:3001/api/users/' + this.props.params.user_id + '/tsessions/');
   };
   populateExerciseUnits = (response) => {
 		this.setState({
 			exerciseUnits: response
-		});
-	};
-	populateMuscleGroupSessions = (response) => {
-		this.setState({
-			muscleGroupSessions: response
 		});
 	};
 	populateTrainingSessions = (response) => {
@@ -103,42 +92,6 @@ export default class ChartGenerator extends React.Component {
 			trainingSessions: response
 		});
 	};
-	populateExercises = (response) => {
-		this.setState({
-			exercises: response
-		});
-	};
-	populateUsers = (response) => {
-		this.setState({
-			users: response
-		});
-	};
-  getAllExerciseUnits = (URL) => {
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-        this.populateExerciseUnits(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  };
-  getAllMuscleGroupSessions = (URL) => {
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-        this.populateMuscleGroupSessions(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  };
   getAllTrainingSessions = (URL) => {
     $.ajax({
       type:"GET",
@@ -152,26 +105,13 @@ export default class ChartGenerator extends React.Component {
       }.bind(this)
     });
   };
-  getAllExercises = (URL) => {
+  getAllExerciseUnits = (URL) => {
     $.ajax({
       type:"GET",
       dataType:"json",
       url:URL,
       success: function(response) {
-        this.populateExercises(response);
-      }.bind(this),
-      error: function(xhr, status, err) {
-        console.error(this.props.url, status, err.toString());
-      }.bind(this)
-    });
-  };
-  getAllUsers = (URL) => {
-    $.ajax({
-      type:"GET",
-      dataType:"json",
-      url:URL,
-      success: function(response) {
-        this.populateUsers(response);
+        this.populateExerciseUnits(response);
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
@@ -199,13 +139,9 @@ export default class ChartGenerator extends React.Component {
     });
   };
   generateChartData = (exercise, date_from, date_to) => {
-    //console.log(exercise);
-    //console.log(date_from);
-    //console.log(date_to);
-    
+        
     var dateFromComponents = date_from.split("/");
     var dateFrom = new Date(dateFromComponents[2], dateFromComponents[1] -1, dateFromComponents[0]);
-    //console.log(dateFrom);
     var dateToComponents = date_to.split("/");
     var dateTo = new Date(dateToComponents[2], dateToComponents[1] -1, dateToComponents[0]);
     if (dateTo < dateFrom) {
@@ -213,72 +149,42 @@ export default class ChartGenerator extends React.Component {
       this.setState ({data});
       return;
     }
-    //console.log(dateTo);
     
-    var users = this.state.users;
-    var user = users[this.props.params.id];
-    //console.log("user: " + user);
-    //console.log("id: " + this.props.params.id);
-    var trainingDays = [];
-    var trainingSessionIds = [];
-    for(var i = 0; i < this.state.trainingSessions.length; i++) {
-      if(this.state.trainingSessions[i].user_id == this.props.params.id) {
-        trainingDays.push({'date': this.state.trainingSessions[i].date, 'training_session_id': this.state.trainingSessions[i].id});
-      }
-    };
-    //console.log(trainingDays);
-    var muscleGroup = '';
-    for(i = 0; i < this.state.exercises.length; i++) {
-        if(this.state.exercises[i].name == exercise) {
-          muscleGroup = this.state.exercises[i].group;
-      }
-    };
     var daysTakenIntoAccount = [];
     var tempDate;
     var tempDateComponents;
     var data = [];
-    var validTrainingDaysIndices = [];
-    for (i = 0; i < trainingDays.length; i++) {
-      tempDateComponents = trainingDays[i].date.split("/");
-      tempDate = new Date(tempDateComponents[2], tempDateComponents[1] - 1, tempDateComponents[0]);
-      //console.log(tempDate);
-      if (tempDate >= dateFrom && tempDate <= dateTo) {
-        //console.log(tempDate);
-        //console.log(dateFrom);
-        //console.log(dateTo);
-        daysTakenIntoAccount.push(trainingDays[i].date);
-        validTrainingDaysIndices.push(i);
+    var validUnits = [];
+    for (var i = 0; i < this.state.exerciseUnits.exerciseunits.length; i++) {
+      if (this.state.exerciseUnits.exerciseunits[i].name == exercise) {
+        validUnits.push(this.state.exerciseUnits.exerciseunits[i]);
       } 
-    };
-    //console.log(validTrainingDaysIndices);
-    var trainingDaysToDisplay = [];
-    if (validTrainingDaysIndices.length == 0) {
-      data = [];
-      this.setState ({data});
-      return;
-    } else {
-      for (i = 0; i < validTrainingDaysIndices.length; i++) {
-        trainingDaysToDisplay.push(trainingDays[validTrainingDaysIndices[i]]);
+    }
+    var validTrainingSessions = [];
+    for(i = 0; i < this.state.trainingSessions.tsessions.length; i++) {
+      var date = this.state.trainingSessions.tsessions[i].date;
+      var year = date.substring(0,4);
+      var month = date.substring(5,7);
+      var day = date.substring(8,10);
+      var tsessionDate = new Date(year,month -1,day);
+      if(tsessionDate >= dateFrom && tsessionDate <= dateTo) {
+        validTrainingSessions.push(this.state.trainingSessions.tsessions[i]);
       }
     }
-    //console.log("muscleGroupSessions");
-    //console.log(this.state.muscleGroupSessions);
-    for(i = 0; i < trainingDaysToDisplay.length; i++) {
-      for(var j = 0; j < this.state.muscleGroupSessions.length; j++) {
-        for(var k = 0; k < this.state.exerciseUnits.length; k++) {
-          if(this.state.muscleGroupSessions[j].name == muscleGroup) {
-            if(this.state.muscleGroupSessions[j].main_session_id == trainingDaysToDisplay[i].training_session_id) {
-              if(this.state.exerciseUnits[k].name == exercise && this.state.exerciseUnits[k].muscle_group_session_id == this.state.muscleGroupSessions[j].id) {
-                data.push({'x': trainingDaysToDisplay[i].date, 'y': this.state.exerciseUnits[k].weight});
-              } 
-            }
-          }
+    console.log(validUnits);
+    console.log(validTrainingSessions);
+    for(i = 0; i < validUnits.length; i++) {
+      for(var j = 0; j < validTrainingSessions.length; j++) {
+        if(validUnits[i].tsession_id == validTrainingSessions[j]._id) {
+          var date = validTrainingSessions[j].date;
+          var year = date.substring(0,4);
+          var month = date.substring(5,7);
+          var day = date.substring(8,10);
+          var dateToDisplay = day + '/' + month + '/' + year;
+          data.push({'x': dateToDisplay, 'y': validUnits[i].weight});
         }
       }
-    };
-    //console.log("data");
-    //console.log(data);
-    //console.log(data.length);
+    }
     var newText = '';
     // trimming dates to shortest possible format
     if(data.length > 8) {
@@ -300,9 +206,12 @@ export default class ChartGenerator extends React.Component {
     }
     //console.log(data);
     this.setState ({data});
+    
   };
   
   render() {
+    //console.log(this.state.exerciseUnits);
+    //console.log(this.state.trainingSessions);
     const { value, suggestions } = this.state;
 
     // Autosuggest will pass through all these props to the input element.
@@ -323,7 +232,7 @@ export default class ChartGenerator extends React.Component {
                <Autosuggest suggestions={suggestions} onSuggestionsFetchRequested={this.onSuggestionsFetchRequested} onSuggestionsClearRequested={this.onSuggestionsClearRequested}
                 getSuggestionValue={getSuggestionValue} renderSuggestion={renderSuggestion} inputProps={inputProps} />
               </td>
-              <td className="col-md-6"><ChartDataPicker exercise={this.state.value} generateChartHandler={this.generateChartData} users={this.state.users}/></td>
+              <td className="col-md-6"><ChartDataPicker exercise={this.state.value} generateChartHandler={this.generateChartData}/></td>
               <td className="col-md-4"></td>
             </tr>
           </tbody>

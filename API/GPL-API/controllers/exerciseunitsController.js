@@ -23,6 +23,16 @@ exports.show = function(req, res) {
   });
 }
 
+exports.showusersexercises = function(req, res) {
+  Exerciseunit.find({'user_id': req.params.user_id}, function(err, docs) {
+    if(!err) {
+      res.json(200, { exerciseunits: docs });  
+    } else {
+      res.json(500, { message: err });
+    }
+  });
+}
+
 exports.create = function(req, res) {
 
     var newExerciseunit = new Exerciseunit(); 
