@@ -1,6 +1,7 @@
 {
   "name": "gym-progress-logger-api",
   "version": "0.0.1",
+  "author": "Pawel Paszki",
   "private": true,
   "scripts": {
     "start": "node app"
@@ -11,6 +12,5 @@
     "jade": "*",
     "lodash": "^4.17.2",
     "mongoose": "~2.7.x"
-  },
-  "author": "Pawel Paszki"
+  }
 }

@@ -53,7 +53,6 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   
   var id = req.params.id;
-
   Exerciseunit.findById(id, function(err, doc) {
     if(!err && doc) {
       doc.weight = req.body.weight;

@@ -37,17 +37,6 @@ exports.create = function(req, res) {
       res.json(500, {message: "Could not create muscle group session. Error: " + err});
     }
   });
-  
-}
-
-exports.showusersmsessions = function(req, res) {
-  Msession.find({'user_id': req.params.user_id}, function(err, docs) {
-    if(!err) {
-      res.json(200, { msessions: docs });  
-    } else {
-      res.json(500, { message: err });
-    }
-  });
 }
 
 exports.update = function(req, res) {

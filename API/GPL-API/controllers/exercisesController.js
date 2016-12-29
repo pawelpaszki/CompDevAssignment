@@ -48,7 +48,6 @@ exports.create = function(req, res) {
 exports.update = function(req, res) {
   
   var id = req.params.id;
-
   Exercise.findById(id, function(err, doc) {
     if(!err && doc) {
       if(doc.constant == false) {
